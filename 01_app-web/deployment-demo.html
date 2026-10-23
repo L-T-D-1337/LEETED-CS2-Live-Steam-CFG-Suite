@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>LEETED™ 1337 — Live Steam CS2 CFG Suite & CS2 Config Agent — DkZ™ v2 Interactive Explorer</title>
+  <style>
+    :root { --bg: #060608; --surface: #0d0d12; --accent: #fa1e4e; --green: #00ff88; --text: #f0f0f5; --muted: #8a8a9e; }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', system-ui, sans-serif; margin: 0; padding: 32px; }
+    .card { background: var(--surface); border: 1px solid rgba(250,30,78,0.3); border-radius: 14px; padding: 24px; max-width: 1200px; margin: 0 auto 24px; }
+    h1 { margin: 0 0 8px; color: var(--text); }
+    .sub { color: var(--muted); margin-bottom: 16px; }
+    .badge { background: rgba(250,30,78,0.15); color: var(--accent); border: 1px solid var(--accent); border-radius: 6px; padding: 2px 8px; font-family: monospace; font-size: 12px; }
+    .ok { color: var(--green); font-family: monospace; font-weight: 700; }
+    table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 14px; }
+    th, td { text-align: left; padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    th { color: var(--accent); font-family: monospace; }
+    input { width: 100%; padding: 10px 14px; background: #060608; border: 1px solid var(--accent); color: var(--text); border-radius: 8px; margin-bottom: 12px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <span class="badge">L-T-D-1337/LEETED-CS2-Live-Steam-CFG-Suite</span>
+    <h1>LEETED™ 1337 — Live Steam CS2 CFG Suite & CS2 Config Agent</h1>
+    <div class="sub">Kompletter aktiver Steam CS2 CFG-Bestand (autoexec, dkz_radar, movement, practice_mode, crosshair, csafap) + CS2 Config Agent Konversationen</div>
+    <div class="ok">● STATUS: ONLINE · 4 KONVERSATIONEN & WORKSPACE-ARTEFAKTE INTEGRIERT</div>
+  </div>
+  <div class="card">
+    <input type="text" id="q" placeholder="Konversationen, Ergebnisse, Pläne oder Workspaces filtern..." oninput="filterRows()">
+    <table id="tbl">
+      <thead><tr><th>Datum</th><th>ID</th><th>Workspace</th><th>Konversation / Ergebnis</th><th>Artefakte</th></tr></thead>
+      <tbody><tr><td><code>2026-08-17</code></td><td><code>d12bd90c</code></td><td><span class='badge'>cfg</span></td><td>Troubleshooting Al9oha Plugin Installation</td><td><code>1 files</code></td></tr>
+<tr><td><code>2026-08-14</code></td><td><code>d67a9267</code></td><td><span class='badge'>cfg</span></td><td>Clean And Organize Autoexec</td><td><code>1 files</code></td></tr>
+<tr><td><code>2026-08-13</code></td><td><code>534a094b</code></td><td><span class='badge'>cfg</span></td><td>CS2 Config Fix And Agent</td><td><code>3 files</code></td></tr>
+<tr><td><code>2026-08-13</code></td><td><code>06f87907</code></td><td><span class='badge'>cfg</span></td><td>Repair Counter-Strike Config File</td><td><code>1 files</code></td></tr>
+</tbody>
+    </table>
+  </div>
+  <script>
+    function filterRows() {
+      const q = document.getElementById('q').value.toLowerCase();
+      document.querySelectorAll('#tbl tbody tr').forEach(tr => {
+        tr.style.display = tr.innerText.toLowerCase().includes(q) ? '' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>

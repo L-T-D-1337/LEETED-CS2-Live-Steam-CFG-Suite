@@ -1,0 +1,402 @@
+[
+  {
+    "line": 11,
+    "old": "alias \"crosshair_fire\" \"croattx\"",
+    "new": [
+      "alias \"crosshair_fire\" \"shot_render\""
+    ],
+    "reason": "Schussprofil an/aus und Kreis/T getrennt von normaler Auswahl."
+  },
+  {
+    "line": 34,
+    "old": "alias \"shape_fire\" \"shot_profile_1;shot_profile_2;shot_profile_3\"",
+    "new": [
+      "alias \"shape_fire\" \"shot_circle_part_1;shot_circle_part_2;shot_circle_part_3;shot_circle_part_4\""
+    ],
+    "reason": "Weisser Kreis, duennere Linie, hoehere dynamische Spreizgrenze."
+  },
+  {
+    "line": 48,
+    "old": "alias \"restore_dot\" \"shape_dot;croco;cl_crosshair_recoil 0;ch1\"",
+    "new": [
+      "alias \"restore_dot\" \"shape_dot;color_restore;cl_crosshair_recoil 0;ch1\""
+    ],
+    "reason": "Gespeichertes Profil und Farbe entsprechend Farbschutz laden; keine Auswahl weiterschalten."
+  },
+  {
+    "line": 52,
+    "old": "alias \"restore_cross\" \"shape_cross;croco;cl_crosshair_recoil 0;ch1\"",
+    "new": [
+      "alias \"restore_cross\" \"shape_cross;color_restore;cl_crosshair_recoil 0;ch1\""
+    ],
+    "reason": "Gespeichertes Profil und Farbe entsprechend Farbschutz laden; keine Auswahl weiterschalten."
+  },
+  {
+    "line": 56,
+    "old": "alias \"restore_hole\" \"shape_hole;croco;cl_crosshair_recoil 0;ch1\"",
+    "new": [
+      "alias \"restore_hole\" \"shape_hole;color_restore;cl_crosshair_recoil 0;ch1\""
+    ],
+    "reason": "Gespeichertes Profil und Farbe entsprechend Farbschutz laden; keine Auswahl weiterschalten."
+  },
+  {
+    "line": 60,
+    "old": "alias \"restore_t\" \"shape_t;croco;cl_crosshair_recoil 0;ch1\"",
+    "new": [
+      "alias \"restore_t\" \"shape_t;color_restore;cl_crosshair_recoil 0;ch1\""
+    ],
+    "reason": "Gespeichertes Profil und Farbe entsprechend Farbschutz laden; keine Auswahl weiterschalten."
+  },
+  {
+    "line": 64,
+    "old": "alias \"restore_trill\" \"shape_trill;croco;cl_crosshair_recoil 0;ch1\"",
+    "new": [
+      "alias \"restore_trill\" \"shape_trill;color_restore;cl_crosshair_recoil 0;ch1\""
+    ],
+    "reason": "Gespeichertes Profil und Farbe entsprechend Farbschutz laden; keine Auswahl weiterschalten."
+  },
+  {
+    "line": 280,
+    "old": "alias <hand> \"switchhands;-lookatweapon\"",
+    "new": [
+      "alias \"<hand>\" \"switchhands;look0\""
+    ],
+    "reason": "Direkte Inspect-Aufrufe ueber look1/look0 zentralisieren bzw. Versionsmarker erneuern."
+  },
+  {
+    "line": 282,
+    "old": "alias <hand \"switchhandsleft;-lookatweapon\"",
+    "new": [
+      "alias \"<hand\" \"switchhandsleft;look0\""
+    ],
+    "reason": "Direkte Inspect-Aufrufe ueber look1/look0 zentralisieren bzw. Versionsmarker erneuern."
+  },
+  {
+    "line": 284,
+    "old": "alias hand> \"switchhandsright;-lookatweapon\"",
+    "new": [
+      "alias \"hand>\" \"switchhandsright;look0\""
+    ],
+    "reason": "Direkte Inspect-Aufrufe ueber look1/look0 zentralisieren bzw. Versionsmarker erneuern."
+  },
+  {
+    "line": 304,
+    "old": "alias rdygo \"-attack;he;molo;smoke;slot3;knife;-lookatweapon\"",
+    "new": [
+      "alias \"rdygo\" \"fire_cancel;he;molo;smoke;slot3;knife;look0\""
+    ],
+    "reason": "Kaufhelfer beendet Angriff UND Schussanzeige; bestehende Waffenfolge bleibt."
+  },
+  {
+    "line": 312,
+    "old": "alias look1 \"+lookatweapon\"",
+    "new": [
+      "alias \"look1\" \"noop\""
+    ],
+    "reason": "Zum Testen startet Inspect AUS; inspect_on aktiviert +lookatweapon."
+  },
+  {
+    "line": 362,
+    "old": "alias +speed \"<vol;+sprint\"",
+    "new": [
+      "alias \"+speed\" \"<vol;+sprint;space_move_hold\""
+    ],
+    "reason": "SHIFT erhalten; aktiver SPACE-Toggle hat Vorrang."
+  },
+  {
+    "line": 364,
+    "old": "alias -speed \"vol>;-sprint\"",
+    "new": [
+      "alias \"-speed\" \"vol>;-sprint;space_move_hold\""
+    ],
+    "reason": "SHIFT-Release darf aktiven SPACE-Toggle nicht aufheben."
+  },
+  {
+    "line": 465,
+    "old": "alias \"+jumpp\" \"mjump;sens0;+buy;alias sens_check_space sens_held;alias check_space equip_z;select_held;sens_refresh\"",
+    "new": [
+      "alias \"+jumpp\" \"mjump;sens0;+buy;space_press_state;select_held;sens_refresh\""
+    ],
+    "reason": "SPACE: vorhandene Rauch-Ersatzfolge, Radmodus und Sens 1.87; Bombentaste wird Modusschalter."
+  },
+  {
+    "line": 469,
+    "old": "alias \"-jumpp\" \"mnormal;sensx;-buy;alias sens_check_space sens_check_quick;alias check_space best_weapon;select_held;look0;proview;sens_refresh\"",
+    "new": [
+      "alias \"-jumpp\" \"mnormal;sensx;-buy;space_release_state;best_weapon;proview;sens_refresh\""
+    ],
+    "reason": "SPACE: Rad-/BUY-Rueckweg, Hauptwaffe rechts, Inspect aus, proview und Sens-Rueckstellung."
+  },
+  {
+    "line": 589,
+    "old": "alias \"+dropbomb\" \"cl_autohelp 1;slot3; slot5; +lookatweapon;look1\"",
+    "new": [
+      "alias \"+dropbomb\" \"drop_press\""
+    ],
+    "reason": "Stabile Taste: normal Bombendrop, bei SPACE sprint0/sprint1-Toggle."
+  },
+  {
+    "line": 591,
+    "old": "alias \"-dropbomb\" \"cl_autohelp 0;drop;lastinv;-lookatweapon;look0\"",
+    "new": [
+      "alias \"-dropbomb\" \"drop_release;alias drop_release noop;alias drop_press drop_once\""
+    ],
+    "reason": "Gespeicherten Release ausfuehren; Moduswechsel erzeugt keinen falschen Drop."
+  },
+  {
+    "line": 635,
+    "old": "alias look1 +lookatweapon",
+    "new": [
+      "alias \"look1\" \"noop\""
+    ],
+    "reason": "Zum Testen startet Inspect AUS; inspect_on aktiviert +lookatweapon."
+  },
+  {
+    "line": 642,
+    "old": "alias \"+quick\" \"<hand;knife;taser;sensx;look0;cl_autohelp 1;alias sens_check_quick sens_held;sens_refresh\"",
+    "new": [
+      "alias \"+quick\" \"<hand;knife;taser;sensx;look1;cl_autohelp 1;alias sens_check_quick sens_held;sens_refresh;refresh_crosshair\""
+    ],
+    "reason": "Bisherige Messer/Zeus-Folge mit optionalem Inspect und sichtbarer passender Anzeige."
+  },
+  {
+    "line": 646,
+    "old": "alias \"-quick\" \"sens0;he;smoke;molo;hand>;cl_autohelp 0;w1;w2;look0;alias sens_check_quick sens_check_qhand;sens_refresh\"",
+    "new": [
+      "alias \"-quick\" \"sens0;cl_autohelp 0;alias sens_check_quick sens_check_qhand;best_weapon;sens_refresh\""
+    ],
+    "reason": "Keine kurzzeitigen Granaten/Inspect-Aufrufe im Quick-Release."
+  },
+  {
+    "line": 650,
+    "old": "alias \"+qhand\" \"look1;<hand;sensx;knife;alias sens_check_qhand sens_held;sens_refresh\"",
+    "new": [
+      "alias \"+qhand\" \"sensx;knife;alias sens_check_qhand sens_held;sens_refresh;refresh_crosshair\""
+    ],
+    "reason": "Messer links mit optionalem Inspect; aktuellen Schusszustand erhalten."
+  },
+  {
+    "line": 654,
+    "old": "alias \"-qhand\" \"hand>;slot2;slot1;sens0;look0;alias sens_check_qhand sens_check_quicky;sens_refresh\"",
+    "new": [
+      "alias \"-qhand\" \"sens0;alias sens_check_qhand sens_check_quicky;best_weapon;sens_refresh\""
+    ],
+    "reason": "Q-Release: Hauptwaffe rechts, Inspect aus; andere Sens-Haltetasten beachten."
+  },
+  {
+    "line": 658,
+    "old": "alias \"+quicky\" \"look1;ch0;sensx;<hand;KNIFE;C4;alias sens_check_quicky sens_held;sens_refresh\"",
+    "new": [
+      "alias \"+quicky\" \"sensx;<hand;knife;c4;look1;alias sens_check_quicky sens_held;sens_refresh;refresh_crosshair\""
+    ],
+    "reason": "Bisherige Messer/Bomben-Folge; kein dauerhaftes Crosshair-Ausblenden."
+  },
+  {
+    "line": 662,
+    "old": "alias \"-quicky\" \"ch1;sens0;hand>;w1;w2;look0;alias sens_check_quicky sens_normal;sens_refresh\"",
+    "new": [
+      "alias \"-quicky\" \"sens0;alias sens_check_quicky sens_normal;best_weapon;sens_refresh\""
+    ],
+    "reason": "Quick-Release mit eindeutiger Waffe/Hand und passendem Crosshair."
+  },
+  {
+    "line": 686,
+    "old": "alias movecross \"croattx;c_hell;reco0\"",
+    "new": [
+      "alias \"movecross\" \"automatic_white;refresh_crosshair\""
+    ],
+    "reason": "Bewegungsanzeige wahrt Auswahl; automatisches Weiss nur bei color_lock_off, Schussprofil hat Vorrang."
+  },
+  {
+    "line": 706,
+    "old": "alias \"croattx\" \"shape_fire\"",
+    "new": [
+      "alias \"croattx\" \"shot_render\""
+    ],
+    "reason": "Schussanzeige durch optionalen Profil-Dispatcher."
+  },
+  {
+    "line": 762,
+    "old": "alias \"c_hell\" \"alias croco rgb_white;refresh_crosshair\"",
+    "new": [
+      "alias \"c_hell\" \"alias selected_color rgb_white;alias croco rgb_white;refresh_crosshair\""
+    ],
+    "reason": "Bewusste Farbwahl speichern; Schussprofil waehrend Schiessen nicht ueberschreiben."
+  },
+  {
+    "line": 765,
+    "old": "alias \"c_matrix\" \"alias croco rgb_matrix;refresh_crosshair\"",
+    "new": [
+      "alias \"c_matrix\" \"alias selected_color rgb_matrix;alias croco rgb_matrix;refresh_crosshair\""
+    ],
+    "reason": "Bewusste Farbwahl speichern; Schussprofil waehrend Schiessen nicht ueberschreiben."
+  },
+  {
+    "line": 768,
+    "old": "alias \"c_npink\" \"alias croco rgb_pink;refresh_crosshair\"",
+    "new": [
+      "alias \"c_npink\" \"alias selected_color rgb_pink;alias croco rgb_pink;refresh_crosshair\""
+    ],
+    "reason": "Bewusste Farbwahl speichern; Schussprofil waehrend Schiessen nicht ueberschreiben."
+  },
+  {
+    "line": 771,
+    "old": "alias \"c_nweed\" \"alias croco rgb_weed;refresh_crosshair\"",
+    "new": [
+      "alias \"c_nweed\" \"alias selected_color rgb_weed;alias croco rgb_weed;refresh_crosshair\""
+    ],
+    "reason": "Bewusste Farbwahl speichern; Schussprofil waehrend Schiessen nicht ueberschreiben."
+  },
+  {
+    "line": 774,
+    "old": "alias \"c_nred\" \"alias croco rgb_red;refresh_crosshair\"",
+    "new": [
+      "alias \"c_nred\" \"alias selected_color rgb_red;alias croco rgb_red;refresh_crosshair\""
+    ],
+    "reason": "Bewusste Farbwahl speichern; Schussprofil waehrend Schiessen nicht ueberschreiben."
+  },
+  {
+    "line": 777,
+    "old": "alias \"c_ntkys\" \"alias croco rgb_cyan;refresh_crosshair\"",
+    "new": [
+      "alias \"c_ntkys\" \"alias selected_color rgb_cyan;alias croco rgb_cyan;refresh_crosshair\""
+    ],
+    "reason": "Bewusste Farbwahl speichern; Schussprofil waehrend Schiessen nicht ueberschreiben."
+  },
+  {
+    "line": 845,
+    "old": "alias -_r \"slot10;grnz\"",
+    "new": [
+      "alias \"-_r\" \"close_radio;grnz;best_weapon\""
+    ],
+    "reason": "ALT-Release darf keine nach SPACE-/Granaten-Release abgelegte Granate mit Inspect reaktivieren."
+  },
+  {
+    "line": 1145,
+    "old": "bind enter +ATTACK",
+    "new": [
+      "bind enter +enter_fire"
+    ],
+    "reason": "Direkte Inspect-Aufrufe ueber look1/look0 zentralisieren bzw. Versionsmarker erneuern."
+  },
+  {
+    "line": 1515,
+    "old": "-lookatweapon",
+    "new": [
+      "look0"
+    ],
+    "reason": "Direkte Inspect-Aufrufe ueber look1/look0 zentralisieren bzw. Versionsmarker erneuern."
+  },
+  {
+    "line": 1656,
+    "old": "alias \"+atx\" \"+attack;alias refresh_crosshair crosshair_fire;atx1;shot_trace_down\"",
+    "new": [
+      "alias \"+atx\" \"alias fire_check_mouse fire_hold;fire_refresh;shot_trace_down\""
+    ],
+    "reason": "Maus1 als gehalten merken; gemeinsame Angriffsrueckstellung."
+  },
+  {
+    "line": 1661,
+    "old": "alias \"-atx\" \"-attack;alias refresh_crosshair crosshair_idle;mycross;-h_color;sens1;sens_refresh;shot_trace_up\"",
+    "new": [
+      "alias \"-atx\" \"alias fire_check_mouse fire_check_enter;fire_refresh;shot_trace_up\""
+    ],
+    "reason": "Maus1 freigeben; Enter darf weiter schiessen, sonst mycross."
+  },
+  {
+    "line": 1669,
+    "old": "alias \"croattx\" \"shape_fire\"",
+    "new": [
+      "alias \"croattx\" \"shot_render\""
+    ],
+    "reason": "Schussanzeige durch optionalen Profil-Dispatcher."
+  },
+  {
+    "line": 1760,
+    "old": "alias \"best_weapon\" \"slot3;slot2;slot1;look0\"",
+    "new": [
+      "alias \"best_weapon\" \"look0;slot3;slot2;slot1;hand>;refresh_crosshair\""
+    ],
+    "reason": "Eindeutig Hauptwaffe, ersatzweise Pistole/Messer; rechte Hand, Inspect aus, passende Anzeige."
+  },
+  {
+    "line": 1767,
+    "old": "alias \"equip_z\" \"<hand;slot7;slot6;slot10;slot8;look1\"",
+    "new": [
+      "alias \"equip_z\" \"<hand;slot7;slot6;slot10;slot8;look1;refresh_crosshair\""
+    ],
+    "reason": "Vorhandene Granatenprioritaet links; optionales Inspect, gespeicherte Farbe bleibt erhalten."
+  },
+  {
+    "line": 1776,
+    "old": "alias \"z_gren_up\" \"alias check_z check_x;alias z_up noop;select_held\"",
+    "new": [
+      "alias \"z_gren_up\" \"alias check_z check_x;alias z_up noop;best_weapon\""
+    ],
+    "reason": "Jedes Granaten-Loslassen endet bei der besten Waffe; keine andere Granate/Inspect neu starten."
+  },
+  {
+    "line": 1801,
+    "old": "alias \"equip_x\" \"<hand;slot8;slot7;slot6;slot10;look1\"",
+    "new": [
+      "alias \"equip_x\" \"<hand;slot8;slot7;slot6;slot10;look1;refresh_crosshair\""
+    ],
+    "reason": "Vorhandene Granatenprioritaet links; optionales Inspect, gespeicherte Farbe bleibt erhalten."
+  },
+  {
+    "line": 1810,
+    "old": "alias \"x_gren_up\" \"alias check_x check_c;alias x_up noop;select_held\"",
+    "new": [
+      "alias \"x_gren_up\" \"alias check_x check_c;alias x_up noop;best_weapon\""
+    ],
+    "reason": "Jedes Granaten-Loslassen endet bei der besten Waffe; keine andere Granate/Inspect neu starten."
+  },
+  {
+    "line": 1835,
+    "old": "alias \"equip_c\" \"<hand;slot10;slot8;slot7;slot6;look1\"",
+    "new": [
+      "alias \"equip_c\" \"<hand;slot10;slot8;slot7;slot6;look1;refresh_crosshair\""
+    ],
+    "reason": "Vorhandene Granatenprioritaet links; optionales Inspect, gespeicherte Farbe bleibt erhalten."
+  },
+  {
+    "line": 1844,
+    "old": "alias \"c_gren_up\" \"alias check_c check_f;alias c_up noop;select_held\"",
+    "new": [
+      "alias \"c_gren_up\" \"alias check_c check_f;alias c_up noop;best_weapon\""
+    ],
+    "reason": "Jedes Granaten-Loslassen endet bei der besten Waffe; keine andere Granate/Inspect neu starten."
+  },
+  {
+    "line": 1869,
+    "old": "alias \"equip_f\" \"<hand;slot6;slot10;slot8;slot7;look1\"",
+    "new": [
+      "alias \"equip_f\" \"<hand;slot6;slot10;slot8;slot7;look1;refresh_crosshair\""
+    ],
+    "reason": "Vorhandene Granatenprioritaet links; optionales Inspect, gespeicherte Farbe bleibt erhalten."
+  },
+  {
+    "line": 1880,
+    "old": "alias \"f_gren_up\" \"alias check_f check_space;alias f_up noop;select_held\"",
+    "new": [
+      "alias \"f_gren_up\" \"alias check_f check_space;alias f_up noop;best_weapon\""
+    ],
+    "reason": "Jedes Granaten-Loslassen endet bei der besten Waffe; keine andere Granate/Inspect neu starten."
+  },
+  {
+    "line": 1921,
+    "old": "alias \"-_r\" \"close_radio;grnz;select_held\"",
+    "new": [
+      "alias \"-_r\" \"close_radio;grnz;best_weapon\""
+    ],
+    "reason": "ALT-Release darf keine nach SPACE-/Granaten-Release abgelegte Granate mit Inspect reaktivieren."
+  },
+  {
+    "line": 1996,
+    "old": "echo LEETED_v1.01.1_09_END",
+    "new": [
+      "echo LEETED_v1.01.1_10_END"
+    ],
+    "reason": "Direkte Inspect-Aufrufe ueber look1/look0 zentralisieren bzw. Versionsmarker erneuern."
+  }
+]

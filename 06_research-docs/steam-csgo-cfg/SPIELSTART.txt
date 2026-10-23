@@ -1,0 +1,13 @@
+LEETED v1.01.1_11 — Spielpaket auf Basis v10
+
+1. Bisherige CFG-Dateien sichern.
+2. Alle neun .cfg-Dateien gemeinsam nach Counter-Strike Global Offensive/game/csgo/cfg kopieren.
+3. Im Hauptmenue Konsole: exec autoexec.cfg
+4. Auf LEETED_PROFILE_LOADED achten.
+
+SPACE ohne automatische Granate; Loslassen: Mausrad ungebunden, Inspect aus, Hauptwaffe rechts. CapsLock nur waehrend SPACE als Schleich-Toggle, danach wieder Bombendrop. Sens 1.33 normal, 1.87 solange SPACE/Quickswitch gehalten ist. Normalfarbe bleibt; groesserer weisser Schusskreis mit Gap 8. Debug-FOV 90 bleibt Laborwert.
+
+Automatisches Inspect startet AUS; zum Aktivieren: inspect_on.
+Experimenteller MOUSE2-Release-Schuss startet AUS. Normales Zoom bleibt erhalten.
+
+874 Alias-Modellpruefungen bestanden. Nicht im CS2-Client getestet; Duckjump kann durch Server-Eingabefilter eingeschraenkt sein. Alte Dateien nicht nur teilweise ersetzen. Aenderungen sind in user_settings.cfg mit // ALT und // NEU beschrieben.

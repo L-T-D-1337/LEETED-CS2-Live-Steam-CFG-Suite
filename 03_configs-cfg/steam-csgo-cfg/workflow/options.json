@@ -1,0 +1,164 @@
+{
+  "version": "1.01.1_10",
+  "reference_height": 960,
+  "profiles": {
+    "dot": {
+      "length": 3,
+      "thickness": 2,
+      "gap": 2,
+      "alpha": 255,
+      "outline": 1,
+      "t": 1,
+      "recoil": 0
+    },
+    "cross": {
+      "length": 2,
+      "thickness": 2,
+      "gap": 1,
+      "alpha": 255,
+      "outline": 0,
+      "t": 1,
+      "recoil": 0
+    },
+    "hole": {
+      "length": 1,
+      "thickness": 7,
+      "gap": 4,
+      "alpha": 255,
+      "outline": 0,
+      "t": 0,
+      "recoil": 0
+    },
+    "trill": {
+      "length": 1,
+      "thickness": 1,
+      "gap": 1,
+      "alpha": 255,
+      "outline": 1,
+      "t": 0,
+      "recoil": 0
+    },
+    "t": {
+      "length": 255,
+      "thickness": 1,
+      "gap": 1,
+      "alpha": 137,
+      "outline": 1,
+      "t": 1,
+      "recoil": 0
+    },
+    "fire": {
+      "length": 2,
+      "thickness": 1,
+      "gap": 4,
+      "alpha": 255,
+      "outline": 0,
+      "t": 1,
+      "recoil": 1,
+      "style": 1,
+      "dot": 1,
+      "screen_height": 1024,
+      "red": 255,
+      "green": 255,
+      "blue": 255,
+      "dynamic_spread_limit": 255,
+      "dynamic_splitdist": 0,
+      "dynamic_splitalpha_innermod": 0,
+      "dynamic_splitalpha_outermod": 0.3,
+      "dynamic_maxdist_splitratio": 0
+    },
+    "fire_t": {
+      "length": 255,
+      "thickness": 1,
+      "gap": 1,
+      "alpha": 77,
+      "outline": 1,
+      "t": 1,
+      "recoil": 1,
+      "style": 4,
+      "dot": 0,
+      "screen_height": 1024,
+      "red": 255,
+      "green": 0,
+      "blue": 0,
+      "dynamic_spread_limit": 255,
+      "dynamic_splitdist": 0,
+      "dynamic_splitalpha_innermod": 0,
+      "dynamic_splitalpha_outermod": 0.3,
+      "dynamic_maxdist_splitratio": 0
+    }
+  },
+  "colors": {
+    "white": [
+      255,
+      255,
+      255
+    ],
+    "matrix": [
+      250,
+      50,
+      129
+    ],
+    "pink": [
+      255,
+      0,
+      255
+    ],
+    "weed": [
+      155,
+      255,
+      0
+    ],
+    "red": [
+      255,
+      0,
+      0
+    ],
+    "cyan": [
+      0,
+      255,
+      255
+    ]
+  },
+  "duckjump_on_b": true,
+  "max_part_bytes": 18000,
+  "source_sha256": "c04843b29043a1a54b1eab2f1d5d82162d2f65d1187ace34aab772a792ee64b5",
+  "shot_trace": false,
+  "shot_sharecode": "CSGO-GDiTu-xh6TG-ac6BF-9FRPS-7CkrM",
+  "max_command_bytes": 384,
+  "fire_chunk_bytes": 180,
+  "sens_normal": 1.33,
+  "sens_held": 1.87,
+  "grenade_priority": {
+    "z": [
+      "smoke",
+      "molo",
+      "he",
+      "flash"
+    ],
+    "x": [
+      "molo",
+      "he",
+      "flash",
+      "smoke"
+    ],
+    "c": [
+      "he",
+      "flash",
+      "smoke",
+      "molo"
+    ],
+    "f": [
+      "flash",
+      "smoke",
+      "molo",
+      "he"
+    ]
+  },
+  "inspect_enabled": false,
+  "color_lock_enabled": true,
+  "shot_enabled": true,
+  "shot_profile": "circle",
+  "release_policy": "primary_on_each_release",
+  "circle_thickness_note": "Requested half of 3 is 1.5; use 1 integer pixel for thin variant. Engine rendering not tested."
+}

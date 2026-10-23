@@ -1,0 +1,26 @@
+{
+  "code": "CSGO-GDiTu-xh6TG-ac6BF-9FRPS-7CkrM",
+  "decoded": {
+    "version": 4,
+    "style": 1,
+    "followRecoil": true,
+    "centerDotEnabled": true,
+    "tStyleEnabled": true,
+    "red": 255,
+    "green": 0,
+    "blue": 0,
+    "alpha": 255,
+    "gap": 2,
+    "length": 3,
+    "dynamicSpreadLimit": 77,
+    "splitDistance": 0,
+    "innerSplitAlpha": 0,
+    "outerSplitAlpha": 0.3,
+    "splitSizeRatio": 0,
+    "thickness": 3,
+    "screenHeight": 1024,
+    "outlineMode": 1
+  },
+  "roundtrip": "CSGO-GDiTu-xh6TG-ac6BF-9FRPS-7CkrM",
+  "convars": "\ncl_crosshair_drawoutline \"1\"\ncl_crosshair_dynamic_maxdist_splitratio \"0\"\ncl_crosshair_dynamic_splitalpha_innermod \"0\"\ncl_crosshair_dynamic_splitalpha_outermod \"0.3\"\ncl_crosshair_dynamic_splitdist \"0\"\ncl_crosshair_dynamic_spread_limit \"77\"\ncl_crosshair_gap \"2\"\ncl_crosshair_length \"3\"\ncl_crosshair_recoil \"1\"\ncl_crosshair_screen_height \"1024\"\ncl_crosshair_t \"1\"\ncl_crosshair_thickness \"3\"\ncl_crosshaircolor_a \"255\"\ncl_crosshaircolor_b \"0\"\ncl_crosshaircolor_g \"0\"\ncl_crosshaircolor_r \"255\"\ncl_crosshairdot \"1\"\ncl_crosshairstyle \"1\"\n"
+}

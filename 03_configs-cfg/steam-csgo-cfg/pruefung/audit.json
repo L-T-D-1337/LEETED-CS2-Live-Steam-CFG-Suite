@@ -1,0 +1,11553 @@
+{
+  "lines": 2198,
+  "aliases": {
+    "inspect_on": [
+      [
+        3,
+        "alias look1 +lookatweapon;alias inspect_toggle inspect_off;echo INSPECT_ON"
+      ]
+    ],
+    "inspect_off": [
+      [
+        5,
+        "alias look1 noop;look0;alias inspect_toggle inspect_on;echo INSPECT_OFF"
+      ]
+    ],
+    "inspect_toggle": [
+      [
+        7,
+        "inspect_on"
+      ]
+    ],
+    "color_lock_on": [
+      [
+        9,
+        "alias automatic_white noop;alias color_restore selected_color;alias color_lock_toggle color_lock_off;refresh_crosshair;echo COLOR_LOCK_ON"
+      ]
+    ],
+    "color_lock_off": [
+      [
+        11,
+        "alias automatic_white legacy_white;alias color_restore croco;alias color_lock_toggle color_lock_on;refresh_crosshair;echo COLOR_LOCK_OFF"
+      ]
+    ],
+    "selected_color": [
+      [
+        13,
+        "rgb_red"
+      ]
+    ],
+    "color_restore": [
+      [
+        15,
+        "selected_color"
+      ]
+    ],
+    "legacy_white": [
+      [
+        17,
+        "alias croco rgb_white"
+      ]
+    ],
+    "color_lock_toggle": [
+      [
+        19,
+        "color_lock_off"
+      ]
+    ],
+    "automatic_white": [
+      [
+        21,
+        "noop"
+      ]
+    ],
+    "shot_on": [
+      [
+        23,
+        "alias shot_render shot_selected;alias shot_toggle shot_off;refresh_crosshair;echo SHOT_ON"
+      ]
+    ],
+    "shot_off": [
+      [
+        25,
+        "alias shot_render mycross;alias shot_toggle shot_on;refresh_crosshair;echo SHOT_OFF"
+      ]
+    ],
+    "shot_toggle": [
+      [
+        27,
+        "shot_off"
+      ]
+    ],
+    "shot_circle": [
+      [
+        29,
+        "alias shot_selected shape_fire;alias shot_style_toggle shot_t;refresh_crosshair;echo SHOT_CIRCLE_WHITE"
+      ]
+    ],
+    "shot_t": [
+      [
+        31,
+        "alias shot_selected shape_fire_t;alias shot_style_toggle shot_circle;refresh_crosshair;echo SHOT_T_RED"
+      ]
+    ],
+    "shot_style_toggle": [
+      [
+        33,
+        "shot_t"
+      ]
+    ],
+    "shot_selected": [
+      [
+        35,
+        "shape_fire"
+      ]
+    ],
+    "shot_render": [
+      [
+        37,
+        "shot_selected"
+      ]
+    ],
+    "shot_circle_part_1": [
+      [
+        39,
+        "crosshair 1;cl_crosshairstyle 1;cl_crosshair_length 2;cl_crosshair_thickness 1;cl_crosshair_gap 4;cl_crosshaircolor_a 255;cl_crosshair_drawoutline 0;cl_crosshairdot 1"
+      ]
+    ],
+    "shot_circle_part_2": [
+      [
+        41,
+        "cl_crosshair_t 1;cl_crosshair_recoil 1;cl_crosshaircolor_r 255;cl_crosshaircolor_g 255;cl_crosshaircolor_b 255;cl_crosshair_dynamic_spread_limit 255"
+      ]
+    ],
+    "shot_circle_part_3": [
+      [
+        43,
+        "cl_crosshair_dynamic_splitdist 0;cl_crosshair_dynamic_splitalpha_innermod 0;cl_crosshair_dynamic_splitalpha_outermod 0.3;cl_crosshair_dynamic_maxdist_splitratio 0"
+      ]
+    ],
+    "shot_circle_part_4": [
+      [
+        45,
+        "cl_crosshair_screen_height 1024"
+      ]
+    ],
+    "shot_t_part_1": [
+      [
+        47,
+        "crosshair 1;cl_crosshairstyle 4;cl_crosshair_length 255;cl_crosshair_thickness 1;cl_crosshair_gap 1;cl_crosshaircolor_a 77;cl_crosshair_drawoutline 1;cl_crosshairdot 0"
+      ]
+    ],
+    "shot_t_part_2": [
+      [
+        49,
+        "cl_crosshair_t 1;cl_crosshair_recoil 1;cl_crosshaircolor_r 255;cl_crosshaircolor_g 0;cl_crosshaircolor_b 0;cl_crosshair_dynamic_spread_limit 255;cl_crosshair_dynamic_splitdist 0"
+      ]
+    ],
+    "shot_t_part_3": [
+      [
+        51,
+        "cl_crosshair_dynamic_splitalpha_innermod 0;cl_crosshair_dynamic_splitalpha_outermod 0.3;cl_crosshair_dynamic_maxdist_splitratio 0;cl_crosshair_screen_height 1024"
+      ]
+    ],
+    "shape_fire_t": [
+      [
+        53,
+        "shot_t_part_1;shot_t_part_2;shot_t_part_3"
+      ]
+    ],
+    "space_press_state": [
+      [
+        55,
+        "alias sens_check_space sens_held;alias check_space equip_z;alias drop_dispatch space_sneak_press"
+      ]
+    ],
+    "space_release_state": [
+      [
+        57,
+        "alias sens_check_space sens_check_quick;alias check_space best_weapon;alias drop_dispatch bomb_down;space_sneak_reset"
+      ]
+    ],
+    "space_sneak_on": [
+      [
+        59,
+        "sprint0;alias space_sneak_toggle space_sneak_off;alias space_move_hold sprint0;echo SPACE_SPRINT0"
+      ]
+    ],
+    "space_sneak_off": [
+      [
+        61,
+        "sprint1;alias space_sneak_toggle space_sneak_on;alias space_move_hold sprint1;echo SPACE_SPRINT1"
+      ]
+    ],
+    "space_sneak_toggle": [
+      [
+        63,
+        "space_sneak_on"
+      ]
+    ],
+    "space_sneak_reset": [
+      [
+        65,
+        "sprint1;alias space_sneak_toggle space_sneak_on;alias space_move_hold noop"
+      ]
+    ],
+    "space_move_hold": [
+      [
+        67,
+        "noop"
+      ]
+    ],
+    "space_sneak_press": [
+      [
+        69,
+        "alias drop_release noop;space_sneak_toggle"
+      ]
+    ],
+    "drop_dispatch": [
+      [
+        71,
+        "bomb_down"
+      ]
+    ],
+    "drop_release": [
+      [
+        73,
+        "noop"
+      ]
+    ],
+    "drop_press": [
+      [
+        75,
+        "drop_once"
+      ]
+    ],
+    "drop_once": [
+      [
+        77,
+        "alias drop_press noop;drop_dispatch"
+      ]
+    ],
+    "bomb_down": [
+      [
+        79,
+        "alias drop_release bomb_up;cl_autohelp 1;slot3;slot5;look1"
+      ]
+    ],
+    "bomb_up": [
+      [
+        81,
+        "cl_autohelp 0;look0;slot3;slot5;drop;best_weapon"
+      ]
+    ],
+    "fire_check_mouse": [
+      [
+        83,
+        "fire_check_enter"
+      ]
+    ],
+    "fire_check_enter": [
+      [
+        85,
+        "fire_end"
+      ]
+    ],
+    "fire_refresh": [
+      [
+        87,
+        "fire_check_mouse"
+      ]
+    ],
+    "fire_hold": [
+      [
+        89,
+        "+attack;alias refresh_crosshair crosshair_fire;atx1"
+      ]
+    ],
+    "fire_end": [
+      [
+        91,
+        "-attack;alias refresh_crosshair crosshair_idle;mycross;-h_color;sens1;sens_refresh"
+      ]
+    ],
+    "fire_cancel": [
+      [
+        93,
+        "alias fire_check_mouse fire_check_enter;alias fire_check_enter fire_end;fire_end"
+      ]
+    ],
+    "+enter_fire": [
+      [
+        95,
+        "alias fire_check_enter fire_hold;fire_refresh;shot_trace_down"
+      ]
+    ],
+    "-enter_fire": [
+      [
+        97,
+        "alias fire_check_enter fire_end;fire_refresh;shot_trace_up"
+      ]
+    ],
+    "mode_status": [
+      [
+        99,
+        "echo LEETED_MODES;alias look1;alias automatic_white;alias shot_selected;alias shot_render;alias space_sneak_toggle;selection_status"
+      ]
+    ],
+    "noop": [
+      [
+        104,
+        ""
+      ],
+      [
+        1896,
+        ""
+      ]
+    ],
+    "refresh_crosshair": [
+      [
+        106,
+        "crosshair_idle"
+      ],
+      [
+        2148,
+        "crosshair_idle"
+      ]
+    ],
+    "crosshair_idle": [
+      [
+        108,
+        "mycross"
+      ]
+    ],
+    "crosshair_fire": [
+      [
+        112,
+        "shot_render"
+      ]
+    ],
+    "shape_dot": [
+      [
+        114,
+        "crosshair 1;cl_crosshairstyle 4;cl_crosshair_length 3;cl_crosshair_thickness 2;cl_crosshair_gap 2;cl_crosshaircolor_a 255;cl_crosshair_drawoutline 1;cl_crosshairdot 0;cl_crosshair_t 1;cl_crosshair_recoil 0;cl_crosshair_screen_height 960"
+      ]
+    ],
+    "shape_cross": [
+      [
+        116,
+        "crosshair 1;cl_crosshairstyle 4;cl_crosshair_length 2;cl_crosshair_thickness 2;cl_crosshair_gap 1;cl_crosshaircolor_a 255;cl_crosshair_drawoutline 0;cl_crosshairdot 0;cl_crosshair_t 1;cl_crosshair_recoil 0;cl_crosshair_screen_height 960"
+      ]
+    ],
+    "shape_hole": [
+      [
+        118,
+        "crosshair 1;cl_crosshairstyle 4;cl_crosshair_length 1;cl_crosshair_thickness 7;cl_crosshair_gap 4;cl_crosshaircolor_a 255;cl_crosshair_drawoutline 0;cl_crosshairdot 0;cl_crosshair_t 0;cl_crosshair_recoil 0;cl_crosshair_screen_height 960"
+      ]
+    ],
+    "shape_trill": [
+      [
+        120,
+        "crosshair 1;cl_crosshairstyle 4;cl_crosshair_length 1;cl_crosshair_thickness 1;cl_crosshair_gap 1;cl_crosshaircolor_a 255;cl_crosshair_drawoutline 1;cl_crosshairdot 0;cl_crosshair_t 0;cl_crosshair_recoil 0;cl_crosshair_screen_height 960"
+      ]
+    ],
+    "shape_t": [
+      [
+        123,
+        "crosshair 1;cl_crosshairstyle 4;cl_crosshair_length 255;cl_crosshair_thickness 1;cl_crosshair_gap 1;cl_crosshaircolor_a 137;cl_crosshair_drawoutline 1;cl_crosshairdot 0;cl_crosshair_t 1;cl_crosshair_recoil 0;cl_crosshair_screen_height 960"
+      ]
+    ],
+    "shot_profile_1": [
+      [
+        128,
+        "crosshair 1;cl_crosshairstyle 1;cl_crosshair_length 2;cl_crosshair_thickness 3;cl_crosshair_gap 2;cl_crosshaircolor_a 255;cl_crosshair_drawoutline 1;cl_crosshairdot 1"
+      ]
+    ],
+    "shot_profile_2": [
+      [
+        130,
+        "cl_crosshair_t 1;cl_crosshair_recoil 1;cl_crosshair_screen_height 1024;cl_crosshaircolor_r 255;cl_crosshaircolor_g 0;cl_crosshaircolor_b 0;cl_crosshair_dynamic_spread_limit 77"
+      ]
+    ],
+    "shot_profile_3": [
+      [
+        132,
+        "cl_crosshair_dynamic_splitdist 0;cl_crosshair_dynamic_splitalpha_innermod 0;cl_crosshair_dynamic_splitalpha_outermod 0.3;cl_crosshair_dynamic_maxdist_splitratio 0"
+      ]
+    ],
+    "shape_fire": [
+      [
+        137,
+        "shot_circle_part_1;shot_circle_part_2;shot_circle_part_3;shot_circle_part_4"
+      ]
+    ],
+    "rgb_white": [
+      [
+        139,
+        "cl_crosshaircolor_r 255;cl_crosshaircolor_g 255;cl_crosshaircolor_b 255"
+      ]
+    ],
+    "rgb_matrix": [
+      [
+        141,
+        "cl_crosshaircolor_r 250;cl_crosshaircolor_g 50;cl_crosshaircolor_b 129"
+      ]
+    ],
+    "rgb_pink": [
+      [
+        143,
+        "cl_crosshaircolor_r 255;cl_crosshaircolor_g 0;cl_crosshaircolor_b 255"
+      ]
+    ],
+    "rgb_weed": [
+      [
+        145,
+        "cl_crosshaircolor_r 155;cl_crosshaircolor_g 255;cl_crosshaircolor_b 0"
+      ]
+    ],
+    "rgb_red": [
+      [
+        147,
+        "cl_crosshaircolor_r 255;cl_crosshaircolor_g 0;cl_crosshaircolor_b 0"
+      ]
+    ],
+    "rgb_cyan": [
+      [
+        149,
+        "cl_crosshaircolor_r 0;cl_crosshaircolor_g 255;cl_crosshaircolor_b 255"
+      ]
+    ],
+    "restore_dot": [
+      [
+        153,
+        "shape_dot;color_restore;cl_crosshair_recoil 0;ch1"
+      ]
+    ],
+    "selected_dot": [
+      [
+        155,
+        "echo CROSS_SELECTED_DOT"
+      ]
+    ],
+    "restore_cross": [
+      [
+        159,
+        "shape_cross;color_restore;cl_crosshair_recoil 0;ch1"
+      ]
+    ],
+    "selected_cross": [
+      [
+        161,
+        "echo CROSS_SELECTED_CROSS"
+      ]
+    ],
+    "restore_hole": [
+      [
+        165,
+        "shape_hole;color_restore;cl_crosshair_recoil 0;ch1"
+      ]
+    ],
+    "selected_hole": [
+      [
+        167,
+        "echo CROSS_SELECTED_HOLE"
+      ]
+    ],
+    "restore_t": [
+      [
+        171,
+        "shape_t;color_restore;cl_crosshair_recoil 0;ch1"
+      ]
+    ],
+    "selected_t": [
+      [
+        173,
+        "echo CROSS_SELECTED_T"
+      ]
+    ],
+    "restore_trill": [
+      [
+        177,
+        "shape_trill;color_restore;cl_crosshair_recoil 0;ch1"
+      ]
+    ],
+    "selected_trill": [
+      [
+        179,
+        "echo CROSS_SELECTED_TRILL"
+      ]
+    ],
+    "selection_status": [
+      [
+        181,
+        "selected_dot"
+      ]
+    ],
+    "cross_pick_once": [
+      [
+        183,
+        "alias cross_pick_action noop;next_cross"
+      ]
+    ],
+    "cross_pick_action": [
+      [
+        185,
+        "cross_pick_once"
+      ]
+    ],
+    "+cross_pick": [
+      [
+        187,
+        "cross_pick_action"
+      ]
+    ],
+    "-cross_pick": [
+      [
+        189,
+        "alias cross_pick_action cross_pick_once"
+      ]
+    ],
+    "sens_normal": [
+      [
+        191,
+        "sensitivity 1.33"
+      ]
+    ],
+    "sens_held": [
+      [
+        193,
+        "sensitivity 1.87"
+      ]
+    ],
+    "sens_refresh": [
+      [
+        195,
+        "sens_check_space"
+      ]
+    ],
+    "sens_check_space": [
+      [
+        197,
+        "sens_check_quick"
+      ]
+    ],
+    "sens_check_quick": [
+      [
+        199,
+        "sens_check_qhand"
+      ]
+    ],
+    "sens_check_qhand": [
+      [
+        201,
+        "sens_check_quicky"
+      ]
+    ],
+    "sens_check_quicky": [
+      [
+        203,
+        "sens_normal"
+      ]
+    ],
+    "check_space": [
+      [
+        205,
+        "best_weapon"
+      ]
+    ],
+    "eng": [
+      [
+        207,
+        "eng1"
+      ]
+    ],
+    "hf": [
+      [
+        209,
+        "-hf"
+      ]
+    ],
+    "decoy": [
+      [
+        211,
+        "deco"
+      ]
+    ],
+    "taser": [
+      [
+        213,
+        "slot11"
+      ]
+    ],
+    "c4": [
+      [
+        215,
+        ">c4"
+      ]
+    ],
+    "shift1": [
+      [
+        217,
+        "bind SHIFT +speed"
+      ]
+    ],
+    "stdmode": [
+      [
+        219,
+        "grnz;Voice1"
+      ]
+    ],
+    "devcon": [
+      [
+        221,
+        "dev_on"
+      ]
+    ],
+    "macmode": [
+      [
+        223,
+        "mac0"
+      ]
+    ],
+    "gmrmode": [
+      [
+        225,
+        "gmrm_01"
+      ]
+    ],
+    "vol_normal": [
+      [
+        227,
+        "stdv;alias volmode_toggle vol_low"
+      ]
+    ],
+    "vol_low": [
+      [
+        229,
+        "volume 0.22;alias volmode_toggle vol_normal"
+      ]
+    ],
+    "volmode_toggle": [
+      [
+        231,
+        "vol_low"
+      ]
+    ],
+    "+smoke": [
+      [
+        233,
+        "smoke"
+      ]
+    ],
+    "-smoke": [
+      [
+        235,
+        "best_weapon"
+      ]
+    ],
+    "voip": [
+      [
+        237,
+        "Voice1"
+      ]
+    ],
+    "_noop": [
+      [
+        239,
+        "noop"
+      ]
+    ],
+    "+turn180": [
+      [
+        249,
+        "yaw 180;+radarzoom"
+      ]
+    ],
+    "-turn180": [
+      [
+        251,
+        "yaw 0;-radarzoom"
+      ]
+    ],
+    "ra1": [
+      [
+        253,
+        "bind r +turn180"
+      ]
+    ],
+    "ra2": [
+      [
+        255,
+        "bind r +radarzoom"
+      ]
+    ],
+    "crosscode": [
+      [
+        257,
+        "echo CSGO-zkNpk-sFnov-seH67-Ln69q-J6sKG;echo CSGO-HhKXK-GGcBN-FcPuc-Cfbux-Np74E"
+      ]
+    ],
+    "+force": [
+      [
+        259,
+        "fallback;say_team >>>SAFE WEAPON NOW<<<"
+      ],
+      [
+        702,
+        "fallback;say_team >>>SAFE WEAPON NOW<<<"
+      ]
+    ],
+    "-force": [
+      [
+        261,
+        "getout"
+      ],
+      [
+        704,
+        "getout"
+      ]
+    ],
+    "eco": [
+      [
+        263,
+        "needrop;say_team >>>ECO/DROP<<<"
+      ],
+      [
+        706,
+        "needrop;say_team >>>ECO/DROP<<<"
+      ]
+    ],
+    "neo1": [
+      [
+        306,
+        "cl_crosshair_drawoutline true; cl_crosshair_dynamic_maxdist_splitratio 1; cl_crosshair_dynamic_splitalpha_innermod 1; cl_crosshair_dynamic_splitalpha_outermod 1; cl_crosshair_dynamic_splitdist 16; cl_crosshair_friendly_warning 1"
+      ]
+    ],
+    "neo2": [
+      [
+        309,
+        "cl_crosshair_sniper_width 1;cl_crosshair_t true;cl_crosshaircolor_a 175;cl_crosshaircolor_b 0;cl_crosshaircolor_g 255;cl_crosshaircolor_r 155"
+      ]
+    ],
+    "neo3": [
+      [
+        312,
+        "cl_crosshairdot false;cl_crosshair_gap 2;cl_crosshair_length 3;cl_crosshairstyle 4;cl_crosshair_thickness 2"
+      ]
+    ],
+    "neo": [
+      [
+        314,
+        "neo1; neo2; neo3"
+      ]
+    ],
+    "he": [
+      [
+        322,
+        "<hand;slot6;look0"
+      ],
+      [
+        985,
+        "<hand;slot6;look1"
+      ]
+    ],
+    "flash": [
+      [
+        324,
+        "<hand;slot7;look0"
+      ],
+      [
+        983,
+        "<hand;slot7;look1"
+      ]
+    ],
+    "smoke": [
+      [
+        326,
+        "<hand;slot8;look0"
+      ],
+      [
+        987,
+        "<hand;slot8;look1"
+      ]
+    ],
+    "molo": [
+      [
+        330,
+        "<hand;slot10;look1"
+      ]
+    ],
+    "deco": [
+      [
+        333,
+        "<hand;slot9;look1"
+      ],
+      [
+        1084,
+        "<hand;slot9;look1"
+      ]
+    ],
+    "+c4": [
+      [
+        336,
+        ">c4;slot8"
+      ]
+    ],
+    "-c4": [
+      [
+        338,
+        "ch1;w1;w2;look0"
+      ]
+    ],
+    "knife": [
+      [
+        341,
+        "<hand;slot3;look1"
+      ],
+      [
+        994,
+        "<hand;slot3;look1"
+      ]
+    ],
+    "nova/sawedoff": [
+      [
+        343,
+        "buy nova; buy sawedoff; knife"
+      ]
+    ],
+    "m4/ak": [
+      [
+        345,
+        "buy m4a1; buy ak47; knife"
+      ]
+    ],
+    "aug/sg": [
+      [
+        348,
+        "buy aug;buy sg556;knife"
+      ]
+    ],
+    "galil/famas": [
+      [
+        350,
+        "buy galilar; buy famas; knife"
+      ]
+    ],
+    "g3/scar": [
+      [
+        352,
+        "buy g3sg1; buy scar20; knife"
+      ]
+    ],
+    "mac10/mp9": [
+      [
+        354,
+        "buy mac10; buy mp9; knife"
+      ]
+    ],
+    "awp": [
+      [
+        356,
+        "buy awp; knife"
+      ]
+    ],
+    "mp7": [
+      [
+        358,
+        "buy mp7; knife"
+      ]
+    ],
+    "ump45": [
+      [
+        360,
+        "buy ump45; knife"
+      ]
+    ],
+    "p90": [
+      [
+        362,
+        "buy p90; knife"
+      ]
+    ],
+    "+vest": [
+      [
+        364,
+        "buy vesthelm; buy vest; knife"
+      ]
+    ],
+    "grens": [
+      [
+        366,
+        "buy flashbang; buy smokegrenade;buy hegrenade; knife"
+      ]
+    ],
+    "ink/molo": [
+      [
+        368,
+        "buy molotov; buy incgrenade; knife"
+      ]
+    ],
+    "vesthelm/vest/grens": [
+      [
+        370,
+        "+vest; buy defuser; buy flashbang; buy hegrenade; buy smokegrenade; knife"
+      ]
+    ],
+    "spar": [
+      [
+        372,
+        "buy defuser; buy hegrenade; knife"
+      ]
+    ],
+    "<hand>": [
+      [
+        395,
+        "switchhands;look0"
+      ]
+    ],
+    "<hand": [
+      [
+        399,
+        "switchhandsleft;look0"
+      ]
+    ],
+    "hand>": [
+      [
+        403,
+        "switchhandsright;look0"
+      ]
+    ],
+    "+strafeleft": [
+      [
+        406,
+        "+left"
+      ]
+    ],
+    "-strafeleft": [
+      [
+        409,
+        "-left"
+      ]
+    ],
+    "+straferight": [
+      [
+        412,
+        "+right"
+      ]
+    ],
+    "-straferight": [
+      [
+        415,
+        "-right"
+      ]
+    ],
+    "useoff": [
+      [
+        417,
+        "-use;-use;-use;-use;-use"
+      ]
+    ],
+    "useon": [
+      [
+        419,
+        "+use;+use;+use;+use;+use"
+      ]
+    ],
+    ">c4": [
+      [
+        421,
+        "<hand;look1;slot5"
+      ]
+    ],
+    "rdygo": [
+      [
+        425,
+        "fire_cancel;he;molo;smoke;slot3;knife;look0"
+      ]
+    ],
+    "w0": [
+      [
+        427,
+        "<hand;slot3;knife"
+      ]
+    ],
+    "w1": [
+      [
+        429,
+        "rdygo;hand>;slot2"
+      ]
+    ],
+    "w2": [
+      [
+        431,
+        "rdygo;hand>;slot1"
+      ]
+    ],
+    "look1": [
+      [
+        435,
+        "noop"
+      ],
+      [
+        772,
+        "noop"
+      ]
+    ],
+    "look0": [
+      [
+        438,
+        "-lookatweapon"
+      ],
+      [
+        775,
+        "-lookatweapon"
+      ]
+    ],
+    "sens1": [
+      [
+        440,
+        "sensitivity 1.33;zoom_sensitivity_ratio 0.8189833027098955"
+      ]
+    ],
+    "sens2": [
+      [
+        442,
+        "sensitivity 1.87;zoom_sensitivity_ratio 0.8189833027098955"
+      ]
+    ],
+    "sensx": [
+      [
+        444,
+        "sensitivity 1.87;zoom_sensitivity_ratio 1.87"
+      ]
+    ],
+    "sens0": [
+      [
+        449,
+        "sens1"
+      ]
+    ],
+    "stdv": [
+      [
+        451,
+        "volume 0.33"
+      ]
+    ],
+    "1voicevol": [
+      [
+        453,
+        "volume 0.22;snd_voipvolume 0.3"
+      ]
+    ],
+    "0voicevol": [
+      [
+        455,
+        "stdv;snd_voipvolume 0.5"
+      ]
+    ],
+    "xmute": [
+      [
+        457,
+        "stdv;snd_voipvolume 0.0"
+      ]
+    ],
+    "voice": [
+      [
+        459,
+        "bind v +voicerecord;stdv;snd_voipvolume 0.1"
+      ]
+    ],
+    "<vol": [
+      [
+        461,
+        "+h_color;1voicevol"
+      ]
+    ],
+    "vol>": [
+      [
+        463,
+        "-h_color;0voicevol"
+      ]
+    ],
+    "+sneak": [
+      [
+        465,
+        "<vol;+duck"
+      ]
+    ],
+    "-sneak": [
+      [
+        467,
+        "vol>;-duck"
+      ]
+    ],
+    "buyend": [
+      [
+        469,
+        "slot3;clear;knife;decoy"
+      ]
+    ],
+    "modemode_std": [
+      [
+        471,
+        "bind CTRL +sneak;bind SHIFT +sprint;bind CapsLock sprint_mode"
+      ]
+    ],
+    "sneak_end": [
+      [
+        473,
+        "bind CTRL movemode_run;bind SHIFT movemode_run;bind CapsLock movemode_run"
+      ]
+    ],
+    "movemode_sneak": [
+      [
+        475,
+        "sneak_end;sprint1"
+      ]
+    ],
+    "movemode_run": [
+      [
+        477,
+        "modemode_std;shift1;sprint0"
+      ]
+    ],
+    "sprint_mode": [
+      [
+        479,
+        "movemode_sneak"
+      ]
+    ],
+    "sprint1": [
+      [
+        481,
+        "<vol;+sprint"
+      ]
+    ],
+    "sprint0": [
+      [
+        483,
+        "vol>;-sprint"
+      ]
+    ],
+    "+speed": [
+      [
+        487,
+        "<vol;+sprint;space_move_hold"
+      ]
+    ],
+    "-speed": [
+      [
+        491,
+        "vol>;-sprint;space_move_hold"
+      ]
+    ],
+    "switchvoice": [
+      [
+        493,
+        "bind v cl_clutch_mode TRUE"
+      ],
+      [
+        1911,
+        "-voicerecord;alias voice_action clutch_on"
+      ]
+    ],
+    "ingamemsg": [
+      [
+        495,
+        "bind F9 repbot ;bind F10 bla;bind F11 ts;bind F12 eng"
+      ]
+    ],
+    "inmageswitch": [
+      [
+        497,
+        "bind F1 hudcol ;bind F2 gmrview"
+      ]
+    ],
+    "face1": [
+      [
+        499,
+        "bind F5 +f_stay;bind F6 +f_switch;bind F7 f_gg;bind F8 f_report"
+      ]
+    ],
+    "gretz": [
+      [
+        501,
+        "bind F3 +hf;bind F4 +gg"
+      ]
+    ],
+    "grnz": [
+      [
+        503,
+        "bind z smoke;bind x molo;bind c he;bind f xgrnz"
+      ],
+      [
+        2108,
+        "grenade_mode"
+      ]
+    ],
+    "xgrnz": [
+      [
+        505,
+        "smoke;molo;he;flash"
+      ]
+    ],
+    "+togglevol": [
+      [
+        511,
+        "toggleconsole; volmode_toggle"
+      ]
+    ],
+    "-togglevol": [
+      [
+        513,
+        "toggleconsole"
+      ]
+    ],
+    "hudcol": [
+      [
+        517,
+        "toggle cl_hud_color 0 1 2 3 4 5 6 7"
+      ]
+    ],
+    "+h_color": [
+      [
+        519,
+        "cl_hud_color 6"
+      ]
+    ],
+    "-h_color": [
+      [
+        521,
+        "cl_hud_color 0"
+      ]
+    ],
+    "h_c-one": [
+      [
+        523,
+        "cl_hud_color 1"
+      ]
+    ],
+    "+lowrate": [
+      [
+        526,
+        "clear;showconsole"
+      ]
+    ],
+    "-lowrate": [
+      [
+        529,
+        "rate 98304;hideconsole;echo low_on1"
+      ]
+    ],
+    "+lanrate": [
+      [
+        532,
+        "clear;showconsole"
+      ]
+    ],
+    "-lanrate": [
+      [
+        535,
+        "rate 1000000;hideconsole;echo lan_on1"
+      ]
+    ],
+    "+rate128": [
+      [
+        538,
+        "showconsole"
+      ]
+    ],
+    "-rate128": [
+      [
+        541,
+        "rate 786432;hideconsole;echo 128_on1"
+      ]
+    ],
+    "+rate64": [
+      [
+        544,
+        "clear;showconsole"
+      ]
+    ],
+    "-rate64": [
+      [
+        547,
+        "rate 386432;hideconsole;echo 64_on1"
+      ]
+    ],
+    "nethub": [
+      [
+        549,
+        "bind F10 +rate64 ;bind F11 +rate128;bind F12 +lanrate;bind F9 +lowrate"
+      ]
+    ],
+    "by": [
+      [
+        551,
+        "say powered by. #LIKEDBIG"
+      ]
+    ],
+    "ts": [
+      [
+        553,
+        "say_team TS3/Discord:#"
+      ]
+    ],
+    "bla": [
+      [
+        555,
+        "say FLAMEBOX >>>>>>>|\\\\____//|<<<<<<< FLAMEBOX"
+      ]
+    ],
+    "repbot": [
+      [
+        557,
+        "say bye bye BITCH - REPORTBOT IS RUNNING!"
+      ]
+    ],
+    "eng1": [
+      [
+        559,
+        "say_team ENGLISH PLEASE"
+      ]
+    ],
+    "+ez": [
+      [
+        561,
+        "say_team ♡"
+      ]
+    ],
+    "-ez": [
+      [
+        563,
+        ""
+      ]
+    ],
+    "gj": [
+      [
+        565,
+        "say_team GooD J0B"
+      ]
+    ],
+    "nt": [
+      [
+        567,
+        "say_team Nice Try"
+      ]
+    ],
+    "sry": [
+      [
+        569,
+        "say_team SORRY!"
+      ]
+    ],
+    "go_play": [
+      [
+        571,
+        "say_team {GO}PLAY{TOGATHER}!"
+      ]
+    ],
+    "thx": [
+      [
+        576,
+        "say_team THANKS!"
+      ]
+    ],
+    "+hf": [
+      [
+        578,
+        ";say [H]ave [F]un _&_ [F]air [P]lay"
+      ]
+    ],
+    "-hf": [
+      [
+        580,
+        "say_team [H]an[F] & [G]ood [L]uck "
+      ]
+    ],
+    "+gg": [
+      [
+        582,
+        "showconsole;say_team [G]ood [G]ame;"
+      ]
+    ],
+    "-gg": [
+      [
+        584,
+        "say [G]ood [G]ame;stop"
+      ]
+    ],
+    "mnormal": [
+      [
+        586,
+        "unbind mwheeldown; look0; <vol; -h_color;-reload"
+      ]
+    ],
+    "mjump": [
+      [
+        588,
+        " vol>; +h_color; bind mwheeldown +jump"
+      ]
+    ],
+    "+jumpp": [
+      [
+        594,
+        "mjump;sens0;+buy;space_press_state;select_held;sens_refresh"
+      ]
+    ],
+    "-jumpp": [
+      [
+        600,
+        "mnormal;sensx;-buy;space_release_state;best_weapon;proview;sens_refresh"
+      ]
+    ],
+    "+duckjump": [
+      [
+        602,
+        "+duck; +jump"
+      ]
+    ],
+    "-duckjump": [
+      [
+        604,
+        "-jump; -duck"
+      ]
+    ],
+    "vst": [
+      [
+        615,
+        "buy vesthelm;buy vest"
+      ]
+    ],
+    "buyanddrop": [
+      [
+        617,
+        "buy ak47; buy m4a1_silencer; slot1; drop"
+      ]
+    ],
+    "dropump": [
+      [
+        619,
+        "knife; ump45; slot1; drop"
+      ]
+    ],
+    "dropflash": [
+      [
+        622,
+        "knife;buy flashbang;slot7;drop;decoy"
+      ]
+    ],
+    "dropp250": [
+      [
+        624,
+        "knife; buy p250; slot2; drop;decoy"
+      ]
+    ],
+    "faceit1": [
+      [
+        626,
+        "cl_hide_avatar_images 0;cl_sanitize_player_names 0;cl_teamcounter_playercount_instead_of_avatars 0;echo FACEIT Modus 1"
+      ]
+    ],
+    "faceit0": [
+      [
+        628,
+        "cl_hide_avatar_images 2;cl_sanitize_player_names 1;cl_teamcounter_playercount_instead_of_avatars 1;echo FACEIT Modus 0"
+      ]
+    ],
+    "+f_stay": [
+      [
+        630,
+        "say !stay;faceit1"
+      ]
+    ],
+    "+f_switch": [
+      [
+        632,
+        "say !switch;faceit1"
+      ]
+    ],
+    "-f_stay": [
+      [
+        634,
+        "hf"
+      ]
+    ],
+    "-f_switch": [
+      [
+        636,
+        "hf"
+      ]
+    ],
+    "f_gg": [
+      [
+        638,
+        "say !gg"
+      ]
+    ],
+    "f_report": [
+      [
+        640,
+        "say !report"
+      ]
+    ],
+    "_fst": [
+      [
+        642,
+        "bind F5 +f_stay"
+      ]
+    ],
+    "_fsw": [
+      [
+        644,
+        "bind F6 +f_switch"
+      ]
+    ],
+    "_fg": [
+      [
+        646,
+        "bind F7 f_gg"
+      ]
+    ],
+    "_fr": [
+      [
+        648,
+        "bind F8 f_report"
+      ]
+    ],
+    "fait": [
+      [
+        650,
+        "_fst;_fsw;_fg;_fr"
+      ]
+    ],
+    "faceit": [
+      [
+        652,
+        "faceit1;fait"
+      ]
+    ],
+    "gmrm_01": [
+      [
+        654,
+        "faceit1; alias gmrmode gmrm_02"
+      ]
+    ],
+    "gmrm_02": [
+      [
+        656,
+        "faceit0; alias gmrmode gmrm_01"
+      ]
+    ],
+    "facemode": [
+      [
+        659,
+        "gmrmode"
+      ]
+    ],
+    "fps1": [
+      [
+        661,
+        "cl_showfps 1"
+      ]
+    ],
+    "fps0": [
+      [
+        663,
+        "cl_showfps 0"
+      ]
+    ],
+    "maxfps": [
+      [
+        665,
+        "fps_max 999"
+      ]
+    ],
+    "myfps": [
+      [
+        668,
+        "fps_max 999"
+      ],
+      [
+        1763,
+        "fps_max 999"
+      ]
+    ],
+    "+gmrquit": [
+      [
+        671,
+        "clear;showconsole;stop;status"
+      ]
+    ],
+    "-gmrquit": [
+      [
+        673,
+        "quit"
+      ]
+    ],
+    "+gmrdisc": [
+      [
+        676,
+        "clear;showconsole;stop;status"
+      ]
+    ],
+    "-gmrdisc": [
+      [
+        678,
+        "disconnect"
+      ]
+    ],
+    "fix": [
+      [
+        681,
+        "clear;exec autoexec.cfg"
+      ]
+    ],
+    "+fixed": [
+      [
+        683,
+        "clear;dev1;showconsole"
+      ]
+    ],
+    "-fixed": [
+      [
+        685,
+        "fix"
+      ]
+    ],
+    "dev0": [
+      [
+        687,
+        "developer 0;echo dev>0"
+      ]
+    ],
+    "dev1": [
+      [
+        689,
+        "developer 1;echo dev>1"
+      ]
+    ],
+    "dev_on": [
+      [
+        691,
+        "dev1; alias devCon dev_off"
+      ]
+    ],
+    "dev_off": [
+      [
+        693,
+        "dev0; alias devCon dev_on"
+      ]
+    ],
+    "devmode": [
+      [
+        695,
+        "devCon"
+      ]
+    ],
+    "+codewall": [
+      [
+        697,
+        "clear;showconsole"
+      ]
+    ],
+    "-codewall": [
+      [
+        700,
+        "hideconsole"
+      ]
+    ],
+    "view_01": [
+      [
+        708,
+        "trillview; alias gmrview view_02"
+      ]
+    ],
+    "view_02": [
+      [
+        710,
+        "proview; alias gmrview view_01"
+      ]
+    ],
+    "proview": [
+      [
+        713,
+        "viewmodel_presetpos 0;viewmodel_offset_x 2.5;viewmodel_offset_y -2;viewmodel_offset_z -2;viewmodel_fov 54"
+      ]
+    ],
+    "trillview": [
+      [
+        716,
+        "viewmodel_presetpos 0;viewmodel_offset_z -1.5;viewmodel_offset_x 2.5;viewmodel_offset_y 1.5;viewmodel_fov 65"
+      ]
+    ],
+    "gmrview": [
+      [
+        718,
+        "view_01"
+      ]
+    ],
+    "+dropbomb": [
+      [
+        722,
+        "drop_press"
+      ]
+    ],
+    "-dropbomb": [
+      [
+        726,
+        "drop_release;alias drop_release noop;alias drop_press drop_once"
+      ]
+    ],
+    "+scorenet": [
+      [
+        728,
+        "+showscores; fps1; fps_max 999 "
+      ]
+    ],
+    "-scorenet": [
+      [
+        730,
+        "-showscores; fps0; myfps"
+      ],
+      [
+        1760,
+        "-showscores;fps1;myfps"
+      ]
+    ],
+    "showhud_on": [
+      [
+        732,
+        "cl_teamcounter_playercount_instead_of_avatars 0;cl_show_equipped_character_for_player_avatars 0"
+      ]
+    ],
+    "showhud_off": [
+      [
+        734,
+        "cl_teamcounter_playercount_instead_of_avatars 1;cl_show_equipped_character_for_player_avatars 1"
+      ]
+    ],
+    "showbomb_on": [
+      [
+        736,
+        "gameinstructor_enable true"
+      ]
+    ],
+    "showbomb_off": [
+      [
+        738,
+        "gameinstructor_enable false"
+      ]
+    ],
+    "radarzoom_off": [
+      [
+        740,
+        "cl_radar_scale 0.42;cl_radar_always_centered 0;cl_radar_rotate 1;cl_hud_radar_scale 1.15"
+      ]
+    ],
+    "radarzoom_on": [
+      [
+        742,
+        "cl_radar_scale 1.3;cl_radar_always_centered 1;cl_radar_rotate 1;cl_hud_radar_scale 1.5"
+      ]
+    ],
+    "+radarzoom": [
+      [
+        744,
+        "cl_autohelp true;1voicevol;showbomb_on;showhud_on;radarzoom_on"
+      ]
+    ],
+    "-radarzoom": [
+      [
+        746,
+        "cl_autohelp false;0voicevol;showbomb_off;showhud_off;radarzoom_off"
+      ]
+    ],
+    "+quick": [
+      [
+        781,
+        "<hand;knife;taser;sensx;look1;cl_autohelp 1;alias sens_check_quick sens_held;sens_refresh;refresh_crosshair"
+      ]
+    ],
+    "-quick": [
+      [
+        787,
+        "sens0;cl_autohelp 0;alias sens_check_quick sens_check_qhand;best_weapon;sens_refresh"
+      ]
+    ],
+    "+qhand": [
+      [
+        793,
+        "sensx;knife;alias sens_check_qhand sens_held;sens_refresh;refresh_crosshair"
+      ]
+    ],
+    "-qhand": [
+      [
+        799,
+        "sens0;alias sens_check_qhand sens_check_quicky;best_weapon;sens_refresh"
+      ]
+    ],
+    "+quicky": [
+      [
+        805,
+        "sensx;<hand;knife;c4;look1;alias sens_check_quicky sens_held;sens_refresh;refresh_crosshair"
+      ]
+    ],
+    "-quicky": [
+      [
+        811,
+        "sens0;alias sens_check_quicky sens_normal;best_weapon;sens_refresh"
+      ]
+    ],
+    "mac_1": [
+      [
+        819,
+        "r_fullscreen_gamma 3.23"
+      ]
+    ],
+    "mac_0": [
+      [
+        821,
+        "r_fullscreen_gamma 2.32"
+      ]
+    ],
+    "mac0": [
+      [
+        823,
+        "mac_0; alias macmode mac1"
+      ]
+    ],
+    "mac1": [
+      [
+        825,
+        "mac_1; alias macmode mac0"
+      ]
+    ],
+    "reco": [
+      [
+        827,
+        "reco0"
+      ]
+    ],
+    "reco0": [
+      [
+        829,
+        "cl_crosshair_recoil false; alias reco reco1"
+      ]
+    ],
+    "reco1": [
+      [
+        833,
+        "refresh_crosshair;alias reco reco0"
+      ]
+    ],
+    "movecross": [
+      [
+        837,
+        "automatic_white;refresh_crosshair"
+      ]
+    ],
+    "+holdzoom": [
+      [
+        839,
+        "+zoom"
+      ],
+      [
+        1629,
+        "+zoom"
+      ]
+    ],
+    "-holdzoom": [
+      [
+        841,
+        "-zoom"
+      ],
+      [
+        1631,
+        "-zoom"
+      ]
+    ],
+    "ch0": [
+      [
+        845,
+        "crosshair 0"
+      ]
+    ],
+    "ch1": [
+      [
+        847,
+        "crosshair 1"
+      ]
+    ],
+    "trill": [
+      [
+        853,
+        "alias mycross restore_trill;alias gmrcrossnow shape_trill;alias selection_status selected_trill;refresh_crosshair"
+      ],
+      [
+        1840,
+        "alias mycross restore_trill;alias gmrcrossnow shape_trill;alias selection_status selected_trill;refresh_crosshair"
+      ]
+    ],
+    "croattx": [
+      [
+        859,
+        "shot_render"
+      ],
+      [
+        1846,
+        "shot_render"
+      ]
+    ],
+    "mycross": [
+      [
+        864,
+        "restore_dot"
+      ],
+      [
+        973,
+        "restore_dot"
+      ],
+      [
+        1851,
+        "restore_dot"
+      ]
+    ],
+    "atx1": [
+      [
+        869,
+        "croattx;+h_color;sens_refresh"
+      ]
+    ],
+    "atx0": [
+      [
+        874,
+        "mycross;-h_color;sens1;sens_refresh"
+      ]
+    ],
+    "crosscross_a": [
+      [
+        877,
+        "shape_cross"
+      ]
+    ],
+    "crosscross_b": [
+      [
+        880,
+        "cl_crosshair_dynamic_splitdist 7;cl_crosshair_dynamic_splitalpha_innermod 1;cl_crosshair_dynamic_splitalpha_outermod 0.5;cl_crosshair_dynamic_maxdist_splitratio 0.3"
+      ]
+    ],
+    "crosscross": [
+      [
+        884,
+        "alias mycross restore_cross;alias gmrcrossnow shape_cross;alias selection_status selected_cross;refresh_crosshair"
+      ]
+    ],
+    "crosshole": [
+      [
+        888,
+        "alias mycross restore_hole;alias gmrcrossnow shape_hole;alias selection_status selected_hole;refresh_crosshair"
+      ]
+    ],
+    "crossdot_a": [
+      [
+        891,
+        "shape_dot"
+      ]
+    ],
+    "crossdot_b": [
+      [
+        894,
+        "cl_crosshair_dynamic_splitdist 16;cl_crosshair_dynamic_splitalpha_innermod 1;cl_crosshair_dynamic_splitalpha_outermod 1;cl_crosshair_dynamic_maxdist_splitratio 1"
+      ]
+    ],
+    "crossdot": [
+      [
+        898,
+        "alias mycross restore_dot;alias gmrcrossnow shape_dot;alias selection_status selected_dot;refresh_crosshair"
+      ]
+    ],
+    "crosst": [
+      [
+        902,
+        "alias mycross restore_t;alias gmrcrossnow shape_t;alias selection_status selected_t;refresh_crosshair"
+      ]
+    ],
+    "cross1": [
+      [
+        904,
+        "crosshole;alias next_cross cross2"
+      ]
+    ],
+    "cross2": [
+      [
+        906,
+        "crossdot;alias next_cross cross3"
+      ]
+    ],
+    "cross3": [
+      [
+        908,
+        "crosscross;alias next_cross cross4"
+      ]
+    ],
+    "cross4": [
+      [
+        910,
+        "crosst;alias next_cross cross1"
+      ]
+    ],
+    "next_cross": [
+      [
+        912,
+        "cross1"
+      ]
+    ],
+    "c_hell": [
+      [
+        917,
+        "alias selected_color rgb_white;alias croco rgb_white;refresh_crosshair"
+      ]
+    ],
+    "c_matrix": [
+      [
+        922,
+        "alias selected_color rgb_matrix;alias croco rgb_matrix;refresh_crosshair"
+      ]
+    ],
+    "c_npink": [
+      [
+        927,
+        "alias selected_color rgb_pink;alias croco rgb_pink;refresh_crosshair"
+      ]
+    ],
+    "c_nweed": [
+      [
+        932,
+        "alias selected_color rgb_weed;alias croco rgb_weed;refresh_crosshair"
+      ]
+    ],
+    "c_nred": [
+      [
+        937,
+        "alias selected_color rgb_red;alias croco rgb_red;refresh_crosshair"
+      ]
+    ],
+    "c_ntkys": [
+      [
+        942,
+        "alias selected_color rgb_cyan;alias croco rgb_cyan;refresh_crosshair"
+      ]
+    ],
+    "crn1": [
+      [
+        945,
+        "c_hell;alias cr_x crn2;echo Farbe: Weiss"
+      ]
+    ],
+    "crn2": [
+      [
+        948,
+        "c_ntkys;alias cr_x crn3;echo Farbe: Cyan"
+      ]
+    ],
+    "crn3": [
+      [
+        951,
+        "c_npink;alias cr_x crn4;echo Farbe: Pink"
+      ]
+    ],
+    "crn4": [
+      [
+        954,
+        "c_nweed;alias cr_x crn5;echo Farbe: Weed"
+      ]
+    ],
+    "crn5": [
+      [
+        957,
+        "c_nred;alias cr_x crn6;echo Farbe: Rot"
+      ]
+    ],
+    "crn6": [
+      [
+        960,
+        "c_matrix;alias cr_x crn1;echo Farbe: Matrix"
+      ]
+    ],
+    "cr_x": [
+      [
+        962,
+        "crn1"
+      ]
+    ],
+    "gmrcrossnow": [
+      [
+        965,
+        "shape_dot"
+      ]
+    ],
+    "croco": [
+      [
+        968,
+        "rgb_red"
+      ]
+    ],
+    "atxc": [
+      [
+        978,
+        "rgb_red"
+      ]
+    ],
+    "freehud": [
+      [
+        981,
+        "sv_cheats true;mp_drop_knife_enable true"
+      ]
+    ],
+    "snowball": [
+      [
+        989,
+        "give weapon_snowball"
+      ]
+    ],
+    "tag": [
+      [
+        991,
+        "give weapon_flashbang"
+      ]
+    ],
+    "+[funkbar]": [
+      [
+        1000,
+        "[1]funkbind;1voicevol;face1;switchvoice"
+      ]
+    ],
+    "-[funkbar]": [
+      [
+        1002,
+        "[0]funkbind;nethub;voip;0voicevol"
+      ],
+      [
+        1916,
+        "[0]funkbind;nethub;Voice1;0voicevol"
+      ]
+    ],
+    "+fuk_": [
+      [
+        1004,
+        "+buy;<hand>;+[funkbar];faceit1;+_r;switchvoice"
+      ]
+    ],
+    "-fuk_": [
+      [
+        1006,
+        "-buy;<hand>;-[funkbar];faceit0;-_r;voice"
+      ],
+      [
+        1918,
+        "-buy;<hand>;-[funkbar];faceit0;-_r;cl_clutch_mode 0;Voice1"
+      ]
+    ],
+    "+_r": [
+      [
+        1008,
+        "brad"
+      ],
+      [
+        2113,
+        "brad"
+      ]
+    ],
+    "-_r": [
+      [
+        1012,
+        "close_radio;grnz;best_weapon"
+      ],
+      [
+        2118,
+        "close_radio;grnz;best_weapon"
+      ]
+    ],
+    "_r": [
+      [
+        1014,
+        "radio_[1]"
+      ]
+    ],
+    "radio_[1]": [
+      [
+        1016,
+        "radio1; alias _r radio_[2]"
+      ]
+    ],
+    "radio_[2]": [
+      [
+        1018,
+        "radio2; alias _r radio_[3]"
+      ]
+    ],
+    "radio_[3]": [
+      [
+        1020,
+        "radio3; alias _r radio_[4]"
+      ],
+      [
+        2120,
+        "radio3;alias _r radio_[1]"
+      ]
+    ],
+    "radio_[4]": [
+      [
+        1022,
+        "Slot10; alias _r radio_[1]"
+      ]
+    ],
+    "{say}": [
+      [
+        1024,
+        "alltalk"
+      ]
+    ],
+    "{team}": [
+      [
+        1026,
+        "teamtalk"
+      ]
+    ],
+    "funkr_[1]": [
+      [
+        1028,
+        "{say}"
+      ]
+    ],
+    "funkr_[0]": [
+      [
+        1030,
+        "{team}"
+      ]
+    ],
+    "[1]hudmode": [
+      [
+        1032,
+        "+cl_show_team_equipment;cl_hud_radar_scale 0.77;cl_teamcounter_playercount_instead_of_avatars 0;cl_show_equipped_character_for_player_avatars 0;cl_sanitize_player_names false;cl_hide_avatar_images 0;cl_mute_enemy_team 0"
+      ]
+    ],
+    "[0]hudmode": [
+      [
+        1034,
+        "-radarzoom;cl_teamcounter_playercount_instead_of_avatars 1;cl_show_equipped_character_for_player_avatars 1;cl_sanitize_player_names true;cl_hide_avatar_images 0;cl_mute_enemy_team 1"
+      ]
+    ],
+    "[1]funkbind": [
+      [
+        1036,
+        "funkR_[1];[1]hudmode"
+      ]
+    ],
+    "[0]funkbind": [
+      [
+        1038,
+        "funkR_[0];[0]hudmode"
+      ]
+    ],
+    "+[rr1]": [
+      [
+        1040,
+        "+radialradio"
+      ]
+    ],
+    "+[rr2]": [
+      [
+        1042,
+        "+radialradio2"
+      ]
+    ],
+    "+[rr3]": [
+      [
+        1044,
+        "+radialradio3"
+      ]
+    ],
+    "-[rr1]": [
+      [
+        1046,
+        "-radialradio"
+      ]
+    ],
+    "-[rr2]": [
+      [
+        1048,
+        "-radialradio2"
+      ]
+    ],
+    "-[rr3]": [
+      [
+        1050,
+        "-radialradio3"
+      ]
+    ],
+    "{brad1}": [
+      [
+        1052,
+        "bind z +[rr1]"
+      ]
+    ],
+    "{brad2}": [
+      [
+        1054,
+        "bind x +[rr2]"
+      ]
+    ],
+    "{brad3}": [
+      [
+        1056,
+        "bind c +[rr3]"
+      ]
+    ],
+    "{rrbind}": [
+      [
+        1058,
+        "bind f _r"
+      ]
+    ],
+    "brad": [
+      [
+        1060,
+        "{brad1};{brad2};{brad3};{rrbind}"
+      ],
+      [
+        2111,
+        "radio_mode"
+      ]
+    ],
+    "clutch1": [
+      [
+        1063,
+        "switchvoice"
+      ]
+    ],
+    "voice1": [
+      [
+        1065,
+        "bind v +voicerecord"
+      ],
+      [
+        1914,
+        "alias voice_action +voicerecord"
+      ]
+    ],
+    "teamtalk": [
+      [
+        1067,
+        "bind Y say_team"
+      ]
+    ],
+    "alltalk": [
+      [
+        1069,
+        "bind Y say"
+      ]
+    ],
+    "@msg": [
+      [
+        1071,
+        "bind F9 repbot; bind F10 bla; bind F11 ts; bind F12 eng"
+      ]
+    ],
+    "{f5stay}": [
+      [
+        1073,
+        "bind F5 +f_stay"
+      ]
+    ],
+    "{f6switch}": [
+      [
+        1075,
+        "bind F6 +f_switch"
+      ]
+    ],
+    "{f7gg}": [
+      [
+        1077,
+        "bind F7 f_gg"
+      ]
+    ],
+    "{f8report}": [
+      [
+        1079,
+        "bind F8 f_report"
+      ]
+    ],
+    "@facekeys": [
+      [
+        1081,
+        "{f5stay};{f6switch};{f7gg};{f8report}"
+      ]
+    ],
+    "+[chain]": [
+      [
+        1102,
+        "+fuk_"
+      ]
+    ],
+    "-[chain]": [
+      [
+        1120,
+        "-fuk_"
+      ]
+    ],
+    "+p2": [
+      [
+        1275,
+        "say_team { PLAY TOGATHER }"
+      ]
+    ],
+    "-p2": [
+      [
+        1277,
+        "say_team { GO BACK & PLAY POSITION #FOKUS }"
+      ]
+    ],
+    "+buy": [
+      [
+        1304,
+        "buymenu"
+      ]
+    ],
+    "-buy": [
+      [
+        1306,
+        "buymenu"
+      ]
+    ],
+    "+atx": [
+      [
+        1829,
+        "alias fire_check_mouse fire_hold;fire_refresh;shot_trace_down"
+      ]
+    ],
+    "-atx": [
+      [
+        1836,
+        "alias fire_check_mouse fire_check_enter;fire_refresh;shot_trace_up"
+      ]
+    ],
+    "+space_mode": [
+      [
+        1862,
+        "+jumpp;space_trace_down"
+      ]
+    ],
+    "-space_mode": [
+      [
+        1865,
+        "space_trace_up;unbind mwheeldown;crosshair 1;-jumpp;unbind mwheeldown;refresh_crosshair;space_trace_done"
+      ]
+    ],
+    "space_trace_down": [
+      [
+        1868,
+        ""
+      ]
+    ],
+    "space_trace_up": [
+      [
+        1871,
+        ""
+      ]
+    ],
+    "space_trace_done": [
+      [
+        1874,
+        ""
+      ]
+    ],
+    "print_down": [
+      [
+        1877,
+        "echo [LEETED05] SPACE_DOWN;bind mwheeldown;crosshair"
+      ]
+    ],
+    "print_up": [
+      [
+        1880,
+        "echo [LEETED05] SPACE_UP_BEGIN"
+      ]
+    ],
+    "print_done": [
+      [
+        1883,
+        "echo [LEETED05] SPACE_UP_END;bind mwheeldown;crosshair"
+      ]
+    ],
+    "trace_on": [
+      [
+        1886,
+        "alias space_trace_down print_down;alias space_trace_up print_up;alias space_trace_done print_done;echo [LEETED] TRACE_ON"
+      ]
+    ],
+    "trace_off": [
+      [
+        1889,
+        "alias space_trace_down noop;alias space_trace_up noop;alias space_trace_done noop;echo [LEETED] TRACE_OFF"
+      ]
+    ],
+    "input_reset": [
+      [
+        1892,
+        "unbind mwheeldown;refresh_crosshair"
+      ]
+    ],
+    "clutch_on": [
+      [
+        1899,
+        "cl_clutch_mode 1"
+      ]
+    ],
+    "+voice_key": [
+      [
+        1902,
+        "voice_action"
+      ]
+    ],
+    "-voice_key": [
+      [
+        1905,
+        "-voicerecord"
+      ]
+    ],
+    "voice_action": [
+      [
+        1908,
+        "+voicerecord"
+      ]
+    ],
+    "input_status": [
+      [
+        1933,
+        "bind space;bind mwheeldown;bind alt;bind v;cl_clutch_mode;crosshair"
+      ],
+      [
+        2169,
+        "bind space;bind mwheeldown;bind b;bind alt;bind v;bind z;bind x;bind c;bind f;cl_clutch_mode;crosshair"
+      ]
+    ],
+    "best_weapon": [
+      [
+        1939,
+        "look0;slot3;slot2;slot1;hand>;refresh_crosshair"
+      ]
+    ],
+    "select_held": [
+      [
+        1942,
+        "check_z"
+      ]
+    ],
+    "equip_z": [
+      [
+        1948,
+        "<hand;slot7;slot6;slot10;slot8;look1;refresh_crosshair"
+      ]
+    ],
+    "check_z": [
+      [
+        1951,
+        "check_x"
+      ]
+    ],
+    "z_gren_down": [
+      [
+        1954,
+        "alias check_z equip_z;alias z_up z_gren_up;equip_z"
+      ]
+    ],
+    "z_gren_up": [
+      [
+        1959,
+        "alias check_z check_x;alias z_up noop;best_weapon"
+      ]
+    ],
+    "z_radio_down": [
+      [
+        1962,
+        "alias z_up z_radio_up;+radialradio"
+      ]
+    ],
+    "z_radio_up": [
+      [
+        1965,
+        "-radialradio;alias z_up noop"
+      ]
+    ],
+    "z_down": [
+      [
+        1968,
+        "z_gren_down"
+      ]
+    ],
+    "z_up": [
+      [
+        1971,
+        "noop"
+      ]
+    ],
+    "+key_z": [
+      [
+        1974,
+        "z_down"
+      ]
+    ],
+    "-key_z": [
+      [
+        1977,
+        "z_up"
+      ]
+    ],
+    "equip_x": [
+      [
+        1986,
+        "<hand;slot8;slot7;slot6;slot10;look1;refresh_crosshair"
+      ]
+    ],
+    "check_x": [
+      [
+        1989,
+        "check_c"
+      ]
+    ],
+    "x_gren_down": [
+      [
+        1992,
+        "alias check_x equip_x;alias x_up x_gren_up;equip_x"
+      ]
+    ],
+    "x_gren_up": [
+      [
+        1997,
+        "alias check_x check_c;alias x_up noop;best_weapon"
+      ]
+    ],
+    "x_radio_down": [
+      [
+        2000,
+        "alias x_up x_radio_up;+radialradio2"
+      ]
+    ],
+    "x_radio_up": [
+      [
+        2003,
+        "-radialradio2;alias x_up noop"
+      ]
+    ],
+    "x_down": [
+      [
+        2006,
+        "x_gren_down"
+      ]
+    ],
+    "x_up": [
+      [
+        2009,
+        "noop"
+      ]
+    ],
+    "+key_x": [
+      [
+        2012,
+        "x_down"
+      ]
+    ],
+    "-key_x": [
+      [
+        2015,
+        "x_up"
+      ]
+    ],
+    "equip_c": [
+      [
+        2024,
+        "<hand;slot10;slot8;slot7;slot6;look1;refresh_crosshair"
+      ]
+    ],
+    "check_c": [
+      [
+        2027,
+        "check_f"
+      ]
+    ],
+    "c_gren_down": [
+      [
+        2030,
+        "alias check_c equip_c;alias c_up c_gren_up;equip_c"
+      ]
+    ],
+    "c_gren_up": [
+      [
+        2035,
+        "alias check_c check_f;alias c_up noop;best_weapon"
+      ]
+    ],
+    "c_radio_down": [
+      [
+        2038,
+        "alias c_up c_radio_up;+radialradio3"
+      ]
+    ],
+    "c_radio_up": [
+      [
+        2041,
+        "-radialradio3;alias c_up noop"
+      ]
+    ],
+    "c_down": [
+      [
+        2044,
+        "c_gren_down"
+      ]
+    ],
+    "c_up": [
+      [
+        2047,
+        "noop"
+      ]
+    ],
+    "+key_c": [
+      [
+        2050,
+        "c_down"
+      ]
+    ],
+    "-key_c": [
+      [
+        2053,
+        "c_up"
+      ]
+    ],
+    "equip_f": [
+      [
+        2062,
+        "<hand;slot6;slot10;slot8;slot7;look1;refresh_crosshair"
+      ]
+    ],
+    "check_f": [
+      [
+        2066,
+        "check_space"
+      ]
+    ],
+    "f_gren_down": [
+      [
+        2069,
+        "alias check_f equip_f;alias f_up f_gren_up;equip_f"
+      ]
+    ],
+    "f_gren_up": [
+      [
+        2075,
+        "alias check_f check_space;alias f_up noop;best_weapon"
+      ]
+    ],
+    "f_radio_down": [
+      [
+        2078,
+        "alias f_up f_radio_up;_r"
+      ]
+    ],
+    "f_radio_up": [
+      [
+        2081,
+        "noop;alias f_up noop"
+      ]
+    ],
+    "f_down": [
+      [
+        2084,
+        "f_gren_down"
+      ]
+    ],
+    "f_up": [
+      [
+        2087,
+        "noop"
+      ]
+    ],
+    "+key_f": [
+      [
+        2090,
+        "f_down"
+      ]
+    ],
+    "-key_f": [
+      [
+        2093,
+        "f_up"
+      ]
+    ],
+    "grenade_mode": [
+      [
+        2099,
+        "alias z_down z_gren_down;alias x_down x_gren_down;alias c_down c_gren_down;alias f_down f_gren_down"
+      ]
+    ],
+    "radio_mode": [
+      [
+        2102,
+        "alias z_down z_radio_down;alias x_down x_radio_down;alias c_down c_radio_down;alias f_down f_radio_down"
+      ]
+    ],
+    "close_radio": [
+      [
+        2105,
+        "-radialradio;-radialradio2;-radialradio3"
+      ]
+    ],
+    "diag_crosshair": [
+      [
+        2167,
+        "log_flags General -donotecho;echo LEETED_CROSSHAIR_STATUS;crosshair;bind mouse1;bind k;find cl_crosshair"
+      ]
+    ],
+    "b_jump": [
+      [
+        2171,
+        "bind b +jump"
+      ]
+    ],
+    "b_duckjump": [
+      [
+        2173,
+        "bind b +duckjump"
+      ]
+    ],
+    "shot_values": [
+      [
+        2175,
+        "crosshair;cl_crosshairstyle;cl_crosshair_length;cl_crosshair_thickness;cl_crosshair_gap;cl_crosshaircolor_a;cl_crosshaircolor_r;cl_crosshaircolor_g;cl_crosshaircolor_b;cl_crosshair_recoil"
+      ]
+    ],
+    "shot_down_report": [
+      [
+        2177,
+        "echo LEETED_SHOT_DOWN;shot_values"
+      ]
+    ],
+    "shot_up_report": [
+      [
+        2179,
+        "echo LEETED_SHOT_UP_END;selection_status;shot_values"
+      ]
+    ],
+    "shot_trace_on": [
+      [
+        2181,
+        "log_flags General -donotecho;alias shot_trace_down shot_down_report;alias shot_trace_up shot_up_report;echo LEETED_SHOT_TRACE_ON"
+      ]
+    ],
+    "shot_trace_off": [
+      [
+        2183,
+        "alias shot_trace_down noop;alias shot_trace_up noop"
+      ]
+    ],
+    "shot_status": [
+      [
+        2185,
+        "log_flags General -donotecho;echo LEETED_SHOT_STATUS;selection_status;bind mouse1;bind k;shot_values"
+      ]
+    ]
+  },
+  "binds": {
+    "space": [
+      [
+        242,
+        "+jumpp"
+      ],
+      [
+        606,
+        "+jumpp"
+      ],
+      [
+        1244,
+        "+jumpp"
+      ],
+      [
+        1921,
+        "+space_mode"
+      ]
+    ],
+    "b": [
+      [
+        245,
+        "+duckjump"
+      ],
+      [
+        609,
+        "+duckjump"
+      ],
+      [
+        1248,
+        "+duckjump"
+      ],
+      [
+        2150,
+        "+duckjump"
+      ]
+    ],
+    "ctrl": [
+      [
+        247,
+        "+sneak"
+      ],
+      [
+        1241,
+        "+sneak"
+      ],
+      [
+        1798,
+        "+sneak"
+      ]
+    ],
+    "f1": [
+      [
+        287,
+        "(unbound)"
+      ]
+    ],
+    "f2": [
+      [
+        289,
+        "(unbound)"
+      ]
+    ],
+    "k": [
+      [
+        294,
+        "+cross_pick"
+      ],
+      [
+        1310,
+        "+smoke"
+      ],
+      [
+        1317,
+        "+cross_pick"
+      ],
+      [
+        2153,
+        "+cross_pick"
+      ]
+    ],
+    "j": [
+      [
+        296,
+        "cr_x"
+      ],
+      [
+        1319,
+        "cr_x"
+      ],
+      [
+        2154,
+        "cr_x"
+      ]
+    ],
+    "r": [
+      [
+        298,
+        "+radarzoom"
+      ],
+      [
+        1321,
+        "+radarzoom"
+      ]
+    ],
+    "alt": [
+      [
+        388,
+        "+[chain]"
+      ],
+      [
+        1300,
+        "+fuk_"
+      ],
+      [
+        1857,
+        "(unbound)"
+      ],
+      [
+        1923,
+        "+fuk_"
+      ]
+    ],
+    "o": [
+      [
+        509,
+        "snowball"
+      ],
+      [
+        1263,
+        "drop;slot3"
+      ]
+    ],
+    "t": [
+      [
+        515,
+        "+togglevol"
+      ]
+    ],
+    "mwheeldown": [
+      [
+        611,
+        "(unbound)"
+      ],
+      [
+        1930,
+        "(unbound)"
+      ],
+      [
+        2158,
+        "(unbound)"
+      ]
+    ],
+    "q": [
+      [
+        813,
+        "+quick"
+      ],
+      [
+        1251,
+        "+quicky"
+      ],
+      [
+        1254,
+        "+qhand"
+      ]
+    ],
+    "mouse2": [
+      [
+        843,
+        "+holdzoom"
+      ],
+      [
+        1217,
+        "+holdzoom"
+      ],
+      [
+        1633,
+        "+holdzoom"
+      ],
+      [
+        1853,
+        "+holdzoom"
+      ]
+    ],
+    "n": [
+      [
+        998,
+        "+smoke"
+      ],
+      [
+        1616,
+        "+jump"
+      ]
+    ],
+    ",": [
+      [
+        1135,
+        "dropump;say_team DROP[UMP]4TEAM"
+      ]
+    ],
+    ".": [
+      [
+        1138,
+        "dropp250;say_team DROP[P250]4TEAM"
+      ]
+    ],
+    "kp_0": [
+      [
+        1141,
+        "dropflash;say_team DROP[Flash]4TEAM"
+      ]
+    ],
+    "kp_9": [
+      [
+        1144,
+        "buy hegrenade;rdygo"
+      ]
+    ],
+    "kp_8": [
+      [
+        1147,
+        "buy flashbang;rdygo"
+      ]
+    ],
+    "kp_7": [
+      [
+        1150,
+        "buy smokegrenade;rdygo"
+      ]
+    ],
+    "kp_4": [
+      [
+        1153,
+        "buy ssg08;rdygo"
+      ]
+    ],
+    "kp_6": [
+      [
+        1156,
+        "buy vest;rdygo"
+      ]
+    ],
+    "kp_5": [
+      [
+        1159,
+        "vst;rdygo"
+      ]
+    ],
+    "kp_3": [
+      [
+        1163,
+        "buy galilar;buy famas;rdygo"
+      ]
+    ],
+    "kp_2": [
+      [
+        1166,
+        "buy m4a1_silencer; buy ak47;rdygo"
+      ]
+    ],
+    "kp_1": [
+      [
+        1169,
+        "buy awp;rdygo"
+      ]
+    ],
+    "kp_multiply": [
+      [
+        1172,
+        "buy incgrenade; buy molotov;rdygo"
+      ]
+    ],
+    "kp_del": [
+      [
+        1175,
+        "buy DEFUSER;rdygo"
+      ]
+    ],
+    "kp_divide": [
+      [
+        1178,
+        "buy decoy;rdygo"
+      ]
+    ],
+    "1": [
+      [
+        1181,
+        "slot1;hand>"
+      ]
+    ],
+    "2": [
+      [
+        1184,
+        "slot2;hand>"
+      ]
+    ],
+    "4": [
+      [
+        1187,
+        "knife"
+      ]
+    ],
+    "3": [
+      [
+        1190,
+        "slot4"
+      ]
+    ],
+    "5": [
+      [
+        1193,
+        "slot5"
+      ]
+    ],
+    "6": [
+      [
+        1196,
+        "slot6"
+      ]
+    ],
+    "7": [
+      [
+        1199,
+        "slot7"
+      ]
+    ],
+    "8": [
+      [
+        1202,
+        "slot8"
+      ]
+    ],
+    "9": [
+      [
+        1205,
+        "slot9"
+      ]
+    ],
+    "0": [
+      [
+        1208,
+        "slot10"
+      ]
+    ],
+    "mwheelup": [
+      [
+        1211,
+        "+reload"
+      ]
+    ],
+    "mouse1": [
+      [
+        1214,
+        "+attack"
+      ],
+      [
+        1855,
+        "+atx"
+      ],
+      [
+        2156,
+        "+atx"
+      ]
+    ],
+    "mouse3": [
+      [
+        1220,
+        "+duck"
+      ],
+      [
+        1624,
+        "+jump"
+      ]
+    ],
+    "mouse4": [
+      [
+        1223,
+        "noclip"
+      ]
+    ],
+    "mouse5": [
+      [
+        1226,
+        "sv_rethrow_last_grenade"
+      ]
+    ],
+    "`": [
+      [
+        1229,
+        "+scorenet"
+      ]
+    ],
+    "tab": [
+      [
+        1232,
+        "+radarzoom"
+      ]
+    ],
+    "capslock": [
+      [
+        1235,
+        "+dropbomb"
+      ]
+    ],
+    "shift": [
+      [
+        1238,
+        "+speed"
+      ]
+    ],
+    "e": [
+      [
+        1257,
+        "+use"
+      ]
+    ],
+    "p": [
+      [
+        1260,
+        "player_ping"
+      ]
+    ],
+    "uparrow": [
+      [
+        1266,
+        "+ez"
+      ]
+    ],
+    "downarrow": [
+      [
+        1269,
+        "nt"
+      ]
+    ],
+    "rightarrow": [
+      [
+        1272,
+        "gj"
+      ]
+    ],
+    "leftarrow": [
+      [
+        1279,
+        "+p2"
+      ]
+    ],
+    "ins": [
+      [
+        1282,
+        "+FIXED"
+      ]
+    ],
+    "del": [
+      [
+        1285,
+        "+gmrdisc"
+      ]
+    ],
+    "end": [
+      [
+        1288,
+        "+gmrquit"
+      ]
+    ],
+    "pgdn": [
+      [
+        1291,
+        "exec train.cfg;bind mouse5 sv_rethrow_last_grenade;bind mouse4 noclip;echo Practice Settings ON"
+      ]
+    ],
+    "pgup": [
+      [
+        1294,
+        "exec movie.cfg;echo Moviemaker Settings ON"
+      ]
+    ],
+    "home": [
+      [
+        1297,
+        "callvote"
+      ]
+    ],
+    "#": [
+      [
+        1302,
+        "cl_clutch_mode TRUE"
+      ]
+    ],
+    "enter": [
+      [
+        1314,
+        "+enter_fire"
+      ]
+    ],
+    "v": [
+      [
+        1804,
+        "+voicerecord"
+      ],
+      [
+        1926,
+        "+voice_key"
+      ]
+    ],
+    "z": [
+      [
+        1980,
+        "+key_z"
+      ]
+    ],
+    "x": [
+      [
+        2018,
+        "+key_x"
+      ]
+    ],
+    "c": [
+      [
+        2056,
+        "+key_c"
+      ]
+    ],
+    "f": [
+      [
+        2096,
+        "+key_f"
+      ]
+    ]
+  },
+  "settings": {
+    "log_flags": [
+      [
+        102,
+        "General -donotecho"
+      ]
+    ],
+    "r_drawtracers_firstperson": [
+      [
+        265,
+        "true"
+      ],
+      [
+        1347,
+        "true"
+      ],
+      [
+        1594,
+        "true"
+      ],
+      [
+        1776,
+        "0"
+      ],
+      [
+        1806,
+        "true"
+      ],
+      [
+        2137,
+        "true"
+      ]
+    ],
+    "r_drawparticles": [
+      [
+        267,
+        "false"
+      ],
+      [
+        817,
+        "1"
+      ],
+      [
+        1808,
+        "false"
+      ],
+      [
+        2138,
+        "false"
+      ]
+    ],
+    "snd_mixahead": [
+      [
+        269,
+        "0.05"
+      ],
+      [
+        1351,
+        "0.05"
+      ],
+      [
+        1810,
+        "0.05"
+      ],
+      [
+        2139,
+        "0.05"
+      ]
+    ],
+    "viewmodel_fov": [
+      [
+        271,
+        "68"
+      ],
+      [
+        1651,
+        "54"
+      ],
+      [
+        1812,
+        "68"
+      ],
+      [
+        2141,
+        "68"
+      ],
+      [
+        2162,
+        "68"
+      ]
+    ],
+    "viewmodel_offset_x": [
+      [
+        273,
+        "-2.5"
+      ],
+      [
+        1645,
+        "2.5"
+      ],
+      [
+        1814,
+        "-2.5"
+      ],
+      [
+        2142,
+        "-2.5"
+      ],
+      [
+        2163,
+        "-2.5"
+      ]
+    ],
+    "viewmodel_offset_y": [
+      [
+        275,
+        "-2.5"
+      ],
+      [
+        1647,
+        "-2"
+      ],
+      [
+        1816,
+        "-2.5"
+      ],
+      [
+        2143,
+        "-2.5"
+      ],
+      [
+        2164,
+        "-2.5"
+      ]
+    ],
+    "viewmodel_offset_z": [
+      [
+        277,
+        "-2"
+      ],
+      [
+        1649,
+        "-2"
+      ],
+      [
+        1818,
+        "-2"
+      ],
+      [
+        2144,
+        "-2"
+      ],
+      [
+        2165,
+        "-2"
+      ]
+    ],
+    "viewmodel_presetpos": [
+      [
+        279,
+        "1"
+      ],
+      [
+        1643,
+        "0"
+      ],
+      [
+        1820,
+        "1"
+      ],
+      [
+        2140,
+        "0"
+      ],
+      [
+        2161,
+        "0"
+      ]
+    ],
+    "speaker_config": [
+      [
+        281,
+        "2"
+      ],
+      [
+        291,
+        "2"
+      ]
+    ],
+    "cl_hud_radar_blur_background": [
+      [
+        283,
+        "0"
+      ],
+      [
+        1796,
+        "0"
+      ]
+    ],
+    "cl_crosshair_t": [
+      [
+        285,
+        "true"
+      ],
+      [
+        316,
+        "true"
+      ],
+      [
+        1508,
+        "1"
+      ]
+    ],
+    "zoom_sensitivity_ratio": [
+      [
+        300,
+        "0.8189833027098955"
+      ],
+      [
+        1600,
+        "0.8189833027098955"
+      ]
+    ],
+    "weapon_accuracy_nospread": [
+      [
+        302,
+        "true"
+      ],
+      [
+        304,
+        "1"
+      ],
+      [
+        1598,
+        "true"
+      ],
+      [
+        2145,
+        "1"
+      ]
+    ],
+    "m_pitch": [
+      [
+        318,
+        "0.0165"
+      ],
+      [
+        1532,
+        "0.0165"
+      ],
+      [
+        1800,
+        "0.0165"
+      ]
+    ],
+    "sensitivity_y_scale": [
+      [
+        320,
+        "1.33"
+      ],
+      [
+        1530,
+        "1.33"
+      ]
+    ],
+    "cl_hud_radar_scale": [
+      [
+        748,
+        "1.15"
+      ],
+      [
+        1461,
+        "1.15"
+      ]
+    ],
+    "cl_radar_scale": [
+      [
+        750,
+        "0.42"
+      ],
+      [
+        760,
+        "0.42"
+      ],
+      [
+        1463,
+        "0.42"
+      ],
+      [
+        1473,
+        "0.42"
+      ]
+    ],
+    "cl_radar_always_centered": [
+      [
+        752,
+        "0"
+      ],
+      [
+        762,
+        "0"
+      ],
+      [
+        1465,
+        "0"
+      ],
+      [
+        1475,
+        "0"
+      ]
+    ],
+    "cl_radar_rotate": [
+      [
+        754,
+        "1"
+      ],
+      [
+        764,
+        "1"
+      ],
+      [
+        1467,
+        "1"
+      ],
+      [
+        1477,
+        "1"
+      ]
+    ],
+    "cl_radar_icon_scale_min": [
+      [
+        756,
+        "0.7"
+      ],
+      [
+        766,
+        "0.7"
+      ],
+      [
+        1469,
+        "0.7"
+      ],
+      [
+        1479,
+        "0.7"
+      ]
+    ],
+    "cl_radar_square_with_scoreboard": [
+      [
+        758,
+        "1"
+      ],
+      [
+        768,
+        "1"
+      ],
+      [
+        1471,
+        "1"
+      ],
+      [
+        1481,
+        "1"
+      ]
+    ],
+    "r_fullscreen_gamma": [
+      [
+        815,
+        "3.007"
+      ]
+    ],
+    "fov_cs_debug": [
+      [
+        849,
+        "90"
+      ],
+      [
+        2146,
+        "90"
+      ]
+    ],
+    "cl_disable_ragdolls": [
+      [
+        1330,
+        "1"
+      ]
+    ],
+    "engine_low_latency_sleep_after_client_tick": [
+      [
+        1332,
+        "true"
+      ],
+      [
+        1576,
+        "1"
+      ]
+    ],
+    "cl_teamid_overhead_mode": [
+      [
+        1337,
+        "3"
+      ],
+      [
+        1497,
+        "2"
+      ]
+    ],
+    "cl_teamid_overhead_colors_show": [
+      [
+        1339,
+        "1"
+      ]
+    ],
+    "fps_max_ui": [
+      [
+        1341,
+        "0"
+      ],
+      [
+        1404,
+        "0"
+      ],
+      [
+        1767,
+        "0"
+      ]
+    ],
+    "r_csgo_render_decals": [
+      [
+        1343,
+        "true"
+      ],
+      [
+        1590,
+        "true"
+      ]
+    ],
+    "r_csgo_effects_bloom": [
+      [
+        1345,
+        "false"
+      ],
+      [
+        1592,
+        "false"
+      ]
+    ],
+    "snd_voipvolume": [
+      [
+        1353,
+        "0.2"
+      ],
+      [
+        1564,
+        "0.7777777"
+      ]
+    ],
+    "snd_gamevoicevolume": [
+      [
+        1355,
+        "1"
+      ]
+    ],
+    "snd_mvp_volume": [
+      [
+        1357,
+        "0.37"
+      ]
+    ],
+    "snd_roundaction_volume": [
+      [
+        1359,
+        "0"
+      ]
+    ],
+    "snd_tensecondwarning_volume": [
+      [
+        1361,
+        "0.2"
+      ]
+    ],
+    "snd_mute_mvp_music_live_players": [
+      [
+        1363,
+        "1"
+      ]
+    ],
+    "voice_modenable": [
+      [
+        1365,
+        "1"
+      ]
+    ],
+    "snd_spatialize_lerp": [
+      [
+        1367,
+        "0.0"
+      ],
+      [
+        1390,
+        "0.0"
+      ]
+    ],
+    "snd_steamaudio_enable_perspective_correction": [
+      [
+        1375,
+        "0"
+      ],
+      [
+        1398,
+        "0"
+      ]
+    ],
+    "snd_headphone_eq": [
+      [
+        1377,
+        "1"
+      ],
+      [
+        1400,
+        "1"
+      ]
+    ],
+    "snd_musicvolume": [
+      [
+        1382,
+        "0"
+      ]
+    ],
+    "fps_max_tools": [
+      [
+        1402,
+        "999"
+      ]
+    ],
+    "fps_max": [
+      [
+        1406,
+        "999"
+      ],
+      [
+        1765,
+        "999"
+      ]
+    ],
+    "cl_showfps": [
+      [
+        1408,
+        "1"
+      ],
+      [
+        1455,
+        "1"
+      ],
+      [
+        1769,
+        "1"
+      ]
+    ],
+    "cl_hud_telemetry_frametime_poor": [
+      [
+        1410,
+        "10"
+      ],
+      [
+        1412,
+        "14"
+      ]
+    ],
+    "mm_dedicated_search_maxping": [
+      [
+        1420,
+        "25"
+      ]
+    ],
+    "net_client_steamdatagram_enable_override": [
+      [
+        1422,
+        "1"
+      ]
+    ],
+    "cl_net_buffer_ticks": [
+      [
+        1424,
+        "1"
+      ],
+      [
+        1774,
+        "1"
+      ]
+    ],
+    "engine_no_focus_sleep": [
+      [
+        1426,
+        "0"
+      ]
+    ],
+    "cl_cq_min_queue": [
+      [
+        1428,
+        "-1"
+      ]
+    ],
+    "cq_buffer_bloat_msecs_max": [
+      [
+        1436,
+        "0"
+      ]
+    ],
+    "rate": [
+      [
+        1442,
+        "98304"
+      ],
+      [
+        1772,
+        "98304"
+      ]
+    ],
+    "cl_interp_ratio": [
+      [
+        1447,
+        "1"
+      ]
+    ],
+    "cl_predict_kill_ragdolls": [
+      [
+        1449,
+        "true"
+      ]
+    ],
+    "cl_predict_head_shot_fx": [
+      [
+        1451,
+        "false"
+      ]
+    ],
+    "cl_predict_body_shot_fx": [
+      [
+        1453,
+        "false"
+      ]
+    ],
+    "cl_autohelp": [
+      [
+        1457,
+        "0"
+      ]
+    ],
+    "cl_obs_interp_enable": [
+      [
+        1459,
+        "0"
+      ]
+    ],
+    "cl_silencer_mode": [
+      [
+        1483,
+        "1"
+      ]
+    ],
+    "cl_debounce_zoom": [
+      [
+        1485,
+        "1"
+      ]
+    ],
+    "cl_sniper_delay_unscope": [
+      [
+        1487,
+        "0"
+      ]
+    ],
+    "hud_scaling": [
+      [
+        1489,
+        "1.1337"
+      ]
+    ],
+    "safezonex": [
+      [
+        1491,
+        "1.1337"
+      ]
+    ],
+    "safezoney": [
+      [
+        1493,
+        "0.999"
+      ]
+    ],
+    "cl_teamid_overhead_maxdist": [
+      [
+        1499,
+        "9999"
+      ]
+    ],
+    "cl_ragdoll_workaround_threshold": [
+      [
+        1501,
+        "0"
+      ]
+    ],
+    "cl_sniper_auto_rezoom": [
+      [
+        1506,
+        "0"
+      ]
+    ],
+    "cl_crosshair_dynamic_splitalpha_outermod": [
+      [
+        1511,
+        "0.3"
+      ]
+    ],
+    "cl_crosshair_dynamic_splitdist": [
+      [
+        1513,
+        "0"
+      ]
+    ],
+    "cl_crosshair_dynamic_splitalpha_innermod": [
+      [
+        1515,
+        "0"
+      ]
+    ],
+    "cl_crosshair_dynamic_maxdist_splitratio": [
+      [
+        1517,
+        "0"
+      ]
+    ],
+    "cl_crosshair_length": [
+      [
+        1520,
+        "2"
+      ]
+    ],
+    "cl_crosshair_gap": [
+      [
+        1523,
+        "1"
+      ]
+    ],
+    "cl_crosshaircolor_a": [
+      [
+        1526,
+        "255"
+      ]
+    ],
+    "cl_crosshairdot": [
+      [
+        1528,
+        "false"
+      ]
+    ],
+    "m_yaw": [
+      [
+        1534,
+        "0.0165"
+      ],
+      [
+        1802,
+        "0.0165"
+      ]
+    ],
+    "cl_grenadecrosshair_decoy": [
+      [
+        1536,
+        "true"
+      ]
+    ],
+    "cl_grenadecrosshair_keepusercrosshair": [
+      [
+        1538,
+        "false"
+      ]
+    ],
+    "cl_grenadecrosshair_flash": [
+      [
+        1540,
+        "false"
+      ]
+    ],
+    "cl_grenadecrosshair_fire": [
+      [
+        1542,
+        "true"
+      ]
+    ],
+    "cl_grenadecrosshair_explosive": [
+      [
+        1544,
+        "false"
+      ]
+    ],
+    "cl_grenadecrosshair_smoke": [
+      [
+        1546,
+        "true"
+      ]
+    ],
+    "cl_grenadecrosshairdelay_decoy": [
+      [
+        1548,
+        "2"
+      ]
+    ],
+    "cl_grenadecrosshairdelay_flash": [
+      [
+        1550,
+        "3"
+      ]
+    ],
+    "cl_grenadecrosshairdelay_fire": [
+      [
+        1552,
+        "5"
+      ]
+    ],
+    "cl_grenadecrosshairdelay_explosive": [
+      [
+        1554,
+        "3"
+      ]
+    ],
+    "cl_grenadecrosshairdelay_smoke": [
+      [
+        1556,
+        "0.2"
+      ]
+    ],
+    "cl_show_observer_crosshair": [
+      [
+        1558,
+        "0"
+      ]
+    ],
+    "sv_disable_observer_interpolation": [
+      [
+        1560,
+        "true"
+      ]
+    ],
+    "install_dlc_workshoptools_cvar": [
+      [
+        1562,
+        "1"
+      ]
+    ],
+    "cl_showloadout": [
+      [
+        1566,
+        "1"
+      ]
+    ],
+    "molotov_throw_detonate_time": [
+      [
+        1568,
+        "100"
+      ]
+    ],
+    "sv_regeneration_force_on": [
+      [
+        1570,
+        "true"
+      ]
+    ],
+    "cl_crosshair_friendly_warning": [
+      [
+        1572,
+        "1"
+      ]
+    ],
+    "cl_hide_avatar_images": [
+      [
+        1574,
+        "1"
+      ]
+    ],
+    "con_enable": [
+      [
+        1578,
+        "1"
+      ]
+    ],
+    "cl_color": [
+      [
+        1586,
+        "0"
+      ]
+    ],
+    "cl_hud_color": [
+      [
+        1588,
+        "12"
+      ]
+    ],
+    "sensitivity": [
+      [
+        1602,
+        "1"
+      ],
+      [
+        1635,
+        "1"
+      ]
+    ],
+    "r_drawtracers": [
+      [
+        1778,
+        "1"
+      ]
+    ],
+    "cl_hud_telemetry_serverrecvmargin_graph_show": [
+      [
+        1787,
+        "1"
+      ]
+    ],
+    "cl_clutch_mode": [
+      [
+        1928,
+        "0"
+      ]
+    ],
+    "crosshair": [
+      [
+        2125,
+        "1"
+      ]
+    ]
+  },
+  "commands": [
+    [
+      3,
+      [
+        "alias",
+        "inspect_on",
+        "alias look1 +lookatweapon;alias inspect_toggle inspect_off;echo INSPECT_ON"
+      ]
+    ],
+    [
+      5,
+      [
+        "alias",
+        "inspect_off",
+        "alias look1 noop;look0;alias inspect_toggle inspect_on;echo INSPECT_OFF"
+      ]
+    ],
+    [
+      7,
+      [
+        "alias",
+        "inspect_toggle",
+        "inspect_on"
+      ]
+    ],
+    [
+      9,
+      [
+        "alias",
+        "color_lock_on",
+        "alias automatic_white noop;alias color_restore selected_color;alias color_lock_toggle color_lock_off;refresh_crosshair;echo COLOR_LOCK_ON"
+      ]
+    ],
+    [
+      11,
+      [
+        "alias",
+        "color_lock_off",
+        "alias automatic_white legacy_white;alias color_restore croco;alias color_lock_toggle color_lock_on;refresh_crosshair;echo COLOR_LOCK_OFF"
+      ]
+    ],
+    [
+      13,
+      [
+        "alias",
+        "selected_color",
+        "rgb_red"
+      ]
+    ],
+    [
+      15,
+      [
+        "alias",
+        "color_restore",
+        "selected_color"
+      ]
+    ],
+    [
+      17,
+      [
+        "alias",
+        "legacy_white",
+        "alias croco rgb_white"
+      ]
+    ],
+    [
+      19,
+      [
+        "alias",
+        "color_lock_toggle",
+        "color_lock_off"
+      ]
+    ],
+    [
+      21,
+      [
+        "alias",
+        "automatic_white",
+        "noop"
+      ]
+    ],
+    [
+      23,
+      [
+        "alias",
+        "shot_on",
+        "alias shot_render shot_selected;alias shot_toggle shot_off;refresh_crosshair;echo SHOT_ON"
+      ]
+    ],
+    [
+      25,
+      [
+        "alias",
+        "shot_off",
+        "alias shot_render mycross;alias shot_toggle shot_on;refresh_crosshair;echo SHOT_OFF"
+      ]
+    ],
+    [
+      27,
+      [
+        "alias",
+        "shot_toggle",
+        "shot_off"
+      ]
+    ],
+    [
+      29,
+      [
+        "alias",
+        "shot_circle",
+        "alias shot_selected shape_fire;alias shot_style_toggle shot_t;refresh_crosshair;echo SHOT_CIRCLE_WHITE"
+      ]
+    ],
+    [
+      31,
+      [
+        "alias",
+        "shot_t",
+        "alias shot_selected shape_fire_t;alias shot_style_toggle shot_circle;refresh_crosshair;echo SHOT_T_RED"
+      ]
+    ],
+    [
+      33,
+      [
+        "alias",
+        "shot_style_toggle",
+        "shot_t"
+      ]
+    ],
+    [
+      35,
+      [
+        "alias",
+        "shot_selected",
+        "shape_fire"
+      ]
+    ],
+    [
+      37,
+      [
+        "alias",
+        "shot_render",
+        "shot_selected"
+      ]
+    ],
+    [
+      39,
+      [
+        "alias",
+        "shot_circle_part_1",
+        "crosshair 1;cl_crosshairstyle 1;cl_crosshair_length 2;cl_crosshair_thickness 1;cl_crosshair_gap 4;cl_crosshaircolor_a 255;cl_crosshair_drawoutline 0;cl_crosshairdot 1"
+      ]
+    ],
+    [
+      41,
+      [
+        "alias",
+        "shot_circle_part_2",
+        "cl_crosshair_t 1;cl_crosshair_recoil 1;cl_crosshaircolor_r 255;cl_crosshaircolor_g 255;cl_crosshaircolor_b 255;cl_crosshair_dynamic_spread_limit 255"
+      ]
+    ],
+    [
+      43,
+      [
+        "alias",
+        "shot_circle_part_3",
+        "cl_crosshair_dynamic_splitdist 0;cl_crosshair_dynamic_splitalpha_innermod 0;cl_crosshair_dynamic_splitalpha_outermod 0.3;cl_crosshair_dynamic_maxdist_splitratio 0"
+      ]
+    ],
+    [
+      45,
+      [
+        "alias",
+        "shot_circle_part_4",
+        "cl_crosshair_screen_height 1024"
+      ]
+    ],
+    [
+      47,
+      [
+        "alias",
+        "shot_t_part_1",
+        "crosshair 1;cl_crosshairstyle 4;cl_crosshair_length 255;cl_crosshair_thickness 1;cl_crosshair_gap 1;cl_crosshaircolor_a 77;cl_crosshair_drawoutline 1;cl_crosshairdot 0"
+      ]
+    ],
+    [
+      49,
+      [
+        "alias",
+        "shot_t_part_2",
+        "cl_crosshair_t 1;cl_crosshair_recoil 1;cl_crosshaircolor_r 255;cl_crosshaircolor_g 0;cl_crosshaircolor_b 0;cl_crosshair_dynamic_spread_limit 255;cl_crosshair_dynamic_splitdist 0"
+      ]
+    ],
+    [
+      51,
+      [
+        "alias",
+        "shot_t_part_3",
+        "cl_crosshair_dynamic_splitalpha_innermod 0;cl_crosshair_dynamic_splitalpha_outermod 0.3;cl_crosshair_dynamic_maxdist_splitratio 0;cl_crosshair_screen_height 1024"
+      ]
+    ],
+    [
+      53,
+      [
+        "alias",
+        "shape_fire_t",
+        "shot_t_part_1;shot_t_part_2;shot_t_part_3"
+      ]
+    ],
+    [
+      55,
+      [
+        "alias",
+        "space_press_state",
+        "alias sens_check_space sens_held;alias check_space equip_z;alias drop_dispatch space_sneak_press"
+      ]
+    ],
+    [
+      57,
+      [
+        "alias",
+        "space_release_state",
+        "alias sens_check_space sens_check_quick;alias check_space best_weapon;alias drop_dispatch bomb_down;space_sneak_reset"
+      ]
+    ],
+    [
+      59,
+      [
+        "alias",
+        "space_sneak_on",
+        "sprint0;alias space_sneak_toggle space_sneak_off;alias space_move_hold sprint0;echo SPACE_SPRINT0"
+      ]
+    ],
+    [
+      61,
+      [
+        "alias",
+        "space_sneak_off",
+        "sprint1;alias space_sneak_toggle space_sneak_on;alias space_move_hold sprint1;echo SPACE_SPRINT1"
+      ]
+    ],
+    [
+      63,
+      [
+        "alias",
+        "space_sneak_toggle",
+        "space_sneak_on"
+      ]
+    ],
+    [
+      65,
+      [
+        "alias",
+        "space_sneak_reset",
+        "sprint1;alias space_sneak_toggle space_sneak_on;alias space_move_hold noop"
+      ]
+    ],
+    [
+      67,
+      [
+        "alias",
+        "space_move_hold",
+        "noop"
+      ]
+    ],
+    [
+      69,
+      [
+        "alias",
+        "space_sneak_press",
+        "alias drop_release noop;space_sneak_toggle"
+      ]
+    ],
+    [
+      71,
+      [
+        "alias",
+        "drop_dispatch",
+        "bomb_down"
+      ]
+    ],
+    [
+      73,
+      [
+        "alias",
+        "drop_release",
+        "noop"
+      ]
+    ],
+    [
+      75,
+      [
+        "alias",
+        "drop_press",
+        "drop_once"
+      ]
+    ],
+    [
+      77,
+      [
+        "alias",
+        "drop_once",
+        "alias drop_press noop;drop_dispatch"
+      ]
+    ],
+    [
+      79,
+      [
+        "alias",
+        "bomb_down",
+        "alias drop_release bomb_up;cl_autohelp 1;slot3;slot5;look1"
+      ]
+    ],
+    [
+      81,
+      [
+        "alias",
+        "bomb_up",
+        "cl_autohelp 0;look0;slot3;slot5;drop;best_weapon"
+      ]
+    ],
+    [
+      83,
+      [
+        "alias",
+        "fire_check_mouse",
+        "fire_check_enter"
+      ]
+    ],
+    [
+      85,
+      [
+        "alias",
+        "fire_check_enter",
+        "fire_end"
+      ]
+    ],
+    [
+      87,
+      [
+        "alias",
+        "fire_refresh",
+        "fire_check_mouse"
+      ]
+    ],
+    [
+      89,
+      [
+        "alias",
+        "fire_hold",
+        "+attack;alias refresh_crosshair crosshair_fire;atx1"
+      ]
+    ],
+    [
+      91,
+      [
+        "alias",
+        "fire_end",
+        "-attack;alias refresh_crosshair crosshair_idle;mycross;-h_color;sens1;sens_refresh"
+      ]
+    ],
+    [
+      93,
+      [
+        "alias",
+        "fire_cancel",
+        "alias fire_check_mouse fire_check_enter;alias fire_check_enter fire_end;fire_end"
+      ]
+    ],
+    [
+      95,
+      [
+        "alias",
+        "+enter_fire",
+        "alias fire_check_enter fire_hold;fire_refresh;shot_trace_down"
+      ]
+    ],
+    [
+      97,
+      [
+        "alias",
+        "-enter_fire",
+        "alias fire_check_enter fire_end;fire_refresh;shot_trace_up"
+      ]
+    ],
+    [
+      99,
+      [
+        "alias",
+        "mode_status",
+        "echo LEETED_MODES;alias look1;alias automatic_white;alias shot_selected;alias shot_render;alias space_sneak_toggle;selection_status"
+      ]
+    ],
+    [
+      102,
+      [
+        "log_flags",
+        "General",
+        "-donotecho"
+      ]
+    ],
+    [
+      104,
+      [
+        "alias",
+        "noop",
+        ""
+      ]
+    ],
+    [
+      106,
+      [
+        "alias",
+        "refresh_crosshair",
+        "crosshair_idle"
+      ]
+    ],
+    [
+      108,
+      [
+        "alias",
+        "crosshair_idle",
+        "mycross"
+      ]
+    ],
+    [
+      112,
+      [
+        "alias",
+        "crosshair_fire",
+        "shot_render"
+      ]
+    ],
+    [
+      114,
+      [
+        "alias",
+        "shape_dot",
+        "crosshair 1;cl_crosshairstyle 4;cl_crosshair_length 3;cl_crosshair_thickness 2;cl_crosshair_gap 2;cl_crosshaircolor_a 255;cl_crosshair_drawoutline 1;cl_crosshairdot 0;cl_crosshair_t 1;cl_crosshair_recoil 0;cl_crosshair_screen_height 960"
+      ]
+    ],
+    [
+      116,
+      [
+        "alias",
+        "shape_cross",
+        "crosshair 1;cl_crosshairstyle 4;cl_crosshair_length 2;cl_crosshair_thickness 2;cl_crosshair_gap 1;cl_crosshaircolor_a 255;cl_crosshair_drawoutline 0;cl_crosshairdot 0;cl_crosshair_t 1;cl_crosshair_recoil 0;cl_crosshair_screen_height 960"
+      ]
+    ],
+    [
+      118,
+      [
+        "alias",
+        "shape_hole",
+        "crosshair 1;cl_crosshairstyle 4;cl_crosshair_length 1;cl_crosshair_thickness 7;cl_crosshair_gap 4;cl_crosshaircolor_a 255;cl_crosshair_drawoutline 0;cl_crosshairdot 0;cl_crosshair_t 0;cl_crosshair_recoil 0;cl_crosshair_screen_height 960"
+      ]
+    ],
+    [
+      120,
+      [
+        "alias",
+        "shape_trill",
+        "crosshair 1;cl_crosshairstyle 4;cl_crosshair_length 1;cl_crosshair_thickness 1;cl_crosshair_gap 1;cl_crosshaircolor_a 255;cl_crosshair_drawoutline 1;cl_crosshairdot 0;cl_crosshair_t 0;cl_crosshair_recoil 0;cl_crosshair_screen_height 960"
+      ]
+    ],
+    [
+      123,
+      [
+        "alias",
+        "shape_t",
+        "crosshair 1;cl_crosshairstyle 4;cl_crosshair_length 255;cl_crosshair_thickness 1;cl_crosshair_gap 1;cl_crosshaircolor_a 137;cl_crosshair_drawoutline 1;cl_crosshairdot 0;cl_crosshair_t 1;cl_crosshair_recoil 0;cl_crosshair_screen_height 960"
+      ]
+    ],
+    [
+      128,
+      [
+        "alias",
+        "shot_profile_1",
+        "crosshair 1;cl_crosshairstyle 1;cl_crosshair_length 2;cl_crosshair_thickness 3;cl_crosshair_gap 2;cl_crosshaircolor_a 255;cl_crosshair_drawoutline 1;cl_crosshairdot 1"
+      ]
+    ],
+    [
+      130,
+      [
+        "alias",
+        "shot_profile_2",
+        "cl_crosshair_t 1;cl_crosshair_recoil 1;cl_crosshair_screen_height 1024;cl_crosshaircolor_r 255;cl_crosshaircolor_g 0;cl_crosshaircolor_b 0;cl_crosshair_dynamic_spread_limit 77"
+      ]
+    ],
+    [
+      132,
+      [
+        "alias",
+        "shot_profile_3",
+        "cl_crosshair_dynamic_splitdist 0;cl_crosshair_dynamic_splitalpha_innermod 0;cl_crosshair_dynamic_splitalpha_outermod 0.3;cl_crosshair_dynamic_maxdist_splitratio 0"
+      ]
+    ],
+    [
+      137,
+      [
+        "alias",
+        "shape_fire",
+        "shot_circle_part_1;shot_circle_part_2;shot_circle_part_3;shot_circle_part_4"
+      ]
+    ],
+    [
+      139,
+      [
+        "alias",
+        "rgb_white",
+        "cl_crosshaircolor_r 255;cl_crosshaircolor_g 255;cl_crosshaircolor_b 255"
+      ]
+    ],
+    [
+      141,
+      [
+        "alias",
+        "rgb_matrix",
+        "cl_crosshaircolor_r 250;cl_crosshaircolor_g 50;cl_crosshaircolor_b 129"
+      ]
+    ],
+    [
+      143,
+      [
+        "alias",
+        "rgb_pink",
+        "cl_crosshaircolor_r 255;cl_crosshaircolor_g 0;cl_crosshaircolor_b 255"
+      ]
+    ],
+    [
+      145,
+      [
+        "alias",
+        "rgb_weed",
+        "cl_crosshaircolor_r 155;cl_crosshaircolor_g 255;cl_crosshaircolor_b 0"
+      ]
+    ],
+    [
+      147,
+      [
+        "alias",
+        "rgb_red",
+        "cl_crosshaircolor_r 255;cl_crosshaircolor_g 0;cl_crosshaircolor_b 0"
+      ]
+    ],
+    [
+      149,
+      [
+        "alias",
+        "rgb_cyan",
+        "cl_crosshaircolor_r 0;cl_crosshaircolor_g 255;cl_crosshaircolor_b 255"
+      ]
+    ],
+    [
+      153,
+      [
+        "alias",
+        "restore_dot",
+        "shape_dot;color_restore;cl_crosshair_recoil 0;ch1"
+      ]
+    ],
+    [
+      155,
+      [
+        "alias",
+        "selected_dot",
+        "echo CROSS_SELECTED_DOT"
+      ]
+    ],
+    [
+      159,
+      [
+        "alias",
+        "restore_cross",
+        "shape_cross;color_restore;cl_crosshair_recoil 0;ch1"
+      ]
+    ],
+    [
+      161,
+      [
+        "alias",
+        "selected_cross",
+        "echo CROSS_SELECTED_CROSS"
+      ]
+    ],
+    [
+      165,
+      [
+        "alias",
+        "restore_hole",
+        "shape_hole;color_restore;cl_crosshair_recoil 0;ch1"
+      ]
+    ],
+    [
+      167,
+      [
+        "alias",
+        "selected_hole",
+        "echo CROSS_SELECTED_HOLE"
+      ]
+    ],
+    [
+      171,
+      [
+        "alias",
+        "restore_t",
+        "shape_t;color_restore;cl_crosshair_recoil 0;ch1"
+      ]
+    ],
+    [
+      173,
+      [
+        "alias",
+        "selected_t",
+        "echo CROSS_SELECTED_T"
+      ]
+    ],
+    [
+      177,
+      [
+        "alias",
+        "restore_trill",
+        "shape_trill;color_restore;cl_crosshair_recoil 0;ch1"
+      ]
+    ],
+    [
+      179,
+      [
+        "alias",
+        "selected_trill",
+        "echo CROSS_SELECTED_TRILL"
+      ]
+    ],
+    [
+      181,
+      [
+        "alias",
+        "selection_status",
+        "selected_dot"
+      ]
+    ],
+    [
+      183,
+      [
+        "alias",
+        "cross_pick_once",
+        "alias cross_pick_action noop;next_cross"
+      ]
+    ],
+    [
+      185,
+      [
+        "alias",
+        "cross_pick_action",
+        "cross_pick_once"
+      ]
+    ],
+    [
+      187,
+      [
+        "alias",
+        "+cross_pick",
+        "cross_pick_action"
+      ]
+    ],
+    [
+      189,
+      [
+        "alias",
+        "-cross_pick",
+        "alias cross_pick_action cross_pick_once"
+      ]
+    ],
+    [
+      191,
+      [
+        "alias",
+        "sens_normal",
+        "sensitivity 1.33"
+      ]
+    ],
+    [
+      193,
+      [
+        "alias",
+        "sens_held",
+        "sensitivity 1.87"
+      ]
+    ],
+    [
+      195,
+      [
+        "alias",
+        "sens_refresh",
+        "sens_check_space"
+      ]
+    ],
+    [
+      197,
+      [
+        "alias",
+        "sens_check_space",
+        "sens_check_quick"
+      ]
+    ],
+    [
+      199,
+      [
+        "alias",
+        "sens_check_quick",
+        "sens_check_qhand"
+      ]
+    ],
+    [
+      201,
+      [
+        "alias",
+        "sens_check_qhand",
+        "sens_check_quicky"
+      ]
+    ],
+    [
+      203,
+      [
+        "alias",
+        "sens_check_quicky",
+        "sens_normal"
+      ]
+    ],
+    [
+      205,
+      [
+        "alias",
+        "check_space",
+        "best_weapon"
+      ]
+    ],
+    [
+      207,
+      [
+        "alias",
+        "eng",
+        "eng1"
+      ]
+    ],
+    [
+      209,
+      [
+        "alias",
+        "hf",
+        "-hf"
+      ]
+    ],
+    [
+      211,
+      [
+        "alias",
+        "decoy",
+        "deco"
+      ]
+    ],
+    [
+      213,
+      [
+        "alias",
+        "taser",
+        "slot11"
+      ]
+    ],
+    [
+      215,
+      [
+        "alias",
+        "c4",
+        ">c4"
+      ]
+    ],
+    [
+      217,
+      [
+        "alias",
+        "shift1",
+        "bind SHIFT +speed"
+      ]
+    ],
+    [
+      219,
+      [
+        "alias",
+        "stdmode",
+        "grnz;Voice1"
+      ]
+    ],
+    [
+      221,
+      [
+        "alias",
+        "devCon",
+        "dev_on"
+      ]
+    ],
+    [
+      223,
+      [
+        "alias",
+        "macmode",
+        "mac0"
+      ]
+    ],
+    [
+      225,
+      [
+        "alias",
+        "gmrmode",
+        "gmrm_01"
+      ]
+    ],
+    [
+      227,
+      [
+        "alias",
+        "vol_normal",
+        "stdv;alias volmode_toggle vol_low"
+      ]
+    ],
+    [
+      229,
+      [
+        "alias",
+        "vol_low",
+        "volume 0.22;alias volmode_toggle vol_normal"
+      ]
+    ],
+    [
+      231,
+      [
+        "alias",
+        "volmode_toggle",
+        "vol_low"
+      ]
+    ],
+    [
+      233,
+      [
+        "alias",
+        "+smoke",
+        "smoke"
+      ]
+    ],
+    [
+      235,
+      [
+        "alias",
+        "-smoke",
+        "best_weapon"
+      ]
+    ],
+    [
+      237,
+      [
+        "alias",
+        "voip",
+        "Voice1"
+      ]
+    ],
+    [
+      239,
+      [
+        "alias",
+        "_noop",
+        "noop"
+      ]
+    ],
+    [
+      242,
+      [
+        "bind",
+        "space",
+        "+jumpp"
+      ]
+    ],
+    [
+      245,
+      [
+        "bind",
+        "b",
+        "+duckjump"
+      ]
+    ],
+    [
+      247,
+      [
+        "bind",
+        "CTRL",
+        "+sneak"
+      ]
+    ],
+    [
+      249,
+      [
+        "alias",
+        "+turn180",
+        "yaw 180;+radarzoom"
+      ]
+    ],
+    [
+      251,
+      [
+        "alias",
+        "-turn180",
+        "yaw 0;-radarzoom"
+      ]
+    ],
+    [
+      253,
+      [
+        "alias",
+        "ra1",
+        "bind r +turn180"
+      ]
+    ],
+    [
+      255,
+      [
+        "alias",
+        "ra2",
+        "bind r +radarzoom"
+      ]
+    ],
+    [
+      257,
+      [
+        "alias",
+        "crosscode",
+        "echo CSGO-zkNpk-sFnov-seH67-Ln69q-J6sKG;echo CSGO-HhKXK-GGcBN-FcPuc-Cfbux-Np74E"
+      ]
+    ],
+    [
+      259,
+      [
+        "alias",
+        "+force",
+        "fallback;say_team >>>SAFE WEAPON NOW<<<"
+      ]
+    ],
+    [
+      261,
+      [
+        "alias",
+        "-force",
+        "getout"
+      ]
+    ],
+    [
+      263,
+      [
+        "alias",
+        "eco",
+        "needrop;say_team >>>ECO/DROP<<<"
+      ]
+    ],
+    [
+      265,
+      [
+        "r_drawtracers_firstperson",
+        "true"
+      ]
+    ],
+    [
+      267,
+      [
+        "r_drawparticles",
+        "false"
+      ]
+    ],
+    [
+      269,
+      [
+        "snd_mixahead",
+        "0.05"
+      ]
+    ],
+    [
+      271,
+      [
+        "viewmodel_fov",
+        "68"
+      ]
+    ],
+    [
+      273,
+      [
+        "viewmodel_offset_x",
+        "-2.5"
+      ]
+    ],
+    [
+      275,
+      [
+        "viewmodel_offset_y",
+        "-2.5"
+      ]
+    ],
+    [
+      277,
+      [
+        "viewmodel_offset_z",
+        "-2"
+      ]
+    ],
+    [
+      279,
+      [
+        "viewmodel_presetpos",
+        "1"
+      ]
+    ],
+    [
+      281,
+      [
+        "speaker_config",
+        "2"
+      ]
+    ],
+    [
+      283,
+      [
+        "cl_hud_radar_blur_background",
+        "0"
+      ]
+    ],
+    [
+      285,
+      [
+        "cl_crosshair_t",
+        "true"
+      ]
+    ],
+    [
+      287,
+      [
+        "UNBIND",
+        "f1"
+      ]
+    ],
+    [
+      289,
+      [
+        "UNBIND",
+        "f2"
+      ]
+    ],
+    [
+      291,
+      [
+        "speaker_config",
+        "2"
+      ]
+    ],
+    [
+      294,
+      [
+        "bind",
+        "k",
+        "+cross_pick"
+      ]
+    ],
+    [
+      296,
+      [
+        "BIND",
+        "J",
+        "cr_x"
+      ]
+    ],
+    [
+      298,
+      [
+        "bind",
+        "r",
+        "+radarzoom"
+      ]
+    ],
+    [
+      300,
+      [
+        "zoom_sensitivity_ratio",
+        "0.8189833027098955"
+      ]
+    ],
+    [
+      302,
+      [
+        "weapon_accuracy_nospread",
+        "true"
+      ]
+    ],
+    [
+      304,
+      [
+        "weapon_accuracy_nospread",
+        "1"
+      ]
+    ],
+    [
+      306,
+      [
+        "alias",
+        "neo1",
+        "cl_crosshair_drawoutline true; cl_crosshair_dynamic_maxdist_splitratio 1; cl_crosshair_dynamic_splitalpha_innermod 1; cl_crosshair_dynamic_splitalpha_outermod 1; cl_crosshair_dynamic_splitdist 16; cl_crosshair_friendly_warning 1"
+      ]
+    ],
+    [
+      309,
+      [
+        "alias",
+        "neo2",
+        "cl_crosshair_sniper_width 1;cl_crosshair_t true;cl_crosshaircolor_a 175;cl_crosshaircolor_b 0;cl_crosshaircolor_g 255;cl_crosshaircolor_r 155"
+      ]
+    ],
+    [
+      312,
+      [
+        "alias",
+        "neo3",
+        "cl_crosshairdot false;cl_crosshair_gap 2;cl_crosshair_length 3;cl_crosshairstyle 4;cl_crosshair_thickness 2"
+      ]
+    ],
+    [
+      314,
+      [
+        "alias",
+        "neo",
+        "neo1; neo2; neo3"
+      ]
+    ],
+    [
+      316,
+      [
+        "cl_crosshair_t",
+        "true"
+      ]
+    ],
+    [
+      318,
+      [
+        "m_pitch",
+        "0.0165"
+      ]
+    ],
+    [
+      320,
+      [
+        "sensitivity_y_scale",
+        "1.33"
+      ]
+    ],
+    [
+      322,
+      [
+        "alias",
+        "he",
+        "<hand;slot6;look0"
+      ]
+    ],
+    [
+      324,
+      [
+        "alias",
+        "flash",
+        "<hand;slot7;look0"
+      ]
+    ],
+    [
+      326,
+      [
+        "alias",
+        "smoke",
+        "<hand;slot8;look0"
+      ]
+    ],
+    [
+      330,
+      [
+        "alias",
+        "molo",
+        "<hand;slot10;look1"
+      ]
+    ],
+    [
+      333,
+      [
+        "alias",
+        "deco",
+        "<hand;slot9;look1"
+      ]
+    ],
+    [
+      336,
+      [
+        "alias",
+        "+c4",
+        ">c4;slot8"
+      ]
+    ],
+    [
+      338,
+      [
+        "alias",
+        "-c4",
+        "ch1;w1;w2;look0"
+      ]
+    ],
+    [
+      341,
+      [
+        "alias",
+        "knife",
+        "<hand;slot3;look1"
+      ]
+    ],
+    [
+      343,
+      [
+        "alias",
+        "nova/sawedoff",
+        "buy nova; buy sawedoff; knife"
+      ]
+    ],
+    [
+      345,
+      [
+        "alias",
+        "m4/ak",
+        "buy m4a1; buy ak47; knife"
+      ]
+    ],
+    [
+      348,
+      [
+        "alias",
+        "aug/sg",
+        "buy aug;buy sg556;knife"
+      ]
+    ],
+    [
+      350,
+      [
+        "alias",
+        "galil/famas",
+        "buy galilar; buy famas; knife"
+      ]
+    ],
+    [
+      352,
+      [
+        "alias",
+        "g3/scar",
+        "buy g3sg1; buy scar20; knife"
+      ]
+    ],
+    [
+      354,
+      [
+        "alias",
+        "mac10/mp9",
+        "buy mac10; buy mp9; knife"
+      ]
+    ],
+    [
+      356,
+      [
+        "alias",
+        "awp",
+        "buy awp; knife"
+      ]
+    ],
+    [
+      358,
+      [
+        "alias",
+        "mp7",
+        "buy mp7; knife"
+      ]
+    ],
+    [
+      360,
+      [
+        "alias",
+        "ump45",
+        "buy ump45; knife"
+      ]
+    ],
+    [
+      362,
+      [
+        "alias",
+        "p90",
+        "buy p90; knife"
+      ]
+    ],
+    [
+      364,
+      [
+        "alias",
+        "+vest",
+        "buy vesthelm; buy vest; knife"
+      ]
+    ],
+    [
+      366,
+      [
+        "alias",
+        "grens",
+        "buy flashbang; buy smokegrenade;buy hegrenade; knife"
+      ]
+    ],
+    [
+      368,
+      [
+        "alias",
+        "ink/molo",
+        "buy molotov; buy incgrenade; knife"
+      ]
+    ],
+    [
+      370,
+      [
+        "alias",
+        "vesthelm/vest/grens",
+        "+vest; buy defuser; buy flashbang; buy hegrenade; buy smokegrenade; knife"
+      ]
+    ],
+    [
+      372,
+      [
+        "alias",
+        "spar",
+        "buy defuser; buy hegrenade; knife"
+      ]
+    ],
+    [
+      373,
+      [
+        "echo",
+        "◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤"
+      ]
+    ],
+    [
+      374,
+      [
+        "echo",
+        "╔═══════════════════════════════════════════════════════════╗"
+      ]
+    ],
+    [
+      375,
+      [
+        "echo",
+        "║                                                           ║"
+      ]
+    ],
+    [
+      378,
+      [
+        "echo",
+        "║        CS2 OPTIMIERTE KONFIGURATION - LEETED        ║"
+      ]
+    ],
+    [
+      379,
+      [
+        "echo",
+        "║                  VERSION: V1 v01.1_01                    ║"
+      ]
+    ],
+    [
+      380,
+      [
+        "echo",
+        "║                                                           ║"
+      ]
+    ],
+    [
+      381,
+      [
+        "echo",
+        "╚═══════════════════════════════════════════════════════════╝"
+      ]
+    ],
+    [
+      382,
+      [
+        "echo",
+        ""
+      ]
+    ],
+    [
+      383,
+      [
+        "echo",
+        "LAUNCHOPTION:-novid -dev -console -noforcemspd -noforcemparms -noforcemaccel -vulkan -full -high -nojoy -tickrate 128 +fps_max 999 -exec autoexec.cfg -freq 999 (Deine FPS hier eintragen \"-freq 145\")<<<"
+      ]
+    ],
+    [
+      384,
+      [
+        "echo",
+        "autoexec.cfg has been loaded | powered by. GAMEPLAYon1.de | GAMEPLAY | CS2 | SETUP | <<<<<<<"
+      ]
+    ],
+    [
+      385,
+      [
+        "echo",
+        "pfad#C:\\Program Files (x86)\\Steam\\steamapps\\common\\...\\cfg\\ #autoexec.cfg"
+      ]
+    ],
+    [
+      386,
+      [
+        "echo",
+        ""
+      ]
+    ],
+    [
+      388,
+      [
+        "bind",
+        "ALT",
+        "+[chain]"
+      ]
+    ],
+    [
+      389,
+      [
+        "echo",
+        "╔═════════════════════════════════════════════════════════╗"
+      ]
+    ],
+    [
+      390,
+      [
+        "echo",
+        "║                     ALIAS SECTION                       ║"
+      ]
+    ],
+    [
+      391,
+      [
+        "echo",
+        "╚═════════════════════════════════════════════════════════╝"
+      ]
+    ],
+    [
+      395,
+      [
+        "alias",
+        "<hand>",
+        "switchhands;look0"
+      ]
+    ],
+    [
+      399,
+      [
+        "alias",
+        "<hand",
+        "switchhandsleft;look0"
+      ]
+    ],
+    [
+      403,
+      [
+        "alias",
+        "hand>",
+        "switchhandsright;look0"
+      ]
+    ],
+    [
+      406,
+      [
+        "alias",
+        "+strafeleft",
+        "+left"
+      ]
+    ],
+    [
+      409,
+      [
+        "alias",
+        "-strafeleft",
+        "-left"
+      ]
+    ],
+    [
+      412,
+      [
+        "alias",
+        "+straferight",
+        "+right"
+      ]
+    ],
+    [
+      415,
+      [
+        "alias",
+        "-straferight",
+        "-right"
+      ]
+    ],
+    [
+      417,
+      [
+        "alias",
+        "useoff",
+        "-use;-use;-use;-use;-use"
+      ]
+    ],
+    [
+      419,
+      [
+        "alias",
+        "useon",
+        "+use;+use;+use;+use;+use"
+      ]
+    ],
+    [
+      421,
+      [
+        "alias",
+        ">c4",
+        "<hand;look1;slot5"
+      ]
+    ],
+    [
+      425,
+      [
+        "alias",
+        "rdygo",
+        "fire_cancel;he;molo;smoke;slot3;knife;look0"
+      ]
+    ],
+    [
+      427,
+      [
+        "alias",
+        "w0",
+        "<hand;slot3;knife"
+      ]
+    ],
+    [
+      429,
+      [
+        "alias",
+        "w1",
+        "rdygo;hand>;slot2"
+      ]
+    ],
+    [
+      431,
+      [
+        "alias",
+        "w2",
+        "rdygo;hand>;slot1"
+      ]
+    ],
+    [
+      435,
+      [
+        "alias",
+        "look1",
+        "noop"
+      ]
+    ],
+    [
+      438,
+      [
+        "alias",
+        "look0",
+        "-lookatweapon"
+      ]
+    ],
+    [
+      440,
+      [
+        "alias",
+        "sens1",
+        "sensitivity 1.33;zoom_sensitivity_ratio 0.8189833027098955"
+      ]
+    ],
+    [
+      442,
+      [
+        "alias",
+        "sens2",
+        "sensitivity 1.87;zoom_sensitivity_ratio 0.8189833027098955"
+      ]
+    ],
+    [
+      444,
+      [
+        "alias",
+        "sensx",
+        "sensitivity 1.87;zoom_sensitivity_ratio 1.87"
+      ]
+    ],
+    [
+      449,
+      [
+        "alias",
+        "sens0",
+        "sens1"
+      ]
+    ],
+    [
+      451,
+      [
+        "alias",
+        "stdv",
+        "volume 0.33"
+      ]
+    ],
+    [
+      453,
+      [
+        "alias",
+        "1voicevol",
+        "volume 0.22;snd_voipvolume 0.3"
+      ]
+    ],
+    [
+      455,
+      [
+        "alias",
+        "0voicevol",
+        "stdv;snd_voipvolume 0.5"
+      ]
+    ],
+    [
+      457,
+      [
+        "alias",
+        "xmute",
+        "stdv;snd_voipvolume 0.0"
+      ]
+    ],
+    [
+      459,
+      [
+        "alias",
+        "voice",
+        "bind v +voicerecord;stdv;snd_voipvolume 0.1"
+      ]
+    ],
+    [
+      461,
+      [
+        "alias",
+        "<vol",
+        "+h_color;1voicevol"
+      ]
+    ],
+    [
+      463,
+      [
+        "alias",
+        "vol>",
+        "-h_color;0voicevol"
+      ]
+    ],
+    [
+      465,
+      [
+        "alias",
+        "+sneak",
+        "<vol;+duck"
+      ]
+    ],
+    [
+      467,
+      [
+        "alias",
+        "-sneak",
+        "vol>;-duck"
+      ]
+    ],
+    [
+      469,
+      [
+        "alias",
+        "buyend",
+        "slot3;clear;knife;decoy"
+      ]
+    ],
+    [
+      471,
+      [
+        "alias",
+        "modemode_std",
+        "bind CTRL +sneak;bind SHIFT +sprint;bind CapsLock sprint_mode"
+      ]
+    ],
+    [
+      473,
+      [
+        "alias",
+        "sneak_end",
+        "bind CTRL movemode_run;bind SHIFT movemode_run;bind CapsLock movemode_run"
+      ]
+    ],
+    [
+      475,
+      [
+        "alias",
+        "movemode_sneak",
+        "sneak_end;sprint1"
+      ]
+    ],
+    [
+      477,
+      [
+        "alias",
+        "movemode_run",
+        "modemode_std;shift1;sprint0"
+      ]
+    ],
+    [
+      479,
+      [
+        "alias",
+        "sprint_mode",
+        "movemode_sneak"
+      ]
+    ],
+    [
+      481,
+      [
+        "alias",
+        "sprint1",
+        "<vol;+sprint"
+      ]
+    ],
+    [
+      483,
+      [
+        "alias",
+        "sprint0",
+        "vol>;-sprint"
+      ]
+    ],
+    [
+      487,
+      [
+        "alias",
+        "+speed",
+        "<vol;+sprint;space_move_hold"
+      ]
+    ],
+    [
+      491,
+      [
+        "alias",
+        "-speed",
+        "vol>;-sprint;space_move_hold"
+      ]
+    ],
+    [
+      493,
+      [
+        "alias",
+        "switchvoice",
+        "bind v cl_clutch_mode TRUE"
+      ]
+    ],
+    [
+      495,
+      [
+        "alias",
+        "ingamemsg",
+        "bind F9 repbot ;bind F10 bla;bind F11 ts;bind F12 eng"
+      ]
+    ],
+    [
+      497,
+      [
+        "alias",
+        "inmageswitch",
+        "bind F1 hudcol ;bind F2 gmrview"
+      ]
+    ],
+    [
+      499,
+      [
+        "alias",
+        "face1",
+        "bind F5 +f_stay;bind F6 +f_switch;bind F7 f_gg;bind F8 f_report"
+      ]
+    ],
+    [
+      501,
+      [
+        "alias",
+        "gretz",
+        "bind F3 +hf;bind F4 +gg"
+      ]
+    ],
+    [
+      503,
+      [
+        "alias",
+        "grnz",
+        "bind z smoke;bind x molo;bind c he;bind f xgrnz"
+      ]
+    ],
+    [
+      505,
+      [
+        "alias",
+        "xgrnz",
+        "smoke;molo;he;flash"
+      ]
+    ],
+    [
+      507,
+      [
+        "grnz"
+      ]
+    ],
+    [
+      509,
+      [
+        "bind",
+        "o",
+        "snowball"
+      ]
+    ],
+    [
+      511,
+      [
+        "alias",
+        "+togglevol",
+        "toggleconsole; volmode_toggle"
+      ]
+    ],
+    [
+      513,
+      [
+        "alias",
+        "-togglevol",
+        "toggleconsole"
+      ]
+    ],
+    [
+      515,
+      [
+        "bind",
+        "t",
+        "+togglevol"
+      ]
+    ],
+    [
+      517,
+      [
+        "alias",
+        "hudcol",
+        "toggle cl_hud_color 0 1 2 3 4 5 6 7"
+      ]
+    ],
+    [
+      519,
+      [
+        "alias",
+        "+h_color",
+        "cl_hud_color 6"
+      ]
+    ],
+    [
+      521,
+      [
+        "alias",
+        "-h_color",
+        "cl_hud_color 0"
+      ]
+    ],
+    [
+      523,
+      [
+        "alias",
+        "h_c-ONE",
+        "cl_hud_color 1"
+      ]
+    ],
+    [
+      526,
+      [
+        "alias",
+        "+lowrate",
+        "clear;showconsole"
+      ]
+    ],
+    [
+      529,
+      [
+        "alias",
+        "-lowrate",
+        "rate 98304;hideconsole;echo low_on1"
+      ]
+    ],
+    [
+      532,
+      [
+        "alias",
+        "+lanrate",
+        "clear;showconsole"
+      ]
+    ],
+    [
+      535,
+      [
+        "alias",
+        "-lanrate",
+        "rate 1000000;hideconsole;echo lan_on1"
+      ]
+    ],
+    [
+      538,
+      [
+        "alias",
+        "+rate128",
+        "showconsole"
+      ]
+    ],
+    [
+      541,
+      [
+        "alias",
+        "-rate128",
+        "rate 786432;hideconsole;echo 128_on1"
+      ]
+    ],
+    [
+      544,
+      [
+        "alias",
+        "+rate64",
+        "clear;showconsole"
+      ]
+    ],
+    [
+      547,
+      [
+        "alias",
+        "-rate64",
+        "rate 386432;hideconsole;echo 64_on1"
+      ]
+    ],
+    [
+      549,
+      [
+        "alias",
+        "nethub",
+        "bind F10 +rate64 ;bind F11 +rate128;bind F12 +lanrate;bind F9 +lowrate"
+      ]
+    ],
+    [
+      551,
+      [
+        "alias",
+        "by",
+        "say powered by. #LIKEDBIG"
+      ]
+    ],
+    [
+      553,
+      [
+        "alias",
+        "ts",
+        "say_team TS3/Discord:#"
+      ]
+    ],
+    [
+      555,
+      [
+        "alias",
+        "bla",
+        "say FLAMEBOX >>>>>>>|\\\\____//|<<<<<<< FLAMEBOX"
+      ]
+    ],
+    [
+      557,
+      [
+        "alias",
+        "repbot",
+        "say bye bye BITCH - REPORTBOT IS RUNNING!"
+      ]
+    ],
+    [
+      559,
+      [
+        "alias",
+        "eng1",
+        "say_team ENGLISH PLEASE"
+      ]
+    ],
+    [
+      561,
+      [
+        "alias",
+        "+ez",
+        "say_team ♡"
+      ]
+    ],
+    [
+      563,
+      [
+        "alias",
+        "-ez",
+        ""
+      ]
+    ],
+    [
+      565,
+      [
+        "alias",
+        "gj",
+        "say_team GooD J0B"
+      ]
+    ],
+    [
+      567,
+      [
+        "alias",
+        "nt",
+        "say_team Nice Try"
+      ]
+    ],
+    [
+      569,
+      [
+        "alias",
+        "sry",
+        "say_team SORRY!"
+      ]
+    ],
+    [
+      571,
+      [
+        "alias",
+        "go_PLAY",
+        "say_team {GO}PLAY{TOGATHER}!"
+      ]
+    ],
+    [
+      576,
+      [
+        "alias",
+        "thx",
+        "say_team THANKS!"
+      ]
+    ],
+    [
+      578,
+      [
+        "alias",
+        "+hf",
+        ";say [H]ave [F]un _&_ [F]air [P]lay"
+      ]
+    ],
+    [
+      580,
+      [
+        "alias",
+        "-hf",
+        "say_team [H]an[F] & [G]ood [L]uck "
+      ]
+    ],
+    [
+      582,
+      [
+        "alias",
+        "+gg",
+        "showconsole;say_team [G]ood [G]ame;"
+      ]
+    ],
+    [
+      584,
+      [
+        "alias",
+        "-gg",
+        "say [G]ood [G]ame;stop"
+      ]
+    ],
+    [
+      586,
+      [
+        "alias",
+        "mnormal",
+        "unbind mwheeldown; look0; <vol; -h_color;-reload"
+      ]
+    ],
+    [
+      588,
+      [
+        "alias",
+        "mjump",
+        " vol>; +h_color; bind mwheeldown +jump"
+      ]
+    ],
+    [
+      594,
+      [
+        "alias",
+        "+jumpp",
+        "mjump;sens0;+buy;space_press_state;select_held;sens_refresh"
+      ]
+    ],
+    [
+      600,
+      [
+        "alias",
+        "-jumpp",
+        "mnormal;sensx;-buy;space_release_state;best_weapon;proview;sens_refresh"
+      ]
+    ],
+    [
+      602,
+      [
+        "alias",
+        "+duckjump",
+        "+duck; +jump"
+      ]
+    ],
+    [
+      604,
+      [
+        "alias",
+        "-duckjump",
+        "-jump; -duck"
+      ]
+    ],
+    [
+      606,
+      [
+        "bind",
+        "space",
+        "+jumpp"
+      ]
+    ],
+    [
+      609,
+      [
+        "bind",
+        "b",
+        "+duckjump"
+      ]
+    ],
+    [
+      611,
+      [
+        "unbind",
+        "mwheeldown"
+      ]
+    ],
+    [
+      613,
+      [
+        "sprint1"
+      ]
+    ],
+    [
+      615,
+      [
+        "alias",
+        "vst",
+        "buy vesthelm;buy vest"
+      ]
+    ],
+    [
+      617,
+      [
+        "alias",
+        "buyanddrop",
+        "buy ak47; buy m4a1_silencer; slot1; drop"
+      ]
+    ],
+    [
+      619,
+      [
+        "alias",
+        "dropump",
+        "knife; ump45; slot1; drop"
+      ]
+    ],
+    [
+      622,
+      [
+        "alias",
+        "dropflash",
+        "knife;buy flashbang;slot7;drop;decoy"
+      ]
+    ],
+    [
+      624,
+      [
+        "alias",
+        "dropp250",
+        "knife; buy p250; slot2; drop;decoy"
+      ]
+    ],
+    [
+      626,
+      [
+        "alias",
+        "faceit1",
+        "cl_hide_avatar_images 0;cl_sanitize_player_names 0;cl_teamcounter_playercount_instead_of_avatars 0;echo FACEIT Modus 1"
+      ]
+    ],
+    [
+      628,
+      [
+        "alias",
+        "faceit0",
+        "cl_hide_avatar_images 2;cl_sanitize_player_names 1;cl_teamcounter_playercount_instead_of_avatars 1;echo FACEIT Modus 0"
+      ]
+    ],
+    [
+      630,
+      [
+        "alias",
+        "+f_stay",
+        "say !stay;faceit1"
+      ]
+    ],
+    [
+      632,
+      [
+        "alias",
+        "+f_switch",
+        "say !switch;faceit1"
+      ]
+    ],
+    [
+      634,
+      [
+        "alias",
+        "-f_stay",
+        "hf"
+      ]
+    ],
+    [
+      636,
+      [
+        "alias",
+        "-f_switch",
+        "hf"
+      ]
+    ],
+    [
+      638,
+      [
+        "alias",
+        "f_gg",
+        "say !gg"
+      ]
+    ],
+    [
+      640,
+      [
+        "alias",
+        "f_report",
+        "say !report"
+      ]
+    ],
+    [
+      642,
+      [
+        "alias",
+        "_fst",
+        "bind F5 +f_stay"
+      ]
+    ],
+    [
+      644,
+      [
+        "alias",
+        "_fsw",
+        "bind F6 +f_switch"
+      ]
+    ],
+    [
+      646,
+      [
+        "alias",
+        "_fg",
+        "bind F7 f_gg"
+      ]
+    ],
+    [
+      648,
+      [
+        "alias",
+        "_fr",
+        "bind F8 f_report"
+      ]
+    ],
+    [
+      650,
+      [
+        "alias",
+        "fait",
+        "_fst;_fsw;_fg;_fr"
+      ]
+    ],
+    [
+      652,
+      [
+        "alias",
+        "faceit",
+        "faceit1;fait"
+      ]
+    ],
+    [
+      654,
+      [
+        "alias",
+        "gmrm_01",
+        "faceit1; alias gmrmode gmrm_02"
+      ]
+    ],
+    [
+      656,
+      [
+        "alias",
+        "gmrm_02",
+        "faceit0; alias gmrmode gmrm_01"
+      ]
+    ],
+    [
+      659,
+      [
+        "alias",
+        "facemode",
+        "gmrmode"
+      ]
+    ],
+    [
+      661,
+      [
+        "alias",
+        "fps1",
+        "cl_showfps 1"
+      ]
+    ],
+    [
+      663,
+      [
+        "alias",
+        "fps0",
+        "cl_showfps 0"
+      ]
+    ],
+    [
+      665,
+      [
+        "alias",
+        "maxfps",
+        "fps_max 999"
+      ]
+    ],
+    [
+      668,
+      [
+        "alias",
+        "myfps",
+        "fps_max 999"
+      ]
+    ],
+    [
+      671,
+      [
+        "alias",
+        "+gmrquit",
+        "clear;showconsole;stop;status"
+      ]
+    ],
+    [
+      673,
+      [
+        "alias",
+        "-gmrquit",
+        "quit"
+      ]
+    ],
+    [
+      676,
+      [
+        "alias",
+        "+gmrdisc",
+        "clear;showconsole;stop;status"
+      ]
+    ],
+    [
+      678,
+      [
+        "alias",
+        "-gmrdisc",
+        "disconnect"
+      ]
+    ],
+    [
+      681,
+      [
+        "alias",
+        "fix",
+        "clear;exec autoexec.cfg"
+      ]
+    ],
+    [
+      683,
+      [
+        "alias",
+        "+FIXED",
+        "clear;dev1;showconsole"
+      ]
+    ],
+    [
+      685,
+      [
+        "alias",
+        "-FIXED",
+        "fix"
+      ]
+    ],
+    [
+      687,
+      [
+        "alias",
+        "dev0",
+        "developer 0;echo dev>0"
+      ]
+    ],
+    [
+      689,
+      [
+        "alias",
+        "dev1",
+        "developer 1;echo dev>1"
+      ]
+    ],
+    [
+      691,
+      [
+        "alias",
+        "dev_on",
+        "dev1; alias devCon dev_off"
+      ]
+    ],
+    [
+      693,
+      [
+        "alias",
+        "dev_off",
+        "dev0; alias devCon dev_on"
+      ]
+    ],
+    [
+      695,
+      [
+        "alias",
+        "devmode",
+        "devCon"
+      ]
+    ],
+    [
+      697,
+      [
+        "alias",
+        "+codewall",
+        "clear;showconsole"
+      ]
+    ],
+    [
+      700,
+      [
+        "alias",
+        "-codewall",
+        "hideconsole"
+      ]
+    ],
+    [
+      702,
+      [
+        "alias",
+        "+force",
+        "fallback;say_team >>>SAFE WEAPON NOW<<<"
+      ]
+    ],
+    [
+      704,
+      [
+        "alias",
+        "-force",
+        "getout"
+      ]
+    ],
+    [
+      706,
+      [
+        "alias",
+        "eco",
+        "needrop;say_team >>>ECO/DROP<<<"
+      ]
+    ],
+    [
+      708,
+      [
+        "alias",
+        "view_01",
+        "trillview; alias gmrview view_02"
+      ]
+    ],
+    [
+      710,
+      [
+        "alias",
+        "view_02",
+        "proview; alias gmrview view_01"
+      ]
+    ],
+    [
+      713,
+      [
+        "alias",
+        "proview",
+        "viewmodel_presetpos 0;viewmodel_offset_x 2.5;viewmodel_offset_y -2;viewmodel_offset_z -2;viewmodel_fov 54"
+      ]
+    ],
+    [
+      716,
+      [
+        "alias",
+        "trillview",
+        "viewmodel_presetpos 0;viewmodel_offset_z -1.5;viewmodel_offset_x 2.5;viewmodel_offset_y 1.5;viewmodel_fov 65"
+      ]
+    ],
+    [
+      718,
+      [
+        "alias",
+        "gmrview",
+        "view_01"
+      ]
+    ],
+    [
+      722,
+      [
+        "alias",
+        "+dropbomb",
+        "drop_press"
+      ]
+    ],
+    [
+      726,
+      [
+        "alias",
+        "-dropbomb",
+        "drop_release;alias drop_release noop;alias drop_press drop_once"
+      ]
+    ],
+    [
+      728,
+      [
+        "alias",
+        "+scorenet",
+        "+showscores; fps1; fps_max 999 "
+      ]
+    ],
+    [
+      730,
+      [
+        "alias",
+        "-scorenet",
+        "-showscores; fps0; myfps"
+      ]
+    ],
+    [
+      732,
+      [
+        "alias",
+        "showhud_on",
+        "cl_teamcounter_playercount_instead_of_avatars 0;cl_show_equipped_character_for_player_avatars 0"
+      ]
+    ],
+    [
+      734,
+      [
+        "alias",
+        "showhud_off",
+        "cl_teamcounter_playercount_instead_of_avatars 1;cl_show_equipped_character_for_player_avatars 1"
+      ]
+    ],
+    [
+      736,
+      [
+        "alias",
+        "showbomb_on",
+        "gameinstructor_enable true"
+      ]
+    ],
+    [
+      738,
+      [
+        "alias",
+        "showbomb_off",
+        "gameinstructor_enable false"
+      ]
+    ],
+    [
+      740,
+      [
+        "alias",
+        "radarzoom_off",
+        "cl_radar_scale 0.42;cl_radar_always_centered 0;cl_radar_rotate 1;cl_hud_radar_scale 1.15"
+      ]
+    ],
+    [
+      742,
+      [
+        "alias",
+        "radarzoom_on",
+        "cl_radar_scale 1.3;cl_radar_always_centered 1;cl_radar_rotate 1;cl_hud_radar_scale 1.5"
+      ]
+    ],
+    [
+      744,
+      [
+        "alias",
+        "+radarzoom",
+        "cl_autohelp true;1voicevol;showbomb_on;showhud_on;radarzoom_on"
+      ]
+    ],
+    [
+      746,
+      [
+        "alias",
+        "-radarzoom",
+        "cl_autohelp false;0voicevol;showbomb_off;showhud_off;radarzoom_off"
+      ]
+    ],
+    [
+      748,
+      [
+        "cl_hud_radar_scale",
+        "1.15"
+      ]
+    ],
+    [
+      750,
+      [
+        "cl_radar_scale",
+        "0.42"
+      ]
+    ],
+    [
+      752,
+      [
+        "cl_radar_always_centered",
+        "0"
+      ]
+    ],
+    [
+      754,
+      [
+        "cl_radar_rotate",
+        "1"
+      ]
+    ],
+    [
+      756,
+      [
+        "cl_radar_icon_scale_min",
+        "0.7"
+      ]
+    ],
+    [
+      758,
+      [
+        "cl_radar_square_with_scoreboard",
+        "1"
+      ]
+    ],
+    [
+      760,
+      [
+        "cl_radar_scale",
+        "0.42"
+      ]
+    ],
+    [
+      762,
+      [
+        "cl_radar_always_centered",
+        "0"
+      ]
+    ],
+    [
+      764,
+      [
+        "cl_radar_rotate",
+        "1"
+      ]
+    ],
+    [
+      766,
+      [
+        "cl_radar_icon_scale_min",
+        "0.7"
+      ]
+    ],
+    [
+      768,
+      [
+        "cl_radar_square_with_scoreboard",
+        "1"
+      ]
+    ],
+    [
+      772,
+      [
+        "alias",
+        "look1",
+        "noop"
+      ]
+    ],
+    [
+      775,
+      [
+        "alias",
+        "look0",
+        "-lookatweapon"
+      ]
+    ],
+    [
+      781,
+      [
+        "alias",
+        "+quick",
+        "<hand;knife;taser;sensx;look1;cl_autohelp 1;alias sens_check_quick sens_held;sens_refresh;refresh_crosshair"
+      ]
+    ],
+    [
+      787,
+      [
+        "alias",
+        "-quick",
+        "sens0;cl_autohelp 0;alias sens_check_quick sens_check_qhand;best_weapon;sens_refresh"
+      ]
+    ],
+    [
+      793,
+      [
+        "alias",
+        "+qhand",
+        "sensx;knife;alias sens_check_qhand sens_held;sens_refresh;refresh_crosshair"
+      ]
+    ],
+    [
+      799,
+      [
+        "alias",
+        "-qhand",
+        "sens0;alias sens_check_qhand sens_check_quicky;best_weapon;sens_refresh"
+      ]
+    ],
+    [
+      805,
+      [
+        "alias",
+        "+quicky",
+        "sensx;<hand;knife;c4;look1;alias sens_check_quicky sens_held;sens_refresh;refresh_crosshair"
+      ]
+    ],
+    [
+      811,
+      [
+        "alias",
+        "-quicky",
+        "sens0;alias sens_check_quicky sens_normal;best_weapon;sens_refresh"
+      ]
+    ],
+    [
+      813,
+      [
+        "bind",
+        "q",
+        "+quick"
+      ]
+    ],
+    [
+      815,
+      [
+        "r_fullscreen_gamma",
+        "3.007"
+      ]
+    ],
+    [
+      817,
+      [
+        "r_drawparticles",
+        "1"
+      ]
+    ],
+    [
+      819,
+      [
+        "alias",
+        "mac_1",
+        "r_fullscreen_gamma 3.23"
+      ]
+    ],
+    [
+      821,
+      [
+        "alias",
+        "mac_0",
+        "r_fullscreen_gamma 2.32"
+      ]
+    ],
+    [
+      823,
+      [
+        "alias",
+        "mac0",
+        "mac_0; alias macmode mac1"
+      ]
+    ],
+    [
+      825,
+      [
+        "alias",
+        "mac1",
+        "mac_1; alias macmode mac0"
+      ]
+    ],
+    [
+      827,
+      [
+        "alias",
+        "reco",
+        "reco0"
+      ]
+    ],
+    [
+      829,
+      [
+        "alias",
+        "reco0",
+        "cl_crosshair_recoil false; alias reco reco1"
+      ]
+    ],
+    [
+      833,
+      [
+        "alias",
+        "reco1",
+        "refresh_crosshair;alias reco reco0"
+      ]
+    ],
+    [
+      837,
+      [
+        "alias",
+        "movecross",
+        "automatic_white;refresh_crosshair"
+      ]
+    ],
+    [
+      839,
+      [
+        "alias",
+        "+holdzoom",
+        "+zoom"
+      ]
+    ],
+    [
+      841,
+      [
+        "alias",
+        "-holdzoom",
+        "-zoom"
+      ]
+    ],
+    [
+      843,
+      [
+        "bind",
+        "MOUSE2",
+        "+holdzoom"
+      ]
+    ],
+    [
+      845,
+      [
+        "alias",
+        "ch0",
+        "crosshair 0"
+      ]
+    ],
+    [
+      847,
+      [
+        "alias",
+        "ch1",
+        "crosshair 1"
+      ]
+    ],
+    [
+      849,
+      [
+        "fov_cs_debug",
+        "90"
+      ]
+    ],
+    [
+      853,
+      [
+        "alias",
+        "trill",
+        "alias mycross restore_trill;alias gmrcrossnow shape_trill;alias selection_status selected_trill;refresh_crosshair"
+      ]
+    ],
+    [
+      859,
+      [
+        "alias",
+        "croattx",
+        "shot_render"
+      ]
+    ],
+    [
+      864,
+      [
+        "alias",
+        "mycross",
+        "restore_dot"
+      ]
+    ],
+    [
+      869,
+      [
+        "alias",
+        "atx1",
+        "croattx;+h_color;sens_refresh"
+      ]
+    ],
+    [
+      874,
+      [
+        "alias",
+        "atx0",
+        "mycross;-h_color;sens1;sens_refresh"
+      ]
+    ],
+    [
+      877,
+      [
+        "alias",
+        "crosscross_a",
+        "shape_cross"
+      ]
+    ],
+    [
+      880,
+      [
+        "alias",
+        "crosscross_b",
+        "cl_crosshair_dynamic_splitdist 7;cl_crosshair_dynamic_splitalpha_innermod 1;cl_crosshair_dynamic_splitalpha_outermod 0.5;cl_crosshair_dynamic_maxdist_splitratio 0.3"
+      ]
+    ],
+    [
+      884,
+      [
+        "alias",
+        "crosscross",
+        "alias mycross restore_cross;alias gmrcrossnow shape_cross;alias selection_status selected_cross;refresh_crosshair"
+      ]
+    ],
+    [
+      888,
+      [
+        "alias",
+        "crosshole",
+        "alias mycross restore_hole;alias gmrcrossnow shape_hole;alias selection_status selected_hole;refresh_crosshair"
+      ]
+    ],
+    [
+      891,
+      [
+        "alias",
+        "crossdot_a",
+        "shape_dot"
+      ]
+    ],
+    [
+      894,
+      [
+        "alias",
+        "crossdot_b",
+        "cl_crosshair_dynamic_splitdist 16;cl_crosshair_dynamic_splitalpha_innermod 1;cl_crosshair_dynamic_splitalpha_outermod 1;cl_crosshair_dynamic_maxdist_splitratio 1"
+      ]
+    ],
+    [
+      898,
+      [
+        "alias",
+        "crossdot",
+        "alias mycross restore_dot;alias gmrcrossnow shape_dot;alias selection_status selected_dot;refresh_crosshair"
+      ]
+    ],
+    [
+      902,
+      [
+        "alias",
+        "crosst",
+        "alias mycross restore_t;alias gmrcrossnow shape_t;alias selection_status selected_t;refresh_crosshair"
+      ]
+    ],
+    [
+      904,
+      [
+        "alias",
+        "cross1",
+        "crosshole;alias next_cross cross2"
+      ]
+    ],
+    [
+      906,
+      [
+        "alias",
+        "cross2",
+        "crossdot;alias next_cross cross3"
+      ]
+    ],
+    [
+      908,
+      [
+        "alias",
+        "cross3",
+        "crosscross;alias next_cross cross4"
+      ]
+    ],
+    [
+      910,
+      [
+        "alias",
+        "cross4",
+        "crosst;alias next_cross cross1"
+      ]
+    ],
+    [
+      912,
+      [
+        "alias",
+        "next_cross",
+        "cross1"
+      ]
+    ],
+    [
+      917,
+      [
+        "alias",
+        "c_hell",
+        "alias selected_color rgb_white;alias croco rgb_white;refresh_crosshair"
+      ]
+    ],
+    [
+      922,
+      [
+        "alias",
+        "c_matrix",
+        "alias selected_color rgb_matrix;alias croco rgb_matrix;refresh_crosshair"
+      ]
+    ],
+    [
+      927,
+      [
+        "alias",
+        "c_npink",
+        "alias selected_color rgb_pink;alias croco rgb_pink;refresh_crosshair"
+      ]
+    ],
+    [
+      932,
+      [
+        "alias",
+        "c_nweed",
+        "alias selected_color rgb_weed;alias croco rgb_weed;refresh_crosshair"
+      ]
+    ],
+    [
+      937,
+      [
+        "alias",
+        "c_nred",
+        "alias selected_color rgb_red;alias croco rgb_red;refresh_crosshair"
+      ]
+    ],
+    [
+      942,
+      [
+        "alias",
+        "c_ntkys",
+        "alias selected_color rgb_cyan;alias croco rgb_cyan;refresh_crosshair"
+      ]
+    ],
+    [
+      945,
+      [
+        "alias",
+        "crn1",
+        "c_hell;alias cr_x crn2;echo Farbe: Weiss"
+      ]
+    ],
+    [
+      948,
+      [
+        "alias",
+        "crn2",
+        "c_ntkys;alias cr_x crn3;echo Farbe: Cyan"
+      ]
+    ],
+    [
+      951,
+      [
+        "alias",
+        "crn3",
+        "c_npink;alias cr_x crn4;echo Farbe: Pink"
+      ]
+    ],
+    [
+      954,
+      [
+        "alias",
+        "crn4",
+        "c_nweed;alias cr_x crn5;echo Farbe: Weed"
+      ]
+    ],
+    [
+      957,
+      [
+        "alias",
+        "crn5",
+        "c_nred;alias cr_x crn6;echo Farbe: Rot"
+      ]
+    ],
+    [
+      960,
+      [
+        "alias",
+        "crn6",
+        "c_matrix;alias cr_x crn1;echo Farbe: Matrix"
+      ]
+    ],
+    [
+      962,
+      [
+        "alias",
+        "cr_x",
+        "crn1"
+      ]
+    ],
+    [
+      965,
+      [
+        "alias",
+        "gmrcrossnow",
+        "shape_dot"
+      ]
+    ],
+    [
+      968,
+      [
+        "alias",
+        "croco",
+        "rgb_red"
+      ]
+    ],
+    [
+      973,
+      [
+        "alias",
+        "mycross",
+        "restore_dot"
+      ]
+    ],
+    [
+      975,
+      [
+        "mycross"
+      ]
+    ],
+    [
+      978,
+      [
+        "alias",
+        "atxc",
+        "rgb_red"
+      ]
+    ],
+    [
+      979,
+      [
+        "echo",
+        "CSGO-zkNpk-sFnov-seH67-Ln69q-J6sKG"
+      ]
+    ],
+    [
+      981,
+      [
+        "alias",
+        "freehud",
+        "sv_cheats true;mp_drop_knife_enable true"
+      ]
+    ],
+    [
+      983,
+      [
+        "alias",
+        "flash",
+        "<hand;slot7;look1"
+      ]
+    ],
+    [
+      985,
+      [
+        "alias",
+        "he",
+        "<hand;slot6;look1"
+      ]
+    ],
+    [
+      987,
+      [
+        "alias",
+        "smoke",
+        "<hand;slot8;look1"
+      ]
+    ],
+    [
+      989,
+      [
+        "alias",
+        "snowball",
+        "give weapon_snowball"
+      ]
+    ],
+    [
+      991,
+      [
+        "alias",
+        "tag",
+        "give weapon_flashbang"
+      ]
+    ],
+    [
+      994,
+      [
+        "alias",
+        "knife",
+        "<hand;slot3;look1"
+      ]
+    ],
+    [
+      998,
+      [
+        "BIND",
+        "N",
+        "+smoke"
+      ]
+    ],
+    [
+      1000,
+      [
+        "alias",
+        "+[funkbar]",
+        "[1]funkbind;1voicevol;face1;switchvoice"
+      ]
+    ],
+    [
+      1002,
+      [
+        "alias",
+        "-[funkbar]",
+        "[0]funkbind;nethub;voip;0voicevol"
+      ]
+    ],
+    [
+      1004,
+      [
+        "alias",
+        "+fuk_",
+        "+buy;<hand>;+[funkbar];faceit1;+_r;switchvoice"
+      ]
+    ],
+    [
+      1006,
+      [
+        "alias",
+        "-fuk_",
+        "-buy;<hand>;-[funkbar];faceit0;-_r;voice"
+      ]
+    ],
+    [
+      1008,
+      [
+        "alias",
+        "+_r",
+        "brad"
+      ]
+    ],
+    [
+      1012,
+      [
+        "alias",
+        "-_r",
+        "close_radio;grnz;best_weapon"
+      ]
+    ],
+    [
+      1014,
+      [
+        "alias",
+        "_r",
+        "radio_[1]"
+      ]
+    ],
+    [
+      1016,
+      [
+        "alias",
+        "radio_[1]",
+        "radio1; alias _r radio_[2]"
+      ]
+    ],
+    [
+      1018,
+      [
+        "alias",
+        "radio_[2]",
+        "radio2; alias _r radio_[3]"
+      ]
+    ],
+    [
+      1020,
+      [
+        "alias",
+        "radio_[3]",
+        "radio3; alias _r radio_[4]"
+      ]
+    ],
+    [
+      1022,
+      [
+        "alias",
+        "radio_[4]",
+        "Slot10; alias _r radio_[1]"
+      ]
+    ],
+    [
+      1024,
+      [
+        "alias",
+        "{say}",
+        "alltalk"
+      ]
+    ],
+    [
+      1026,
+      [
+        "alias",
+        "{team}",
+        "teamtalk"
+      ]
+    ],
+    [
+      1028,
+      [
+        "alias",
+        "funkR_[1]",
+        "{say}"
+      ]
+    ],
+    [
+      1030,
+      [
+        "alias",
+        "funkR_[0]",
+        "{team}"
+      ]
+    ],
+    [
+      1032,
+      [
+        "alias",
+        "[1]hudmode",
+        "+cl_show_team_equipment;cl_hud_radar_scale 0.77;cl_teamcounter_playercount_instead_of_avatars 0;cl_show_equipped_character_for_player_avatars 0;cl_sanitize_player_names false;cl_hide_avatar_images 0;cl_mute_enemy_team 0"
+      ]
+    ],
+    [
+      1034,
+      [
+        "alias",
+        "[0]hudmode",
+        "-radarzoom;cl_teamcounter_playercount_instead_of_avatars 1;cl_show_equipped_character_for_player_avatars 1;cl_sanitize_player_names true;cl_hide_avatar_images 0;cl_mute_enemy_team 1"
+      ]
+    ],
+    [
+      1036,
+      [
+        "alias",
+        "[1]funkbind",
+        "funkR_[1];[1]hudmode"
+      ]
+    ],
+    [
+      1038,
+      [
+        "alias",
+        "[0]funkbind",
+        "funkR_[0];[0]hudmode"
+      ]
+    ],
+    [
+      1040,
+      [
+        "alias",
+        "+[rr1]",
+        "+radialradio"
+      ]
+    ],
+    [
+      1042,
+      [
+        "alias",
+        "+[rr2]",
+        "+radialradio2"
+      ]
+    ],
+    [
+      1044,
+      [
+        "alias",
+        "+[rr3]",
+        "+radialradio3"
+      ]
+    ],
+    [
+      1046,
+      [
+        "alias",
+        "-[rr1]",
+        "-radialradio"
+      ]
+    ],
+    [
+      1048,
+      [
+        "alias",
+        "-[rr2]",
+        "-radialradio2"
+      ]
+    ],
+    [
+      1050,
+      [
+        "alias",
+        "-[rr3]",
+        "-radialradio3"
+      ]
+    ],
+    [
+      1052,
+      [
+        "alias",
+        "{brad1}",
+        "bind z +[rr1]"
+      ]
+    ],
+    [
+      1054,
+      [
+        "alias",
+        "{brad2}",
+        "bind x +[rr2]"
+      ]
+    ],
+    [
+      1056,
+      [
+        "alias",
+        "{brad3}",
+        "bind c +[rr3]"
+      ]
+    ],
+    [
+      1058,
+      [
+        "alias",
+        "{rrbind}",
+        "bind f _r"
+      ]
+    ],
+    [
+      1060,
+      [
+        "alias",
+        "brad",
+        "{brad1};{brad2};{brad3};{rrbind}"
+      ]
+    ],
+    [
+      1063,
+      [
+        "alias",
+        "clutch1",
+        "switchvoice"
+      ]
+    ],
+    [
+      1065,
+      [
+        "alias",
+        "Voice1",
+        "bind v +voicerecord"
+      ]
+    ],
+    [
+      1067,
+      [
+        "alias",
+        "teamtalk",
+        "bind Y say_team"
+      ]
+    ],
+    [
+      1069,
+      [
+        "alias",
+        "alltalk",
+        "bind Y say"
+      ]
+    ],
+    [
+      1071,
+      [
+        "alias",
+        "@msg",
+        "bind F9 repbot; bind F10 bla; bind F11 ts; bind F12 eng"
+      ]
+    ],
+    [
+      1073,
+      [
+        "alias",
+        "{f5stay}",
+        "bind F5 +f_stay"
+      ]
+    ],
+    [
+      1075,
+      [
+        "alias",
+        "{f6switch}",
+        "bind F6 +f_switch"
+      ]
+    ],
+    [
+      1077,
+      [
+        "alias",
+        "{f7gg}",
+        "bind F7 f_gg"
+      ]
+    ],
+    [
+      1079,
+      [
+        "alias",
+        "{f8report}",
+        "bind F8 f_report"
+      ]
+    ],
+    [
+      1081,
+      [
+        "alias",
+        "@facekeys",
+        "{f5stay};{f6switch};{f7gg};{f8report}"
+      ]
+    ],
+    [
+      1084,
+      [
+        "alias",
+        "deco",
+        "<hand;slot9;look1"
+      ]
+    ],
+    [
+      1102,
+      [
+        "alias",
+        "+[chain]",
+        "+fuk_"
+      ]
+    ],
+    [
+      1120,
+      [
+        "alias",
+        "-[chain]",
+        "-fuk_"
+      ]
+    ],
+    [
+      1127,
+      [
+        "echo",
+        "RUN ALIAS ! <END"
+      ]
+    ],
+    [
+      1128,
+      [
+        "echo",
+        ""
+      ]
+    ],
+    [
+      1129,
+      [
+        "echo",
+        "--------------------------------------------------------------"
+      ]
+    ],
+    [
+      1130,
+      [
+        "echo",
+        "╔═════════════════════════════════════════════════════════╗"
+      ]
+    ],
+    [
+      1131,
+      [
+        "echo",
+        "║                    BINDINGS SECTION                     ║"
+      ]
+    ],
+    [
+      1132,
+      [
+        "echo",
+        "╚═════════════════════════════════════════════════════════╝"
+      ]
+    ],
+    [
+      1133,
+      [
+        "echo",
+        "[,] <> #DROP[UMP]4TEAM"
+      ]
+    ],
+    [
+      1135,
+      [
+        "bind",
+        ",",
+        "dropump;say_team DROP[UMP]4TEAM"
+      ]
+    ],
+    [
+      1136,
+      [
+        "echo",
+        "[.] <> #DROP[P250]4TEAM"
+      ]
+    ],
+    [
+      1138,
+      [
+        "bind",
+        ".",
+        "dropp250;say_team DROP[P250]4TEAM"
+      ]
+    ],
+    [
+      1139,
+      [
+        "echo",
+        "[kp_0] <> #DROP[Flash]4TEAM"
+      ]
+    ],
+    [
+      1141,
+      [
+        "bind",
+        "kp_0",
+        "dropflash;say_team DROP[Flash]4TEAM"
+      ]
+    ],
+    [
+      1142,
+      [
+        "echo",
+        "[kp_9] <> #BUY HEGRENADE"
+      ]
+    ],
+    [
+      1144,
+      [
+        "bind",
+        "kp_9",
+        "buy hegrenade;rdygo"
+      ]
+    ],
+    [
+      1145,
+      [
+        "echo",
+        "[kp_8] <> #BUY FLASHBANG"
+      ]
+    ],
+    [
+      1147,
+      [
+        "bind",
+        "kp_8",
+        "buy flashbang;rdygo"
+      ]
+    ],
+    [
+      1148,
+      [
+        "echo",
+        "[kp_7] <> #BUY SMOKEGRENADE"
+      ]
+    ],
+    [
+      1150,
+      [
+        "bind",
+        "kp_7",
+        "buy smokegrenade;rdygo"
+      ]
+    ],
+    [
+      1151,
+      [
+        "echo",
+        "[kp_4] <> #BUY SSG08"
+      ]
+    ],
+    [
+      1153,
+      [
+        "bind",
+        "kp_4",
+        "buy ssg08;rdygo"
+      ]
+    ],
+    [
+      1154,
+      [
+        "echo",
+        "[kp_6] <> #BUY VEST"
+      ]
+    ],
+    [
+      1156,
+      [
+        "bind",
+        "kp_6",
+        "buy vest;rdygo"
+      ]
+    ],
+    [
+      1157,
+      [
+        "echo",
+        "[kp_5] <> #BUY VEST & HELM"
+      ]
+    ],
+    [
+      1159,
+      [
+        "bind",
+        "kp_5",
+        "vst;rdygo"
+      ]
+    ],
+    [
+      1160,
+      [
+        "echo",
+        "[kp_3] <> #BUY GALIL/FAMAS"
+      ]
+    ],
+    [
+      1163,
+      [
+        "bind",
+        "kp_3",
+        "buy galilar;buy famas;rdygo"
+      ]
+    ],
+    [
+      1164,
+      [
+        "echo",
+        "[kp_2] <> #BUY M4A1-S / AK47"
+      ]
+    ],
+    [
+      1166,
+      [
+        "bind",
+        "kp_2",
+        "buy m4a1_silencer; buy ak47;rdygo"
+      ]
+    ],
+    [
+      1167,
+      [
+        "echo",
+        "[kp_1] <> #BUY AWP"
+      ]
+    ],
+    [
+      1169,
+      [
+        "bind",
+        "kp_1",
+        "buy awp;rdygo"
+      ]
+    ],
+    [
+      1170,
+      [
+        "echo",
+        "[kp_multiply] <> #BUY INCENDIARY/MOLOTOV"
+      ]
+    ],
+    [
+      1172,
+      [
+        "bind",
+        "kp_multiply",
+        "buy incgrenade; buy molotov;rdygo"
+      ]
+    ],
+    [
+      1173,
+      [
+        "echo",
+        "[kp_del] <> #BUY DEFUSER"
+      ]
+    ],
+    [
+      1175,
+      [
+        "bind",
+        "kp_del",
+        "buy DEFUSER;rdygo"
+      ]
+    ],
+    [
+      1176,
+      [
+        "echo",
+        "[kp_divide] <> #BUY DECOY"
+      ]
+    ],
+    [
+      1178,
+      [
+        "bind",
+        "kp_divide",
+        "buy decoy;rdygo"
+      ]
+    ],
+    [
+      1179,
+      [
+        "echo",
+        "[1] <> #SLOT 1 - PRIMARY WEAPON"
+      ]
+    ],
+    [
+      1181,
+      [
+        "bind",
+        "1",
+        "slot1;hand>"
+      ]
+    ],
+    [
+      1182,
+      [
+        "echo",
+        "[2] <> #SLOT 2 - SECONDARY WEAPON"
+      ]
+    ],
+    [
+      1184,
+      [
+        "bind",
+        "2",
+        "slot2;hand>"
+      ]
+    ],
+    [
+      1185,
+      [
+        "echo",
+        "[3] <> #SLOT 3 - KNIFE"
+      ]
+    ],
+    [
+      1187,
+      [
+        "bind",
+        "4",
+        "knife"
+      ]
+    ],
+    [
+      1188,
+      [
+        "echo",
+        "[4] <> #SLOT 4 - GRENADE"
+      ]
+    ],
+    [
+      1190,
+      [
+        "bind",
+        "3",
+        "slot4"
+      ]
+    ],
+    [
+      1191,
+      [
+        "echo",
+        "[5] <> #SLOT 5 - BOMB"
+      ]
+    ],
+    [
+      1193,
+      [
+        "bind",
+        "5",
+        "slot5"
+      ]
+    ],
+    [
+      1194,
+      [
+        "echo",
+        "[6] <> #SLOT 6 - HE GRENADE"
+      ]
+    ],
+    [
+      1196,
+      [
+        "bind",
+        "6",
+        "slot6"
+      ]
+    ],
+    [
+      1197,
+      [
+        "echo",
+        "[7] <> #SLOT 7 - FLASHBANG"
+      ]
+    ],
+    [
+      1199,
+      [
+        "bind",
+        "7",
+        "slot7"
+      ]
+    ],
+    [
+      1200,
+      [
+        "echo",
+        "[8] <> #SLOT 8 - SMOKE GRENADE"
+      ]
+    ],
+    [
+      1202,
+      [
+        "bind",
+        "8",
+        "slot8"
+      ]
+    ],
+    [
+      1203,
+      [
+        "echo",
+        "[9] <> #SLOT 9 - INCENDIARY GRENADE"
+      ]
+    ],
+    [
+      1205,
+      [
+        "bind",
+        "9",
+        "slot9"
+      ]
+    ],
+    [
+      1206,
+      [
+        "echo",
+        "[0] <> #SLOT 10 - MOLOTOV"
+      ]
+    ],
+    [
+      1208,
+      [
+        "bind",
+        "0",
+        "slot10"
+      ]
+    ],
+    [
+      1209,
+      [
+        "echo",
+        "[mwheelup] <> #RELOAD"
+      ]
+    ],
+    [
+      1211,
+      [
+        "bind",
+        "mwheelup",
+        "+reload"
+      ]
+    ],
+    [
+      1212,
+      [
+        "echo",
+        "[mouse1] <> #PRIMARY ATTACK"
+      ]
+    ],
+    [
+      1214,
+      [
+        "bind",
+        "mouse1",
+        "+attack"
+      ]
+    ],
+    [
+      1215,
+      [
+        "echo",
+        "[mouse2] <> #SECONDARY ATTACK"
+      ]
+    ],
+    [
+      1217,
+      [
+        "bind",
+        "mouse2",
+        "+holdzoom"
+      ]
+    ],
+    [
+      1218,
+      [
+        "echo",
+        "[mouse3] <> #DUCK"
+      ]
+    ],
+    [
+      1220,
+      [
+        "bind",
+        "mouse3",
+        "+duck"
+      ]
+    ],
+    [
+      1221,
+      [
+        "echo",
+        "[MOUSE4] <> #Allows you to fly around the map"
+      ]
+    ],
+    [
+      1223,
+      [
+        "bind",
+        "MOUSE4",
+        "noclip"
+      ]
+    ],
+    [
+      1224,
+      [
+        "echo",
+        "[MOUSE5] <> #Will trow the most recent grenade so you can see the landing position"
+      ]
+    ],
+    [
+      1226,
+      [
+        "bind",
+        "MOUSE5",
+        "sv_rethrow_last_grenade"
+      ]
+    ],
+    [
+      1227,
+      [
+        "echo",
+        "SHOW SCOREBOARD"
+      ]
+    ],
+    [
+      1229,
+      [
+        "bind",
+        "`",
+        "+scorenet"
+      ]
+    ],
+    [
+      1230,
+      [
+        "echo",
+        "[TAB] <> #RADAR ZOOM"
+      ]
+    ],
+    [
+      1232,
+      [
+        "bind",
+        "TAB",
+        "+radarzoom"
+      ]
+    ],
+    [
+      1233,
+      [
+        "echo",
+        "[CapsLock] <> #DROP BOMB"
+      ]
+    ],
+    [
+      1235,
+      [
+        "bind",
+        "CapsLock",
+        "+dropbomb"
+      ]
+    ],
+    [
+      1236,
+      [
+        "echo",
+        "[SHIFT] <> #SPRINT"
+      ]
+    ],
+    [
+      1238,
+      [
+        "bind",
+        "SHIFT",
+        "+speed"
+      ]
+    ],
+    [
+      1239,
+      [
+        "echo",
+        "[CTRL] <> #DUCK(Sneakmode)"
+      ]
+    ],
+    [
+      1241,
+      [
+        "bind",
+        "CTRL",
+        "+sneak"
+      ]
+    ],
+    [
+      1242,
+      [
+        "echo",
+        "[space] <> #JUMP"
+      ]
+    ],
+    [
+      1244,
+      [
+        "bind",
+        "space",
+        "+jumpp"
+      ]
+    ],
+    [
+      1245,
+      [
+        "echo",
+        "[b] <> #WHEEL JUMP"
+      ]
+    ],
+    [
+      1248,
+      [
+        "bind",
+        "b",
+        "+duckjump"
+      ]
+    ],
+    [
+      1249,
+      [
+        "echo",
+        "[q] <> #QUICK SWITCH"
+      ]
+    ],
+    [
+      1251,
+      [
+        "bind",
+        "q",
+        "+quicky"
+      ]
+    ],
+    [
+      1252,
+      [
+        "echo",
+        "[q] <> #TOGGLE HAND"
+      ]
+    ],
+    [
+      1254,
+      [
+        "bind",
+        "q",
+        "+qhand"
+      ]
+    ],
+    [
+      1255,
+      [
+        "echo",
+        "[e] <> #USE OBJECT / BUY MENU"
+      ]
+    ],
+    [
+      1257,
+      [
+        "bind",
+        "e",
+        "+use"
+      ]
+    ],
+    [
+      1258,
+      [
+        "echo",
+        "[P] <> #PLAYER PING"
+      ]
+    ],
+    [
+      1260,
+      [
+        "bind",
+        "P",
+        "player_ping"
+      ]
+    ],
+    [
+      1261,
+      [
+        "echo",
+        "[m] <> #DROP WEAPON"
+      ]
+    ],
+    [
+      1263,
+      [
+        "bind",
+        "o",
+        "drop;slot3"
+      ]
+    ],
+    [
+      1264,
+      [
+        "echo",
+        "[uparrow] <> #CHAT: eZ"
+      ]
+    ],
+    [
+      1266,
+      [
+        "bind",
+        "uparrow",
+        "+ez"
+      ]
+    ],
+    [
+      1267,
+      [
+        "echo",
+        "[downarrow] <> #CHAT: Nice Try"
+      ]
+    ],
+    [
+      1269,
+      [
+        "bind",
+        "downarrow",
+        "nt"
+      ]
+    ],
+    [
+      1270,
+      [
+        "echo",
+        "[rightarrow] <> #CHAT: Good Job"
+      ]
+    ],
+    [
+      1272,
+      [
+        "bind",
+        "rightarrow",
+        "gj"
+      ]
+    ],
+    [
+      1273,
+      [
+        "echo",
+        "[leftarrow] <> #CHAT: go_PLAY"
+      ]
+    ],
+    [
+      1275,
+      [
+        "alias",
+        "+p2",
+        "say_team",
+        "{ PLAY TOGATHER }"
+      ]
+    ],
+    [
+      1277,
+      [
+        "alias",
+        "-p2",
+        "say_team",
+        "{ GO BACK & PLAY POSITION #FOKUS }"
+      ]
+    ],
+    [
+      1279,
+      [
+        "bind",
+        "leftarrow",
+        "+p2"
+      ]
+    ],
+    [
+      1280,
+      [
+        "echo",
+        "[INS] <> #DEV MODE ON"
+      ]
+    ],
+    [
+      1282,
+      [
+        "bind",
+        "INS",
+        "+FIXED"
+      ]
+    ],
+    [
+      1283,
+      [
+        "echo",
+        "[DEL] <> #DISCONNECT & STOP DEMO"
+      ]
+    ],
+    [
+      1285,
+      [
+        "bind",
+        "DEL",
+        "+gmrdisc"
+      ]
+    ],
+    [
+      1286,
+      [
+        "echo",
+        "[END] <> #QUIT GAME"
+      ]
+    ],
+    [
+      1288,
+      [
+        "bind",
+        "END",
+        "+gmrquit"
+      ]
+    ],
+    [
+      1289,
+      [
+        "echo",
+        "[pgdn] <> #EXEC TRAIN MODE"
+      ]
+    ],
+    [
+      1291,
+      [
+        "bind",
+        "pgdn",
+        "exec train.cfg;bind mouse5 sv_rethrow_last_grenade;bind mouse4 noclip;echo Practice Settings ON"
+      ]
+    ],
+    [
+      1292,
+      [
+        "echo",
+        "[pgup] <> #EXEC MOVIE MODE"
+      ]
+    ],
+    [
+      1294,
+      [
+        "bind",
+        "pgup",
+        "exec movie.cfg;echo Moviemaker Settings ON"
+      ]
+    ],
+    [
+      1295,
+      [
+        "echo",
+        "[HOME] <> #CALL VOTE"
+      ]
+    ],
+    [
+      1297,
+      [
+        "bind",
+        "HOME",
+        "callvote"
+      ]
+    ],
+    [
+      1298,
+      [
+        "echo",
+        "RUN BINDS ! <END"
+      ]
+    ],
+    [
+      1300,
+      [
+        "bind",
+        "ALT",
+        "+fuk_"
+      ]
+    ],
+    [
+      1302,
+      [
+        "bind",
+        "#",
+        "cl_clutch_mode",
+        "TRUE"
+      ]
+    ],
+    [
+      1304,
+      [
+        "alias",
+        "+buy",
+        "buymenu"
+      ]
+    ],
+    [
+      1306,
+      [
+        "alias",
+        "-buy",
+        "buymenu"
+      ]
+    ],
+    [
+      1308,
+      [
+        "-radarzoom"
+      ]
+    ],
+    [
+      1310,
+      [
+        "bind",
+        "K",
+        "+smoke"
+      ]
+    ],
+    [
+      1314,
+      [
+        "bind",
+        "enter",
+        "+enter_fire"
+      ]
+    ],
+    [
+      1317,
+      [
+        "bind",
+        "k",
+        "+cross_pick"
+      ]
+    ],
+    [
+      1319,
+      [
+        "BIND",
+        "J",
+        "cr_x"
+      ]
+    ],
+    [
+      1321,
+      [
+        "bind",
+        "r",
+        "+radarzoom"
+      ]
+    ],
+    [
+      1323,
+      [
+        "stdmode"
+      ]
+    ],
+    [
+      1324,
+      [
+        "echo",
+        ""
+      ]
+    ],
+    [
+      1325,
+      [
+        "echo",
+        "╔═════════════════════════════════════════════════════════╗"
+      ]
+    ],
+    [
+      1326,
+      [
+        "echo",
+        "║                    SETTINGS SECTION                     ║"
+      ]
+    ],
+    [
+      1327,
+      [
+        "echo",
+        "╚═════════════════════════════════════════════════════════╝"
+      ]
+    ],
+    [
+      1328,
+      [
+        "echo",
+        ""
+      ]
+    ],
+    [
+      1330,
+      [
+        "cl_disable_ragdolls",
+        "1"
+      ]
+    ],
+    [
+      1332,
+      [
+        "engine_low_latency_sleep_after_client_tick",
+        "true"
+      ]
+    ],
+    [
+      1337,
+      [
+        "cl_teamid_overhead_mode",
+        "3"
+      ]
+    ],
+    [
+      1339,
+      [
+        "cl_teamid_overhead_colors_show",
+        "1"
+      ]
+    ],
+    [
+      1341,
+      [
+        "fps_max_ui",
+        "0"
+      ]
+    ],
+    [
+      1343,
+      [
+        "r_csgo_render_decals",
+        "true"
+      ]
+    ],
+    [
+      1345,
+      [
+        "r_csgo_effects_bloom",
+        "false"
+      ]
+    ],
+    [
+      1347,
+      [
+        "r_drawtracers_firstperson",
+        "true"
+      ]
+    ],
+    [
+      1349,
+      [
+        "r_drawparticles"
+      ]
+    ],
+    [
+      1351,
+      [
+        "snd_mixahead",
+        "0.05"
+      ]
+    ],
+    [
+      1353,
+      [
+        "snd_voipvolume",
+        "0.2"
+      ]
+    ],
+    [
+      1355,
+      [
+        "snd_gamevoicevolume",
+        "1"
+      ]
+    ],
+    [
+      1357,
+      [
+        "snd_mvp_volume",
+        "0.37"
+      ]
+    ],
+    [
+      1359,
+      [
+        "snd_roundaction_volume",
+        "0"
+      ]
+    ],
+    [
+      1361,
+      [
+        "snd_tensecondwarning_volume",
+        "0.2"
+      ]
+    ],
+    [
+      1363,
+      [
+        "snd_mute_mvp_music_live_players",
+        "1"
+      ]
+    ],
+    [
+      1365,
+      [
+        "voice_modenable",
+        "1"
+      ]
+    ],
+    [
+      1367,
+      [
+        "snd_spatialize_lerp",
+        "0.0"
+      ]
+    ],
+    [
+      1375,
+      [
+        "snd_steamaudio_enable_perspective_correction",
+        "0"
+      ]
+    ],
+    [
+      1377,
+      [
+        "snd_headphone_eq",
+        "1"
+      ]
+    ],
+    [
+      1382,
+      [
+        "snd_musicvolume",
+        "0"
+      ]
+    ],
+    [
+      1390,
+      [
+        "snd_spatialize_lerp",
+        "0.0"
+      ]
+    ],
+    [
+      1398,
+      [
+        "snd_steamaudio_enable_perspective_correction",
+        "0"
+      ]
+    ],
+    [
+      1400,
+      [
+        "snd_headphone_eq",
+        "1"
+      ]
+    ],
+    [
+      1402,
+      [
+        "fps_max_tools",
+        "999"
+      ]
+    ],
+    [
+      1404,
+      [
+        "fps_max_ui",
+        "0"
+      ]
+    ],
+    [
+      1406,
+      [
+        "fps_max",
+        "999"
+      ]
+    ],
+    [
+      1408,
+      [
+        "cl_showfps",
+        "1"
+      ]
+    ],
+    [
+      1410,
+      [
+        "cl_hud_telemetry_frametime_poor",
+        "10"
+      ]
+    ],
+    [
+      1412,
+      [
+        "cl_hud_telemetry_frametime_poor",
+        "14"
+      ]
+    ],
+    [
+      1420,
+      [
+        "mm_dedicated_search_maxping",
+        "25"
+      ]
+    ],
+    [
+      1422,
+      [
+        "net_client_steamdatagram_enable_override",
+        "1"
+      ]
+    ],
+    [
+      1424,
+      [
+        "cl_net_buffer_ticks",
+        "1"
+      ]
+    ],
+    [
+      1426,
+      [
+        "engine_no_focus_sleep",
+        "0"
+      ]
+    ],
+    [
+      1428,
+      [
+        "cl_cq_min_queue",
+        "-1"
+      ]
+    ],
+    [
+      1436,
+      [
+        "cq_buffer_bloat_msecs_max",
+        "0"
+      ]
+    ],
+    [
+      1442,
+      [
+        "rate",
+        "98304"
+      ]
+    ],
+    [
+      1447,
+      [
+        "cl_interp_ratio",
+        "1"
+      ]
+    ],
+    [
+      1449,
+      [
+        "cl_predict_kill_ragdolls",
+        "true"
+      ]
+    ],
+    [
+      1451,
+      [
+        "cl_predict_head_shot_fx",
+        "false"
+      ]
+    ],
+    [
+      1453,
+      [
+        "cl_predict_body_shot_fx",
+        "false"
+      ]
+    ],
+    [
+      1455,
+      [
+        "cl_showfps",
+        "1"
+      ]
+    ],
+    [
+      1457,
+      [
+        "cl_autohelp",
+        "0"
+      ]
+    ],
+    [
+      1459,
+      [
+        "cl_obs_interp_enable",
+        "0"
+      ]
+    ],
+    [
+      1461,
+      [
+        "cl_hud_radar_scale",
+        "1.15"
+      ]
+    ],
+    [
+      1463,
+      [
+        "cl_radar_scale",
+        "0.42"
+      ]
+    ],
+    [
+      1465,
+      [
+        "cl_radar_always_centered",
+        "0"
+      ]
+    ],
+    [
+      1467,
+      [
+        "cl_radar_rotate",
+        "1"
+      ]
+    ],
+    [
+      1469,
+      [
+        "cl_radar_icon_scale_min",
+        "0.7"
+      ]
+    ],
+    [
+      1471,
+      [
+        "cl_radar_square_with_scoreboard",
+        "1"
+      ]
+    ],
+    [
+      1473,
+      [
+        "cl_radar_scale",
+        "0.42"
+      ]
+    ],
+    [
+      1475,
+      [
+        "cl_radar_always_centered",
+        "0"
+      ]
+    ],
+    [
+      1477,
+      [
+        "cl_radar_rotate",
+        "1"
+      ]
+    ],
+    [
+      1479,
+      [
+        "cl_radar_icon_scale_min",
+        "0.7"
+      ]
+    ],
+    [
+      1481,
+      [
+        "cl_radar_square_with_scoreboard",
+        "1"
+      ]
+    ],
+    [
+      1483,
+      [
+        "cl_silencer_mode",
+        "1"
+      ]
+    ],
+    [
+      1485,
+      [
+        "cl_debounce_zoom",
+        "1"
+      ]
+    ],
+    [
+      1487,
+      [
+        "cl_sniper_delay_unscope",
+        "0"
+      ]
+    ],
+    [
+      1489,
+      [
+        "hud_scaling",
+        "1.1337"
+      ]
+    ],
+    [
+      1491,
+      [
+        "safezonex",
+        "1.1337"
+      ]
+    ],
+    [
+      1493,
+      [
+        "safezoney",
+        "0.999"
+      ]
+    ],
+    [
+      1495,
+      [
+        "+cl_show_team_equipment"
+      ]
+    ],
+    [
+      1497,
+      [
+        "cl_teamid_overhead_mode",
+        "2"
+      ]
+    ],
+    [
+      1499,
+      [
+        "cl_teamid_overhead_maxdist",
+        "9999"
+      ]
+    ],
+    [
+      1501,
+      [
+        "cl_ragdoll_workaround_threshold",
+        "0"
+      ]
+    ],
+    [
+      1506,
+      [
+        "cl_sniper_auto_rezoom",
+        "0"
+      ]
+    ],
+    [
+      1508,
+      [
+        "cl_crosshair_t",
+        "1"
+      ]
+    ],
+    [
+      1511,
+      [
+        "cl_crosshair_dynamic_splitalpha_outermod",
+        "0.3"
+      ]
+    ],
+    [
+      1513,
+      [
+        "cl_crosshair_dynamic_splitdist",
+        "0"
+      ]
+    ],
+    [
+      1515,
+      [
+        "cl_crosshair_dynamic_splitalpha_innermod",
+        "0"
+      ]
+    ],
+    [
+      1517,
+      [
+        "cl_crosshair_dynamic_maxdist_splitratio",
+        "0"
+      ]
+    ],
+    [
+      1520,
+      [
+        "cl_crosshair_length",
+        "2"
+      ]
+    ],
+    [
+      1523,
+      [
+        "cl_crosshair_gap",
+        "1"
+      ]
+    ],
+    [
+      1526,
+      [
+        "cl_crosshaircolor_a",
+        "255"
+      ]
+    ],
+    [
+      1528,
+      [
+        "cl_crosshairdot",
+        "false"
+      ]
+    ],
+    [
+      1530,
+      [
+        "sensitivity_y_scale",
+        "1.33"
+      ]
+    ],
+    [
+      1532,
+      [
+        "m_pitch",
+        "0.0165"
+      ]
+    ],
+    [
+      1534,
+      [
+        "m_yaw",
+        "0.0165"
+      ]
+    ],
+    [
+      1536,
+      [
+        "cl_grenadecrosshair_decoy",
+        "true"
+      ]
+    ],
+    [
+      1538,
+      [
+        "cl_grenadecrosshair_keepusercrosshair",
+        "false"
+      ]
+    ],
+    [
+      1540,
+      [
+        "cl_grenadecrosshair_flash",
+        "false"
+      ]
+    ],
+    [
+      1542,
+      [
+        "cl_grenadecrosshair_fire",
+        "true"
+      ]
+    ],
+    [
+      1544,
+      [
+        "cl_grenadecrosshair_explosive",
+        "false"
+      ]
+    ],
+    [
+      1546,
+      [
+        "cl_grenadecrosshair_smoke",
+        "true"
+      ]
+    ],
+    [
+      1548,
+      [
+        "cl_grenadecrosshairdelay_decoy",
+        "2"
+      ]
+    ],
+    [
+      1550,
+      [
+        "cl_grenadecrosshairdelay_flash",
+        "3"
+      ]
+    ],
+    [
+      1552,
+      [
+        "cl_grenadecrosshairdelay_fire",
+        "5"
+      ]
+    ],
+    [
+      1554,
+      [
+        "cl_grenadecrosshairdelay_explosive",
+        "3"
+      ]
+    ],
+    [
+      1556,
+      [
+        "cl_grenadecrosshairdelay_smoke",
+        "0.2"
+      ]
+    ],
+    [
+      1558,
+      [
+        "cl_show_observer_crosshair",
+        "0"
+      ]
+    ],
+    [
+      1560,
+      [
+        "sv_disable_observer_interpolation",
+        "true"
+      ]
+    ],
+    [
+      1562,
+      [
+        "install_dlc_workshoptools_cvar",
+        "1"
+      ]
+    ],
+    [
+      1564,
+      [
+        "snd_voipvolume",
+        "0.7777777"
+      ]
+    ],
+    [
+      1566,
+      [
+        "cl_showloadout",
+        "1"
+      ]
+    ],
+    [
+      1568,
+      [
+        "molotov_throw_detonate_time",
+        "100"
+      ]
+    ],
+    [
+      1570,
+      [
+        "sv_regeneration_force_on",
+        "true"
+      ]
+    ],
+    [
+      1572,
+      [
+        "cl_crosshair_friendly_warning",
+        "1"
+      ]
+    ],
+    [
+      1574,
+      [
+        "cl_hide_avatar_images",
+        "1"
+      ]
+    ],
+    [
+      1576,
+      [
+        "engine_low_latency_sleep_after_client_tick",
+        "1"
+      ]
+    ],
+    [
+      1578,
+      [
+        "con_enable",
+        "1"
+      ]
+    ],
+    [
+      1586,
+      [
+        "cl_color",
+        "0"
+      ]
+    ],
+    [
+      1588,
+      [
+        "cl_hud_color",
+        "12"
+      ]
+    ],
+    [
+      1590,
+      [
+        "r_csgo_render_decals",
+        "true"
+      ]
+    ],
+    [
+      1592,
+      [
+        "r_csgo_effects_bloom",
+        "false"
+      ]
+    ],
+    [
+      1594,
+      [
+        "r_drawtracers_firstperson",
+        "true"
+      ]
+    ],
+    [
+      1596,
+      [
+        "r_drawparticles"
+      ]
+    ],
+    [
+      1598,
+      [
+        "weapon_accuracy_nospread",
+        "true"
+      ]
+    ],
+    [
+      1600,
+      [
+        "zoom_sensitivity_ratio",
+        "0.8189833027098955"
+      ]
+    ],
+    [
+      1602,
+      [
+        "sensitivity",
+        "1"
+      ]
+    ],
+    [
+      1613,
+      [
+        "voice"
+      ]
+    ],
+    [
+      1616,
+      [
+        "bind",
+        "n",
+        "+jump"
+      ]
+    ],
+    [
+      1624,
+      [
+        "bind",
+        "MOUSE3",
+        "+jump"
+      ]
+    ],
+    [
+      1629,
+      [
+        "alias",
+        "+holdzoom",
+        "+zoom"
+      ]
+    ],
+    [
+      1631,
+      [
+        "alias",
+        "-holdzoom",
+        "-zoom"
+      ]
+    ],
+    [
+      1633,
+      [
+        "bind",
+        "MOUSE2",
+        "+holdzoom"
+      ]
+    ],
+    [
+      1635,
+      [
+        "sensitivity",
+        "1"
+      ]
+    ],
+    [
+      1643,
+      [
+        "viewmodel_presetpos",
+        "0"
+      ]
+    ],
+    [
+      1645,
+      [
+        "viewmodel_offset_x",
+        "2.5"
+      ]
+    ],
+    [
+      1647,
+      [
+        "viewmodel_offset_y",
+        "-2"
+      ]
+    ],
+    [
+      1649,
+      [
+        "viewmodel_offset_z",
+        "-2"
+      ]
+    ],
+    [
+      1651,
+      [
+        "viewmodel_fov",
+        "54"
+      ]
+    ],
+    [
+      1652,
+      [
+        "echo",
+        ""
+      ]
+    ],
+    [
+      1653,
+      [
+        "echo",
+        "╔═════════════════════════════════════════════════════════╗"
+      ]
+    ],
+    [
+      1654,
+      [
+        "echo",
+        "║                  DEBUG & STARTUP SECTION                ║"
+      ]
+    ],
+    [
+      1655,
+      [
+        "echo",
+        "╚═════════════════════════════════════════════════════════╝"
+      ]
+    ],
+    [
+      1656,
+      [
+        "echo",
+        ""
+      ]
+    ],
+    [
+      1657,
+      [
+        "echo",
+        "-------------------------------------------------------------------------------"
+      ]
+    ],
+    [
+      1658,
+      [
+        "echo",
+        ""
+      ]
+    ],
+    [
+      1659,
+      [
+        "echo",
+        "Saved User Cloud(#MEMORYSTICK)"
+      ]
+    ],
+    [
+      1661,
+      [
+        "mycross"
+      ]
+    ],
+    [
+      1662,
+      [
+        "echo",
+        "=======FIXED FINISH======"
+      ]
+    ],
+    [
+      1664,
+      [
+        "+strafe"
+      ]
+    ],
+    [
+      1666,
+      [
+        "-radarzoom"
+      ]
+    ],
+    [
+      1668,
+      [
+        "-dropbomb"
+      ]
+    ],
+    [
+      1670,
+      [
+        "-scorenet"
+      ]
+    ],
+    [
+      1672,
+      [
+        "-reload"
+      ]
+    ],
+    [
+      1674,
+      [
+        "-attack"
+      ]
+    ],
+    [
+      1676,
+      [
+        "-attack2"
+      ]
+    ],
+    [
+      1678,
+      [
+        "-duck"
+      ]
+    ],
+    [
+      1680,
+      [
+        "-jump"
+      ]
+    ],
+    [
+      1682,
+      [
+        "-use"
+      ]
+    ],
+    [
+      1686,
+      [
+        "look0"
+      ]
+    ],
+    [
+      1687,
+      [
+        "echo",
+        "#DEBUG* [>]User Config @RUN_"
+      ]
+    ],
+    [
+      1688,
+      [
+        "echo",
+        "=======FIXED FINISH======"
+      ]
+    ],
+    [
+      1690,
+      [
+        "sens0"
+      ]
+    ],
+    [
+      1692,
+      [
+        "mac_1"
+      ]
+    ],
+    [
+      1694,
+      [
+        "myfps"
+      ]
+    ],
+    [
+      1696,
+      [
+        "hand>"
+      ]
+    ],
+    [
+      1698,
+      [
+        "nethub"
+      ]
+    ],
+    [
+      1700,
+      [
+        "xgrnz"
+      ]
+    ],
+    [
+      1702,
+      [
+        "gretz"
+      ]
+    ],
+    [
+      1704,
+      [
+        "stdv"
+      ]
+    ],
+    [
+      1706,
+      [
+        "proview"
+      ]
+    ],
+    [
+      1708,
+      [
+        "c_nred"
+      ]
+    ],
+    [
+      1709,
+      [
+        "echo",
+        "#USER FIX** [>]User Config @RUN_"
+      ]
+    ],
+    [
+      1710,
+      [
+        "echo",
+        "=======READY TO RUMBLE======"
+      ]
+    ],
+    [
+      1712,
+      [
+        "+cl_show_team_equipment"
+      ]
+    ],
+    [
+      1713,
+      [
+        "echo",
+        " "
+      ]
+    ],
+    [
+      1717,
+      [
+        "echo",
+        "MEMORYSTICK[UPLOAD 100%] <GAME OVER"
+      ]
+    ],
+    [
+      1719,
+      [
+        "stdmode"
+      ]
+    ],
+    [
+      1720,
+      [
+        "echo",
+        " "
+      ]
+    ],
+    [
+      1721,
+      [
+        "echo",
+        "=============== CS2 SUPER SKRIPT v2.0 ==============="
+      ]
+    ],
+    [
+      1722,
+      [
+        "echo",
+        " "
+      ]
+    ],
+    [
+      1723,
+      [
+        "echo",
+        "GRUNDLEGENDE BINDINGS:"
+      ]
+    ],
+    [
+      1724,
+      [
+        "echo",
+        "A/D - Starfemode | Z - Rauch | X - Molotow"
+      ]
+    ],
+    [
+      1725,
+      [
+        "echo",
+        "C - HE | F - Blend | ALT - Decoy"
+      ]
+    ],
+    [
+      1726,
+      [
+        "echo",
+        " "
+      ]
+    ],
+    [
+      1727,
+      [
+        "echo",
+        "STANDARD MODUS (ALT losgelassen):"
+      ]
+    ],
+    [
+      1728,
+      [
+        "echo",
+        "F1 - Crosshair Größe | F2 - Recoil Crosshair"
+      ]
+    ],
+    [
+      1729,
+      [
+        "echo",
+        "F3 - HUD Farbe | F4 - Viewmodel"
+      ]
+    ],
+    [
+      1730,
+      [
+        "echo",
+        "F5 - Nächstes XHair | F6 - Farbe"
+      ]
+    ],
+    [
+      1731,
+      [
+        "echo",
+        "F7 - Alpha | F8 - T-Style"
+      ]
+    ],
+    [
+      1732,
+      [
+        "echo",
+        "F9-F12 - Netzwerkraten(LOWRATE-64TICK-128TICK-LANSTARK)"
+      ]
+    ],
+    [
+      1733,
+      [
+        "echo",
+        " "
+      ]
+    ],
+    [
+      1734,
+      [
+        "echo",
+        "FACEIT&MSG+FUNK MODUS (ALT gedrückt halten+):"
+      ]
+    ],
+    [
+      1735,
+      [
+        "echo",
+        "F3 - Have Fun | F4 - Good Game"
+      ]
+    ],
+    [
+      1736,
+      [
+        "echo",
+        "F5 - !stay | F6 - !switch"
+      ]
+    ],
+    [
+      1737,
+      [
+        "echo",
+        "F7 - !gg | F8 - !report"
+      ]
+    ],
+    [
+      1738,
+      [
+        "echo",
+        "F9 - Reportbot | F10 - Flamebox"
+      ]
+    ],
+    [
+      1739,
+      [
+        "echo",
+        "F11 - Teamspeak | F12 - Playerinfo"
+      ]
+    ],
+    [
+      1740,
+      [
+        "echo",
+        " "
+      ]
+    ],
+    [
+      1741,
+      [
+        "echo",
+        "#ᴸᴵᴷᴱᴰᴮᴵᴳ #𝐿𝐼𝐊𝐄𝐃𝐵𝐼𝐆 #ＬＩ𝐊𝐄𝐃Ｂ𝐼Ｇ #Լᵢⲕₑ𝑑𝑏ᵢ𝑔 #𐌋𐌉𐌊𐌄𐌃𐌁𐌉Ᏽ #𝐋𝐈𝐊𝐄𝐃𝐁𝐈𝐆"
+      ]
+    ],
+    [
+      1742,
+      [
+        "echo",
+        "██████╗",
+        "███████╗██╗",
+        "██╗██╗",
+        "██╗██╗████████╗██████╗"
+      ]
+    ],
+    [
+      1743,
+      [
+        "echo",
+        "██╔══██╗██╔════╝██║",
+        "██║██║",
+        "██╔╝██║╚══██╔══╝╚════██╗"
+      ]
+    ],
+    [
+      1744,
+      [
+        "echo",
+        "██║",
+        "██║█████╗",
+        "██║",
+        "██║█████╔╝",
+        "██║",
+        "██║",
+        "█████╔╝"
+      ]
+    ],
+    [
+      1745,
+      [
+        "echo",
+        "██║",
+        "██║██╔══╝",
+        "╚██╗",
+        "██╔╝██╔═██╗",
+        "██║",
+        "██║",
+        "██╔═══╝"
+      ]
+    ],
+    [
+      1746,
+      [
+        "echo",
+        "██████╔╝███████╗",
+        "╚████╔╝",
+        "██║",
+        "██╗██║",
+        "██║",
+        "███████╗"
+      ]
+    ],
+    [
+      1747,
+      [
+        "echo",
+        "╚═════╝",
+        "╚══════╝",
+        "╚═══╝",
+        "╚═╝",
+        "╚═╝╚═╝",
+        "╚═╝",
+        "╚══════╝#"
+      ]
+    ],
+    [
+      1748,
+      [
+        "echo",
+        "#ᴸᴵᴷᴱᴰᴮᴵᴳ #𝐿𝐼𝐊𝐄𝐃𝐵𝐼𝐆 #ＬＩ𝐊𝐄𝐃Ｂ𝐼Ｇ #Լᵢⲕₑ𝑑𝑏ᵢ𝑔 #𐌋𐌉𐌊𐌄𐌃𐌁𐌉Ᏽ #𝐋𝐈𝐊𝐄𝐃𝐁𝐈𝐆"
+      ]
+    ],
+    [
+      1749,
+      [
+        "echo",
+        ""
+      ]
+    ],
+    [
+      1750,
+      [
+        "echo",
+        "╔═════════════════════════════════════════════════════════╗"
+      ]
+    ],
+    [
+      1751,
+      [
+        "echo",
+        "║                                                         ║"
+      ]
+    ],
+    [
+      1754,
+      [
+        "echo",
+        "LEETED_BASIS_GELADEN_REPARATUR_FOLGT"
+      ]
+    ],
+    [
+      1755,
+      [
+        "echo",
+        "║              VERSION: V1 v01.1_01                      ║"
+      ]
+    ],
+    [
+      1756,
+      [
+        "echo",
+        "║                                                         ║"
+      ]
+    ],
+    [
+      1757,
+      [
+        "echo",
+        "╚═════════════════════════════════════════════════════════╝"
+      ]
+    ],
+    [
+      1758,
+      [
+        "echo",
+        ""
+      ]
+    ],
+    [
+      1760,
+      [
+        "alias",
+        "-scorenet",
+        "-showscores;fps1;myfps"
+      ]
+    ],
+    [
+      1763,
+      [
+        "alias",
+        "myfps",
+        "fps_max 999"
+      ]
+    ],
+    [
+      1765,
+      [
+        "fps_max",
+        "999"
+      ]
+    ],
+    [
+      1767,
+      [
+        "fps_max_ui",
+        "0"
+      ]
+    ],
+    [
+      1769,
+      [
+        "cl_showfps",
+        "1"
+      ]
+    ],
+    [
+      1772,
+      [
+        "rate",
+        "98304"
+      ]
+    ],
+    [
+      1774,
+      [
+        "cl_net_buffer_ticks",
+        "1"
+      ]
+    ],
+    [
+      1776,
+      [
+        "r_drawtracers_firstperson",
+        "0"
+      ]
+    ],
+    [
+      1778,
+      [
+        "r_drawtracers",
+        "1"
+      ]
+    ],
+    [
+      1787,
+      [
+        "cl_hud_telemetry_serverrecvmargin_graph_show",
+        "1"
+      ]
+    ],
+    [
+      1790,
+      [
+        "echo",
+        "[LEETED] ENDBLOCK v01.2_03 aktiv"
+      ]
+    ],
+    [
+      1793,
+      [
+        "echo",
+        "[LEETED] neo crosshair config aktiv"
+      ]
+    ],
+    [
+      1794,
+      [
+        "echo",
+        "CSGO-HhKXK-GGcBN-FcPuc-Cfbux-Np74E"
+      ]
+    ],
+    [
+      1796,
+      [
+        "cl_hud_radar_blur_background",
+        "0"
+      ]
+    ],
+    [
+      1798,
+      [
+        "bind",
+        "CTRL",
+        "+sneak"
+      ]
+    ],
+    [
+      1800,
+      [
+        "m_pitch",
+        "0.0165"
+      ]
+    ],
+    [
+      1802,
+      [
+        "m_yaw",
+        "0.0165"
+      ]
+    ],
+    [
+      1804,
+      [
+        "bind",
+        "v",
+        "+voicerecord"
+      ]
+    ],
+    [
+      1806,
+      [
+        "r_drawtracers_firstperson",
+        "true"
+      ]
+    ],
+    [
+      1808,
+      [
+        "r_drawparticles",
+        "false"
+      ]
+    ],
+    [
+      1810,
+      [
+        "snd_mixahead",
+        "0.05"
+      ]
+    ],
+    [
+      1812,
+      [
+        "viewmodel_fov",
+        "68"
+      ]
+    ],
+    [
+      1814,
+      [
+        "viewmodel_offset_x",
+        "-2.5"
+      ]
+    ],
+    [
+      1816,
+      [
+        "viewmodel_offset_y",
+        "-2.5"
+      ]
+    ],
+    [
+      1818,
+      [
+        "viewmodel_offset_z",
+        "-2"
+      ]
+    ],
+    [
+      1820,
+      [
+        "viewmodel_presetpos",
+        "1"
+      ]
+    ],
+    [
+      1829,
+      [
+        "alias",
+        "+atx",
+        "alias fire_check_mouse fire_hold;fire_refresh;shot_trace_down"
+      ]
+    ],
+    [
+      1836,
+      [
+        "alias",
+        "-atx",
+        "alias fire_check_mouse fire_check_enter;fire_refresh;shot_trace_up"
+      ]
+    ],
+    [
+      1840,
+      [
+        "alias",
+        "trill",
+        "alias mycross restore_trill;alias gmrcrossnow shape_trill;alias selection_status selected_trill;refresh_crosshair"
+      ]
+    ],
+    [
+      1846,
+      [
+        "alias",
+        "croattx",
+        "shot_render"
+      ]
+    ],
+    [
+      1851,
+      [
+        "alias",
+        "mycross",
+        "restore_dot"
+      ]
+    ],
+    [
+      1853,
+      [
+        "bind",
+        "MOUSE2",
+        "+holdzoom"
+      ]
+    ],
+    [
+      1855,
+      [
+        "bind",
+        "mouse1",
+        "+atx"
+      ]
+    ],
+    [
+      1857,
+      [
+        "unbind",
+        "alt"
+      ]
+    ],
+    [
+      1862,
+      [
+        "alias",
+        "+space_mode",
+        "+jumpp;space_trace_down"
+      ]
+    ],
+    [
+      1865,
+      [
+        "alias",
+        "-space_mode",
+        "space_trace_up;unbind mwheeldown;crosshair 1;-jumpp;unbind mwheeldown;refresh_crosshair;space_trace_done"
+      ]
+    ],
+    [
+      1868,
+      [
+        "alias",
+        "space_trace_down",
+        ""
+      ]
+    ],
+    [
+      1871,
+      [
+        "alias",
+        "space_trace_up",
+        ""
+      ]
+    ],
+    [
+      1874,
+      [
+        "alias",
+        "space_trace_done",
+        ""
+      ]
+    ],
+    [
+      1877,
+      [
+        "alias",
+        "print_down",
+        "echo [LEETED05] SPACE_DOWN;bind mwheeldown;crosshair"
+      ]
+    ],
+    [
+      1880,
+      [
+        "alias",
+        "print_up",
+        "echo [LEETED05] SPACE_UP_BEGIN"
+      ]
+    ],
+    [
+      1883,
+      [
+        "alias",
+        "print_done",
+        "echo [LEETED05] SPACE_UP_END;bind mwheeldown;crosshair"
+      ]
+    ],
+    [
+      1886,
+      [
+        "alias",
+        "trace_on",
+        "alias space_trace_down print_down;alias space_trace_up print_up;alias space_trace_done print_done;echo [LEETED] TRACE_ON"
+      ]
+    ],
+    [
+      1889,
+      [
+        "alias",
+        "trace_off",
+        "alias space_trace_down noop;alias space_trace_up noop;alias space_trace_done noop;echo [LEETED] TRACE_OFF"
+      ]
+    ],
+    [
+      1892,
+      [
+        "alias",
+        "input_reset",
+        "unbind mwheeldown;refresh_crosshair"
+      ]
+    ],
+    [
+      1896,
+      [
+        "alias",
+        "noop",
+        ""
+      ]
+    ],
+    [
+      1899,
+      [
+        "alias",
+        "clutch_on",
+        "cl_clutch_mode 1"
+      ]
+    ],
+    [
+      1902,
+      [
+        "alias",
+        "+voice_key",
+        "voice_action"
+      ]
+    ],
+    [
+      1905,
+      [
+        "alias",
+        "-voice_key",
+        "-voicerecord"
+      ]
+    ],
+    [
+      1908,
+      [
+        "alias",
+        "voice_action",
+        "+voicerecord"
+      ]
+    ],
+    [
+      1911,
+      [
+        "alias",
+        "switchvoice",
+        "-voicerecord;alias voice_action clutch_on"
+      ]
+    ],
+    [
+      1914,
+      [
+        "alias",
+        "Voice1",
+        "alias voice_action +voicerecord"
+      ]
+    ],
+    [
+      1916,
+      [
+        "alias",
+        "-[funkbar]",
+        "[0]funkbind;nethub;Voice1;0voicevol"
+      ]
+    ],
+    [
+      1918,
+      [
+        "alias",
+        "-fuk_",
+        "-buy;<hand>;-[funkbar];faceit0;-_r;cl_clutch_mode 0;Voice1"
+      ]
+    ],
+    [
+      1921,
+      [
+        "bind",
+        "space",
+        "+space_mode"
+      ]
+    ],
+    [
+      1923,
+      [
+        "bind",
+        "alt",
+        "+fuk_"
+      ]
+    ],
+    [
+      1926,
+      [
+        "bind",
+        "v",
+        "+voice_key"
+      ]
+    ],
+    [
+      1928,
+      [
+        "cl_clutch_mode",
+        "0"
+      ]
+    ],
+    [
+      1930,
+      [
+        "unbind",
+        "mwheeldown"
+      ]
+    ],
+    [
+      1933,
+      [
+        "alias",
+        "input_status",
+        "bind space;bind mwheeldown;bind alt;bind v;cl_clutch_mode;crosshair"
+      ]
+    ],
+    [
+      1939,
+      [
+        "alias",
+        "best_weapon",
+        "look0;slot3;slot2;slot1;hand>;refresh_crosshair"
+      ]
+    ],
+    [
+      1942,
+      [
+        "alias",
+        "select_held",
+        "check_z"
+      ]
+    ],
+    [
+      1948,
+      [
+        "alias",
+        "equip_z",
+        "<hand;slot7;slot6;slot10;slot8;look1;refresh_crosshair"
+      ]
+    ],
+    [
+      1951,
+      [
+        "alias",
+        "check_z",
+        "check_x"
+      ]
+    ],
+    [
+      1954,
+      [
+        "alias",
+        "z_gren_down",
+        "alias check_z equip_z;alias z_up z_gren_up;equip_z"
+      ]
+    ],
+    [
+      1959,
+      [
+        "alias",
+        "z_gren_up",
+        "alias check_z check_x;alias z_up noop;best_weapon"
+      ]
+    ],
+    [
+      1962,
+      [
+        "alias",
+        "z_radio_down",
+        "alias z_up z_radio_up;+radialradio"
+      ]
+    ],
+    [
+      1965,
+      [
+        "alias",
+        "z_radio_up",
+        "-radialradio;alias z_up noop"
+      ]
+    ],
+    [
+      1968,
+      [
+        "alias",
+        "z_down",
+        "z_gren_down"
+      ]
+    ],
+    [
+      1971,
+      [
+        "alias",
+        "z_up",
+        "noop"
+      ]
+    ],
+    [
+      1974,
+      [
+        "alias",
+        "+key_z",
+        "z_down"
+      ]
+    ],
+    [
+      1977,
+      [
+        "alias",
+        "-key_z",
+        "z_up"
+      ]
+    ],
+    [
+      1980,
+      [
+        "bind",
+        "z",
+        "+key_z"
+      ]
+    ],
+    [
+      1986,
+      [
+        "alias",
+        "equip_x",
+        "<hand;slot8;slot7;slot6;slot10;look1;refresh_crosshair"
+      ]
+    ],
+    [
+      1989,
+      [
+        "alias",
+        "check_x",
+        "check_c"
+      ]
+    ],
+    [
+      1992,
+      [
+        "alias",
+        "x_gren_down",
+        "alias check_x equip_x;alias x_up x_gren_up;equip_x"
+      ]
+    ],
+    [
+      1997,
+      [
+        "alias",
+        "x_gren_up",
+        "alias check_x check_c;alias x_up noop;best_weapon"
+      ]
+    ],
+    [
+      2000,
+      [
+        "alias",
+        "x_radio_down",
+        "alias x_up x_radio_up;+radialradio2"
+      ]
+    ],
+    [
+      2003,
+      [
+        "alias",
+        "x_radio_up",
+        "-radialradio2;alias x_up noop"
+      ]
+    ],
+    [
+      2006,
+      [
+        "alias",
+        "x_down",
+        "x_gren_down"
+      ]
+    ],
+    [
+      2009,
+      [
+        "alias",
+        "x_up",
+        "noop"
+      ]
+    ],
+    [
+      2012,
+      [
+        "alias",
+        "+key_x",
+        "x_down"
+      ]
+    ],
+    [
+      2015,
+      [
+        "alias",
+        "-key_x",
+        "x_up"
+      ]
+    ],
+    [
+      2018,
+      [
+        "bind",
+        "x",
+        "+key_x"
+      ]
+    ],
+    [
+      2024,
+      [
+        "alias",
+        "equip_c",
+        "<hand;slot10;slot8;slot7;slot6;look1;refresh_crosshair"
+      ]
+    ],
+    [
+      2027,
+      [
+        "alias",
+        "check_c",
+        "check_f"
+      ]
+    ],
+    [
+      2030,
+      [
+        "alias",
+        "c_gren_down",
+        "alias check_c equip_c;alias c_up c_gren_up;equip_c"
+      ]
+    ],
+    [
+      2035,
+      [
+        "alias",
+        "c_gren_up",
+        "alias check_c check_f;alias c_up noop;best_weapon"
+      ]
+    ],
+    [
+      2038,
+      [
+        "alias",
+        "c_radio_down",
+        "alias c_up c_radio_up;+radialradio3"
+      ]
+    ],
+    [
+      2041,
+      [
+        "alias",
+        "c_radio_up",
+        "-radialradio3;alias c_up noop"
+      ]
+    ],
+    [
+      2044,
+      [
+        "alias",
+        "c_down",
+        "c_gren_down"
+      ]
+    ],
+    [
+      2047,
+      [
+        "alias",
+        "c_up",
+        "noop"
+      ]
+    ],
+    [
+      2050,
+      [
+        "alias",
+        "+key_c",
+        "c_down"
+      ]
+    ],
+    [
+      2053,
+      [
+        "alias",
+        "-key_c",
+        "c_up"
+      ]
+    ],
+    [
+      2056,
+      [
+        "bind",
+        "c",
+        "+key_c"
+      ]
+    ],
+    [
+      2062,
+      [
+        "alias",
+        "equip_f",
+        "<hand;slot6;slot10;slot8;slot7;look1;refresh_crosshair"
+      ]
+    ],
+    [
+      2066,
+      [
+        "alias",
+        "check_f",
+        "check_space"
+      ]
+    ],
+    [
+      2069,
+      [
+        "alias",
+        "f_gren_down",
+        "alias check_f equip_f;alias f_up f_gren_up;equip_f"
+      ]
+    ],
+    [
+      2075,
+      [
+        "alias",
+        "f_gren_up",
+        "alias check_f check_space;alias f_up noop;best_weapon"
+      ]
+    ],
+    [
+      2078,
+      [
+        "alias",
+        "f_radio_down",
+        "alias f_up f_radio_up;_r"
+      ]
+    ],
+    [
+      2081,
+      [
+        "alias",
+        "f_radio_up",
+        "noop;alias f_up noop"
+      ]
+    ],
+    [
+      2084,
+      [
+        "alias",
+        "f_down",
+        "f_gren_down"
+      ]
+    ],
+    [
+      2087,
+      [
+        "alias",
+        "f_up",
+        "noop"
+      ]
+    ],
+    [
+      2090,
+      [
+        "alias",
+        "+key_f",
+        "f_down"
+      ]
+    ],
+    [
+      2093,
+      [
+        "alias",
+        "-key_f",
+        "f_up"
+      ]
+    ],
+    [
+      2096,
+      [
+        "bind",
+        "f",
+        "+key_f"
+      ]
+    ],
+    [
+      2099,
+      [
+        "alias",
+        "grenade_mode",
+        "alias z_down z_gren_down;alias x_down x_gren_down;alias c_down c_gren_down;alias f_down f_gren_down"
+      ]
+    ],
+    [
+      2102,
+      [
+        "alias",
+        "radio_mode",
+        "alias z_down z_radio_down;alias x_down x_radio_down;alias c_down c_radio_down;alias f_down f_radio_down"
+      ]
+    ],
+    [
+      2105,
+      [
+        "alias",
+        "close_radio",
+        "-radialradio;-radialradio2;-radialradio3"
+      ]
+    ],
+    [
+      2108,
+      [
+        "alias",
+        "grnz",
+        "grenade_mode"
+      ]
+    ],
+    [
+      2111,
+      [
+        "alias",
+        "brad",
+        "radio_mode"
+      ]
+    ],
+    [
+      2113,
+      [
+        "alias",
+        "+_r",
+        "brad"
+      ]
+    ],
+    [
+      2118,
+      [
+        "alias",
+        "-_r",
+        "close_radio;grnz;best_weapon"
+      ]
+    ],
+    [
+      2120,
+      [
+        "alias",
+        "radio_[3]",
+        "radio3;alias _r radio_[1]"
+      ]
+    ],
+    [
+      2123,
+      [
+        "grenade_mode"
+      ]
+    ],
+    [
+      2125,
+      [
+        "crosshair",
+        "1"
+      ]
+    ],
+    [
+      2128,
+      [
+        "trace_on"
+      ]
+    ],
+    [
+      2131,
+      [
+        "echo",
+        "LEETED_BASIS_GELADEN"
+      ]
+    ],
+    [
+      2134,
+      [
+        "input_status"
+      ]
+    ],
+    [
+      2137,
+      [
+        "r_drawtracers_firstperson",
+        "true"
+      ]
+    ],
+    [
+      2138,
+      [
+        "r_drawparticles",
+        "false"
+      ]
+    ],
+    [
+      2139,
+      [
+        "snd_mixahead",
+        "0.05"
+      ]
+    ],
+    [
+      2140,
+      [
+        "viewmodel_presetpos",
+        "0"
+      ]
+    ],
+    [
+      2141,
+      [
+        "viewmodel_fov",
+        "68"
+      ]
+    ],
+    [
+      2142,
+      [
+        "viewmodel_offset_x",
+        "-2.5"
+      ]
+    ],
+    [
+      2143,
+      [
+        "viewmodel_offset_y",
+        "-2.5"
+      ]
+    ],
+    [
+      2144,
+      [
+        "viewmodel_offset_z",
+        "-2"
+      ]
+    ],
+    [
+      2145,
+      [
+        "weapon_accuracy_nospread",
+        "1"
+      ]
+    ],
+    [
+      2146,
+      [
+        "fov_cs_debug",
+        "90"
+      ]
+    ],
+    [
+      2148,
+      [
+        "alias",
+        "refresh_crosshair",
+        "crosshair_idle"
+      ]
+    ],
+    [
+      2150,
+      [
+        "bind",
+        "b",
+        "+duckjump"
+      ]
+    ],
+    [
+      2153,
+      [
+        "bind",
+        "k",
+        "+cross_pick"
+      ]
+    ],
+    [
+      2154,
+      [
+        "bind",
+        "j",
+        "cr_x"
+      ]
+    ],
+    [
+      2156,
+      [
+        "bind",
+        "mouse1",
+        "+atx"
+      ]
+    ],
+    [
+      2158,
+      [
+        "unbind",
+        "mwheeldown"
+      ]
+    ],
+    [
+      2159,
+      [
+        "mycross"
+      ]
+    ],
+    [
+      2161,
+      [
+        "viewmodel_presetpos",
+        "0"
+      ]
+    ],
+    [
+      2162,
+      [
+        "viewmodel_fov",
+        "68"
+      ]
+    ],
+    [
+      2163,
+      [
+        "viewmodel_offset_x",
+        "-2.5"
+      ]
+    ],
+    [
+      2164,
+      [
+        "viewmodel_offset_y",
+        "-2.5"
+      ]
+    ],
+    [
+      2165,
+      [
+        "viewmodel_offset_z",
+        "-2"
+      ]
+    ],
+    [
+      2167,
+      [
+        "alias",
+        "diag_crosshair",
+        "log_flags General -donotecho;echo LEETED_CROSSHAIR_STATUS;crosshair;bind mouse1;bind k;find cl_crosshair"
+      ]
+    ],
+    [
+      2169,
+      [
+        "alias",
+        "input_status",
+        "bind space;bind mwheeldown;bind b;bind alt;bind v;bind z;bind x;bind c;bind f;cl_clutch_mode;crosshair"
+      ]
+    ],
+    [
+      2171,
+      [
+        "alias",
+        "b_jump",
+        "bind b +jump"
+      ]
+    ],
+    [
+      2173,
+      [
+        "alias",
+        "b_duckjump",
+        "bind b +duckjump"
+      ]
+    ],
+    [
+      2175,
+      [
+        "alias",
+        "shot_values",
+        "crosshair;cl_crosshairstyle;cl_crosshair_length;cl_crosshair_thickness;cl_crosshair_gap;cl_crosshaircolor_a;cl_crosshaircolor_r;cl_crosshaircolor_g;cl_crosshaircolor_b;cl_crosshair_recoil"
+      ]
+    ],
+    [
+      2177,
+      [
+        "alias",
+        "shot_down_report",
+        "echo LEETED_SHOT_DOWN;shot_values"
+      ]
+    ],
+    [
+      2179,
+      [
+        "alias",
+        "shot_up_report",
+        "echo LEETED_SHOT_UP_END;selection_status;shot_values"
+      ]
+    ],
+    [
+      2181,
+      [
+        "alias",
+        "shot_trace_on",
+        "log_flags General -donotecho;alias shot_trace_down shot_down_report;alias shot_trace_up shot_up_report;echo LEETED_SHOT_TRACE_ON"
+      ]
+    ],
+    [
+      2183,
+      [
+        "alias",
+        "shot_trace_off",
+        "alias shot_trace_down noop;alias shot_trace_up noop"
+      ]
+    ],
+    [
+      2185,
+      [
+        "alias",
+        "shot_status",
+        "log_flags General -donotecho;echo LEETED_SHOT_STATUS;selection_status;bind mouse1;bind k;shot_values"
+      ]
+    ],
+    [
+      2187,
+      [
+        "shot_trace_off"
+      ]
+    ],
+    [
+      2189,
+      [
+        "sens_refresh"
+      ]
+    ],
+    [
+      2192,
+      [
+        "inspect_off"
+      ]
+    ],
+    [
+      2192,
+      [
+        "color_lock_on"
+      ]
+    ],
+    [
+      2192,
+      [
+        "shot_circle"
+      ]
+    ],
+    [
+      2192,
+      [
+        "shot_on"
+      ]
+    ],
+    [
+      2192,
+      [
+        "look0"
+      ]
+    ],
+    [
+      2192,
+      [
+        "hand>"
+      ]
+    ],
+    [
+      2192,
+      [
+        "sens_refresh"
+      ]
+    ],
+    [
+      2192,
+      [
+        "refresh_crosshair"
+      ]
+    ],
+    [
+      2193,
+      [
+        "host_writeconfig"
+      ]
+    ],
+    [
+      2197,
+      [
+        "echo",
+        "LEETED_v1.01.1_10_END"
+      ]
+    ],
+    [
+      2198,
+      [
+        "input_status"
+      ]
+    ]
+  ],
+  "quote_candidates": []
+}

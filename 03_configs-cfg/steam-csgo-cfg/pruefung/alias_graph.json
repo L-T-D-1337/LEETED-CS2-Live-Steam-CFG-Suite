@@ -1,0 +1,3908 @@
+{
+  "scope": "Final startup alias graph; dynamic assignments shown separately from calls; not a full engine call graph",
+  "bindings": {
+    "space": "+space_mode",
+    "b": "+duckjump",
+    "ctrl": "+sneak",
+    "k": "+cross_pick",
+    "j": "cr_x",
+    "r": "+radarzoom",
+    "z": "+key_z",
+    "x": "+key_x",
+    "c": "+key_c",
+    "f": "+key_f",
+    "o": "drop;slot3",
+    "t": "+togglevol",
+    "q": "+qhand",
+    "mouse2": "+holdzoom",
+    "n": "+jump",
+    ",": "dropump;say_team DROP[UMP]4TEAM",
+    ".": "dropp250;say_team DROP[P250]4TEAM",
+    "kp_0": "dropflash;say_team DROP[Flash]4TEAM",
+    "kp_9": "buy hegrenade;rdygo",
+    "kp_8": "buy flashbang;rdygo",
+    "kp_7": "buy smokegrenade;rdygo",
+    "kp_4": "buy ssg08;rdygo",
+    "kp_6": "buy vest;rdygo",
+    "kp_5": "vst;rdygo",
+    "kp_3": "buy galilar;buy famas;rdygo",
+    "kp_2": "buy m4a1_silencer; buy ak47;rdygo",
+    "kp_1": "buy awp;rdygo",
+    "kp_multiply": "buy incgrenade; buy molotov;rdygo",
+    "kp_del": "buy DEFUSER;rdygo",
+    "kp_divide": "buy decoy;rdygo",
+    "1": "slot1;hand>",
+    "2": "slot2;hand>",
+    "4": "knife",
+    "3": "slot4",
+    "5": "slot5",
+    "6": "slot6",
+    "7": "slot7",
+    "8": "slot8",
+    "9": "slot9",
+    "0": "slot10",
+    "mwheelup": "+reload",
+    "mouse1": "+atx",
+    "mouse3": "+jump",
+    "mouse4": "noclip",
+    "mouse5": "sv_rethrow_last_grenade",
+    "`": "+scorenet",
+    "tab": "+radarzoom",
+    "capslock": "+dropbomb",
+    "shift": "+speed",
+    "e": "+use",
+    "p": "player_ping",
+    "uparrow": "+ez",
+    "downarrow": "nt",
+    "rightarrow": "gj",
+    "leftarrow": "+p2",
+    "ins": "+FIXED",
+    "del": "+gmrdisc",
+    "end": "+gmrquit",
+    "pgdn": "exec train.cfg;bind mouse5 sv_rethrow_last_grenade;bind mouse4 noclip;echo Practice Settings ON",
+    "pgup": "exec movie.cfg;echo Moviemaker Settings ON",
+    "home": "callvote",
+    "#": "cl_clutch_mode TRUE",
+    "enter": "+enter_fire",
+    "v": "+voice_key",
+    "f10": "+rate64",
+    "f11": "+rate128",
+    "f12": "+lanrate",
+    "f9": "+lowrate",
+    "f3": "+hf",
+    "f4": "+gg",
+    "alt": "+fuk_"
+  },
+  "aliases": {
+    "inspect_on": "alias look1 +lookatweapon;alias inspect_toggle inspect_off;echo INSPECT_ON",
+    "inspect_off": "alias look1 noop;look0;alias inspect_toggle inspect_on;echo INSPECT_OFF",
+    "inspect_toggle": "inspect_on",
+    "color_lock_on": "alias automatic_white noop;alias color_restore selected_color;alias color_lock_toggle color_lock_off;refresh_crosshair;echo COLOR_LOCK_ON",
+    "color_lock_off": "alias automatic_white legacy_white;alias color_restore croco;alias color_lock_toggle color_lock_on;refresh_crosshair;echo COLOR_LOCK_OFF",
+    "selected_color": "rgb_red",
+    "color_restore": "selected_color",
+    "legacy_white": "alias croco rgb_white",
+    "color_lock_toggle": "color_lock_off",
+    "automatic_white": "noop",
+    "shot_on": "alias shot_render shot_selected;alias shot_toggle shot_off;refresh_crosshair;echo SHOT_ON",
+    "shot_off": "alias shot_render mycross;alias shot_toggle shot_on;refresh_crosshair;echo SHOT_OFF",
+    "shot_toggle": "shot_off",
+    "shot_circle": "alias shot_selected shape_fire;alias shot_style_toggle shot_t;refresh_crosshair;echo SHOT_CIRCLE_WHITE",
+    "shot_t": "alias shot_selected shape_fire_t;alias shot_style_toggle shot_circle;refresh_crosshair;echo SHOT_T_RED",
+    "shot_style_toggle": "shot_t",
+    "shot_selected": "shape_fire",
+    "shot_render": "shot_selected",
+    "shot_circle_part_1": "crosshair 1;cl_crosshairstyle 1;cl_crosshair_length 2;cl_crosshair_thickness 1;cl_crosshair_gap 4;cl_crosshaircolor_a 255;cl_crosshair_drawoutline 0;cl_crosshairdot 1",
+    "shot_circle_part_2": "cl_crosshair_t 1;cl_crosshair_recoil 1;cl_crosshaircolor_r 255;cl_crosshaircolor_g 255;cl_crosshaircolor_b 255;cl_crosshair_dynamic_spread_limit 255",
+    "shot_circle_part_3": "cl_crosshair_dynamic_splitdist 0;cl_crosshair_dynamic_splitalpha_innermod 0;cl_crosshair_dynamic_splitalpha_outermod 0.3;cl_crosshair_dynamic_maxdist_splitratio 0",
+    "shot_circle_part_4": "cl_crosshair_screen_height 1024",
+    "shot_t_part_1": "crosshair 1;cl_crosshairstyle 4;cl_crosshair_length 255;cl_crosshair_thickness 1;cl_crosshair_gap 1;cl_crosshaircolor_a 77;cl_crosshair_drawoutline 1;cl_crosshairdot 0",
+    "shot_t_part_2": "cl_crosshair_t 1;cl_crosshair_recoil 1;cl_crosshaircolor_r 255;cl_crosshaircolor_g 0;cl_crosshaircolor_b 0;cl_crosshair_dynamic_spread_limit 255;cl_crosshair_dynamic_splitdist 0",
+    "shot_t_part_3": "cl_crosshair_dynamic_splitalpha_innermod 0;cl_crosshair_dynamic_splitalpha_outermod 0.3;cl_crosshair_dynamic_maxdist_splitratio 0;cl_crosshair_screen_height 1024",
+    "shape_fire_t": "shot_t_part_1;shot_t_part_2;shot_t_part_3",
+    "space_press_state": "alias sens_check_space sens_held;alias check_space equip_z;alias drop_dispatch space_sneak_press",
+    "space_release_state": "alias sens_check_space sens_check_quick;alias check_space best_weapon;alias drop_dispatch bomb_down;space_sneak_reset",
+    "space_sneak_on": "sprint0;alias space_sneak_toggle space_sneak_off;alias space_move_hold sprint0;echo SPACE_SPRINT0",
+    "space_sneak_off": "sprint1;alias space_sneak_toggle space_sneak_on;alias space_move_hold sprint1;echo SPACE_SPRINT1",
+    "space_sneak_toggle": "space_sneak_on",
+    "space_sneak_reset": "sprint1;alias space_sneak_toggle space_sneak_on;alias space_move_hold noop",
+    "space_move_hold": "noop",
+    "space_sneak_press": "alias drop_release noop;space_sneak_toggle",
+    "drop_dispatch": "bomb_down",
+    "drop_release": "noop",
+    "drop_press": "drop_once",
+    "drop_once": "alias drop_press noop;drop_dispatch",
+    "bomb_down": "alias drop_release bomb_up;cl_autohelp 1;slot3;slot5;look1",
+    "bomb_up": "cl_autohelp 0;look0;slot3;slot5;drop;best_weapon",
+    "fire_check_mouse": "fire_check_enter",
+    "fire_check_enter": "fire_end",
+    "fire_refresh": "fire_check_mouse",
+    "fire_hold": "+attack;alias refresh_crosshair crosshair_fire;atx1",
+    "fire_end": "-attack;alias refresh_crosshair crosshair_idle;mycross;-h_color;sens1;sens_refresh",
+    "fire_cancel": "alias fire_check_mouse fire_check_enter;alias fire_check_enter fire_end;fire_end",
+    "+enter_fire": "alias fire_check_enter fire_hold;fire_refresh;shot_trace_down",
+    "-enter_fire": "alias fire_check_enter fire_end;fire_refresh;shot_trace_up",
+    "mode_status": "echo LEETED_MODES;alias look1;alias automatic_white;alias shot_selected;alias shot_render;alias space_sneak_toggle;selection_status",
+    "noop": "",
+    "refresh_crosshair": "crosshair_idle",
+    "crosshair_idle": "mycross",
+    "crosshair_fire": "shot_render",
+    "shape_dot": "crosshair 1;cl_crosshairstyle 4;cl_crosshair_length 3;cl_crosshair_thickness 2;cl_crosshair_gap 2;cl_crosshaircolor_a 255;cl_crosshair_drawoutline 1;cl_crosshairdot 0;cl_crosshair_t 1;cl_crosshair_recoil 0;cl_crosshair_screen_height 960",
+    "shape_cross": "crosshair 1;cl_crosshairstyle 4;cl_crosshair_length 2;cl_crosshair_thickness 2;cl_crosshair_gap 1;cl_crosshaircolor_a 255;cl_crosshair_drawoutline 0;cl_crosshairdot 0;cl_crosshair_t 1;cl_crosshair_recoil 0;cl_crosshair_screen_height 960",
+    "shape_hole": "crosshair 1;cl_crosshairstyle 4;cl_crosshair_length 1;cl_crosshair_thickness 7;cl_crosshair_gap 4;cl_crosshaircolor_a 255;cl_crosshair_drawoutline 0;cl_crosshairdot 0;cl_crosshair_t 0;cl_crosshair_recoil 0;cl_crosshair_screen_height 960",
+    "shape_trill": "crosshair 1;cl_crosshairstyle 4;cl_crosshair_length 1;cl_crosshair_thickness 1;cl_crosshair_gap 1;cl_crosshaircolor_a 255;cl_crosshair_drawoutline 1;cl_crosshairdot 0;cl_crosshair_t 0;cl_crosshair_recoil 0;cl_crosshair_screen_height 960",
+    "shape_t": "crosshair 1;cl_crosshairstyle 4;cl_crosshair_length 255;cl_crosshair_thickness 1;cl_crosshair_gap 1;cl_crosshaircolor_a 137;cl_crosshair_drawoutline 1;cl_crosshairdot 0;cl_crosshair_t 1;cl_crosshair_recoil 0;cl_crosshair_screen_height 960",
+    "shot_profile_1": "crosshair 1;cl_crosshairstyle 1;cl_crosshair_length 2;cl_crosshair_thickness 3;cl_crosshair_gap 2;cl_crosshaircolor_a 255;cl_crosshair_drawoutline 1;cl_crosshairdot 1",
+    "shot_profile_2": "cl_crosshair_t 1;cl_crosshair_recoil 1;cl_crosshair_screen_height 1024;cl_crosshaircolor_r 255;cl_crosshaircolor_g 0;cl_crosshaircolor_b 0;cl_crosshair_dynamic_spread_limit 77",
+    "shot_profile_3": "cl_crosshair_dynamic_splitdist 0;cl_crosshair_dynamic_splitalpha_innermod 0;cl_crosshair_dynamic_splitalpha_outermod 0.3;cl_crosshair_dynamic_maxdist_splitratio 0",
+    "shape_fire": "shot_circle_part_1;shot_circle_part_2;shot_circle_part_3;shot_circle_part_4",
+    "rgb_white": "cl_crosshaircolor_r 255;cl_crosshaircolor_g 255;cl_crosshaircolor_b 255",
+    "rgb_matrix": "cl_crosshaircolor_r 250;cl_crosshaircolor_g 50;cl_crosshaircolor_b 129",
+    "rgb_pink": "cl_crosshaircolor_r 255;cl_crosshaircolor_g 0;cl_crosshaircolor_b 255",
+    "rgb_weed": "cl_crosshaircolor_r 155;cl_crosshaircolor_g 255;cl_crosshaircolor_b 0",
+    "rgb_red": "cl_crosshaircolor_r 255;cl_crosshaircolor_g 0;cl_crosshaircolor_b 0",
+    "rgb_cyan": "cl_crosshaircolor_r 0;cl_crosshaircolor_g 255;cl_crosshaircolor_b 255",
+    "restore_dot": "shape_dot;color_restore;cl_crosshair_recoil 0;ch1",
+    "selected_dot": "echo CROSS_SELECTED_DOT",
+    "restore_cross": "shape_cross;color_restore;cl_crosshair_recoil 0;ch1",
+    "selected_cross": "echo CROSS_SELECTED_CROSS",
+    "restore_hole": "shape_hole;color_restore;cl_crosshair_recoil 0;ch1",
+    "selected_hole": "echo CROSS_SELECTED_HOLE",
+    "restore_t": "shape_t;color_restore;cl_crosshair_recoil 0;ch1",
+    "selected_t": "echo CROSS_SELECTED_T",
+    "restore_trill": "shape_trill;color_restore;cl_crosshair_recoil 0;ch1",
+    "selected_trill": "echo CROSS_SELECTED_TRILL",
+    "selection_status": "selected_dot",
+    "cross_pick_once": "alias cross_pick_action noop;next_cross",
+    "cross_pick_action": "cross_pick_once",
+    "+cross_pick": "cross_pick_action",
+    "-cross_pick": "alias cross_pick_action cross_pick_once",
+    "sens_normal": "sensitivity 1.33",
+    "sens_held": "sensitivity 1.87",
+    "sens_refresh": "sens_check_space",
+    "sens_check_space": "sens_check_quick",
+    "sens_check_quick": "sens_check_qhand",
+    "sens_check_qhand": "sens_check_quicky",
+    "sens_check_quicky": "sens_normal",
+    "check_space": "best_weapon",
+    "eng": "eng1",
+    "hf": "-hf",
+    "decoy": "deco",
+    "taser": "slot11",
+    "c4": ">c4",
+    "shift1": "bind SHIFT +speed",
+    "stdmode": "grnz;Voice1",
+    "devcon": "dev_on",
+    "macmode": "mac0",
+    "gmrmode": "gmrm_01",
+    "vol_normal": "stdv;alias volmode_toggle vol_low",
+    "vol_low": "volume 0.22;alias volmode_toggle vol_normal",
+    "volmode_toggle": "vol_low",
+    "+smoke": "smoke",
+    "-smoke": "best_weapon",
+    "voip": "Voice1",
+    "_noop": "noop",
+    "+turn180": "yaw 180;+radarzoom",
+    "-turn180": "yaw 0;-radarzoom",
+    "ra1": "bind r +turn180",
+    "ra2": "bind r +radarzoom",
+    "crosscode": "echo CSGO-zkNpk-sFnov-seH67-Ln69q-J6sKG;echo CSGO-HhKXK-GGcBN-FcPuc-Cfbux-Np74E",
+    "+force": "fallback;say_team >>>SAFE WEAPON NOW<<<",
+    "-force": "getout",
+    "eco": "needrop;say_team >>>ECO/DROP<<<",
+    "neo1": "cl_crosshair_drawoutline true; cl_crosshair_dynamic_maxdist_splitratio 1; cl_crosshair_dynamic_splitalpha_innermod 1; cl_crosshair_dynamic_splitalpha_outermod 1; cl_crosshair_dynamic_splitdist 16; cl_crosshair_friendly_warning 1",
+    "neo2": "cl_crosshair_sniper_width 1;cl_crosshair_t true;cl_crosshaircolor_a 175;cl_crosshaircolor_b 0;cl_crosshaircolor_g 255;cl_crosshaircolor_r 155",
+    "neo3": "cl_crosshairdot false;cl_crosshair_gap 2;cl_crosshair_length 3;cl_crosshairstyle 4;cl_crosshair_thickness 2",
+    "neo": "neo1; neo2; neo3",
+    "he": "<hand;slot6;look1",
+    "flash": "<hand;slot7;look1",
+    "smoke": "<hand;slot8;look1",
+    "molo": "<hand;slot10;look1",
+    "deco": "<hand;slot9;look1",
+    "+c4": ">c4;slot8",
+    "-c4": "ch1;w1;w2;look0",
+    "knife": "<hand;slot3;look1",
+    "nova/sawedoff": "buy nova; buy sawedoff; knife",
+    "m4/ak": "buy m4a1; buy ak47; knife",
+    "aug/sg": "buy aug;buy sg556;knife",
+    "galil/famas": "buy galilar; buy famas; knife",
+    "g3/scar": "buy g3sg1; buy scar20; knife",
+    "mac10/mp9": "buy mac10; buy mp9; knife",
+    "awp": "buy awp; knife",
+    "mp7": "buy mp7; knife",
+    "ump45": "buy ump45; knife",
+    "p90": "buy p90; knife",
+    "+vest": "buy vesthelm; buy vest; knife",
+    "grens": "buy flashbang; buy smokegrenade;buy hegrenade; knife",
+    "ink/molo": "buy molotov; buy incgrenade; knife",
+    "vesthelm/vest/grens": "+vest; buy defuser; buy flashbang; buy hegrenade; buy smokegrenade; knife",
+    "spar": "buy defuser; buy hegrenade; knife",
+    "<hand>": "switchhands;look0",
+    "<hand": "switchhandsleft;look0",
+    "hand>": "switchhandsright;look0",
+    "+strafeleft": "+left",
+    "-strafeleft": "-left",
+    "+straferight": "+right",
+    "-straferight": "-right",
+    "useoff": "-use;-use;-use;-use;-use",
+    "useon": "+use;+use;+use;+use;+use",
+    ">c4": "<hand;look1;slot5",
+    "rdygo": "fire_cancel;he;molo;smoke;slot3;knife;look0",
+    "w0": "<hand;slot3;knife",
+    "w1": "rdygo;hand>;slot2",
+    "w2": "rdygo;hand>;slot1",
+    "look1": "noop",
+    "look0": "-lookatweapon",
+    "sens1": "sensitivity 1.33;zoom_sensitivity_ratio 0.8189833027098955",
+    "sens2": "sensitivity 1.87;zoom_sensitivity_ratio 0.8189833027098955",
+    "sensx": "sensitivity 1.87;zoom_sensitivity_ratio 1.87",
+    "sens0": "sens1",
+    "stdv": "volume 0.33",
+    "1voicevol": "volume 0.22;snd_voipvolume 0.3",
+    "0voicevol": "stdv;snd_voipvolume 0.5",
+    "xmute": "stdv;snd_voipvolume 0.0",
+    "voice": "bind v +voicerecord;stdv;snd_voipvolume 0.1",
+    "<vol": "+h_color;1voicevol",
+    "vol>": "-h_color;0voicevol",
+    "+sneak": "<vol;+duck",
+    "-sneak": "vol>;-duck",
+    "buyend": "slot3;clear;knife;decoy",
+    "modemode_std": "bind CTRL +sneak;bind SHIFT +sprint;bind CapsLock sprint_mode",
+    "sneak_end": "bind CTRL movemode_run;bind SHIFT movemode_run;bind CapsLock movemode_run",
+    "movemode_sneak": "sneak_end;sprint1",
+    "movemode_run": "modemode_std;shift1;sprint0",
+    "sprint_mode": "movemode_sneak",
+    "sprint1": "<vol;+sprint",
+    "sprint0": "vol>;-sprint",
+    "+speed": "<vol;+sprint;space_move_hold",
+    "-speed": "vol>;-sprint;space_move_hold",
+    "switchvoice": "-voicerecord;alias voice_action clutch_on",
+    "ingamemsg": "bind F9 repbot ;bind F10 bla;bind F11 ts;bind F12 eng",
+    "inmageswitch": "bind F1 hudcol ;bind F2 gmrview",
+    "face1": "bind F5 +f_stay;bind F6 +f_switch;bind F7 f_gg;bind F8 f_report",
+    "gretz": "bind F3 +hf;bind F4 +gg",
+    "grnz": "grenade_mode",
+    "xgrnz": "smoke;molo;he;flash",
+    "+togglevol": "toggleconsole; volmode_toggle",
+    "-togglevol": "toggleconsole",
+    "hudcol": "toggle cl_hud_color 0 1 2 3 4 5 6 7",
+    "+h_color": "cl_hud_color 6",
+    "-h_color": "cl_hud_color 0",
+    "h_c-one": "cl_hud_color 1",
+    "+lowrate": "clear;showconsole",
+    "-lowrate": "rate 98304;hideconsole;echo low_on1",
+    "+lanrate": "clear;showconsole",
+    "-lanrate": "rate 1000000;hideconsole;echo lan_on1",
+    "+rate128": "showconsole",
+    "-rate128": "rate 786432;hideconsole;echo 128_on1",
+    "+rate64": "clear;showconsole",
+    "-rate64": "rate 386432;hideconsole;echo 64_on1",
+    "nethub": "bind F10 +rate64 ;bind F11 +rate128;bind F12 +lanrate;bind F9 +lowrate",
+    "by": "say powered by. #LIKEDBIG",
+    "ts": "say_team TS3/Discord:#",
+    "bla": "say FLAMEBOX >>>>>>>|\\\\____//|<<<<<<< FLAMEBOX",
+    "repbot": "say bye bye BITCH - REPORTBOT IS RUNNING!",
+    "eng1": "say_team ENGLISH PLEASE",
+    "+ez": "say_team ♡",
+    "-ez": "",
+    "gj": "say_team GooD J0B",
+    "nt": "say_team Nice Try",
+    "sry": "say_team SORRY!",
+    "go_play": "say_team {GO}PLAY{TOGATHER}!",
+    "thx": "say_team THANKS!",
+    "+hf": ";say [H]ave [F]un _&_ [F]air [P]lay",
+    "-hf": "say_team [H]an[F] & [G]ood [L]uck ",
+    "+gg": "showconsole;say_team [G]ood [G]ame;",
+    "-gg": "say [G]ood [G]ame;stop",
+    "mnormal": "unbind mwheeldown; look0; <vol; -h_color;-reload",
+    "mjump": " vol>; +h_color; bind mwheeldown +jump",
+    "+jumpp": "mjump;sens0;+buy;space_press_state;select_held;sens_refresh",
+    "-jumpp": "mnormal;sensx;-buy;space_release_state;best_weapon;proview;sens_refresh",
+    "+duckjump": "+duck; +jump",
+    "-duckjump": "-jump; -duck",
+    "vst": "buy vesthelm;buy vest",
+    "buyanddrop": "buy ak47; buy m4a1_silencer; slot1; drop",
+    "dropump": "knife; ump45; slot1; drop",
+    "dropflash": "knife;buy flashbang;slot7;drop;decoy",
+    "dropp250": "knife; buy p250; slot2; drop;decoy",
+    "faceit1": "cl_hide_avatar_images 0;cl_sanitize_player_names 0;cl_teamcounter_playercount_instead_of_avatars 0;echo FACEIT Modus 1",
+    "faceit0": "cl_hide_avatar_images 2;cl_sanitize_player_names 1;cl_teamcounter_playercount_instead_of_avatars 1;echo FACEIT Modus 0",
+    "+f_stay": "say !stay;faceit1",
+    "+f_switch": "say !switch;faceit1",
+    "-f_stay": "hf",
+    "-f_switch": "hf",
+    "f_gg": "say !gg",
+    "f_report": "say !report",
+    "_fst": "bind F5 +f_stay",
+    "_fsw": "bind F6 +f_switch",
+    "_fg": "bind F7 f_gg",
+    "_fr": "bind F8 f_report",
+    "fait": "_fst;_fsw;_fg;_fr",
+    "faceit": "faceit1;fait",
+    "gmrm_01": "faceit1; alias gmrmode gmrm_02",
+    "gmrm_02": "faceit0; alias gmrmode gmrm_01",
+    "facemode": "gmrmode",
+    "fps1": "cl_showfps 1",
+    "fps0": "cl_showfps 0",
+    "maxfps": "fps_max 999",
+    "myfps": "fps_max 999",
+    "+gmrquit": "clear;showconsole;stop;status",
+    "-gmrquit": "quit",
+    "+gmrdisc": "clear;showconsole;stop;status",
+    "-gmrdisc": "disconnect",
+    "fix": "clear;exec autoexec.cfg",
+    "+fixed": "clear;dev1;showconsole",
+    "-fixed": "fix",
+    "dev0": "developer 0;echo dev>0",
+    "dev1": "developer 1;echo dev>1",
+    "dev_on": "dev1; alias devCon dev_off",
+    "dev_off": "dev0; alias devCon dev_on",
+    "devmode": "devCon",
+    "+codewall": "clear;showconsole",
+    "-codewall": "hideconsole",
+    "view_01": "trillview; alias gmrview view_02",
+    "view_02": "proview; alias gmrview view_01",
+    "proview": "viewmodel_presetpos 0;viewmodel_offset_x 2.5;viewmodel_offset_y -2;viewmodel_offset_z -2;viewmodel_fov 54",
+    "trillview": "viewmodel_presetpos 0;viewmodel_offset_z -1.5;viewmodel_offset_x 2.5;viewmodel_offset_y 1.5;viewmodel_fov 65",
+    "gmrview": "view_01",
+    "+dropbomb": "drop_press",
+    "-dropbomb": "drop_release;alias drop_release noop;alias drop_press drop_once",
+    "+scorenet": "+showscores; fps1; fps_max 999 ",
+    "-scorenet": "-showscores;fps1;myfps",
+    "showhud_on": "cl_teamcounter_playercount_instead_of_avatars 0;cl_show_equipped_character_for_player_avatars 0",
+    "showhud_off": "cl_teamcounter_playercount_instead_of_avatars 1;cl_show_equipped_character_for_player_avatars 1",
+    "showbomb_on": "gameinstructor_enable true",
+    "showbomb_off": "gameinstructor_enable false",
+    "radarzoom_off": "cl_radar_scale 0.42;cl_radar_always_centered 0;cl_radar_rotate 1;cl_hud_radar_scale 1.15",
+    "radarzoom_on": "cl_radar_scale 1.3;cl_radar_always_centered 1;cl_radar_rotate 1;cl_hud_radar_scale 1.5",
+    "+radarzoom": "cl_autohelp true;1voicevol;showbomb_on;showhud_on;radarzoom_on",
+    "-radarzoom": "cl_autohelp false;0voicevol;showbomb_off;showhud_off;radarzoom_off",
+    "+quick": "<hand;knife;taser;sensx;look1;cl_autohelp 1;alias sens_check_quick sens_held;sens_refresh;refresh_crosshair",
+    "-quick": "sens0;cl_autohelp 0;alias sens_check_quick sens_check_qhand;best_weapon;sens_refresh",
+    "+qhand": "sensx;knife;alias sens_check_qhand sens_held;sens_refresh;refresh_crosshair",
+    "-qhand": "sens0;alias sens_check_qhand sens_check_quicky;best_weapon;sens_refresh",
+    "+quicky": "sensx;<hand;knife;c4;look1;alias sens_check_quicky sens_held;sens_refresh;refresh_crosshair",
+    "-quicky": "sens0;alias sens_check_quicky sens_normal;best_weapon;sens_refresh",
+    "mac_1": "r_fullscreen_gamma 3.23",
+    "mac_0": "r_fullscreen_gamma 2.32",
+    "mac0": "mac_0; alias macmode mac1",
+    "mac1": "mac_1; alias macmode mac0",
+    "reco": "reco0",
+    "reco0": "cl_crosshair_recoil false; alias reco reco1",
+    "reco1": "refresh_crosshair;alias reco reco0",
+    "movecross": "automatic_white;refresh_crosshair",
+    "+holdzoom": "+zoom",
+    "-holdzoom": "-zoom",
+    "ch0": "crosshair 0",
+    "ch1": "crosshair 1",
+    "trill": "alias mycross restore_trill;alias gmrcrossnow shape_trill;alias selection_status selected_trill;refresh_crosshair",
+    "croattx": "shot_render",
+    "mycross": "restore_dot",
+    "atx1": "croattx;+h_color;sens_refresh",
+    "atx0": "mycross;-h_color;sens1;sens_refresh",
+    "crosscross_a": "shape_cross",
+    "crosscross_b": "cl_crosshair_dynamic_splitdist 7;cl_crosshair_dynamic_splitalpha_innermod 1;cl_crosshair_dynamic_splitalpha_outermod 0.5;cl_crosshair_dynamic_maxdist_splitratio 0.3",
+    "crosscross": "alias mycross restore_cross;alias gmrcrossnow shape_cross;alias selection_status selected_cross;refresh_crosshair",
+    "crosshole": "alias mycross restore_hole;alias gmrcrossnow shape_hole;alias selection_status selected_hole;refresh_crosshair",
+    "crossdot_a": "shape_dot",
+    "crossdot_b": "cl_crosshair_dynamic_splitdist 16;cl_crosshair_dynamic_splitalpha_innermod 1;cl_crosshair_dynamic_splitalpha_outermod 1;cl_crosshair_dynamic_maxdist_splitratio 1",
+    "crossdot": "alias mycross restore_dot;alias gmrcrossnow shape_dot;alias selection_status selected_dot;refresh_crosshair",
+    "crosst": "alias mycross restore_t;alias gmrcrossnow shape_t;alias selection_status selected_t;refresh_crosshair",
+    "cross1": "crosshole;alias next_cross cross2",
+    "cross2": "crossdot;alias next_cross cross3",
+    "cross3": "crosscross;alias next_cross cross4",
+    "cross4": "crosst;alias next_cross cross1",
+    "next_cross": "cross1",
+    "c_hell": "alias selected_color rgb_white;alias croco rgb_white;refresh_crosshair",
+    "c_matrix": "alias selected_color rgb_matrix;alias croco rgb_matrix;refresh_crosshair",
+    "c_npink": "alias selected_color rgb_pink;alias croco rgb_pink;refresh_crosshair",
+    "c_nweed": "alias selected_color rgb_weed;alias croco rgb_weed;refresh_crosshair",
+    "c_nred": "alias selected_color rgb_red;alias croco rgb_red;refresh_crosshair",
+    "c_ntkys": "alias selected_color rgb_cyan;alias croco rgb_cyan;refresh_crosshair",
+    "crn1": "c_hell;alias cr_x crn2;echo Farbe: Weiss",
+    "crn2": "c_ntkys;alias cr_x crn3;echo Farbe: Cyan",
+    "crn3": "c_npink;alias cr_x crn4;echo Farbe: Pink",
+    "crn4": "c_nweed;alias cr_x crn5;echo Farbe: Weed",
+    "crn5": "c_nred;alias cr_x crn6;echo Farbe: Rot",
+    "crn6": "c_matrix;alias cr_x crn1;echo Farbe: Matrix",
+    "cr_x": "crn1",
+    "gmrcrossnow": "shape_dot",
+    "croco": "rgb_red",
+    "atxc": "rgb_red",
+    "freehud": "sv_cheats true;mp_drop_knife_enable true",
+    "snowball": "give weapon_snowball",
+    "tag": "give weapon_flashbang",
+    "+[funkbar]": "[1]funkbind;1voicevol;face1;switchvoice",
+    "-[funkbar]": "[0]funkbind;nethub;Voice1;0voicevol",
+    "+fuk_": "+buy;<hand>;+[funkbar];faceit1;+_r;switchvoice",
+    "-fuk_": "-buy;<hand>;-[funkbar];faceit0;-_r;cl_clutch_mode 0;Voice1",
+    "+_r": "brad",
+    "-_r": "close_radio;grnz;best_weapon",
+    "_r": "radio_[1]",
+    "radio_[1]": "radio1; alias _r radio_[2]",
+    "radio_[2]": "radio2; alias _r radio_[3]",
+    "radio_[3]": "radio3;alias _r radio_[1]",
+    "radio_[4]": "Slot10; alias _r radio_[1]",
+    "{say}": "alltalk",
+    "{team}": "teamtalk",
+    "funkr_[1]": "{say}",
+    "funkr_[0]": "{team}",
+    "[1]hudmode": "+cl_show_team_equipment;cl_hud_radar_scale 0.77;cl_teamcounter_playercount_instead_of_avatars 0;cl_show_equipped_character_for_player_avatars 0;cl_sanitize_player_names false;cl_hide_avatar_images 0;cl_mute_enemy_team 0",
+    "[0]hudmode": "-radarzoom;cl_teamcounter_playercount_instead_of_avatars 1;cl_show_equipped_character_for_player_avatars 1;cl_sanitize_player_names true;cl_hide_avatar_images 0;cl_mute_enemy_team 1",
+    "[1]funkbind": "funkR_[1];[1]hudmode",
+    "[0]funkbind": "funkR_[0];[0]hudmode",
+    "+[rr1]": "+radialradio",
+    "+[rr2]": "+radialradio2",
+    "+[rr3]": "+radialradio3",
+    "-[rr1]": "-radialradio",
+    "-[rr2]": "-radialradio2",
+    "-[rr3]": "-radialradio3",
+    "{brad1}": "bind z +[rr1]",
+    "{brad2}": "bind x +[rr2]",
+    "{brad3}": "bind c +[rr3]",
+    "{rrbind}": "bind f _r",
+    "brad": "radio_mode",
+    "clutch1": "switchvoice",
+    "voice1": "alias voice_action +voicerecord",
+    "teamtalk": "bind Y say_team",
+    "alltalk": "bind Y say",
+    "@msg": "bind F9 repbot; bind F10 bla; bind F11 ts; bind F12 eng",
+    "{f5stay}": "bind F5 +f_stay",
+    "{f6switch}": "bind F6 +f_switch",
+    "{f7gg}": "bind F7 f_gg",
+    "{f8report}": "bind F8 f_report",
+    "@facekeys": "{f5stay};{f6switch};{f7gg};{f8report}",
+    "+[chain]": "+fuk_",
+    "-[chain]": "-fuk_",
+    "+p2": "say_team { PLAY TOGATHER }",
+    "-p2": "say_team { GO BACK & PLAY POSITION #FOKUS }",
+    "+buy": "buymenu",
+    "-buy": "buymenu",
+    "+atx": "alias fire_check_mouse fire_hold;fire_refresh;shot_trace_down",
+    "-atx": "alias fire_check_mouse fire_check_enter;fire_refresh;shot_trace_up",
+    "+space_mode": "+jumpp;space_trace_down",
+    "-space_mode": "space_trace_up;unbind mwheeldown;crosshair 1;-jumpp;unbind mwheeldown;refresh_crosshair;space_trace_done",
+    "space_trace_down": "print_down",
+    "space_trace_up": "print_up",
+    "space_trace_done": "print_done",
+    "print_down": "echo [LEETED05] SPACE_DOWN;bind mwheeldown;crosshair",
+    "print_up": "echo [LEETED05] SPACE_UP_BEGIN",
+    "print_done": "echo [LEETED05] SPACE_UP_END;bind mwheeldown;crosshair",
+    "trace_on": "alias space_trace_down print_down;alias space_trace_up print_up;alias space_trace_done print_done;echo [LEETED] TRACE_ON",
+    "trace_off": "alias space_trace_down noop;alias space_trace_up noop;alias space_trace_done noop;echo [LEETED] TRACE_OFF",
+    "input_reset": "unbind mwheeldown;refresh_crosshair",
+    "clutch_on": "cl_clutch_mode 1",
+    "+voice_key": "voice_action",
+    "-voice_key": "-voicerecord",
+    "voice_action": "+voicerecord",
+    "input_status": "bind space;bind mwheeldown;bind b;bind alt;bind v;bind z;bind x;bind c;bind f;cl_clutch_mode;crosshair",
+    "best_weapon": "look0;slot3;slot2;slot1;hand>;refresh_crosshair",
+    "select_held": "check_z",
+    "equip_z": "<hand;slot7;slot6;slot10;slot8;look1;refresh_crosshair",
+    "check_z": "check_x",
+    "z_gren_down": "alias check_z equip_z;alias z_up z_gren_up;equip_z",
+    "z_gren_up": "alias check_z check_x;alias z_up noop;best_weapon",
+    "z_radio_down": "alias z_up z_radio_up;+radialradio",
+    "z_radio_up": "-radialradio;alias z_up noop",
+    "z_down": "z_gren_down",
+    "z_up": "noop",
+    "+key_z": "z_down",
+    "-key_z": "z_up",
+    "equip_x": "<hand;slot8;slot7;slot6;slot10;look1;refresh_crosshair",
+    "check_x": "check_c",
+    "x_gren_down": "alias check_x equip_x;alias x_up x_gren_up;equip_x",
+    "x_gren_up": "alias check_x check_c;alias x_up noop;best_weapon",
+    "x_radio_down": "alias x_up x_radio_up;+radialradio2",
+    "x_radio_up": "-radialradio2;alias x_up noop",
+    "x_down": "x_gren_down",
+    "x_up": "noop",
+    "+key_x": "x_down",
+    "-key_x": "x_up",
+    "equip_c": "<hand;slot10;slot8;slot7;slot6;look1;refresh_crosshair",
+    "check_c": "check_f",
+    "c_gren_down": "alias check_c equip_c;alias c_up c_gren_up;equip_c",
+    "c_gren_up": "alias check_c check_f;alias c_up noop;best_weapon",
+    "c_radio_down": "alias c_up c_radio_up;+radialradio3",
+    "c_radio_up": "-radialradio3;alias c_up noop",
+    "c_down": "c_gren_down",
+    "c_up": "noop",
+    "+key_c": "c_down",
+    "-key_c": "c_up",
+    "equip_f": "<hand;slot6;slot10;slot8;slot7;look1;refresh_crosshair",
+    "check_f": "check_space",
+    "f_gren_down": "alias check_f equip_f;alias f_up f_gren_up;equip_f",
+    "f_gren_up": "alias check_f check_space;alias f_up noop;best_weapon",
+    "f_radio_down": "alias f_up f_radio_up;_r",
+    "f_radio_up": "noop;alias f_up noop",
+    "f_down": "f_gren_down",
+    "f_up": "noop",
+    "+key_f": "f_down",
+    "-key_f": "f_up",
+    "grenade_mode": "alias z_down z_gren_down;alias x_down x_gren_down;alias c_down c_gren_down;alias f_down f_gren_down",
+    "radio_mode": "alias z_down z_radio_down;alias x_down x_radio_down;alias c_down c_radio_down;alias f_down f_radio_down",
+    "close_radio": "-radialradio;-radialradio2;-radialradio3",
+    "diag_crosshair": "log_flags General -donotecho;echo LEETED_CROSSHAIR_STATUS;crosshair;bind mouse1;bind k;find cl_crosshair",
+    "b_jump": "bind b +jump",
+    "b_duckjump": "bind b +duckjump",
+    "shot_values": "crosshair;cl_crosshairstyle;cl_crosshair_length;cl_crosshair_thickness;cl_crosshair_gap;cl_crosshaircolor_a;cl_crosshaircolor_r;cl_crosshaircolor_g;cl_crosshaircolor_b;cl_crosshair_recoil",
+    "shot_down_report": "echo LEETED_SHOT_DOWN;shot_values",
+    "shot_up_report": "echo LEETED_SHOT_UP_END;selection_status;shot_values",
+    "shot_trace_on": "log_flags General -donotecho;alias shot_trace_down shot_down_report;alias shot_trace_up shot_up_report;echo LEETED_SHOT_TRACE_ON",
+    "shot_trace_off": "alias shot_trace_down noop;alias shot_trace_up noop",
+    "shot_status": "log_flags General -donotecho;echo LEETED_SHOT_STATUS;selection_status;bind mouse1;bind k;shot_values",
+    "shot_trace_down": "noop",
+    "shot_trace_up": "noop"
+  },
+  "edges": [
+    {
+      "from": "inspect_on",
+      "to": "look1",
+      "kind": "assignment",
+      "value": "+lookatweapon"
+    },
+    {
+      "from": "inspect_on",
+      "to": "inspect_toggle",
+      "kind": "assignment",
+      "value": "inspect_off"
+    },
+    {
+      "from": "inspect_off",
+      "to": "look1",
+      "kind": "assignment",
+      "value": "noop"
+    },
+    {
+      "from": "inspect_off",
+      "to": "look0",
+      "kind": "call"
+    },
+    {
+      "from": "inspect_off",
+      "to": "inspect_toggle",
+      "kind": "assignment",
+      "value": "inspect_on"
+    },
+    {
+      "from": "inspect_toggle",
+      "to": "inspect_on",
+      "kind": "call"
+    },
+    {
+      "from": "color_lock_on",
+      "to": "automatic_white",
+      "kind": "assignment",
+      "value": "noop"
+    },
+    {
+      "from": "color_lock_on",
+      "to": "color_restore",
+      "kind": "assignment",
+      "value": "selected_color"
+    },
+    {
+      "from": "color_lock_on",
+      "to": "color_lock_toggle",
+      "kind": "assignment",
+      "value": "color_lock_off"
+    },
+    {
+      "from": "color_lock_on",
+      "to": "refresh_crosshair",
+      "kind": "call"
+    },
+    {
+      "from": "color_lock_off",
+      "to": "automatic_white",
+      "kind": "assignment",
+      "value": "legacy_white"
+    },
+    {
+      "from": "color_lock_off",
+      "to": "color_restore",
+      "kind": "assignment",
+      "value": "croco"
+    },
+    {
+      "from": "color_lock_off",
+      "to": "color_lock_toggle",
+      "kind": "assignment",
+      "value": "color_lock_on"
+    },
+    {
+      "from": "color_lock_off",
+      "to": "refresh_crosshair",
+      "kind": "call"
+    },
+    {
+      "from": "selected_color",
+      "to": "rgb_red",
+      "kind": "call"
+    },
+    {
+      "from": "color_restore",
+      "to": "selected_color",
+      "kind": "call"
+    },
+    {
+      "from": "legacy_white",
+      "to": "croco",
+      "kind": "assignment",
+      "value": "rgb_white"
+    },
+    {
+      "from": "color_lock_toggle",
+      "to": "color_lock_off",
+      "kind": "call"
+    },
+    {
+      "from": "automatic_white",
+      "to": "noop",
+      "kind": "call"
+    },
+    {
+      "from": "shot_on",
+      "to": "shot_render",
+      "kind": "assignment",
+      "value": "shot_selected"
+    },
+    {
+      "from": "shot_on",
+      "to": "shot_toggle",
+      "kind": "assignment",
+      "value": "shot_off"
+    },
+    {
+      "from": "shot_on",
+      "to": "refresh_crosshair",
+      "kind": "call"
+    },
+    {
+      "from": "shot_off",
+      "to": "shot_render",
+      "kind": "assignment",
+      "value": "mycross"
+    },
+    {
+      "from": "shot_off",
+      "to": "shot_toggle",
+      "kind": "assignment",
+      "value": "shot_on"
+    },
+    {
+      "from": "shot_off",
+      "to": "refresh_crosshair",
+      "kind": "call"
+    },
+    {
+      "from": "shot_toggle",
+      "to": "shot_off",
+      "kind": "call"
+    },
+    {
+      "from": "shot_circle",
+      "to": "shot_selected",
+      "kind": "assignment",
+      "value": "shape_fire"
+    },
+    {
+      "from": "shot_circle",
+      "to": "shot_style_toggle",
+      "kind": "assignment",
+      "value": "shot_t"
+    },
+    {
+      "from": "shot_circle",
+      "to": "refresh_crosshair",
+      "kind": "call"
+    },
+    {
+      "from": "shot_t",
+      "to": "shot_selected",
+      "kind": "assignment",
+      "value": "shape_fire_t"
+    },
+    {
+      "from": "shot_t",
+      "to": "shot_style_toggle",
+      "kind": "assignment",
+      "value": "shot_circle"
+    },
+    {
+      "from": "shot_t",
+      "to": "refresh_crosshair",
+      "kind": "call"
+    },
+    {
+      "from": "shot_style_toggle",
+      "to": "shot_t",
+      "kind": "call"
+    },
+    {
+      "from": "shot_selected",
+      "to": "shape_fire",
+      "kind": "call"
+    },
+    {
+      "from": "shot_render",
+      "to": "shot_selected",
+      "kind": "call"
+    },
+    {
+      "from": "shape_fire_t",
+      "to": "shot_t_part_1",
+      "kind": "call"
+    },
+    {
+      "from": "shape_fire_t",
+      "to": "shot_t_part_2",
+      "kind": "call"
+    },
+    {
+      "from": "shape_fire_t",
+      "to": "shot_t_part_3",
+      "kind": "call"
+    },
+    {
+      "from": "space_press_state",
+      "to": "sens_check_space",
+      "kind": "assignment",
+      "value": "sens_held"
+    },
+    {
+      "from": "space_press_state",
+      "to": "check_space",
+      "kind": "assignment",
+      "value": "equip_z"
+    },
+    {
+      "from": "space_press_state",
+      "to": "drop_dispatch",
+      "kind": "assignment",
+      "value": "space_sneak_press"
+    },
+    {
+      "from": "space_release_state",
+      "to": "sens_check_space",
+      "kind": "assignment",
+      "value": "sens_check_quick"
+    },
+    {
+      "from": "space_release_state",
+      "to": "check_space",
+      "kind": "assignment",
+      "value": "best_weapon"
+    },
+    {
+      "from": "space_release_state",
+      "to": "drop_dispatch",
+      "kind": "assignment",
+      "value": "bomb_down"
+    },
+    {
+      "from": "space_release_state",
+      "to": "space_sneak_reset",
+      "kind": "call"
+    },
+    {
+      "from": "space_sneak_on",
+      "to": "sprint0",
+      "kind": "call"
+    },
+    {
+      "from": "space_sneak_on",
+      "to": "space_sneak_toggle",
+      "kind": "assignment",
+      "value": "space_sneak_off"
+    },
+    {
+      "from": "space_sneak_on",
+      "to": "space_move_hold",
+      "kind": "assignment",
+      "value": "sprint0"
+    },
+    {
+      "from": "space_sneak_off",
+      "to": "sprint1",
+      "kind": "call"
+    },
+    {
+      "from": "space_sneak_off",
+      "to": "space_sneak_toggle",
+      "kind": "assignment",
+      "value": "space_sneak_on"
+    },
+    {
+      "from": "space_sneak_off",
+      "to": "space_move_hold",
+      "kind": "assignment",
+      "value": "sprint1"
+    },
+    {
+      "from": "space_sneak_toggle",
+      "to": "space_sneak_on",
+      "kind": "call"
+    },
+    {
+      "from": "space_sneak_reset",
+      "to": "sprint1",
+      "kind": "call"
+    },
+    {
+      "from": "space_sneak_reset",
+      "to": "space_sneak_toggle",
+      "kind": "assignment",
+      "value": "space_sneak_on"
+    },
+    {
+      "from": "space_sneak_reset",
+      "to": "space_move_hold",
+      "kind": "assignment",
+      "value": "noop"
+    },
+    {
+      "from": "space_move_hold",
+      "to": "noop",
+      "kind": "call"
+    },
+    {
+      "from": "space_sneak_press",
+      "to": "drop_release",
+      "kind": "assignment",
+      "value": "noop"
+    },
+    {
+      "from": "space_sneak_press",
+      "to": "space_sneak_toggle",
+      "kind": "call"
+    },
+    {
+      "from": "drop_dispatch",
+      "to": "bomb_down",
+      "kind": "call"
+    },
+    {
+      "from": "drop_release",
+      "to": "noop",
+      "kind": "call"
+    },
+    {
+      "from": "drop_press",
+      "to": "drop_once",
+      "kind": "call"
+    },
+    {
+      "from": "drop_once",
+      "to": "drop_press",
+      "kind": "assignment",
+      "value": "noop"
+    },
+    {
+      "from": "drop_once",
+      "to": "drop_dispatch",
+      "kind": "call"
+    },
+    {
+      "from": "bomb_down",
+      "to": "drop_release",
+      "kind": "assignment",
+      "value": "bomb_up"
+    },
+    {
+      "from": "bomb_down",
+      "to": "look1",
+      "kind": "call"
+    },
+    {
+      "from": "bomb_up",
+      "to": "look0",
+      "kind": "call"
+    },
+    {
+      "from": "bomb_up",
+      "to": "best_weapon",
+      "kind": "call"
+    },
+    {
+      "from": "fire_check_mouse",
+      "to": "fire_check_enter",
+      "kind": "call"
+    },
+    {
+      "from": "fire_check_enter",
+      "to": "fire_end",
+      "kind": "call"
+    },
+    {
+      "from": "fire_refresh",
+      "to": "fire_check_mouse",
+      "kind": "call"
+    },
+    {
+      "from": "fire_hold",
+      "to": "refresh_crosshair",
+      "kind": "assignment",
+      "value": "crosshair_fire"
+    },
+    {
+      "from": "fire_hold",
+      "to": "atx1",
+      "kind": "call"
+    },
+    {
+      "from": "fire_end",
+      "to": "refresh_crosshair",
+      "kind": "assignment",
+      "value": "crosshair_idle"
+    },
+    {
+      "from": "fire_end",
+      "to": "mycross",
+      "kind": "call"
+    },
+    {
+      "from": "fire_end",
+      "to": "-h_color",
+      "kind": "call"
+    },
+    {
+      "from": "fire_end",
+      "to": "sens1",
+      "kind": "call"
+    },
+    {
+      "from": "fire_end",
+      "to": "sens_refresh",
+      "kind": "call"
+    },
+    {
+      "from": "fire_cancel",
+      "to": "fire_check_mouse",
+      "kind": "assignment",
+      "value": "fire_check_enter"
+    },
+    {
+      "from": "fire_cancel",
+      "to": "fire_check_enter",
+      "kind": "assignment",
+      "value": "fire_end"
+    },
+    {
+      "from": "fire_cancel",
+      "to": "fire_end",
+      "kind": "call"
+    },
+    {
+      "from": "+enter_fire",
+      "to": "fire_check_enter",
+      "kind": "assignment",
+      "value": "fire_hold"
+    },
+    {
+      "from": "+enter_fire",
+      "to": "fire_refresh",
+      "kind": "call"
+    },
+    {
+      "from": "+enter_fire",
+      "to": "shot_trace_down",
+      "kind": "call"
+    },
+    {
+      "from": "-enter_fire",
+      "to": "fire_check_enter",
+      "kind": "assignment",
+      "value": "fire_end"
+    },
+    {
+      "from": "-enter_fire",
+      "to": "fire_refresh",
+      "kind": "call"
+    },
+    {
+      "from": "-enter_fire",
+      "to": "shot_trace_up",
+      "kind": "call"
+    },
+    {
+      "from": "mode_status",
+      "to": "selection_status",
+      "kind": "call"
+    },
+    {
+      "from": "refresh_crosshair",
+      "to": "crosshair_idle",
+      "kind": "call"
+    },
+    {
+      "from": "crosshair_idle",
+      "to": "mycross",
+      "kind": "call"
+    },
+    {
+      "from": "crosshair_fire",
+      "to": "shot_render",
+      "kind": "call"
+    },
+    {
+      "from": "shape_fire",
+      "to": "shot_circle_part_1",
+      "kind": "call"
+    },
+    {
+      "from": "shape_fire",
+      "to": "shot_circle_part_2",
+      "kind": "call"
+    },
+    {
+      "from": "shape_fire",
+      "to": "shot_circle_part_3",
+      "kind": "call"
+    },
+    {
+      "from": "shape_fire",
+      "to": "shot_circle_part_4",
+      "kind": "call"
+    },
+    {
+      "from": "restore_dot",
+      "to": "shape_dot",
+      "kind": "call"
+    },
+    {
+      "from": "restore_dot",
+      "to": "color_restore",
+      "kind": "call"
+    },
+    {
+      "from": "restore_dot",
+      "to": "ch1",
+      "kind": "call"
+    },
+    {
+      "from": "restore_cross",
+      "to": "shape_cross",
+      "kind": "call"
+    },
+    {
+      "from": "restore_cross",
+      "to": "color_restore",
+      "kind": "call"
+    },
+    {
+      "from": "restore_cross",
+      "to": "ch1",
+      "kind": "call"
+    },
+    {
+      "from": "restore_hole",
+      "to": "shape_hole",
+      "kind": "call"
+    },
+    {
+      "from": "restore_hole",
+      "to": "color_restore",
+      "kind": "call"
+    },
+    {
+      "from": "restore_hole",
+      "to": "ch1",
+      "kind": "call"
+    },
+    {
+      "from": "restore_t",
+      "to": "shape_t",
+      "kind": "call"
+    },
+    {
+      "from": "restore_t",
+      "to": "color_restore",
+      "kind": "call"
+    },
+    {
+      "from": "restore_t",
+      "to": "ch1",
+      "kind": "call"
+    },
+    {
+      "from": "restore_trill",
+      "to": "shape_trill",
+      "kind": "call"
+    },
+    {
+      "from": "restore_trill",
+      "to": "color_restore",
+      "kind": "call"
+    },
+    {
+      "from": "restore_trill",
+      "to": "ch1",
+      "kind": "call"
+    },
+    {
+      "from": "selection_status",
+      "to": "selected_dot",
+      "kind": "call"
+    },
+    {
+      "from": "cross_pick_once",
+      "to": "cross_pick_action",
+      "kind": "assignment",
+      "value": "noop"
+    },
+    {
+      "from": "cross_pick_once",
+      "to": "next_cross",
+      "kind": "call"
+    },
+    {
+      "from": "cross_pick_action",
+      "to": "cross_pick_once",
+      "kind": "call"
+    },
+    {
+      "from": "+cross_pick",
+      "to": "cross_pick_action",
+      "kind": "call"
+    },
+    {
+      "from": "-cross_pick",
+      "to": "cross_pick_action",
+      "kind": "assignment",
+      "value": "cross_pick_once"
+    },
+    {
+      "from": "sens_refresh",
+      "to": "sens_check_space",
+      "kind": "call"
+    },
+    {
+      "from": "sens_check_space",
+      "to": "sens_check_quick",
+      "kind": "call"
+    },
+    {
+      "from": "sens_check_quick",
+      "to": "sens_check_qhand",
+      "kind": "call"
+    },
+    {
+      "from": "sens_check_qhand",
+      "to": "sens_check_quicky",
+      "kind": "call"
+    },
+    {
+      "from": "sens_check_quicky",
+      "to": "sens_normal",
+      "kind": "call"
+    },
+    {
+      "from": "check_space",
+      "to": "best_weapon",
+      "kind": "call"
+    },
+    {
+      "from": "eng",
+      "to": "eng1",
+      "kind": "call"
+    },
+    {
+      "from": "hf",
+      "to": "-hf",
+      "kind": "call"
+    },
+    {
+      "from": "decoy",
+      "to": "deco",
+      "kind": "call"
+    },
+    {
+      "from": "c4",
+      "to": ">c4",
+      "kind": "call"
+    },
+    {
+      "from": "stdmode",
+      "to": "grnz",
+      "kind": "call"
+    },
+    {
+      "from": "stdmode",
+      "to": "voice1",
+      "kind": "call"
+    },
+    {
+      "from": "devcon",
+      "to": "dev_on",
+      "kind": "call"
+    },
+    {
+      "from": "macmode",
+      "to": "mac0",
+      "kind": "call"
+    },
+    {
+      "from": "gmrmode",
+      "to": "gmrm_01",
+      "kind": "call"
+    },
+    {
+      "from": "vol_normal",
+      "to": "stdv",
+      "kind": "call"
+    },
+    {
+      "from": "vol_normal",
+      "to": "volmode_toggle",
+      "kind": "assignment",
+      "value": "vol_low"
+    },
+    {
+      "from": "vol_low",
+      "to": "volmode_toggle",
+      "kind": "assignment",
+      "value": "vol_normal"
+    },
+    {
+      "from": "volmode_toggle",
+      "to": "vol_low",
+      "kind": "call"
+    },
+    {
+      "from": "+smoke",
+      "to": "smoke",
+      "kind": "call"
+    },
+    {
+      "from": "-smoke",
+      "to": "best_weapon",
+      "kind": "call"
+    },
+    {
+      "from": "voip",
+      "to": "voice1",
+      "kind": "call"
+    },
+    {
+      "from": "_noop",
+      "to": "noop",
+      "kind": "call"
+    },
+    {
+      "from": "+turn180",
+      "to": "+radarzoom",
+      "kind": "call"
+    },
+    {
+      "from": "-turn180",
+      "to": "-radarzoom",
+      "kind": "call"
+    },
+    {
+      "from": "neo",
+      "to": "neo1",
+      "kind": "call"
+    },
+    {
+      "from": "neo",
+      "to": "neo2",
+      "kind": "call"
+    },
+    {
+      "from": "neo",
+      "to": "neo3",
+      "kind": "call"
+    },
+    {
+      "from": "he",
+      "to": "<hand",
+      "kind": "call"
+    },
+    {
+      "from": "he",
+      "to": "look1",
+      "kind": "call"
+    },
+    {
+      "from": "flash",
+      "to": "<hand",
+      "kind": "call"
+    },
+    {
+      "from": "flash",
+      "to": "look1",
+      "kind": "call"
+    },
+    {
+      "from": "smoke",
+      "to": "<hand",
+      "kind": "call"
+    },
+    {
+      "from": "smoke",
+      "to": "look1",
+      "kind": "call"
+    },
+    {
+      "from": "molo",
+      "to": "<hand",
+      "kind": "call"
+    },
+    {
+      "from": "molo",
+      "to": "look1",
+      "kind": "call"
+    },
+    {
+      "from": "deco",
+      "to": "<hand",
+      "kind": "call"
+    },
+    {
+      "from": "deco",
+      "to": "look1",
+      "kind": "call"
+    },
+    {
+      "from": "+c4",
+      "to": ">c4",
+      "kind": "call"
+    },
+    {
+      "from": "-c4",
+      "to": "ch1",
+      "kind": "call"
+    },
+    {
+      "from": "-c4",
+      "to": "w1",
+      "kind": "call"
+    },
+    {
+      "from": "-c4",
+      "to": "w2",
+      "kind": "call"
+    },
+    {
+      "from": "-c4",
+      "to": "look0",
+      "kind": "call"
+    },
+    {
+      "from": "knife",
+      "to": "<hand",
+      "kind": "call"
+    },
+    {
+      "from": "knife",
+      "to": "look1",
+      "kind": "call"
+    },
+    {
+      "from": "nova/sawedoff",
+      "to": "knife",
+      "kind": "call"
+    },
+    {
+      "from": "m4/ak",
+      "to": "knife",
+      "kind": "call"
+    },
+    {
+      "from": "aug/sg",
+      "to": "knife",
+      "kind": "call"
+    },
+    {
+      "from": "galil/famas",
+      "to": "knife",
+      "kind": "call"
+    },
+    {
+      "from": "g3/scar",
+      "to": "knife",
+      "kind": "call"
+    },
+    {
+      "from": "mac10/mp9",
+      "to": "knife",
+      "kind": "call"
+    },
+    {
+      "from": "awp",
+      "to": "knife",
+      "kind": "call"
+    },
+    {
+      "from": "mp7",
+      "to": "knife",
+      "kind": "call"
+    },
+    {
+      "from": "ump45",
+      "to": "knife",
+      "kind": "call"
+    },
+    {
+      "from": "p90",
+      "to": "knife",
+      "kind": "call"
+    },
+    {
+      "from": "+vest",
+      "to": "knife",
+      "kind": "call"
+    },
+    {
+      "from": "grens",
+      "to": "knife",
+      "kind": "call"
+    },
+    {
+      "from": "ink/molo",
+      "to": "knife",
+      "kind": "call"
+    },
+    {
+      "from": "vesthelm/vest/grens",
+      "to": "+vest",
+      "kind": "call"
+    },
+    {
+      "from": "vesthelm/vest/grens",
+      "to": "knife",
+      "kind": "call"
+    },
+    {
+      "from": "spar",
+      "to": "knife",
+      "kind": "call"
+    },
+    {
+      "from": "<hand>",
+      "to": "look0",
+      "kind": "call"
+    },
+    {
+      "from": "<hand",
+      "to": "look0",
+      "kind": "call"
+    },
+    {
+      "from": "hand>",
+      "to": "look0",
+      "kind": "call"
+    },
+    {
+      "from": ">c4",
+      "to": "<hand",
+      "kind": "call"
+    },
+    {
+      "from": ">c4",
+      "to": "look1",
+      "kind": "call"
+    },
+    {
+      "from": "rdygo",
+      "to": "fire_cancel",
+      "kind": "call"
+    },
+    {
+      "from": "rdygo",
+      "to": "he",
+      "kind": "call"
+    },
+    {
+      "from": "rdygo",
+      "to": "molo",
+      "kind": "call"
+    },
+    {
+      "from": "rdygo",
+      "to": "smoke",
+      "kind": "call"
+    },
+    {
+      "from": "rdygo",
+      "to": "knife",
+      "kind": "call"
+    },
+    {
+      "from": "rdygo",
+      "to": "look0",
+      "kind": "call"
+    },
+    {
+      "from": "w0",
+      "to": "<hand",
+      "kind": "call"
+    },
+    {
+      "from": "w0",
+      "to": "knife",
+      "kind": "call"
+    },
+    {
+      "from": "w1",
+      "to": "rdygo",
+      "kind": "call"
+    },
+    {
+      "from": "w1",
+      "to": "hand>",
+      "kind": "call"
+    },
+    {
+      "from": "w2",
+      "to": "rdygo",
+      "kind": "call"
+    },
+    {
+      "from": "w2",
+      "to": "hand>",
+      "kind": "call"
+    },
+    {
+      "from": "look1",
+      "to": "noop",
+      "kind": "call"
+    },
+    {
+      "from": "sens0",
+      "to": "sens1",
+      "kind": "call"
+    },
+    {
+      "from": "0voicevol",
+      "to": "stdv",
+      "kind": "call"
+    },
+    {
+      "from": "xmute",
+      "to": "stdv",
+      "kind": "call"
+    },
+    {
+      "from": "voice",
+      "to": "stdv",
+      "kind": "call"
+    },
+    {
+      "from": "<vol",
+      "to": "+h_color",
+      "kind": "call"
+    },
+    {
+      "from": "<vol",
+      "to": "1voicevol",
+      "kind": "call"
+    },
+    {
+      "from": "vol>",
+      "to": "-h_color",
+      "kind": "call"
+    },
+    {
+      "from": "vol>",
+      "to": "0voicevol",
+      "kind": "call"
+    },
+    {
+      "from": "+sneak",
+      "to": "<vol",
+      "kind": "call"
+    },
+    {
+      "from": "-sneak",
+      "to": "vol>",
+      "kind": "call"
+    },
+    {
+      "from": "buyend",
+      "to": "knife",
+      "kind": "call"
+    },
+    {
+      "from": "buyend",
+      "to": "decoy",
+      "kind": "call"
+    },
+    {
+      "from": "movemode_sneak",
+      "to": "sneak_end",
+      "kind": "call"
+    },
+    {
+      "from": "movemode_sneak",
+      "to": "sprint1",
+      "kind": "call"
+    },
+    {
+      "from": "movemode_run",
+      "to": "modemode_std",
+      "kind": "call"
+    },
+    {
+      "from": "movemode_run",
+      "to": "shift1",
+      "kind": "call"
+    },
+    {
+      "from": "movemode_run",
+      "to": "sprint0",
+      "kind": "call"
+    },
+    {
+      "from": "sprint_mode",
+      "to": "movemode_sneak",
+      "kind": "call"
+    },
+    {
+      "from": "sprint1",
+      "to": "<vol",
+      "kind": "call"
+    },
+    {
+      "from": "sprint0",
+      "to": "vol>",
+      "kind": "call"
+    },
+    {
+      "from": "+speed",
+      "to": "<vol",
+      "kind": "call"
+    },
+    {
+      "from": "+speed",
+      "to": "space_move_hold",
+      "kind": "call"
+    },
+    {
+      "from": "-speed",
+      "to": "vol>",
+      "kind": "call"
+    },
+    {
+      "from": "-speed",
+      "to": "space_move_hold",
+      "kind": "call"
+    },
+    {
+      "from": "switchvoice",
+      "to": "voice_action",
+      "kind": "assignment",
+      "value": "clutch_on"
+    },
+    {
+      "from": "grnz",
+      "to": "grenade_mode",
+      "kind": "call"
+    },
+    {
+      "from": "xgrnz",
+      "to": "smoke",
+      "kind": "call"
+    },
+    {
+      "from": "xgrnz",
+      "to": "molo",
+      "kind": "call"
+    },
+    {
+      "from": "xgrnz",
+      "to": "he",
+      "kind": "call"
+    },
+    {
+      "from": "xgrnz",
+      "to": "flash",
+      "kind": "call"
+    },
+    {
+      "from": "+togglevol",
+      "to": "volmode_toggle",
+      "kind": "call"
+    },
+    {
+      "from": "mnormal",
+      "to": "look0",
+      "kind": "call"
+    },
+    {
+      "from": "mnormal",
+      "to": "<vol",
+      "kind": "call"
+    },
+    {
+      "from": "mnormal",
+      "to": "-h_color",
+      "kind": "call"
+    },
+    {
+      "from": "mjump",
+      "to": "vol>",
+      "kind": "call"
+    },
+    {
+      "from": "mjump",
+      "to": "+h_color",
+      "kind": "call"
+    },
+    {
+      "from": "+jumpp",
+      "to": "mjump",
+      "kind": "call"
+    },
+    {
+      "from": "+jumpp",
+      "to": "sens0",
+      "kind": "call"
+    },
+    {
+      "from": "+jumpp",
+      "to": "+buy",
+      "kind": "call"
+    },
+    {
+      "from": "+jumpp",
+      "to": "space_press_state",
+      "kind": "call"
+    },
+    {
+      "from": "+jumpp",
+      "to": "select_held",
+      "kind": "call"
+    },
+    {
+      "from": "+jumpp",
+      "to": "sens_refresh",
+      "kind": "call"
+    },
+    {
+      "from": "-jumpp",
+      "to": "mnormal",
+      "kind": "call"
+    },
+    {
+      "from": "-jumpp",
+      "to": "sensx",
+      "kind": "call"
+    },
+    {
+      "from": "-jumpp",
+      "to": "-buy",
+      "kind": "call"
+    },
+    {
+      "from": "-jumpp",
+      "to": "space_release_state",
+      "kind": "call"
+    },
+    {
+      "from": "-jumpp",
+      "to": "best_weapon",
+      "kind": "call"
+    },
+    {
+      "from": "-jumpp",
+      "to": "proview",
+      "kind": "call"
+    },
+    {
+      "from": "-jumpp",
+      "to": "sens_refresh",
+      "kind": "call"
+    },
+    {
+      "from": "dropump",
+      "to": "knife",
+      "kind": "call"
+    },
+    {
+      "from": "dropump",
+      "to": "ump45",
+      "kind": "call"
+    },
+    {
+      "from": "dropflash",
+      "to": "knife",
+      "kind": "call"
+    },
+    {
+      "from": "dropflash",
+      "to": "decoy",
+      "kind": "call"
+    },
+    {
+      "from": "dropp250",
+      "to": "knife",
+      "kind": "call"
+    },
+    {
+      "from": "dropp250",
+      "to": "decoy",
+      "kind": "call"
+    },
+    {
+      "from": "+f_stay",
+      "to": "faceit1",
+      "kind": "call"
+    },
+    {
+      "from": "+f_switch",
+      "to": "faceit1",
+      "kind": "call"
+    },
+    {
+      "from": "-f_stay",
+      "to": "hf",
+      "kind": "call"
+    },
+    {
+      "from": "-f_switch",
+      "to": "hf",
+      "kind": "call"
+    },
+    {
+      "from": "fait",
+      "to": "_fst",
+      "kind": "call"
+    },
+    {
+      "from": "fait",
+      "to": "_fsw",
+      "kind": "call"
+    },
+    {
+      "from": "fait",
+      "to": "_fg",
+      "kind": "call"
+    },
+    {
+      "from": "fait",
+      "to": "_fr",
+      "kind": "call"
+    },
+    {
+      "from": "faceit",
+      "to": "faceit1",
+      "kind": "call"
+    },
+    {
+      "from": "faceit",
+      "to": "fait",
+      "kind": "call"
+    },
+    {
+      "from": "gmrm_01",
+      "to": "faceit1",
+      "kind": "call"
+    },
+    {
+      "from": "gmrm_01",
+      "to": "gmrmode",
+      "kind": "assignment",
+      "value": "gmrm_02"
+    },
+    {
+      "from": "gmrm_02",
+      "to": "faceit0",
+      "kind": "call"
+    },
+    {
+      "from": "gmrm_02",
+      "to": "gmrmode",
+      "kind": "assignment",
+      "value": "gmrm_01"
+    },
+    {
+      "from": "facemode",
+      "to": "gmrmode",
+      "kind": "call"
+    },
+    {
+      "from": "+fixed",
+      "to": "dev1",
+      "kind": "call"
+    },
+    {
+      "from": "-fixed",
+      "to": "fix",
+      "kind": "call"
+    },
+    {
+      "from": "dev_on",
+      "to": "dev1",
+      "kind": "call"
+    },
+    {
+      "from": "dev_on",
+      "to": "devcon",
+      "kind": "assignment",
+      "value": "dev_off"
+    },
+    {
+      "from": "dev_off",
+      "to": "dev0",
+      "kind": "call"
+    },
+    {
+      "from": "dev_off",
+      "to": "devcon",
+      "kind": "assignment",
+      "value": "dev_on"
+    },
+    {
+      "from": "devmode",
+      "to": "devcon",
+      "kind": "call"
+    },
+    {
+      "from": "view_01",
+      "to": "trillview",
+      "kind": "call"
+    },
+    {
+      "from": "view_01",
+      "to": "gmrview",
+      "kind": "assignment",
+      "value": "view_02"
+    },
+    {
+      "from": "view_02",
+      "to": "proview",
+      "kind": "call"
+    },
+    {
+      "from": "view_02",
+      "to": "gmrview",
+      "kind": "assignment",
+      "value": "view_01"
+    },
+    {
+      "from": "gmrview",
+      "to": "view_01",
+      "kind": "call"
+    },
+    {
+      "from": "+dropbomb",
+      "to": "drop_press",
+      "kind": "call"
+    },
+    {
+      "from": "-dropbomb",
+      "to": "drop_release",
+      "kind": "call"
+    },
+    {
+      "from": "-dropbomb",
+      "to": "drop_release",
+      "kind": "assignment",
+      "value": "noop"
+    },
+    {
+      "from": "-dropbomb",
+      "to": "drop_press",
+      "kind": "assignment",
+      "value": "drop_once"
+    },
+    {
+      "from": "+scorenet",
+      "to": "fps1",
+      "kind": "call"
+    },
+    {
+      "from": "-scorenet",
+      "to": "fps1",
+      "kind": "call"
+    },
+    {
+      "from": "-scorenet",
+      "to": "myfps",
+      "kind": "call"
+    },
+    {
+      "from": "+radarzoom",
+      "to": "1voicevol",
+      "kind": "call"
+    },
+    {
+      "from": "+radarzoom",
+      "to": "showbomb_on",
+      "kind": "call"
+    },
+    {
+      "from": "+radarzoom",
+      "to": "showhud_on",
+      "kind": "call"
+    },
+    {
+      "from": "+radarzoom",
+      "to": "radarzoom_on",
+      "kind": "call"
+    },
+    {
+      "from": "-radarzoom",
+      "to": "0voicevol",
+      "kind": "call"
+    },
+    {
+      "from": "-radarzoom",
+      "to": "showbomb_off",
+      "kind": "call"
+    },
+    {
+      "from": "-radarzoom",
+      "to": "showhud_off",
+      "kind": "call"
+    },
+    {
+      "from": "-radarzoom",
+      "to": "radarzoom_off",
+      "kind": "call"
+    },
+    {
+      "from": "+quick",
+      "to": "<hand",
+      "kind": "call"
+    },
+    {
+      "from": "+quick",
+      "to": "knife",
+      "kind": "call"
+    },
+    {
+      "from": "+quick",
+      "to": "taser",
+      "kind": "call"
+    },
+    {
+      "from": "+quick",
+      "to": "sensx",
+      "kind": "call"
+    },
+    {
+      "from": "+quick",
+      "to": "look1",
+      "kind": "call"
+    },
+    {
+      "from": "+quick",
+      "to": "sens_check_quick",
+      "kind": "assignment",
+      "value": "sens_held"
+    },
+    {
+      "from": "+quick",
+      "to": "sens_refresh",
+      "kind": "call"
+    },
+    {
+      "from": "+quick",
+      "to": "refresh_crosshair",
+      "kind": "call"
+    },
+    {
+      "from": "-quick",
+      "to": "sens0",
+      "kind": "call"
+    },
+    {
+      "from": "-quick",
+      "to": "sens_check_quick",
+      "kind": "assignment",
+      "value": "sens_check_qhand"
+    },
+    {
+      "from": "-quick",
+      "to": "best_weapon",
+      "kind": "call"
+    },
+    {
+      "from": "-quick",
+      "to": "sens_refresh",
+      "kind": "call"
+    },
+    {
+      "from": "+qhand",
+      "to": "sensx",
+      "kind": "call"
+    },
+    {
+      "from": "+qhand",
+      "to": "knife",
+      "kind": "call"
+    },
+    {
+      "from": "+qhand",
+      "to": "sens_check_qhand",
+      "kind": "assignment",
+      "value": "sens_held"
+    },
+    {
+      "from": "+qhand",
+      "to": "sens_refresh",
+      "kind": "call"
+    },
+    {
+      "from": "+qhand",
+      "to": "refresh_crosshair",
+      "kind": "call"
+    },
+    {
+      "from": "-qhand",
+      "to": "sens0",
+      "kind": "call"
+    },
+    {
+      "from": "-qhand",
+      "to": "sens_check_qhand",
+      "kind": "assignment",
+      "value": "sens_check_quicky"
+    },
+    {
+      "from": "-qhand",
+      "to": "best_weapon",
+      "kind": "call"
+    },
+    {
+      "from": "-qhand",
+      "to": "sens_refresh",
+      "kind": "call"
+    },
+    {
+      "from": "+quicky",
+      "to": "sensx",
+      "kind": "call"
+    },
+    {
+      "from": "+quicky",
+      "to": "<hand",
+      "kind": "call"
+    },
+    {
+      "from": "+quicky",
+      "to": "knife",
+      "kind": "call"
+    },
+    {
+      "from": "+quicky",
+      "to": "c4",
+      "kind": "call"
+    },
+    {
+      "from": "+quicky",
+      "to": "look1",
+      "kind": "call"
+    },
+    {
+      "from": "+quicky",
+      "to": "sens_check_quicky",
+      "kind": "assignment",
+      "value": "sens_held"
+    },
+    {
+      "from": "+quicky",
+      "to": "sens_refresh",
+      "kind": "call"
+    },
+    {
+      "from": "+quicky",
+      "to": "refresh_crosshair",
+      "kind": "call"
+    },
+    {
+      "from": "-quicky",
+      "to": "sens0",
+      "kind": "call"
+    },
+    {
+      "from": "-quicky",
+      "to": "sens_check_quicky",
+      "kind": "assignment",
+      "value": "sens_normal"
+    },
+    {
+      "from": "-quicky",
+      "to": "best_weapon",
+      "kind": "call"
+    },
+    {
+      "from": "-quicky",
+      "to": "sens_refresh",
+      "kind": "call"
+    },
+    {
+      "from": "mac0",
+      "to": "mac_0",
+      "kind": "call"
+    },
+    {
+      "from": "mac0",
+      "to": "macmode",
+      "kind": "assignment",
+      "value": "mac1"
+    },
+    {
+      "from": "mac1",
+      "to": "mac_1",
+      "kind": "call"
+    },
+    {
+      "from": "mac1",
+      "to": "macmode",
+      "kind": "assignment",
+      "value": "mac0"
+    },
+    {
+      "from": "reco",
+      "to": "reco0",
+      "kind": "call"
+    },
+    {
+      "from": "reco0",
+      "to": "reco",
+      "kind": "assignment",
+      "value": "reco1"
+    },
+    {
+      "from": "reco1",
+      "to": "refresh_crosshair",
+      "kind": "call"
+    },
+    {
+      "from": "reco1",
+      "to": "reco",
+      "kind": "assignment",
+      "value": "reco0"
+    },
+    {
+      "from": "movecross",
+      "to": "automatic_white",
+      "kind": "call"
+    },
+    {
+      "from": "movecross",
+      "to": "refresh_crosshair",
+      "kind": "call"
+    },
+    {
+      "from": "trill",
+      "to": "mycross",
+      "kind": "assignment",
+      "value": "restore_trill"
+    },
+    {
+      "from": "trill",
+      "to": "gmrcrossnow",
+      "kind": "assignment",
+      "value": "shape_trill"
+    },
+    {
+      "from": "trill",
+      "to": "selection_status",
+      "kind": "assignment",
+      "value": "selected_trill"
+    },
+    {
+      "from": "trill",
+      "to": "refresh_crosshair",
+      "kind": "call"
+    },
+    {
+      "from": "croattx",
+      "to": "shot_render",
+      "kind": "call"
+    },
+    {
+      "from": "mycross",
+      "to": "restore_dot",
+      "kind": "call"
+    },
+    {
+      "from": "atx1",
+      "to": "croattx",
+      "kind": "call"
+    },
+    {
+      "from": "atx1",
+      "to": "+h_color",
+      "kind": "call"
+    },
+    {
+      "from": "atx1",
+      "to": "sens_refresh",
+      "kind": "call"
+    },
+    {
+      "from": "atx0",
+      "to": "mycross",
+      "kind": "call"
+    },
+    {
+      "from": "atx0",
+      "to": "-h_color",
+      "kind": "call"
+    },
+    {
+      "from": "atx0",
+      "to": "sens1",
+      "kind": "call"
+    },
+    {
+      "from": "atx0",
+      "to": "sens_refresh",
+      "kind": "call"
+    },
+    {
+      "from": "crosscross_a",
+      "to": "shape_cross",
+      "kind": "call"
+    },
+    {
+      "from": "crosscross",
+      "to": "mycross",
+      "kind": "assignment",
+      "value": "restore_cross"
+    },
+    {
+      "from": "crosscross",
+      "to": "gmrcrossnow",
+      "kind": "assignment",
+      "value": "shape_cross"
+    },
+    {
+      "from": "crosscross",
+      "to": "selection_status",
+      "kind": "assignment",
+      "value": "selected_cross"
+    },
+    {
+      "from": "crosscross",
+      "to": "refresh_crosshair",
+      "kind": "call"
+    },
+    {
+      "from": "crosshole",
+      "to": "mycross",
+      "kind": "assignment",
+      "value": "restore_hole"
+    },
+    {
+      "from": "crosshole",
+      "to": "gmrcrossnow",
+      "kind": "assignment",
+      "value": "shape_hole"
+    },
+    {
+      "from": "crosshole",
+      "to": "selection_status",
+      "kind": "assignment",
+      "value": "selected_hole"
+    },
+    {
+      "from": "crosshole",
+      "to": "refresh_crosshair",
+      "kind": "call"
+    },
+    {
+      "from": "crossdot_a",
+      "to": "shape_dot",
+      "kind": "call"
+    },
+    {
+      "from": "crossdot",
+      "to": "mycross",
+      "kind": "assignment",
+      "value": "restore_dot"
+    },
+    {
+      "from": "crossdot",
+      "to": "gmrcrossnow",
+      "kind": "assignment",
+      "value": "shape_dot"
+    },
+    {
+      "from": "crossdot",
+      "to": "selection_status",
+      "kind": "assignment",
+      "value": "selected_dot"
+    },
+    {
+      "from": "crossdot",
+      "to": "refresh_crosshair",
+      "kind": "call"
+    },
+    {
+      "from": "crosst",
+      "to": "mycross",
+      "kind": "assignment",
+      "value": "restore_t"
+    },
+    {
+      "from": "crosst",
+      "to": "gmrcrossnow",
+      "kind": "assignment",
+      "value": "shape_t"
+    },
+    {
+      "from": "crosst",
+      "to": "selection_status",
+      "kind": "assignment",
+      "value": "selected_t"
+    },
+    {
+      "from": "crosst",
+      "to": "refresh_crosshair",
+      "kind": "call"
+    },
+    {
+      "from": "cross1",
+      "to": "crosshole",
+      "kind": "call"
+    },
+    {
+      "from": "cross1",
+      "to": "next_cross",
+      "kind": "assignment",
+      "value": "cross2"
+    },
+    {
+      "from": "cross2",
+      "to": "crossdot",
+      "kind": "call"
+    },
+    {
+      "from": "cross2",
+      "to": "next_cross",
+      "kind": "assignment",
+      "value": "cross3"
+    },
+    {
+      "from": "cross3",
+      "to": "crosscross",
+      "kind": "call"
+    },
+    {
+      "from": "cross3",
+      "to": "next_cross",
+      "kind": "assignment",
+      "value": "cross4"
+    },
+    {
+      "from": "cross4",
+      "to": "crosst",
+      "kind": "call"
+    },
+    {
+      "from": "cross4",
+      "to": "next_cross",
+      "kind": "assignment",
+      "value": "cross1"
+    },
+    {
+      "from": "next_cross",
+      "to": "cross1",
+      "kind": "call"
+    },
+    {
+      "from": "c_hell",
+      "to": "selected_color",
+      "kind": "assignment",
+      "value": "rgb_white"
+    },
+    {
+      "from": "c_hell",
+      "to": "croco",
+      "kind": "assignment",
+      "value": "rgb_white"
+    },
+    {
+      "from": "c_hell",
+      "to": "refresh_crosshair",
+      "kind": "call"
+    },
+    {
+      "from": "c_matrix",
+      "to": "selected_color",
+      "kind": "assignment",
+      "value": "rgb_matrix"
+    },
+    {
+      "from": "c_matrix",
+      "to": "croco",
+      "kind": "assignment",
+      "value": "rgb_matrix"
+    },
+    {
+      "from": "c_matrix",
+      "to": "refresh_crosshair",
+      "kind": "call"
+    },
+    {
+      "from": "c_npink",
+      "to": "selected_color",
+      "kind": "assignment",
+      "value": "rgb_pink"
+    },
+    {
+      "from": "c_npink",
+      "to": "croco",
+      "kind": "assignment",
+      "value": "rgb_pink"
+    },
+    {
+      "from": "c_npink",
+      "to": "refresh_crosshair",
+      "kind": "call"
+    },
+    {
+      "from": "c_nweed",
+      "to": "selected_color",
+      "kind": "assignment",
+      "value": "rgb_weed"
+    },
+    {
+      "from": "c_nweed",
+      "to": "croco",
+      "kind": "assignment",
+      "value": "rgb_weed"
+    },
+    {
+      "from": "c_nweed",
+      "to": "refresh_crosshair",
+      "kind": "call"
+    },
+    {
+      "from": "c_nred",
+      "to": "selected_color",
+      "kind": "assignment",
+      "value": "rgb_red"
+    },
+    {
+      "from": "c_nred",
+      "to": "croco",
+      "kind": "assignment",
+      "value": "rgb_red"
+    },
+    {
+      "from": "c_nred",
+      "to": "refresh_crosshair",
+      "kind": "call"
+    },
+    {
+      "from": "c_ntkys",
+      "to": "selected_color",
+      "kind": "assignment",
+      "value": "rgb_cyan"
+    },
+    {
+      "from": "c_ntkys",
+      "to": "croco",
+      "kind": "assignment",
+      "value": "rgb_cyan"
+    },
+    {
+      "from": "c_ntkys",
+      "to": "refresh_crosshair",
+      "kind": "call"
+    },
+    {
+      "from": "crn1",
+      "to": "c_hell",
+      "kind": "call"
+    },
+    {
+      "from": "crn1",
+      "to": "cr_x",
+      "kind": "assignment",
+      "value": "crn2"
+    },
+    {
+      "from": "crn2",
+      "to": "c_ntkys",
+      "kind": "call"
+    },
+    {
+      "from": "crn2",
+      "to": "cr_x",
+      "kind": "assignment",
+      "value": "crn3"
+    },
+    {
+      "from": "crn3",
+      "to": "c_npink",
+      "kind": "call"
+    },
+    {
+      "from": "crn3",
+      "to": "cr_x",
+      "kind": "assignment",
+      "value": "crn4"
+    },
+    {
+      "from": "crn4",
+      "to": "c_nweed",
+      "kind": "call"
+    },
+    {
+      "from": "crn4",
+      "to": "cr_x",
+      "kind": "assignment",
+      "value": "crn5"
+    },
+    {
+      "from": "crn5",
+      "to": "c_nred",
+      "kind": "call"
+    },
+    {
+      "from": "crn5",
+      "to": "cr_x",
+      "kind": "assignment",
+      "value": "crn6"
+    },
+    {
+      "from": "crn6",
+      "to": "c_matrix",
+      "kind": "call"
+    },
+    {
+      "from": "crn6",
+      "to": "cr_x",
+      "kind": "assignment",
+      "value": "crn1"
+    },
+    {
+      "from": "cr_x",
+      "to": "crn1",
+      "kind": "call"
+    },
+    {
+      "from": "gmrcrossnow",
+      "to": "shape_dot",
+      "kind": "call"
+    },
+    {
+      "from": "croco",
+      "to": "rgb_red",
+      "kind": "call"
+    },
+    {
+      "from": "atxc",
+      "to": "rgb_red",
+      "kind": "call"
+    },
+    {
+      "from": "+[funkbar]",
+      "to": "[1]funkbind",
+      "kind": "call"
+    },
+    {
+      "from": "+[funkbar]",
+      "to": "1voicevol",
+      "kind": "call"
+    },
+    {
+      "from": "+[funkbar]",
+      "to": "face1",
+      "kind": "call"
+    },
+    {
+      "from": "+[funkbar]",
+      "to": "switchvoice",
+      "kind": "call"
+    },
+    {
+      "from": "-[funkbar]",
+      "to": "[0]funkbind",
+      "kind": "call"
+    },
+    {
+      "from": "-[funkbar]",
+      "to": "nethub",
+      "kind": "call"
+    },
+    {
+      "from": "-[funkbar]",
+      "to": "voice1",
+      "kind": "call"
+    },
+    {
+      "from": "-[funkbar]",
+      "to": "0voicevol",
+      "kind": "call"
+    },
+    {
+      "from": "+fuk_",
+      "to": "+buy",
+      "kind": "call"
+    },
+    {
+      "from": "+fuk_",
+      "to": "<hand>",
+      "kind": "call"
+    },
+    {
+      "from": "+fuk_",
+      "to": "+[funkbar]",
+      "kind": "call"
+    },
+    {
+      "from": "+fuk_",
+      "to": "faceit1",
+      "kind": "call"
+    },
+    {
+      "from": "+fuk_",
+      "to": "+_r",
+      "kind": "call"
+    },
+    {
+      "from": "+fuk_",
+      "to": "switchvoice",
+      "kind": "call"
+    },
+    {
+      "from": "-fuk_",
+      "to": "-buy",
+      "kind": "call"
+    },
+    {
+      "from": "-fuk_",
+      "to": "<hand>",
+      "kind": "call"
+    },
+    {
+      "from": "-fuk_",
+      "to": "-[funkbar]",
+      "kind": "call"
+    },
+    {
+      "from": "-fuk_",
+      "to": "faceit0",
+      "kind": "call"
+    },
+    {
+      "from": "-fuk_",
+      "to": "-_r",
+      "kind": "call"
+    },
+    {
+      "from": "-fuk_",
+      "to": "voice1",
+      "kind": "call"
+    },
+    {
+      "from": "+_r",
+      "to": "brad",
+      "kind": "call"
+    },
+    {
+      "from": "-_r",
+      "to": "close_radio",
+      "kind": "call"
+    },
+    {
+      "from": "-_r",
+      "to": "grnz",
+      "kind": "call"
+    },
+    {
+      "from": "-_r",
+      "to": "best_weapon",
+      "kind": "call"
+    },
+    {
+      "from": "_r",
+      "to": "radio_[1]",
+      "kind": "call"
+    },
+    {
+      "from": "radio_[1]",
+      "to": "_r",
+      "kind": "assignment",
+      "value": "radio_[2]"
+    },
+    {
+      "from": "radio_[2]",
+      "to": "_r",
+      "kind": "assignment",
+      "value": "radio_[3]"
+    },
+    {
+      "from": "radio_[3]",
+      "to": "_r",
+      "kind": "assignment",
+      "value": "radio_[1]"
+    },
+    {
+      "from": "radio_[4]",
+      "to": "_r",
+      "kind": "assignment",
+      "value": "radio_[1]"
+    },
+    {
+      "from": "{say}",
+      "to": "alltalk",
+      "kind": "call"
+    },
+    {
+      "from": "{team}",
+      "to": "teamtalk",
+      "kind": "call"
+    },
+    {
+      "from": "funkr_[1]",
+      "to": "{say}",
+      "kind": "call"
+    },
+    {
+      "from": "funkr_[0]",
+      "to": "{team}",
+      "kind": "call"
+    },
+    {
+      "from": "[0]hudmode",
+      "to": "-radarzoom",
+      "kind": "call"
+    },
+    {
+      "from": "[1]funkbind",
+      "to": "funkr_[1]",
+      "kind": "call"
+    },
+    {
+      "from": "[1]funkbind",
+      "to": "[1]hudmode",
+      "kind": "call"
+    },
+    {
+      "from": "[0]funkbind",
+      "to": "funkr_[0]",
+      "kind": "call"
+    },
+    {
+      "from": "[0]funkbind",
+      "to": "[0]hudmode",
+      "kind": "call"
+    },
+    {
+      "from": "brad",
+      "to": "radio_mode",
+      "kind": "call"
+    },
+    {
+      "from": "clutch1",
+      "to": "switchvoice",
+      "kind": "call"
+    },
+    {
+      "from": "voice1",
+      "to": "voice_action",
+      "kind": "assignment",
+      "value": "+voicerecord"
+    },
+    {
+      "from": "@facekeys",
+      "to": "{f5stay}",
+      "kind": "call"
+    },
+    {
+      "from": "@facekeys",
+      "to": "{f6switch}",
+      "kind": "call"
+    },
+    {
+      "from": "@facekeys",
+      "to": "{f7gg}",
+      "kind": "call"
+    },
+    {
+      "from": "@facekeys",
+      "to": "{f8report}",
+      "kind": "call"
+    },
+    {
+      "from": "+[chain]",
+      "to": "+fuk_",
+      "kind": "call"
+    },
+    {
+      "from": "-[chain]",
+      "to": "-fuk_",
+      "kind": "call"
+    },
+    {
+      "from": "+atx",
+      "to": "fire_check_mouse",
+      "kind": "assignment",
+      "value": "fire_hold"
+    },
+    {
+      "from": "+atx",
+      "to": "fire_refresh",
+      "kind": "call"
+    },
+    {
+      "from": "+atx",
+      "to": "shot_trace_down",
+      "kind": "call"
+    },
+    {
+      "from": "-atx",
+      "to": "fire_check_mouse",
+      "kind": "assignment",
+      "value": "fire_check_enter"
+    },
+    {
+      "from": "-atx",
+      "to": "fire_refresh",
+      "kind": "call"
+    },
+    {
+      "from": "-atx",
+      "to": "shot_trace_up",
+      "kind": "call"
+    },
+    {
+      "from": "+space_mode",
+      "to": "+jumpp",
+      "kind": "call"
+    },
+    {
+      "from": "+space_mode",
+      "to": "space_trace_down",
+      "kind": "call"
+    },
+    {
+      "from": "-space_mode",
+      "to": "space_trace_up",
+      "kind": "call"
+    },
+    {
+      "from": "-space_mode",
+      "to": "-jumpp",
+      "kind": "call"
+    },
+    {
+      "from": "-space_mode",
+      "to": "refresh_crosshair",
+      "kind": "call"
+    },
+    {
+      "from": "-space_mode",
+      "to": "space_trace_done",
+      "kind": "call"
+    },
+    {
+      "from": "space_trace_down",
+      "to": "print_down",
+      "kind": "call"
+    },
+    {
+      "from": "space_trace_up",
+      "to": "print_up",
+      "kind": "call"
+    },
+    {
+      "from": "space_trace_done",
+      "to": "print_done",
+      "kind": "call"
+    },
+    {
+      "from": "trace_on",
+      "to": "space_trace_down",
+      "kind": "assignment",
+      "value": "print_down"
+    },
+    {
+      "from": "trace_on",
+      "to": "space_trace_up",
+      "kind": "assignment",
+      "value": "print_up"
+    },
+    {
+      "from": "trace_on",
+      "to": "space_trace_done",
+      "kind": "assignment",
+      "value": "print_done"
+    },
+    {
+      "from": "trace_off",
+      "to": "space_trace_down",
+      "kind": "assignment",
+      "value": "noop"
+    },
+    {
+      "from": "trace_off",
+      "to": "space_trace_up",
+      "kind": "assignment",
+      "value": "noop"
+    },
+    {
+      "from": "trace_off",
+      "to": "space_trace_done",
+      "kind": "assignment",
+      "value": "noop"
+    },
+    {
+      "from": "input_reset",
+      "to": "refresh_crosshair",
+      "kind": "call"
+    },
+    {
+      "from": "+voice_key",
+      "to": "voice_action",
+      "kind": "call"
+    },
+    {
+      "from": "best_weapon",
+      "to": "look0",
+      "kind": "call"
+    },
+    {
+      "from": "best_weapon",
+      "to": "hand>",
+      "kind": "call"
+    },
+    {
+      "from": "best_weapon",
+      "to": "refresh_crosshair",
+      "kind": "call"
+    },
+    {
+      "from": "select_held",
+      "to": "check_z",
+      "kind": "call"
+    },
+    {
+      "from": "equip_z",
+      "to": "<hand",
+      "kind": "call"
+    },
+    {
+      "from": "equip_z",
+      "to": "look1",
+      "kind": "call"
+    },
+    {
+      "from": "equip_z",
+      "to": "refresh_crosshair",
+      "kind": "call"
+    },
+    {
+      "from": "check_z",
+      "to": "check_x",
+      "kind": "call"
+    },
+    {
+      "from": "z_gren_down",
+      "to": "check_z",
+      "kind": "assignment",
+      "value": "equip_z"
+    },
+    {
+      "from": "z_gren_down",
+      "to": "z_up",
+      "kind": "assignment",
+      "value": "z_gren_up"
+    },
+    {
+      "from": "z_gren_down",
+      "to": "equip_z",
+      "kind": "call"
+    },
+    {
+      "from": "z_gren_up",
+      "to": "check_z",
+      "kind": "assignment",
+      "value": "check_x"
+    },
+    {
+      "from": "z_gren_up",
+      "to": "z_up",
+      "kind": "assignment",
+      "value": "noop"
+    },
+    {
+      "from": "z_gren_up",
+      "to": "best_weapon",
+      "kind": "call"
+    },
+    {
+      "from": "z_radio_down",
+      "to": "z_up",
+      "kind": "assignment",
+      "value": "z_radio_up"
+    },
+    {
+      "from": "z_radio_up",
+      "to": "z_up",
+      "kind": "assignment",
+      "value": "noop"
+    },
+    {
+      "from": "z_down",
+      "to": "z_gren_down",
+      "kind": "call"
+    },
+    {
+      "from": "z_up",
+      "to": "noop",
+      "kind": "call"
+    },
+    {
+      "from": "+key_z",
+      "to": "z_down",
+      "kind": "call"
+    },
+    {
+      "from": "-key_z",
+      "to": "z_up",
+      "kind": "call"
+    },
+    {
+      "from": "equip_x",
+      "to": "<hand",
+      "kind": "call"
+    },
+    {
+      "from": "equip_x",
+      "to": "look1",
+      "kind": "call"
+    },
+    {
+      "from": "equip_x",
+      "to": "refresh_crosshair",
+      "kind": "call"
+    },
+    {
+      "from": "check_x",
+      "to": "check_c",
+      "kind": "call"
+    },
+    {
+      "from": "x_gren_down",
+      "to": "check_x",
+      "kind": "assignment",
+      "value": "equip_x"
+    },
+    {
+      "from": "x_gren_down",
+      "to": "x_up",
+      "kind": "assignment",
+      "value": "x_gren_up"
+    },
+    {
+      "from": "x_gren_down",
+      "to": "equip_x",
+      "kind": "call"
+    },
+    {
+      "from": "x_gren_up",
+      "to": "check_x",
+      "kind": "assignment",
+      "value": "check_c"
+    },
+    {
+      "from": "x_gren_up",
+      "to": "x_up",
+      "kind": "assignment",
+      "value": "noop"
+    },
+    {
+      "from": "x_gren_up",
+      "to": "best_weapon",
+      "kind": "call"
+    },
+    {
+      "from": "x_radio_down",
+      "to": "x_up",
+      "kind": "assignment",
+      "value": "x_radio_up"
+    },
+    {
+      "from": "x_radio_up",
+      "to": "x_up",
+      "kind": "assignment",
+      "value": "noop"
+    },
+    {
+      "from": "x_down",
+      "to": "x_gren_down",
+      "kind": "call"
+    },
+    {
+      "from": "x_up",
+      "to": "noop",
+      "kind": "call"
+    },
+    {
+      "from": "+key_x",
+      "to": "x_down",
+      "kind": "call"
+    },
+    {
+      "from": "-key_x",
+      "to": "x_up",
+      "kind": "call"
+    },
+    {
+      "from": "equip_c",
+      "to": "<hand",
+      "kind": "call"
+    },
+    {
+      "from": "equip_c",
+      "to": "look1",
+      "kind": "call"
+    },
+    {
+      "from": "equip_c",
+      "to": "refresh_crosshair",
+      "kind": "call"
+    },
+    {
+      "from": "check_c",
+      "to": "check_f",
+      "kind": "call"
+    },
+    {
+      "from": "c_gren_down",
+      "to": "check_c",
+      "kind": "assignment",
+      "value": "equip_c"
+    },
+    {
+      "from": "c_gren_down",
+      "to": "c_up",
+      "kind": "assignment",
+      "value": "c_gren_up"
+    },
+    {
+      "from": "c_gren_down",
+      "to": "equip_c",
+      "kind": "call"
+    },
+    {
+      "from": "c_gren_up",
+      "to": "check_c",
+      "kind": "assignment",
+      "value": "check_f"
+    },
+    {
+      "from": "c_gren_up",
+      "to": "c_up",
+      "kind": "assignment",
+      "value": "noop"
+    },
+    {
+      "from": "c_gren_up",
+      "to": "best_weapon",
+      "kind": "call"
+    },
+    {
+      "from": "c_radio_down",
+      "to": "c_up",
+      "kind": "assignment",
+      "value": "c_radio_up"
+    },
+    {
+      "from": "c_radio_up",
+      "to": "c_up",
+      "kind": "assignment",
+      "value": "noop"
+    },
+    {
+      "from": "c_down",
+      "to": "c_gren_down",
+      "kind": "call"
+    },
+    {
+      "from": "c_up",
+      "to": "noop",
+      "kind": "call"
+    },
+    {
+      "from": "+key_c",
+      "to": "c_down",
+      "kind": "call"
+    },
+    {
+      "from": "-key_c",
+      "to": "c_up",
+      "kind": "call"
+    },
+    {
+      "from": "equip_f",
+      "to": "<hand",
+      "kind": "call"
+    },
+    {
+      "from": "equip_f",
+      "to": "look1",
+      "kind": "call"
+    },
+    {
+      "from": "equip_f",
+      "to": "refresh_crosshair",
+      "kind": "call"
+    },
+    {
+      "from": "check_f",
+      "to": "check_space",
+      "kind": "call"
+    },
+    {
+      "from": "f_gren_down",
+      "to": "check_f",
+      "kind": "assignment",
+      "value": "equip_f"
+    },
+    {
+      "from": "f_gren_down",
+      "to": "f_up",
+      "kind": "assignment",
+      "value": "f_gren_up"
+    },
+    {
+      "from": "f_gren_down",
+      "to": "equip_f",
+      "kind": "call"
+    },
+    {
+      "from": "f_gren_up",
+      "to": "check_f",
+      "kind": "assignment",
+      "value": "check_space"
+    },
+    {
+      "from": "f_gren_up",
+      "to": "f_up",
+      "kind": "assignment",
+      "value": "noop"
+    },
+    {
+      "from": "f_gren_up",
+      "to": "best_weapon",
+      "kind": "call"
+    },
+    {
+      "from": "f_radio_down",
+      "to": "f_up",
+      "kind": "assignment",
+      "value": "f_radio_up"
+    },
+    {
+      "from": "f_radio_down",
+      "to": "_r",
+      "kind": "call"
+    },
+    {
+      "from": "f_radio_up",
+      "to": "noop",
+      "kind": "call"
+    },
+    {
+      "from": "f_radio_up",
+      "to": "f_up",
+      "kind": "assignment",
+      "value": "noop"
+    },
+    {
+      "from": "f_down",
+      "to": "f_gren_down",
+      "kind": "call"
+    },
+    {
+      "from": "f_up",
+      "to": "noop",
+      "kind": "call"
+    },
+    {
+      "from": "+key_f",
+      "to": "f_down",
+      "kind": "call"
+    },
+    {
+      "from": "-key_f",
+      "to": "f_up",
+      "kind": "call"
+    },
+    {
+      "from": "grenade_mode",
+      "to": "z_down",
+      "kind": "assignment",
+      "value": "z_gren_down"
+    },
+    {
+      "from": "grenade_mode",
+      "to": "x_down",
+      "kind": "assignment",
+      "value": "x_gren_down"
+    },
+    {
+      "from": "grenade_mode",
+      "to": "c_down",
+      "kind": "assignment",
+      "value": "c_gren_down"
+    },
+    {
+      "from": "grenade_mode",
+      "to": "f_down",
+      "kind": "assignment",
+      "value": "f_gren_down"
+    },
+    {
+      "from": "radio_mode",
+      "to": "z_down",
+      "kind": "assignment",
+      "value": "z_radio_down"
+    },
+    {
+      "from": "radio_mode",
+      "to": "x_down",
+      "kind": "assignment",
+      "value": "x_radio_down"
+    },
+    {
+      "from": "radio_mode",
+      "to": "c_down",
+      "kind": "assignment",
+      "value": "c_radio_down"
+    },
+    {
+      "from": "radio_mode",
+      "to": "f_down",
+      "kind": "assignment",
+      "value": "f_radio_down"
+    },
+    {
+      "from": "shot_down_report",
+      "to": "shot_values",
+      "kind": "call"
+    },
+    {
+      "from": "shot_up_report",
+      "to": "selection_status",
+      "kind": "call"
+    },
+    {
+      "from": "shot_up_report",
+      "to": "shot_values",
+      "kind": "call"
+    },
+    {
+      "from": "shot_trace_on",
+      "to": "shot_trace_down",
+      "kind": "assignment",
+      "value": "shot_down_report"
+    },
+    {
+      "from": "shot_trace_on",
+      "to": "shot_trace_up",
+      "kind": "assignment",
+      "value": "shot_up_report"
+    },
+    {
+      "from": "shot_trace_off",
+      "to": "shot_trace_down",
+      "kind": "assignment",
+      "value": "noop"
+    },
+    {
+      "from": "shot_trace_off",
+      "to": "shot_trace_up",
+      "kind": "assignment",
+      "value": "noop"
+    },
+    {
+      "from": "shot_status",
+      "to": "selection_status",
+      "kind": "call"
+    },
+    {
+      "from": "shot_status",
+      "to": "shot_values",
+      "kind": "call"
+    },
+    {
+      "from": "shot_trace_down",
+      "to": "noop",
+      "kind": "call"
+    },
+    {
+      "from": "shot_trace_up",
+      "to": "noop",
+      "kind": "call"
+    }
+  ],
+  "delta_from_09": {
+    "bindings": {
+      "enter": {
+        "before": "+ATTACK",
+        "after": "+enter_fire"
+      }
+    },
+    "aliases": {
+      "+atx": {
+        "before": "+attack;alias refresh_crosshair crosshair_fire;atx1;shot_trace_down",
+        "after": "alias fire_check_mouse fire_hold;fire_refresh;shot_trace_down"
+      },
+      "+dropbomb": {
+        "before": "cl_autohelp 1;slot3; slot5; +lookatweapon;look1",
+        "after": "drop_press"
+      },
+      "+enter_fire": {
+        "before": null,
+        "after": "alias fire_check_enter fire_hold;fire_refresh;shot_trace_down"
+      },
+      "+jumpp": {
+        "before": "mjump;sens0;+buy;alias sens_check_space sens_held;alias check_space equip_z;select_held;sens_refresh",
+        "after": "mjump;sens0;+buy;space_press_state;select_held;sens_refresh"
+      },
+      "+qhand": {
+        "before": "look1;<hand;sensx;knife;alias sens_check_qhand sens_held;sens_refresh",
+        "after": "sensx;knife;alias sens_check_qhand sens_held;sens_refresh;refresh_crosshair"
+      },
+      "+quick": {
+        "before": "<hand;knife;taser;sensx;look0;cl_autohelp 1;alias sens_check_quick sens_held;sens_refresh",
+        "after": "<hand;knife;taser;sensx;look1;cl_autohelp 1;alias sens_check_quick sens_held;sens_refresh;refresh_crosshair"
+      },
+      "+quicky": {
+        "before": "look1;ch0;sensx;<hand;KNIFE;C4;alias sens_check_quicky sens_held;sens_refresh",
+        "after": "sensx;<hand;knife;c4;look1;alias sens_check_quicky sens_held;sens_refresh;refresh_crosshair"
+      },
+      "+speed": {
+        "before": "<vol;+sprint",
+        "after": "<vol;+sprint;space_move_hold"
+      },
+      "-_r": {
+        "before": "close_radio;grnz;select_held",
+        "after": "close_radio;grnz;best_weapon"
+      },
+      "-atx": {
+        "before": "-attack;alias refresh_crosshair crosshair_idle;mycross;-h_color;sens1;sens_refresh;shot_trace_up",
+        "after": "alias fire_check_mouse fire_check_enter;fire_refresh;shot_trace_up"
+      },
+      "-dropbomb": {
+        "before": "cl_autohelp 0;drop;lastinv;-lookatweapon;look0",
+        "after": "drop_release;alias drop_release noop;alias drop_press drop_once"
+      },
+      "-enter_fire": {
+        "before": null,
+        "after": "alias fire_check_enter fire_end;fire_refresh;shot_trace_up"
+      },
+      "-jumpp": {
+        "before": "mnormal;sensx;-buy;alias sens_check_space sens_check_quick;alias check_space best_weapon;select_held;look0;proview;sens_refresh",
+        "after": "mnormal;sensx;-buy;space_release_state;best_weapon;proview;sens_refresh"
+      },
+      "-qhand": {
+        "before": "hand>;slot2;slot1;sens0;look0;alias sens_check_qhand sens_check_quicky;sens_refresh",
+        "after": "sens0;alias sens_check_qhand sens_check_quicky;best_weapon;sens_refresh"
+      },
+      "-quick": {
+        "before": "sens0;he;smoke;molo;hand>;cl_autohelp 0;w1;w2;look0;alias sens_check_quick sens_check_qhand;sens_refresh",
+        "after": "sens0;cl_autohelp 0;alias sens_check_quick sens_check_qhand;best_weapon;sens_refresh"
+      },
+      "-quicky": {
+        "before": "ch1;sens0;hand>;w1;w2;look0;alias sens_check_quicky sens_normal;sens_refresh",
+        "after": "sens0;alias sens_check_quicky sens_normal;best_weapon;sens_refresh"
+      },
+      "-speed": {
+        "before": "vol>;-sprint",
+        "after": "vol>;-sprint;space_move_hold"
+      },
+      "<hand": {
+        "before": "switchhandsleft;-lookatweapon",
+        "after": "switchhandsleft;look0"
+      },
+      "<hand>": {
+        "before": "switchhands;-lookatweapon",
+        "after": "switchhands;look0"
+      },
+      "automatic_white": {
+        "before": null,
+        "after": "noop"
+      },
+      "best_weapon": {
+        "before": "slot3;slot2;slot1;look0",
+        "after": "look0;slot3;slot2;slot1;hand>;refresh_crosshair"
+      },
+      "bomb_down": {
+        "before": null,
+        "after": "alias drop_release bomb_up;cl_autohelp 1;slot3;slot5;look1"
+      },
+      "bomb_up": {
+        "before": null,
+        "after": "cl_autohelp 0;look0;slot3;slot5;drop;best_weapon"
+      },
+      "c_gren_up": {
+        "before": "alias check_c check_f;alias c_up noop;select_held",
+        "after": "alias check_c check_f;alias c_up noop;best_weapon"
+      },
+      "c_hell": {
+        "before": "alias croco rgb_white;refresh_crosshair",
+        "after": "alias selected_color rgb_white;alias croco rgb_white;refresh_crosshair"
+      },
+      "c_matrix": {
+        "before": "alias croco rgb_matrix;refresh_crosshair",
+        "after": "alias selected_color rgb_matrix;alias croco rgb_matrix;refresh_crosshair"
+      },
+      "c_npink": {
+        "before": "alias croco rgb_pink;refresh_crosshair",
+        "after": "alias selected_color rgb_pink;alias croco rgb_pink;refresh_crosshair"
+      },
+      "c_nred": {
+        "before": "alias croco rgb_red;refresh_crosshair",
+        "after": "alias selected_color rgb_red;alias croco rgb_red;refresh_crosshair"
+      },
+      "c_ntkys": {
+        "before": "alias croco rgb_cyan;refresh_crosshair",
+        "after": "alias selected_color rgb_cyan;alias croco rgb_cyan;refresh_crosshair"
+      },
+      "c_nweed": {
+        "before": "alias croco rgb_weed;refresh_crosshair",
+        "after": "alias selected_color rgb_weed;alias croco rgb_weed;refresh_crosshair"
+      },
+      "color_lock_off": {
+        "before": null,
+        "after": "alias automatic_white legacy_white;alias color_restore croco;alias color_lock_toggle color_lock_on;refresh_crosshair;echo COLOR_LOCK_OFF"
+      },
+      "color_lock_on": {
+        "before": null,
+        "after": "alias automatic_white noop;alias color_restore selected_color;alias color_lock_toggle color_lock_off;refresh_crosshair;echo COLOR_LOCK_ON"
+      },
+      "color_lock_toggle": {
+        "before": null,
+        "after": "color_lock_off"
+      },
+      "color_restore": {
+        "before": null,
+        "after": "selected_color"
+      },
+      "croattx": {
+        "before": "shape_fire",
+        "after": "shot_render"
+      },
+      "crosshair_fire": {
+        "before": "croattx",
+        "after": "shot_render"
+      },
+      "drop_dispatch": {
+        "before": null,
+        "after": "bomb_down"
+      },
+      "drop_once": {
+        "before": null,
+        "after": "alias drop_press noop;drop_dispatch"
+      },
+      "drop_press": {
+        "before": null,
+        "after": "drop_once"
+      },
+      "drop_release": {
+        "before": null,
+        "after": "noop"
+      },
+      "equip_c": {
+        "before": "<hand;slot10;slot8;slot7;slot6;look1",
+        "after": "<hand;slot10;slot8;slot7;slot6;look1;refresh_crosshair"
+      },
+      "equip_f": {
+        "before": "<hand;slot6;slot10;slot8;slot7;look1",
+        "after": "<hand;slot6;slot10;slot8;slot7;look1;refresh_crosshair"
+      },
+      "equip_x": {
+        "before": "<hand;slot8;slot7;slot6;slot10;look1",
+        "after": "<hand;slot8;slot7;slot6;slot10;look1;refresh_crosshair"
+      },
+      "equip_z": {
+        "before": "<hand;slot7;slot6;slot10;slot8;look1",
+        "after": "<hand;slot7;slot6;slot10;slot8;look1;refresh_crosshair"
+      },
+      "f_gren_up": {
+        "before": "alias check_f check_space;alias f_up noop;select_held",
+        "after": "alias check_f check_space;alias f_up noop;best_weapon"
+      },
+      "fire_cancel": {
+        "before": null,
+        "after": "alias fire_check_mouse fire_check_enter;alias fire_check_enter fire_end;fire_end"
+      },
+      "fire_check_enter": {
+        "before": null,
+        "after": "fire_end"
+      },
+      "fire_check_mouse": {
+        "before": null,
+        "after": "fire_check_enter"
+      },
+      "fire_end": {
+        "before": null,
+        "after": "-attack;alias refresh_crosshair crosshair_idle;mycross;-h_color;sens1;sens_refresh"
+      },
+      "fire_hold": {
+        "before": null,
+        "after": "+attack;alias refresh_crosshair crosshair_fire;atx1"
+      },
+      "fire_refresh": {
+        "before": null,
+        "after": "fire_check_mouse"
+      },
+      "hand>": {
+        "before": "switchhandsright;-lookatweapon",
+        "after": "switchhandsright;look0"
+      },
+      "inspect_off": {
+        "before": null,
+        "after": "alias look1 noop;look0;alias inspect_toggle inspect_on;echo INSPECT_OFF"
+      },
+      "inspect_on": {
+        "before": null,
+        "after": "alias look1 +lookatweapon;alias inspect_toggle inspect_off;echo INSPECT_ON"
+      },
+      "inspect_toggle": {
+        "before": null,
+        "after": "inspect_on"
+      },
+      "legacy_white": {
+        "before": null,
+        "after": "alias croco rgb_white"
+      },
+      "look1": {
+        "before": "+lookatweapon",
+        "after": "noop"
+      },
+      "mode_status": {
+        "before": null,
+        "after": "echo LEETED_MODES;alias look1;alias automatic_white;alias shot_selected;alias shot_render;alias space_sneak_toggle;selection_status"
+      },
+      "movecross": {
+        "before": "croattx;c_hell;reco0",
+        "after": "automatic_white;refresh_crosshair"
+      },
+      "rdygo": {
+        "before": "-attack;he;molo;smoke;slot3;knife;-lookatweapon",
+        "after": "fire_cancel;he;molo;smoke;slot3;knife;look0"
+      },
+      "restore_cross": {
+        "before": "shape_cross;croco;cl_crosshair_recoil 0;ch1",
+        "after": "shape_cross;color_restore;cl_crosshair_recoil 0;ch1"
+      },
+      "restore_dot": {
+        "before": "shape_dot;croco;cl_crosshair_recoil 0;ch1",
+        "after": "shape_dot;color_restore;cl_crosshair_recoil 0;ch1"
+      },
+      "restore_hole": {
+        "before": "shape_hole;croco;cl_crosshair_recoil 0;ch1",
+        "after": "shape_hole;color_restore;cl_crosshair_recoil 0;ch1"
+      },
+      "restore_t": {
+        "before": "shape_t;croco;cl_crosshair_recoil 0;ch1",
+        "after": "shape_t;color_restore;cl_crosshair_recoil 0;ch1"
+      },
+      "restore_trill": {
+        "before": "shape_trill;croco;cl_crosshair_recoil 0;ch1",
+        "after": "shape_trill;color_restore;cl_crosshair_recoil 0;ch1"
+      },
+      "selected_color": {
+        "before": null,
+        "after": "rgb_red"
+      },
+      "shape_fire": {
+        "before": "shot_profile_1;shot_profile_2;shot_profile_3",
+        "after": "shot_circle_part_1;shot_circle_part_2;shot_circle_part_3;shot_circle_part_4"
+      },
+      "shape_fire_t": {
+        "before": null,
+        "after": "shot_t_part_1;shot_t_part_2;shot_t_part_3"
+      },
+      "shot_circle": {
+        "before": null,
+        "after": "alias shot_selected shape_fire;alias shot_style_toggle shot_t;refresh_crosshair;echo SHOT_CIRCLE_WHITE"
+      },
+      "shot_circle_part_1": {
+        "before": null,
+        "after": "crosshair 1;cl_crosshairstyle 1;cl_crosshair_length 2;cl_crosshair_thickness 1;cl_crosshair_gap 4;cl_crosshaircolor_a 255;cl_crosshair_drawoutline 0;cl_crosshairdot 1"
+      },
+      "shot_circle_part_2": {
+        "before": null,
+        "after": "cl_crosshair_t 1;cl_crosshair_recoil 1;cl_crosshaircolor_r 255;cl_crosshaircolor_g 255;cl_crosshaircolor_b 255;cl_crosshair_dynamic_spread_limit 255"
+      },
+      "shot_circle_part_3": {
+        "before": null,
+        "after": "cl_crosshair_dynamic_splitdist 0;cl_crosshair_dynamic_splitalpha_innermod 0;cl_crosshair_dynamic_splitalpha_outermod 0.3;cl_crosshair_dynamic_maxdist_splitratio 0"
+      },
+      "shot_circle_part_4": {
+        "before": null,
+        "after": "cl_crosshair_screen_height 1024"
+      },
+      "shot_off": {
+        "before": null,
+        "after": "alias shot_render mycross;alias shot_toggle shot_on;refresh_crosshair;echo SHOT_OFF"
+      },
+      "shot_on": {
+        "before": null,
+        "after": "alias shot_render shot_selected;alias shot_toggle shot_off;refresh_crosshair;echo SHOT_ON"
+      },
+      "shot_render": {
+        "before": null,
+        "after": "shot_selected"
+      },
+      "shot_selected": {
+        "before": null,
+        "after": "shape_fire"
+      },
+      "shot_style_toggle": {
+        "before": null,
+        "after": "shot_t"
+      },
+      "shot_t": {
+        "before": null,
+        "after": "alias shot_selected shape_fire_t;alias shot_style_toggle shot_circle;refresh_crosshair;echo SHOT_T_RED"
+      },
+      "shot_t_part_1": {
+        "before": null,
+        "after": "crosshair 1;cl_crosshairstyle 4;cl_crosshair_length 255;cl_crosshair_thickness 1;cl_crosshair_gap 1;cl_crosshaircolor_a 77;cl_crosshair_drawoutline 1;cl_crosshairdot 0"
+      },
+      "shot_t_part_2": {
+        "before": null,
+        "after": "cl_crosshair_t 1;cl_crosshair_recoil 1;cl_crosshaircolor_r 255;cl_crosshaircolor_g 0;cl_crosshaircolor_b 0;cl_crosshair_dynamic_spread_limit 255;cl_crosshair_dynamic_splitdist 0"
+      },
+      "shot_t_part_3": {
+        "before": null,
+        "after": "cl_crosshair_dynamic_splitalpha_innermod 0;cl_crosshair_dynamic_splitalpha_outermod 0.3;cl_crosshair_dynamic_maxdist_splitratio 0;cl_crosshair_screen_height 1024"
+      },
+      "shot_toggle": {
+        "before": null,
+        "after": "shot_off"
+      },
+      "space_move_hold": {
+        "before": null,
+        "after": "noop"
+      },
+      "space_press_state": {
+        "before": null,
+        "after": "alias sens_check_space sens_held;alias check_space equip_z;alias drop_dispatch space_sneak_press"
+      },
+      "space_release_state": {
+        "before": null,
+        "after": "alias sens_check_space sens_check_quick;alias check_space best_weapon;alias drop_dispatch bomb_down;space_sneak_reset"
+      },
+      "space_sneak_off": {
+        "before": null,
+        "after": "sprint1;alias space_sneak_toggle space_sneak_on;alias space_move_hold sprint1;echo SPACE_SPRINT1"
+      },
+      "space_sneak_on": {
+        "before": null,
+        "after": "sprint0;alias space_sneak_toggle space_sneak_off;alias space_move_hold sprint0;echo SPACE_SPRINT0"
+      },
+      "space_sneak_press": {
+        "before": null,
+        "after": "alias drop_release noop;space_sneak_toggle"
+      },
+      "space_sneak_reset": {
+        "before": null,
+        "after": "sprint1;alias space_sneak_toggle space_sneak_on;alias space_move_hold noop"
+      },
+      "space_sneak_toggle": {
+        "before": null,
+        "after": "space_sneak_on"
+      },
+      "x_gren_up": {
+        "before": "alias check_x check_c;alias x_up noop;select_held",
+        "after": "alias check_x check_c;alias x_up noop;best_weapon"
+      },
+      "z_gren_up": {
+        "before": "alias check_z check_x;alias z_up noop;select_held",
+        "after": "alias check_z check_x;alias z_up noop;best_weapon"
+      }
+    }
+  },
+  "inputs": {
+    "base09.cfg.txt": "c04843b29043a1a54b1eab2f1d5d82162d2f65d1187ace34aab772a792ee64b5",
+    "inspiration_original.md": "7fb8b938bc26eff9186aaa76d8612d3b4000449b62411e25c6e5abb85e541da2"
+  }
+}

@@ -1,0 +1,2198 @@
+// LEETED v1.01.1_10 - auf Basis 09; Startoptionen am Ende.
+// NEU v10: Inspect bei folgenden Tastendruecken erlauben; startet selbst keine Animation.
+alias "inspect_on" "alias look1 +lookatweapon;alias inspect_toggle inspect_off;echo INSPECT_ON"
+// NEU v10: Automatisches Inspect deaktivieren und vorhandene Eingabe freigeben.
+alias "inspect_off" "alias look1 noop;look0;alias inspect_toggle inspect_on;echo INSPECT_OFF"
+// NEU v10: Inspect-Schalter; Startwert folgt am Ende.
+alias "inspect_toggle" "inspect_on"
+// NEU v10: Automatische Farbwechsel sperren; J bleibt zur bewussten Farbwahl frei.
+alias "color_lock_on" "alias automatic_white noop;alias color_restore selected_color;alias color_lock_toggle color_lock_off;refresh_crosshair;echo COLOR_LOCK_ON"
+// NEU v10: Alten automatischen Weiss-Effekt von movecross erlauben; bewusste J-Auswahl separat behalten.
+alias "color_lock_off" "alias automatic_white legacy_white;alias color_restore croco;alias color_lock_toggle color_lock_on;refresh_crosshair;echo COLOR_LOCK_OFF"
+// NEU v10: Bewusst gewaehlte J-Farbe getrennt von automatischer Altfarbe speichern.
+alias "selected_color" "rgb_red"
+// NEU v10: Farbrueckstellung nach aktivem Farbschutz.
+alias "color_restore" "selected_color"
+// NEU v10: Nur bei deaktiviertem Farbschutz automatische Altfarbe Weiss setzen.
+alias "legacy_white" "alias croco rgb_white"
+// NEU v10: Farbschutz umschalten.
+alias "color_lock_toggle" "color_lock_off"
+// NEU v10: Farbschutz startet aktiv.
+alias "automatic_white" "noop"
+// NEU v10: Schussprofil beim Halten von Maus1 einschalten.
+alias "shot_on" "alias shot_render shot_selected;alias shot_toggle shot_off;refresh_crosshair;echo SHOT_ON"
+// NEU v10: Gewaehltes normales Crosshair auch beim Schiessen anzeigen, Recoil aus.
+alias "shot_off" "alias shot_render mycross;alias shot_toggle shot_on;refresh_crosshair;echo SHOT_OFF"
+// NEU v10: Schussanzeige an/aus.
+alias "shot_toggle" "shot_off"
+// NEU v10: Weissen dynamischen Kreis auswaehlen.
+alias "shot_circle" "alias shot_selected shape_fire;alias shot_style_toggle shot_t;refresh_crosshair;echo SHOT_CIRCLE_WHITE"
+// NEU v10: Grosses rotes T mit Recoil auswaehlen.
+alias "shot_t" "alias shot_selected shape_fire_t;alias shot_style_toggle shot_circle;refresh_crosshair;echo SHOT_T_RED"
+// NEU v10: Kreis und T umschalten, normale Auswahl bleibt erhalten.
+alias "shot_style_toggle" "shot_t"
+// NEU v10: Standard-Schussprofil Kreis.
+alias "shot_selected" "shape_fire"
+// NEU v10: Schussanzeige ist standardmaessig aktiv.
+alias "shot_render" "shot_selected"
+// NEU v10: Kurzer Schussprofil-Teil; Werte konfigurierbar in options.json.
+alias "shot_circle_part_1" "crosshair 1;cl_crosshairstyle 1;cl_crosshair_length 2;cl_crosshair_thickness 1;cl_crosshair_gap 4;cl_crosshaircolor_a 255;cl_crosshair_drawoutline 0;cl_crosshairdot 1"
+// NEU v10: Kurzer Schussprofil-Teil; Werte konfigurierbar in options.json.
+alias "shot_circle_part_2" "cl_crosshair_t 1;cl_crosshair_recoil 1;cl_crosshaircolor_r 255;cl_crosshaircolor_g 255;cl_crosshaircolor_b 255;cl_crosshair_dynamic_spread_limit 255"
+// NEU v10: Kurzer Schussprofil-Teil; Werte konfigurierbar in options.json.
+alias "shot_circle_part_3" "cl_crosshair_dynamic_splitdist 0;cl_crosshair_dynamic_splitalpha_innermod 0;cl_crosshair_dynamic_splitalpha_outermod 0.3;cl_crosshair_dynamic_maxdist_splitratio 0"
+// NEU v10: Kurzer Schussprofil-Teil; Werte konfigurierbar in options.json.
+alias "shot_circle_part_4" "cl_crosshair_screen_height 1024"
+// NEU v10: Kurzer Schussprofil-Teil; Werte konfigurierbar in options.json.
+alias "shot_t_part_1" "crosshair 1;cl_crosshairstyle 4;cl_crosshair_length 255;cl_crosshair_thickness 1;cl_crosshair_gap 1;cl_crosshaircolor_a 77;cl_crosshair_drawoutline 1;cl_crosshairdot 0"
+// NEU v10: Kurzer Schussprofil-Teil; Werte konfigurierbar in options.json.
+alias "shot_t_part_2" "cl_crosshair_t 1;cl_crosshair_recoil 1;cl_crosshaircolor_r 255;cl_crosshaircolor_g 0;cl_crosshaircolor_b 0;cl_crosshair_dynamic_spread_limit 255;cl_crosshair_dynamic_splitdist 0"
+// NEU v10: Kurzer Schussprofil-Teil; Werte konfigurierbar in options.json.
+alias "shot_t_part_3" "cl_crosshair_dynamic_splitalpha_innermod 0;cl_crosshair_dynamic_splitalpha_outermod 0.3;cl_crosshair_dynamic_maxdist_splitratio 0;cl_crosshair_screen_height 1024"
+// NEU v10: Grosses rotes T wie frueher angenaehert; neue maximale Laenge 255 statt alter 1000.
+alias "shape_fire_t" "shot_t_part_1;shot_t_part_2;shot_t_part_3"
+// NEU v10: SPACE-Zustand merken; keine Bombe beim folgenden CapsLock-Druck abwerfen.
+alias "space_press_state" "alias sens_check_space sens_held;alias check_space equip_z;alias drop_dispatch space_sneak_press"
+// NEU v10: SPACE-Ende: Standardfunktion Bombendrop und sprint1 wiederherstellen.
+alias "space_release_state" "alias sens_check_space sens_check_quick;alias check_space best_weapon;alias drop_dispatch bomb_down;space_sneak_reset"
+// NEU v10: Angeforderter SPACE-Modus ruft vorhandenes sprint0 auf.
+alias "space_sneak_on" "sprint0;alias space_sneak_toggle space_sneak_off;alias space_move_hold sprint0;echo SPACE_SPRINT0"
+// NEU v10: Zweiter Druck stellt vorhandenes sprint1 wieder her.
+alias "space_sneak_off" "sprint1;alias space_sneak_toggle space_sneak_on;alias space_move_hold sprint1;echo SPACE_SPRINT1"
+// NEU v10: Naechster Druck waehrend SPACE aktiviert sprint0.
+alias "space_sneak_toggle" "space_sneak_on"
+// NEU v10: SPACE-Release beendet den Toggle immer; SHIFT bleibt danach normal nutzbar.
+alias "space_sneak_reset" "sprint1;alias space_sneak_toggle space_sneak_on;alias space_move_hold noop"
+// NEU v10: Temporaren SPACE-Modus nach SHIFT-Release erneut anwenden.
+alias "space_move_hold" "noop"
+// NEU v10: Tastendruck als SPACE-Modusschalter merken: Release darf keine Bombe droppen.
+alias "space_sneak_press" "alias drop_release noop;space_sneak_toggle"
+// NEU v10: Bombentaste im Normalmodus.
+alias "drop_dispatch" "bomb_down"
+// NEU v10: Release-Aktion wird beim Tastendruck gespeichert.
+alias "drop_release" "noop"
+// NEU v10: Latch verhindert mehrfaches Umschalten beim Halten.
+alias "drop_press" "drop_once"
+// NEU v10: Genau eine Bomben-/Toggle-Aktion pro Tastendruck.
+alias "drop_once" "alias drop_press noop;drop_dispatch"
+// NEU v10: Normale Bombenauswahl; passende Release-Aktion auch bei spaeterem SPACE merken.
+alias "bomb_down" "alias drop_release bomb_up;cl_autohelp 1;slot3;slot5;look1"
+// NEU v10: Vor Drop Bombe erneut waehlen: anderer Waffenwechsel waehrend Halten darf nicht Hauptwaffe droppen.
+alias "bomb_up" "cl_autohelp 0;look0;slot3;slot5;drop;best_weapon"
+// NEU v10: Maus1 startet nicht gehalten.
+alias "fire_check_mouse" "fire_check_enter"
+// NEU v10: Enter startet nicht gehalten.
+alias "fire_check_enter" "fire_end"
+// NEU v10: Gemeinsamen Angriffszustand aus beiden Tasten ableiten.
+alias "fire_refresh" "fire_check_mouse"
+// NEU v10: Mindestens eine Angriffstaste gehalten: Angriff und Schussanzeige.
+alias "fire_hold" "+attack;alias refresh_crosshair crosshair_fire;atx1"
+// NEU v10: Letzte Angriffstaste losgelassen: Angriff aus, gespeichertes Profil und Sens zurueck.
+alias "fire_end" "-attack;alias refresh_crosshair crosshair_idle;mycross;-h_color;sens1;sens_refresh"
+// NEU v10: Kauf-/Abbruchpfad: Angriff samt Anzeige und beiden Haltetasten-Flags beenden.
+alias "fire_cancel" "alias fire_check_mouse fire_check_enter;alias fire_check_enter fire_end;fire_end"
+// NEU v10: Enter nutzt dieselbe optionale Schussanzeige wie Maus1.
+alias "+enter_fire" "alias fire_check_enter fire_hold;fire_refresh;shot_trace_down"
+// NEU v10: Enter freigeben; Maus1 darf weiter schiessen.
+alias "-enter_fire" "alias fire_check_enter fire_end;fire_refresh;shot_trace_up"
+// NEU v10: Aktive Optionen und Auswahl ohne Zustandsaenderung ausgeben.
+alias "mode_status" "echo LEETED_MODES;alias look1;alias automatic_white;alias shot_selected;alias shot_render;alias space_sneak_toggle;selection_status"
+// LEETED v1.01.1_09 - freigegebene Reparatur, Altzeilen bleiben erhalten.
+// NEU: LEETED: Diagnoseausgabe einschalten; keine Gameplay-Aenderung.
+log_flags General -donotecho
+// NEU: Leere Aktion fuer freigegebene Tasten.
+alias "noop" ""
+// NEU: Normales Crosshair oder Schussprofil je nach gehaltener Maustaste.
+alias "refresh_crosshair" "crosshair_idle"
+// NEU: Ausgewaehltes Profil mit seiner Farbe anzeigen.
+alias "crosshair_idle" "mycross"
+// NEU: Schussprofil anzeigen; gespeicherte Auswahl nicht veraendern.
+// ALT: alias "crosshair_fire" "croattx"
+// NEU v10: Schussprofil an/aus und Kreis/T getrennt von normaler Auswahl.
+alias "crosshair_fire" "shot_render"
+// NEU: Profil dot: normales Profil, Schussfolgen AUS; konfigurierbar in options.json.
+alias "shape_dot" "crosshair 1;cl_crosshairstyle 4;cl_crosshair_length 3;cl_crosshair_thickness 2;cl_crosshair_gap 2;cl_crosshaircolor_a 255;cl_crosshair_drawoutline 1;cl_crosshairdot 0;cl_crosshair_t 1;cl_crosshair_recoil 0;cl_crosshair_screen_height 960"
+// NEU: Profil cross: normales Profil, Schussfolgen AUS; konfigurierbar in options.json.
+alias "shape_cross" "crosshair 1;cl_crosshairstyle 4;cl_crosshair_length 2;cl_crosshair_thickness 2;cl_crosshair_gap 1;cl_crosshaircolor_a 255;cl_crosshair_drawoutline 0;cl_crosshairdot 0;cl_crosshair_t 1;cl_crosshair_recoil 0;cl_crosshair_screen_height 960"
+// NEU: Profil hole: normales Profil, Schussfolgen AUS; konfigurierbar in options.json.
+alias "shape_hole" "crosshair 1;cl_crosshairstyle 4;cl_crosshair_length 1;cl_crosshair_thickness 7;cl_crosshair_gap 4;cl_crosshaircolor_a 255;cl_crosshair_drawoutline 0;cl_crosshairdot 0;cl_crosshair_t 0;cl_crosshair_recoil 0;cl_crosshair_screen_height 960"
+// NEU: Profil trill: normales Profil, Schussfolgen AUS; konfigurierbar in options.json.
+alias "shape_trill" "crosshair 1;cl_crosshairstyle 4;cl_crosshair_length 1;cl_crosshair_thickness 1;cl_crosshair_gap 1;cl_crosshaircolor_a 255;cl_crosshair_drawoutline 1;cl_crosshairdot 0;cl_crosshair_t 0;cl_crosshair_recoil 0;cl_crosshair_screen_height 960"
+// ALT: alias "shape_t" "crosshair 1;cl_crosshairstyle 4;cl_crosshair_length 255;cl_crosshair_thickness 1;cl_crosshair_gap 1;cl_crosshaircolor_a 137;cl_crosshair_drawoutline 1;cl_crosshairdot 0;cl_crosshair_t 1;cl_crosshair_recoil 1;cl_crosshair_screen_height 960"
+// NEU: Profil t: normales Profil, Schussfolgen AUS; konfigurierbar in options.json.
+alias "shape_t" "crosshair 1;cl_crosshairstyle 4;cl_crosshair_length 255;cl_crosshair_thickness 1;cl_crosshair_gap 1;cl_crosshaircolor_a 137;cl_crosshair_drawoutline 1;cl_crosshairdot 0;cl_crosshair_t 1;cl_crosshair_recoil 0;cl_crosshair_screen_height 960"
+// ALT: alias "shape_fire" "crosshair 1;cl_crosshairstyle 1;cl_crosshair_length 2;cl_crosshair_thickness 3;cl_crosshair_gap 2;cl_crosshaircolor_a 255;cl_crosshair_drawoutline 1;cl_crosshairdot 1;cl_crosshair_t 1;cl_crosshair_recoil 1;cl_crosshair_screen_height 1024;cl_crosshaircolor_r 255;cl_crosshaircolor_g 0;cl_crosshaircolor_b 0;cl_crosshair_dynamic_spread_limit 77;cl_crosshair_dynamic_splitdist 0;cl_crosshair_dynamic_splitalpha_innermod 0;cl_crosshair_dynamic_splitalpha_outermod 0.3;cl_crosshair_dynamic_maxdist_splitratio 0"
+// NEU: Lange Schussprofil-Definition in kurze Teilaliase zerlegen; identische Reihenfolge und Werte.
+// ALT: alias "shot_profile_1" "crosshair 1;cl_crosshairstyle 1;cl_crosshair_length 3;cl_crosshair_thickness 3;cl_crosshair_gap 2;cl_crosshaircolor_a 255;cl_crosshair_drawoutline 1;cl_crosshairdot 1"
+// NEU: Kurzer Schussprofil-Teil 1 aus dem Code; Laenge angepasst auf 2.
+alias "shot_profile_1" "crosshair 1;cl_crosshairstyle 1;cl_crosshair_length 2;cl_crosshair_thickness 3;cl_crosshair_gap 2;cl_crosshaircolor_a 255;cl_crosshair_drawoutline 1;cl_crosshairdot 1"
+// NEU: Kurzer Schussprofil-Teil 2 aus dem Code; Laenge angepasst auf 2.
+alias "shot_profile_2" "cl_crosshair_t 1;cl_crosshair_recoil 1;cl_crosshair_screen_height 1024;cl_crosshaircolor_r 255;cl_crosshaircolor_g 0;cl_crosshaircolor_b 0;cl_crosshair_dynamic_spread_limit 77"
+// NEU: Kurzer Schussprofil-Teil 3 aus dem Code; Laenge angepasst auf 2.
+alias "shot_profile_3" "cl_crosshair_dynamic_splitdist 0;cl_crosshair_dynamic_splitalpha_innermod 0;cl_crosshair_dynamic_splitalpha_outermod 0.3;cl_crosshair_dynamic_maxdist_splitratio 0"
+// ALT: alias "shape_fire" "crosshair 1;cl_crosshairstyle 4;cl_crosshair_length 255;cl_crosshair_thickness 1;cl_crosshair_gap 1;cl_crosshaircolor_a 77;cl_crosshair_drawoutline 1;cl_crosshairdot 0;cl_crosshair_t 1;cl_crosshair_recoil 1;cl_crosshair_screen_height 960"
+// NEU: Schussprofil aus kurzen Teilaufrufen; alter langer Aufruf oben auskommentiert.
+// ALT: alias "shape_fire" "shot_profile_1;shot_profile_2;shot_profile_3"
+// NEU v10: Weisser Kreis, duennere Linie, hoehere dynamische Spreizgrenze.
+alias "shape_fire" "shot_circle_part_1;shot_circle_part_2;shot_circle_part_3;shot_circle_part_4"
+// NEU: Farbe white ohne Aenderung der Profilauswahl.
+alias "rgb_white" "cl_crosshaircolor_r 255;cl_crosshaircolor_g 255;cl_crosshaircolor_b 255"
+// NEU: Farbe matrix ohne Aenderung der Profilauswahl.
+alias "rgb_matrix" "cl_crosshaircolor_r 250;cl_crosshaircolor_g 50;cl_crosshaircolor_b 129"
+// NEU: Farbe pink ohne Aenderung der Profilauswahl.
+alias "rgb_pink" "cl_crosshaircolor_r 255;cl_crosshaircolor_g 0;cl_crosshaircolor_b 255"
+// NEU: Farbe weed ohne Aenderung der Profilauswahl.
+alias "rgb_weed" "cl_crosshaircolor_r 155;cl_crosshaircolor_g 255;cl_crosshaircolor_b 0"
+// NEU: Farbe red ohne Aenderung der Profilauswahl.
+alias "rgb_red" "cl_crosshaircolor_r 255;cl_crosshaircolor_g 0;cl_crosshaircolor_b 0"
+// NEU: Farbe cyan ohne Aenderung der Profilauswahl.
+alias "rgb_cyan" "cl_crosshaircolor_r 0;cl_crosshaircolor_g 255;cl_crosshaircolor_b 255"
+// NEU: Gespeichertes Profil dot anzeigen; kein Auswahl-/Weiterschalt-Aufruf.
+// ALT: alias "restore_dot" "shape_dot;croco;cl_crosshair_recoil 0;ch1"
+// NEU v10: Gespeichertes Profil und Farbe entsprechend Farbschutz laden; keine Auswahl weiterschalten.
+alias "restore_dot" "shape_dot;color_restore;cl_crosshair_recoil 0;ch1"
+// NEU: Lesbare Diagnose fuer Profil dot.
+alias "selected_dot" "echo CROSS_SELECTED_DOT"
+// NEU: Gespeichertes Profil cross anzeigen; kein Auswahl-/Weiterschalt-Aufruf.
+// ALT: alias "restore_cross" "shape_cross;croco;cl_crosshair_recoil 0;ch1"
+// NEU v10: Gespeichertes Profil und Farbe entsprechend Farbschutz laden; keine Auswahl weiterschalten.
+alias "restore_cross" "shape_cross;color_restore;cl_crosshair_recoil 0;ch1"
+// NEU: Lesbare Diagnose fuer Profil cross.
+alias "selected_cross" "echo CROSS_SELECTED_CROSS"
+// NEU: Gespeichertes Profil hole anzeigen; kein Auswahl-/Weiterschalt-Aufruf.
+// ALT: alias "restore_hole" "shape_hole;croco;cl_crosshair_recoil 0;ch1"
+// NEU v10: Gespeichertes Profil und Farbe entsprechend Farbschutz laden; keine Auswahl weiterschalten.
+alias "restore_hole" "shape_hole;color_restore;cl_crosshair_recoil 0;ch1"
+// NEU: Lesbare Diagnose fuer Profil hole.
+alias "selected_hole" "echo CROSS_SELECTED_HOLE"
+// NEU: Gespeichertes Profil t anzeigen; kein Auswahl-/Weiterschalt-Aufruf.
+// ALT: alias "restore_t" "shape_t;croco;cl_crosshair_recoil 0;ch1"
+// NEU v10: Gespeichertes Profil und Farbe entsprechend Farbschutz laden; keine Auswahl weiterschalten.
+alias "restore_t" "shape_t;color_restore;cl_crosshair_recoil 0;ch1"
+// NEU: Lesbare Diagnose fuer Profil t.
+alias "selected_t" "echo CROSS_SELECTED_T"
+// NEU: Gespeichertes Profil trill anzeigen; kein Auswahl-/Weiterschalt-Aufruf.
+// ALT: alias "restore_trill" "shape_trill;croco;cl_crosshair_recoil 0;ch1"
+// NEU v10: Gespeichertes Profil und Farbe entsprechend Farbschutz laden; keine Auswahl weiterschalten.
+alias "restore_trill" "shape_trill;color_restore;cl_crosshair_recoil 0;ch1"
+// NEU: Lesbare Diagnose fuer Profil trill.
+alias "selected_trill" "echo CROSS_SELECTED_TRILL"
+// NEU: Standardauswahl fuer Diagnose.
+alias "selection_status" "selected_dot"
+// NEU: K: genau ein Wechsel pro Tastendruck.
+alias "cross_pick_once" "alias cross_pick_action noop;next_cross"
+// NEU: K-Wechsel ist nach Loslassen wieder bereit.
+alias "cross_pick_action" "cross_pick_once"
+// NEU: K-Tastendruck auf einmalige Auswahl leiten.
+alias "+cross_pick" "cross_pick_action"
+// NEU: K loslassen: naechsten Tastendruck erlauben, keine Auswahl aendern.
+alias "-cross_pick" "alias cross_pick_action cross_pick_once"
+// NEU: Standard-Sensitivitaet; Zoomwerte bleiben in vorhandenen sens-Aliasen.
+alias "sens_normal" "sensitivity 1.33"
+// NEU: Sensitivitaet bei gehaltenem SPACE oder Quickswitch.
+alias "sens_held" "sensitivity 1.87"
+// NEU: Aktive Haltetasten auswerten.
+alias "sens_refresh" "sens_check_space"
+// NEU: Sens-Zustand space startet losgelassen.
+alias "sens_check_space" "sens_check_quick"
+// NEU: Sens-Zustand quick startet losgelassen.
+alias "sens_check_quick" "sens_check_qhand"
+// NEU: Sens-Zustand qhand startet losgelassen.
+alias "sens_check_qhand" "sens_check_quicky"
+// NEU: Sens-Zustand quicky startet losgelassen.
+alias "sens_check_quicky" "sens_normal"
+// NEU: Ohne gehaltene Granatentaste oder SPACE zur besten Waffe.
+alias "check_space" "best_weapon"
+// NEU: Fehlender Chat-Alias: vorhandenen Englisch-Text nutzen.
+alias "eng" "eng1"
+// NEU: Fehlender Release-Gruss: vorhandenen Team-Gruss nutzen.
+alias "hf" "-hf"
+// NEU: Decoy ausruesten statt unbekannten Befehl aufrufen.
+alias "decoy" "deco"
+// NEU: Zeus ausruesten.
+alias "taser" "slot11"
+// NEU: Bomben-Ausruestfunktion verwenden.
+alias "c4" ">c4"
+// NEU: SHIFT nach Bewegungsmodus wiederherstellen.
+alias "shift1" "bind SHIFT +speed"
+// NEU: Normalmodus fuer Granaten und Voice wiederherstellen.
+alias "stdmode" "grnz;Voice1"
+// NEU: Entwickler-Umschalter initialisieren.
+alias "devCon" "dev_on"
+// NEU: Gamma-Umschalter initialisieren.
+alias "macmode" "mac0"
+// NEU: FACEIT-Anzeigeumschalter initialisieren.
+alias "gmrmode" "gmrm_01"
+// NEU: Normallautstaerke, dann leise als naechste Stufe.
+alias "vol_normal" "stdv;alias volmode_toggle vol_low"
+// NEU: Leise Lautstaerke, dann Normal als naechste Stufe.
+alias "vol_low" "volume 0.22;alias volmode_toggle vol_normal"
+// NEU: Bisher fehlenden Lautstaerkeumschalter starten.
+alias "volmode_toggle" "vol_low"
+// NEU: Kompatibilitaet fuer alte Rauch-Aufrufe.
+alias "+smoke" "smoke"
+// NEU: Alte Rauch-Taste beim Loslassen zur Waffe zurueck.
+alias "-smoke" "best_weapon"
+// NEU: Alten Voice-Namen auf vorhandene Rueckstellung legen.
+alias "voip" "Voice1"
+// NEU: Alten Leerlaufnamen weiter unterstuetzen.
+alias "_noop" "noop"
+// LEETED v1.01.1_03 - original command order + input repairs
+// Taste space.
+bind "space" "+jumpp"
+// ALT: bind "b" "+jump;"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+bind "b" "+duckjump"
+// Taste CTRL.
+bind "CTRL"  "+sneak"
+// Funktion +turn180.
+alias "+turn180" "yaw 180;+radarzoom"
+// Funktion -turn180.
+alias "-turn180" "yaw 0;-radarzoom"
+// Funktion ra1.
+alias ra1 "bind r +turn180"
+// Funktion ra2.
+alias ra2 "bind r +radarzoom"
+// Funktion crosscode.
+alias crosscode "echo CSGO-zkNpk-sFnov-seH67-Ln69q-J6sKG;echo CSGO-HhKXK-GGcBN-FcPuc-Cfbux-Np74E"
+// Funktion +force.
+alias +force "fallback;say_team >>>SAFE WEAPON NOW<<<"
+// Funktion -force.
+alias -force "getout"
+// Funktion eco.
+alias eco "needrop;say_team >>>ECO/DROP<<<"
+// Einstellung/Aufruf r_drawtracers_firstperson.
+r_drawtracers_firstperson true
+// Einstellung/Aufruf r_drawparticles.
+r_drawparticles false
+// Einstellung/Aufruf snd_mixahead.
+snd_mixahead 0.05
+// Einstellung/Aufruf viewmodel_fov.
+viewmodel_fov 68
+// Einstellung/Aufruf viewmodel_offset_x.
+viewmodel_offset_x -2.5
+// Einstellung/Aufruf viewmodel_offset_y.
+viewmodel_offset_y -2.5
+// Einstellung/Aufruf viewmodel_offset_z.
+viewmodel_offset_z -2
+// Einstellung/Aufruf viewmodel_presetpos.
+viewmodel_presetpos 1
+// Einstellung/Aufruf speaker_config.
+speaker_config 2
+// Einstellung/Aufruf cl_hud_radar_blur_background.
+cl_hud_radar_blur_background 0
+// Einstellung/Aufruf cl_crosshair_t.
+cl_crosshair_t true
+// Einstellung/Aufruf UNBIND.
+UNBIND  f1
+// Einstellung/Aufruf UNBIND.
+UNBIND f2
+// Einstellung/Aufruf speaker_config.
+speaker_config 2
+// ALT: bind K "next_cross"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+bind k +cross_pick
+// Taste J.
+BIND J "cr_x"
+// Taste r.
+bind r +radarzoom
+// Einstellung/Aufruf zoom_sensitivity_ratio.
+zoom_sensitivity_ratio 0.8189833027098955
+// Einstellung/Aufruf weapon_accuracy_nospread.
+weapon_accuracy_nospread true
+// Einstellung/Aufruf weapon_accuracy_nospread.
+weapon_accuracy_nospread 1
+// Funktion neo1.
+alias neo1 "cl_crosshair_drawoutline true; cl_crosshair_dynamic_maxdist_splitratio 1; cl_crosshair_dynamic_splitalpha_innermod 1; cl_crosshair_dynamic_splitalpha_outermod 1; cl_crosshair_dynamic_splitdist 16; cl_crosshair_friendly_warning 1"
+// ALT: alias neo2 "cl_crosshair_outlinethickness 1; cl_crosshair_sniper_width 1; cl_crosshair_t true; cl_crosshairalpha 175; cl_crosshaircolor 5; cl_crosshaircolor_b 0; cl_crosshaircolor_g 255; cl_crosshaircolor_r 155"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "neo2" "cl_crosshair_sniper_width 1;cl_crosshair_t true;cl_crosshaircolor_a 175;cl_crosshaircolor_b 0;cl_crosshaircolor_g 255;cl_crosshaircolor_r 155"
+// ALT: alias neo3 "cl_crosshairdot false; cl_crosshairgap -3; cl_crosshairgap_useweaponvalue false; cl_crosshairsize 1.5; cl_crosshairstyle 4; cl_crosshairthickness 1; cl_crosshairusealpha true"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "neo3" "cl_crosshairdot false;cl_crosshair_gap 2;cl_crosshair_length 3;cl_crosshairstyle 4;cl_crosshair_thickness 2"
+// Funktion neo.
+alias neo "neo1; neo2; neo3"
+// Einstellung/Aufruf cl_crosshair_t.
+cl_crosshair_t true
+// Einstellung/Aufruf m_pitch.
+m_pitch 0.0165
+// Einstellung/Aufruf sensitivity_y_scale.
+sensitivity_y_scale 1.33
+// Funktion he.
+alias "he" "<hand;slot6;look0"
+// Funktion flash.
+alias "flash" "<hand;slot7;look0"
+// Funktion smoke.
+alias "smoke" "<hand;slot8;look0"
+// ALT: alias molo "<hand;slot10;look0"
+// ALT: alias molo "<hand;slot10;look0"
+// NEU: Brandgranate wie die anderen Granaten mit look1 ausruesten.
+alias "molo" "<hand;slot10;look1"
+// ALT: alias deco "<hand;slot9;look0"
+// NEU: Vorhandene Decoy ausruesten; nicht per give erzeugen.
+alias "deco" "<hand;slot9;look1"
+// ALT: alias "+c4"     ">c4;use weapon_smokegrenade"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "+c4" ">c4;slot8"
+// Funktion -c4.
+alias "-c4" "ch1;w1;w2;look0"
+// ALT: alias "knife"  "use weapon_knife;look1"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "knife" "<hand;slot3;look1"
+// Funktion nova/sawedoff.
+alias "nova/sawedoff" "buy nova; buy sawedoff; knife"
+// Funktion m4/ak.
+alias "m4/ak" "buy m4a1; buy ak47; knife"
+// ALT: alias "aug/sg" "buy aug; buy sg556; use knife"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "aug/sg" "buy aug;buy sg556;knife"
+// Funktion galil/famas.
+alias "galil/famas" "buy galilar; buy famas; knife"
+// Funktion g3/scar.
+alias "g3/scar" "buy g3sg1; buy scar20; knife"
+// Funktion mac10/mp9.
+alias "mac10/mp9" "buy mac10; buy mp9; knife"
+// Funktion awp.
+alias "awp" "buy awp; knife"
+// Funktion mp7.
+alias "mp7" "buy mp7; knife"
+// Funktion ump45.
+alias "ump45" "buy ump45; knife"
+// Funktion p90.
+alias "p90" "buy p90; knife"
+// Funktion +vest.
+alias "+vest" "buy vesthelm; buy vest; knife"
+// Funktion grens.
+alias "grens" "buy flashbang; buy smokegrenade;buy hegrenade; knife"
+// Funktion ink/molo.
+alias "ink/molo" "buy molotov; buy incgrenade; knife"
+// Funktion vesthelm/vest/grens.
+alias "vesthelm/vest/grens" "+vest; buy defuser; buy flashbang; buy hegrenade; buy smokegrenade; knife"
+// Funktion spar.
+alias "spar" "buy defuser; buy hegrenade; knife"
+echo "◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤"
+echo "╔═══════════════════════════════════════════════════════════╗"
+echo "║                                                           ║"
+// ALT: echo "║        CS2 OPTIMIERTE KONFIGURATION - DKZ DEVKITZ        ║"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+echo "║        CS2 OPTIMIERTE KONFIGURATION - LEETED        ║"
+echo "║                  VERSION: V1 v01.1_01                    ║"
+echo "║                                                           ║"
+echo "╚═══════════════════════════════════════════════════════════╝"
+echo ""
+echo "LAUNCHOPTION:-novid -dev -console -noforcemspd -noforcemparms -noforcemaccel -vulkan -full -high -nojoy -tickrate 128 +fps_max 999 -exec autoexec.cfg -freq 999 (Deine FPS hier eintragen \"-freq 145\")<<<"
+echo "autoexec.cfg has been loaded | powered by. GAMEPLAYon1.de | GAMEPLAY | CS2 | SETUP | <<<<<<<"
+echo "pfad#C:\Program Files (x86)\Steam\steamapps\common\...\cfg\ #autoexec.cfg"
+echo ""
+// Taste ALT.
+bind "ALT" "+[chain]"
+echo "╔═════════════════════════════════════════════════════════╗"
+echo "║                     ALIAS SECTION                       ║"
+echo "╚═════════════════════════════════════════════════════════╝"
+// Funktion <hand>.
+// ALT: alias <hand> "switchhands;-lookatweapon"
+// NEU v10: Direkte Inspect-Aufrufe ueber look1/look0 zentralisieren bzw. Versionsmarker erneuern.
+alias "<hand>" "switchhands;look0"
+// Funktion <hand.
+// ALT: alias <hand "switchhandsleft;-lookatweapon"
+// NEU v10: Direkte Inspect-Aufrufe ueber look1/look0 zentralisieren bzw. Versionsmarker erneuern.
+alias "<hand" "switchhandsleft;look0"
+// Funktion hand>.
+// ALT: alias hand> "switchhandsright;-lookatweapon"
+// NEU v10: Direkte Inspect-Aufrufe ueber look1/look0 zentralisieren bzw. Versionsmarker erneuern.
+alias "hand>" "switchhandsright;look0"
+// ALT: alias +strafeleft "+left; +moveleft"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "+strafeleft" "+left"
+// ALT: alias -strafeleft "-left; -moveleft"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "-strafeleft" "-left"
+// ALT: alias +straferight "+right; +moveright"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "+straferight" "+right"
+// ALT: alias -straferight "-right; -moveright"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "-straferight" "-right"
+// Funktion useoff.
+alias useoff "-use;-use;-use;-use;-use"
+// Funktion useon.
+alias useon "+use;+use;+use;+use;+use"
+// Funktion >c4.
+alias >c4 "<hand;look1;slot5"
+// Funktion rdygo.
+// ALT: alias rdygo "-attack;he;molo;smoke;slot3;knife;-lookatweapon"
+// NEU v10: Kaufhelfer beendet Angriff UND Schussanzeige; bestehende Waffenfolge bleibt.
+alias "rdygo" "fire_cancel;he;molo;smoke;slot3;knife;look0"
+// Funktion w0.
+alias w0 "<hand;slot3;knife"
+// Funktion w1.
+alias w1 "rdygo;hand>;slot2"
+// Funktion w2.
+alias w2 "rdygo;hand>;slot1"
+// Funktion look1.
+// ALT: alias look1 "+lookatweapon"
+// NEU v10: Zum Testen startet Inspect AUS; inspect_on aktiviert +lookatweapon.
+alias "look1" "noop"
+// ALT: alias look0 "-lookatweapon;-reload;-lookatweapon;-lookatweapon;-reload"
+// NEU: Eine eindeutige Inspect-Release-Definition; Animation nicht mit Reload erzwingen.
+alias "look0" "-lookatweapon"
+// Funktion sens1.
+alias sens1 "sensitivity 1.33;zoom_sensitivity_ratio 0.8189833027098955"
+// Funktion sens2.
+alias sens2 "sensitivity 1.87;zoom_sensitivity_ratio 0.8189833027098955"
+// Funktion sensx.
+alias sensx "sensitivity 1.87;zoom_sensitivity_ratio 1.87"
+// ALT: bind ""
+// NEU: Entfaellt hier: veralteter/ungueltiger Aufruf, alte ungenutzte Chain oder vorzeitiges Speichern; siehe Aenderungsbericht.
+
+// Funktion sens0.
+alias sens0 "sens1"
+// Funktion stdv.
+alias stdv "volume 0.33"
+// Funktion 1voicevol.
+alias 1voicevol "volume 0.22;snd_voipvolume 0.3"
+// Funktion 0voicevol.
+alias 0voicevol "stdv;snd_voipvolume 0.5"
+// Funktion xmute.
+alias xmute "stdv;snd_voipvolume 0.0"
+// Funktion voice.
+alias voice "bind v +voicerecord;stdv;snd_voipvolume 0.1"
+// Funktion <vol.
+alias <vol "+h_color;1voicevol"
+// Funktion vol>.
+alias vol> "-h_color;0voicevol"
+// Funktion +sneak.
+alias +sneak "<vol;+duck"
+// Funktion -sneak.
+alias -sneak "vol>;-duck"
+// Funktion buyend.
+alias buyend "slot3;clear;knife;decoy"
+// Funktion modemode_std.
+alias modemode_std "bind CTRL +sneak;bind SHIFT +sprint;bind CapsLock sprint_mode"
+// Funktion sneak_end.
+alias sneak_end "bind CTRL movemode_run;bind SHIFT movemode_run;bind CapsLock movemode_run"
+// Funktion movemode_sneak.
+alias movemode_sneak "sneak_end;sprint1"
+// Funktion movemode_run.
+alias movemode_run "modemode_std;shift1;sprint0"
+// Funktion sprint_mode.
+alias sprint_mode movemode_sneak
+// Funktion sprint1.
+alias sprint1 "<vol;+sprint"
+// Funktion sprint0.
+alias sprint0 "vol>;-sprint"
+// Funktion +speed.
+// ALT: alias +speed "<vol;+sprint"
+// NEU v10: SHIFT erhalten; aktiver SPACE-Toggle hat Vorrang.
+alias "+speed" "<vol;+sprint;space_move_hold"
+// Funktion -speed.
+// ALT: alias -speed "vol>;-sprint"
+// NEU v10: SHIFT-Release darf aktiven SPACE-Toggle nicht aufheben.
+alias "-speed" "vol>;-sprint;space_move_hold"
+// Funktion switchvoice.
+alias switchvoice "bind v cl_clutch_mode TRUE"
+// Funktion ingamemsg.
+alias ingamemsg "bind F9 repbot ;bind F10 bla;bind F11 ts;bind F12 eng"
+// Funktion inmageswitch.
+alias inmageswitch "bind F1 hudcol ;bind F2 gmrview"
+// Funktion face1.
+alias face1 "bind F5 +f_stay;bind F6 +f_switch;bind F7 f_gg;bind F8 f_report"
+// Funktion gretz.
+alias gretz "bind F3 +hf;bind F4 +gg"
+// Funktion grnz.
+alias grnz "bind z smoke;bind x molo;bind c he;bind f xgrnz"
+// Funktion xgrnz.
+alias xgrnz "smoke;molo;he;flash"
+// Einstellung/Aufruf grnz.
+grnz
+// Taste o.
+bind o snowball
+// Funktion +togglevol.
+alias +togglevol "toggleconsole; volmode_toggle"
+// Funktion -togglevol.
+alias -togglevol "toggleconsole"
+// Taste t.
+bind t +togglevol
+// Funktion hudcol.
+alias hudcol "toggle cl_hud_color 0 1 2 3 4 5 6 7"
+// Funktion +h_color.
+alias +h_color "cl_hud_color 6"
+// Funktion -h_color.
+alias -h_color "cl_hud_color 0"
+// Funktion h_c-ONE.
+alias h_c-ONE "cl_hud_color 1"
+// ALT: alias +lowrate "clear;+console"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "+lowrate" "clear;showconsole"
+// ALT: alias -lowrate "rate 98000;-console;echo low_on1;"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "-lowrate" "rate 98304;hideconsole;echo low_on1"
+// ALT: alias +lanrate "clear;+console"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "+lanrate" "clear;showconsole"
+// ALT: alias -lanrate "rate 1286432;-console;echo lan_on1;"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "-lanrate" "rate 1000000;hideconsole;echo lan_on1"
+// ALT: alias +rate128 "+console"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "+rate128" "showconsole"
+// ALT: alias -rate128 "rate 786432;-console;echo 128_on1"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "-rate128" "rate 786432;hideconsole;echo 128_on1"
+// ALT: alias +rate64 "clear;+console"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "+rate64" "clear;showconsole"
+// ALT: alias -rate64 "rate 386432;-console;echo 64_on1"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "-rate64" "rate 386432;hideconsole;echo 64_on1"
+// Funktion nethub.
+alias nethub "bind F10 +rate64 ;bind F11 +rate128;bind F12 +lanrate;bind F9 +lowrate"
+// Funktion by.
+alias by "say powered by. #LIKEDBIG"
+// Funktion ts.
+alias ts "say_team TS3/Discord:#"
+// Funktion bla.
+alias bla "say FLAMEBOX >>>>>>>|\\____//|<<<<<<< FLAMEBOX"
+// Funktion repbot.
+alias repbot "say bye bye BITCH - REPORTBOT IS RUNNING!"
+// Funktion eng1.
+alias eng1 "say_team ENGLISH PLEASE"
+// Funktion +ez.
+alias +ez "say_team ♡"
+// Funktion -ez.
+alias -ez ""
+// Funktion gj.
+alias gj "say_team GooD J0B"
+// Funktion nt.
+alias nt "say_team Nice Try"
+// Funktion sry.
+alias sry "say_team SORRY!"
+// Funktion go_PLAY.
+alias go_PLAY "say_team {GO}PLAY{TOGATHER}!"
+// ALT: PLAY
+// NEU: Entfaellt hier: veralteter/ungueltiger Aufruf, alte ungenutzte Chain oder vorzeitiges Speichern; siehe Aenderungsbericht.
+
+// Funktion thx.
+alias thx "say_team THANKS!"
+// Funktion +hf.
+alias +hf ";say [H]ave [F]un _&_ [F]air [P]lay"
+// Funktion -hf.
+alias -hf "say_team [H]an[F] & [G]ood [L]uck "
+// Funktion +gg.
+alias +gg "showconsole;say_team [G]ood [G]ame;"
+// Funktion -gg.
+alias -gg "say [G]ood [G]ame;stop"
+// Funktion mnormal.
+alias "mnormal" "unbind mwheeldown; look0; <vol; -h_color;-reload"
+// Funktion mjump.
+alias "mjump" " vol>; +h_color; bind mwheeldown +jump"
+// ALT: alias "+jumpp" "mjump;sens0;+buy"
+// ALT: alias "+jumpp" "mjump; sens0; +buy" //; -sprint
+// NEU: SPACE: bestehender Rad-/BUY-Modus, Granatenprioritaet Rauch und gehaltene Sens 1.87.
+// ALT: alias "+jumpp" "mjump;sens0;+buy;alias sens_check_space sens_held;alias check_space equip_z;select_held;sens_refresh"
+// NEU v10: SPACE: vorhandene Rauch-Ersatzfolge, Radmodus und Sens 1.87; Bombentaste wird Modusschalter.
+alias "+jumpp" "mjump;sens0;+buy;space_press_state;select_held;sens_refresh"
+// ALT: alias "-jumpp" "mnormal;sensx;-buy"
+// ALT: alias "-jumpp" "-jump; mnormal; sensx ; -buy"//; sprint1
+// NEU: SPACE loslassen: Rad-/BUY-Rueckweg, Granatenzustand freigeben, immer look0/proview und Sens nach restlichen Haltetasten.
+// ALT: alias "-jumpp" "mnormal;sensx;-buy;alias sens_check_space sens_check_quick;alias check_space best_weapon;select_held;look0;proview;sens_refresh"
+// NEU v10: SPACE: Rad-/BUY-Rueckweg, Hauptwaffe rechts, Inspect aus, proview und Sens-Rueckstellung.
+alias "-jumpp" "mnormal;sensx;-buy;space_release_state;best_weapon;proview;sens_refresh"
+// Funktion +duckjump.
+alias "+duckjump" "+duck; +jump"
+// Funktion -duckjump.
+alias "-duckjump" "-jump; -duck"
+// Taste space.
+bind "space" "+jumpp"
+// ALT: bind "b" "+jump"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+bind "b" "+duckjump"
+// Einstellung/Aufruf unbind.
+unbind "mwheeldown"
+// Einstellung/Aufruf sprint1.
+sprint1
+// Funktion vst.
+alias vst "buy vesthelm;buy vest"
+// Funktion buyanddrop.
+alias buyanddrop "buy ak47; buy m4a1_silencer; slot1; drop"
+// Funktion dropump.
+alias dropump "knife; ump45; slot1; drop"
+// ALT: alias dropflash "knife; buy flashbang; SLOT5; drop;decoy"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "dropflash" "knife;buy flashbang;slot7;drop;decoy"
+// Funktion dropp250.
+alias dropp250 "knife; buy p250; slot2; drop;decoy"
+// Funktion faceit1.
+alias faceit1 "cl_hide_avatar_images 0;cl_sanitize_player_names 0;cl_teamcounter_playercount_instead_of_avatars 0;echo FACEIT Modus 1"
+// Funktion faceit0.
+alias faceit0 "cl_hide_avatar_images 2;cl_sanitize_player_names 1;cl_teamcounter_playercount_instead_of_avatars 1;echo FACEIT Modus 0"
+// Funktion +f_stay.
+alias +f_stay "say !stay;faceit1"
+// Funktion +f_switch.
+alias +f_switch "say !switch;faceit1"
+// Funktion -f_stay.
+alias -f_stay "hf"
+// Funktion -f_switch.
+alias -f_switch "hf"
+// Funktion f_gg.
+alias f_gg "say !gg"
+// Funktion f_report.
+alias f_report "say !report"
+// Funktion _fst.
+alias _fst "bind F5 +f_stay"
+// Funktion _fsw.
+alias _fsw "bind F6 +f_switch"
+// Funktion _fg.
+alias _fg "bind F7 f_gg"
+// Funktion _fr.
+alias _fr "bind F8 f_report"
+// Funktion fait.
+alias fait "_fst;_fsw;_fg;_fr"
+// Funktion faceit.
+alias faceit "faceit1;fait"
+// Funktion gmrm_01.
+alias gmrm_01 "faceit1; alias gmrmode gmrm_02"
+// Funktion gmrm_02.
+alias gmrm_02 "faceit0; alias gmrmode gmrm_01"
+// ALT: alias facemode gmrm_01
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "facemode" "gmrmode"
+// Funktion fps1.
+alias fps1 "cl_showfps 1"
+// Funktion fps0.
+alias fps0 "cl_showfps 0"
+// Funktion maxfps.
+alias maxfps "fps_max 999"
+// ALT: alias myfps "fps_max 999"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "myfps" "fps_max 999"
+// ALT: alias +gmrquit "clear;showconsole;stopdemo;status"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "+gmrquit" "clear;showconsole;stop;status"
+// Funktion -gmrquit.
+alias -gmrquit "quit"
+// ALT: alias +gmrdisc "clear;showconsole;stopdemo;status"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "+gmrdisc" "clear;showconsole;stop;status"
+// Funktion -gmrdisc.
+alias -gmrdisc "disconnect"
+// ALT: alias fix "clear;exec autoexec.cfg"
+// NEU: INS laedt den neuen autoexec-Startpunkt.
+alias "fix" "clear;exec autoexec.cfg"
+// Funktion +FIXED.
+alias +FIXED "clear;dev1;showconsole"
+// Funktion -FIXED.
+alias -FIXED "fix"
+// Funktion dev0.
+alias dev0 "developer 0;echo dev>0"
+// Funktion dev1.
+alias dev1 "developer 1;echo dev>1"
+// Funktion dev_on.
+alias dev_on "dev1; alias devCon dev_off"
+// Funktion dev_off.
+alias dev_off "dev0; alias devCon dev_on"
+// Funktion devmode.
+alias devmode "devCon"
+// Funktion +codewall.
+alias +codewall "clear;showconsole"
+// ALT: alias -codewall "-console"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "-codewall" "hideconsole"
+// Funktion +force.
+alias +force "fallback;say_team >>>SAFE WEAPON NOW<<<"
+// Funktion -force.
+alias -force "getout"
+// Funktion eco.
+alias eco "needrop;say_team >>>ECO/DROP<<<"
+// Funktion view_01.
+alias view_01 "trillview; alias gmrview view_02"
+// Funktion view_02.
+alias view_02 "proview; alias gmrview view_01"
+// ALT: alias proview "viewmodel_presetpos 1;viewmodel_offset_x 2.5;viewmodel_offset_y -2;viewmodel_offset_z -2;viewmodel_fov 54;cl_usenewbob 1"
+// NEU: Preset vor eigenen Offsets; nicht verfuegbare Bob-Option entfernt.
+alias "proview" "viewmodel_presetpos 0;viewmodel_offset_x 2.5;viewmodel_offset_y -2;viewmodel_offset_z -2;viewmodel_fov 54"
+// ALT: alias trillview "viewmodel_offset_z -1.5;viewmodel_offset_x 2.5;viewmodel_offset_y 1.5;viewmodel_fov 65;cl_bob_lower_amt 0;cl_bobamt_lat 0;cl_bobamt_vert 0;cl_usenewbob 1;cl_bobcycle 0.98;cl_viewmodel_shift_left_amt 0;cl_viewmodel_shift_right_amt 0"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "trillview" "viewmodel_presetpos 0;viewmodel_offset_z -1.5;viewmodel_offset_x 2.5;viewmodel_offset_y 1.5;viewmodel_fov 65"
+// Funktion gmrview.
+alias gmrview "view_01"
+// Funktion +dropbomb.
+// ALT: alias "+dropbomb" "cl_autohelp 1;slot3; slot5; +lookatweapon;look1"
+// NEU v10: Stabile Taste: normal Bombendrop, bei SPACE sprint0/sprint1-Toggle.
+alias "+dropbomb" "drop_press"
+// Funktion -dropbomb.
+// ALT: alias "-dropbomb" "cl_autohelp 0;drop;lastinv;-lookatweapon;look0"
+// NEU v10: Gespeicherten Release ausfuehren; Moduswechsel erzeugt keinen falschen Drop.
+alias "-dropbomb" "drop_release;alias drop_release noop;alias drop_press drop_once"
+// Funktion +scorenet.
+alias +scorenet "+showscores; fps1; fps_max 999 "
+// Funktion -scorenet.
+alias -scorenet "-showscores; fps0; myfps"
+// Funktion showhud_on.
+alias showhud_on "cl_teamcounter_playercount_instead_of_avatars 0;cl_show_equipped_character_for_player_avatars 0"
+// Funktion showhud_off.
+alias showhud_off "cl_teamcounter_playercount_instead_of_avatars 1;cl_show_equipped_character_for_player_avatars 1"
+// Funktion showbomb_on.
+alias showbomb_on "gameinstructor_enable true"
+// Funktion showbomb_off.
+alias showbomb_off "gameinstructor_enable false"
+// Funktion radarzoom_off.
+alias radarzoom_off "cl_radar_scale 0.42;cl_radar_always_centered 0;cl_radar_rotate 1;cl_hud_radar_scale 1.15"
+// Funktion radarzoom_on.
+alias radarzoom_on "cl_radar_scale 1.3;cl_radar_always_centered 1;cl_radar_rotate 1;cl_hud_radar_scale 1.5"
+// Funktion +radarzoom.
+alias +radarzoom "cl_autohelp true;1voicevol;showbomb_on;showhud_on;radarzoom_on"
+// Funktion -radarzoom.
+alias -radarzoom "cl_autohelp false;0voicevol;showbomb_off;showhud_off;radarzoom_off"
+// Einstellung/Aufruf cl_hud_radar_scale.
+cl_hud_radar_scale 1.15
+// Einstellung/Aufruf cl_radar_scale.
+cl_radar_scale 0.42
+// Einstellung/Aufruf cl_radar_always_centered.
+cl_radar_always_centered 0
+// Einstellung/Aufruf cl_radar_rotate.
+cl_radar_rotate 1
+// Einstellung/Aufruf cl_radar_icon_scale_min.
+cl_radar_icon_scale_min 0.7
+// Einstellung/Aufruf cl_radar_square_with_scoreboard.
+cl_radar_square_with_scoreboard 1
+// Einstellung/Aufruf cl_radar_scale.
+cl_radar_scale 0.42
+// Einstellung/Aufruf cl_radar_always_centered.
+cl_radar_always_centered 0
+// Einstellung/Aufruf cl_radar_rotate.
+cl_radar_rotate 1
+// Einstellung/Aufruf cl_radar_icon_scale_min.
+cl_radar_icon_scale_min 0.7
+// Einstellung/Aufruf cl_radar_square_with_scoreboard.
+cl_radar_square_with_scoreboard 1
+// Funktion look1.
+// ALT: alias look1 +lookatweapon
+// NEU v10: Zum Testen startet Inspect AUS; inspect_on aktiviert +lookatweapon.
+alias "look1" "noop"
+// ALT: alias look0 -lookatweapon
+// NEU: Eine eindeutige Inspect-Release-Definition; Animation nicht mit Reload erzwingen.
+alias "look0" "-lookatweapon"
+// ALT: alias +quick "<hand;knife;taser;sensx;look0;cl_autohelp 1"
+// ALT: alias +quick "<hand;knife;taser;sensx;look0;cl_autohelp 1"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+// ALT: alias "+quick" "<hand;knife;taser;sensx;look0;cl_autohelp 1;alias sens_check_quick sens_held;sens_refresh"
+// NEU v10: Bisherige Messer/Zeus-Folge mit optionalem Inspect und sichtbarer passender Anzeige.
+alias "+quick" "<hand;knife;taser;sensx;look1;cl_autohelp 1;alias sens_check_quick sens_held;sens_refresh;refresh_crosshair"
+// ALT: alias -quick "sens0;he;smoke;molo;hand>;cl_autohelp 0;w1;w2;look0"
+// ALT: alias -quick "sens0;he;smoke;molo;hand>;cl_autohelp 0;w1;w2;look0"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+// ALT: alias "-quick" "sens0;he;smoke;molo;hand>;cl_autohelp 0;w1;w2;look0;alias sens_check_quick sens_check_qhand;sens_refresh"
+// NEU v10: Keine kurzzeitigen Granaten/Inspect-Aufrufe im Quick-Release.
+alias "-quick" "sens0;cl_autohelp 0;alias sens_check_quick sens_check_qhand;best_weapon;sens_refresh"
+// ALT: alias +qhand "look1;<hand;sensx;knife"
+// ALT: alias +qhand "look1;<hand;sensx;knife"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+// ALT: alias "+qhand" "look1;<hand;sensx;knife;alias sens_check_qhand sens_held;sens_refresh"
+// NEU v10: Messer links mit optionalem Inspect; aktuellen Schusszustand erhalten.
+alias "+qhand" "sensx;knife;alias sens_check_qhand sens_held;sens_refresh;refresh_crosshair"
+// ALT: alias -qhand "hand>;slot2;slot1;sens0;look0"
+// ALT: alias -qhand "hand>;slot2;slot1;sens0;look0"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+// ALT: alias "-qhand" "hand>;slot2;slot1;sens0;look0;alias sens_check_qhand sens_check_quicky;sens_refresh"
+// NEU v10: Q-Release: Hauptwaffe rechts, Inspect aus; andere Sens-Haltetasten beachten.
+alias "-qhand" "sens0;alias sens_check_qhand sens_check_quicky;best_weapon;sens_refresh"
+// ALT: alias +quicky "look1;ch0;sensx;<hand;KNIFE;C4"
+// ALT: alias +quicky "look1;ch0;sensx;<hand;KNIFE;C4"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+// ALT: alias "+quicky" "look1;ch0;sensx;<hand;KNIFE;C4;alias sens_check_quicky sens_held;sens_refresh"
+// NEU v10: Bisherige Messer/Bomben-Folge; kein dauerhaftes Crosshair-Ausblenden.
+alias "+quicky" "sensx;<hand;knife;c4;look1;alias sens_check_quicky sens_held;sens_refresh;refresh_crosshair"
+// ALT: alias -quicky "ch1;sens0;hand>;w1;w2;look0"
+// ALT: alias -quicky "ch1;sens0;hand>;w1;w2;look0"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+// ALT: alias "-quicky" "ch1;sens0;hand>;w1;w2;look0;alias sens_check_quicky sens_normal;sens_refresh"
+// NEU v10: Quick-Release mit eindeutiger Waffe/Hand und passendem Crosshair.
+alias "-quicky" "sens0;alias sens_check_quicky sens_normal;best_weapon;sens_refresh"
+// Taste q.
+bind q +quick
+// Einstellung/Aufruf r_fullscreen_gamma.
+r_fullscreen_gamma "3.007"
+// Einstellung/Aufruf r_drawparticles.
+r_drawparticles 1
+// Funktion mac_1.
+alias mac_1 "r_fullscreen_gamma 3.23"
+// Funktion mac_0.
+alias mac_0 "r_fullscreen_gamma 2.32"
+// Funktion mac0.
+alias mac0 "mac_0; alias macmode mac1"
+// Funktion mac1.
+alias mac1 "mac_1; alias macmode mac0"
+// Funktion reco.
+alias "reco" "reco0"
+// Funktion reco0.
+alias "reco0" "cl_crosshair_recoil false; alias reco reco1"
+// ALT: alias "reco1" "cl_crosshair_recoil true; alias reco reco0"
+// ALT: alias "reco1" "cl_crosshair_recoil true; alias reco reco0"
+// NEU: Schussfolgen nur gemaess aktuellem Schusszustand; normale Profile bleiben aus.
+alias "reco1" "refresh_crosshair;alias reco reco0"
+// Funktion movecross.
+// ALT: alias movecross "croattx;c_hell;reco0"
+// NEU v10: Bewegungsanzeige wahrt Auswahl; automatisches Weiss nur bei color_lock_off, Schussprofil hat Vorrang.
+alias "movecross" "automatic_white;refresh_crosshair"
+// Funktion +holdzoom.
+alias "+holdzoom" "+zoom"
+// Funktion -holdzoom.
+alias "-holdzoom" "-zoom"
+// Taste MOUSE2.
+bind "MOUSE2" "+holdzoom"
+// Funktion ch0.
+alias ch0 "crosshair 0"
+// Funktion ch1.
+alias ch1 "crosshair 1"
+// Einstellung/Aufruf fov_cs_debug.
+fov_cs_debug 90
+// ALT: alias "trill" "alias gmrcrossnow shape_trill;refresh_crosshair"
+// ALT: alias trill "alias gmrcrossnow cl_crosshairstyle 4;cl_crosshairsize 0.337;cl_crosshairthickness 0.5;cl_crosshairgap -4;cl_crosshair_drawoutline 1;cl_crosshair_outlinethickness 1;cl_crosshairdot 0;cl_crosshair_t 0;cl_crosshairusealpha 1;cl_crosshairalpha 777;cl_crosshair_recoil false;cl_crosshairgap_useweaponvalue 0;alias gmrcrossnow crossdot"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "trill" "alias mycross restore_trill;alias gmrcrossnow shape_trill;alias selection_status selected_trill;refresh_crosshair"
+// ALT: alias "croattx" "shape_fire;atxc"
+// ALT: alias croattx "atxc;cl_crosshairstyle 4;cl_crosshairsize 1000;cl_crosshairthickness 0.5;cl_crosshairgap -4;cl_crosshair_drawoutline 1;cl_crosshair_outlinethickness 1;cl_crosshairdot 0;cl_crosshair_t 1;cl_crosshairusealpha 1;cl_crosshair_recoil true;cl_crosshairgap_useweaponvalue 0;cl_crosshairalpha 77;ch1"
+// NEU: Alle Werte einschliesslich Farbe direkt aus dem gewuenschten Sharecode.
+// ALT: alias "croattx" "shape_fire"
+// NEU v10: Schussanzeige durch optionalen Profil-Dispatcher.
+alias "croattx" "shot_render"
+// ALT: alias "mycross" "gmrcrossnow;croco;cl_crosshair_recoil 0;ch1"
+// ALT: alias "mycross" "gmrcrossnow;croco;ch1"
+// ALT: alias mycross "gmrcrossnow;croco"
+// NEU: Direkten Rueckstell-Alias speichern; kein next_cross und kein Auswahlschritt beim Wiederanzeigen.
+alias "mycross" "restore_dot"
+// ALT: alias "atx1" "croattx;+h_color;sensitivity 0.8189833027098955"
+// ALT: alias atx1 "croattx;reco1;+h_color;sensitivity 0.8189833027098955"
+// ALT: alias atx1 "croattx;reco1;+h_color;sensitivity 0.8189833027098955"
+// NEU: Schussprofil behalten; alte Schuss-Sens 0.819 durch angeforderte 1.33/1.87-Zustandswahl ersetzen.
+alias "atx1" "croattx;+h_color;sens_refresh"
+// ALT: alias "atx0" "mycross;-h_color;sens1"
+// ALT: alias "atx0" "refresh_crosshair;-h_color;sens1"
+// ALT: alias atx0 "mycross;-h_color;reco0;sens1"
+// NEU: Gespeichertes mycross direkt laden, unabhaengig vom Anzeige-Dispatcher.
+alias "atx0" "mycross;-h_color;sens1;sens_refresh"
+// ALT: alias crosscross_a "cl_crosshairstyle 4;cl_crosshairsize 1;cl_crosshairthickness 1;cl_crosshairgap -4.1;cl_crosshairdot 0;cl_crosshair_t 1;cl_crosshair_drawoutline 0;cl_crosshair_outlinethickness 0"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "crosscross_a" "shape_cross"
+// ALT: alias crosscross_b "cl_crosshairalpha 255;cl_crosshairusealpha 1;cl_crosshairgap_useweaponvalue 0;cl_fixedcrosshairgap 3;cl_crosshair_recoil 0;cl_crosshair_dynamic_splitdist 7;cl_crosshair_dynamic_splitalpha_innermod 1;cl_crosshair_dynamic_splitalpha_outermod 0.5;cl_crosshair_dynamic_maxdist_splitratio 0.3"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "crosscross_b" "cl_crosshair_dynamic_splitdist 7;cl_crosshair_dynamic_splitalpha_innermod 1;cl_crosshair_dynamic_splitalpha_outermod 0.5;cl_crosshair_dynamic_maxdist_splitratio 0.3"
+// ALT: alias "crosscross" "alias gmrcrossnow shape_cross;refresh_crosshair"
+// ALT: alias crosscross "crosscross_a;crosscross_b;alias gmrcrossnow crosscross"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "crosscross" "alias mycross restore_cross;alias gmrcrossnow shape_cross;alias selection_status selected_cross;refresh_crosshair"
+// ALT: alias "crosshole" "alias gmrcrossnow shape_hole;refresh_crosshair"
+// ALT: alias crosshole "cl_crosshairstyle 4;cl_crosshairsize 0.337;cl_crosshairthickness 3.5;cl_crosshairgap -4.5;cl_crosshair_drawoutline 0;cl_crosshairdot 0;cl_crosshair_t 0;cl_crosshairusealpha 1;cl_crosshair_recoil false;cl_crosshairgap_useweaponvalue 0;cl_crosshairalpha 777;alias gmrcrossnow crosshole"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "crosshole" "alias mycross restore_hole;alias gmrcrossnow shape_hole;alias selection_status selected_hole;refresh_crosshair"
+// ALT: alias crossdot_a "cl_crosshairstyle 4;cl_crosshairsize 1.5;cl_crosshairthickness 1;cl_crosshairgap -3;cl_crosshairdot 0;cl_crosshair_t 1;cl_crosshair_drawoutline 1;cl_crosshair_outlinethickness 1"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "crossdot_a" "shape_dot"
+// ALT: alias crossdot_b "cl_crosshairalpha 255;cl_crosshairusealpha 1;cl_crosshairgap_useweaponvalue 0;cl_fixedcrosshairgap 2.8;cl_crosshair_recoil 0;cl_crosshair_dynamic_splitdist 16;cl_crosshair_dynamic_splitalpha_innermod 1;cl_crosshair_dynamic_splitalpha_outermod 1;cl_crosshair_dynamic_maxdist_splitratio 1"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "crossdot_b" "cl_crosshair_dynamic_splitdist 16;cl_crosshair_dynamic_splitalpha_innermod 1;cl_crosshair_dynamic_splitalpha_outermod 1;cl_crosshair_dynamic_maxdist_splitratio 1"
+// ALT: alias "crossdot" "alias gmrcrossnow shape_dot;refresh_crosshair"
+// ALT: alias crossdot "crossdot_a;crossdot_b;alias gmrcrossnow crossdot"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "crossdot" "alias mycross restore_dot;alias gmrcrossnow shape_dot;alias selection_status selected_dot;refresh_crosshair"
+// ALT: alias "crosst" "alias gmrcrossnow shape_t;refresh_crosshair"
+// ALT: alias crosst "cl_crosshairstyle 4;cl_crosshairsize 1000;cl_crosshairthickness 0.5;cl_crosshairgap -4;cl_crosshair_drawoutline 1;cl_crosshair_outlinethickness 1;cl_crosshairdot 0;cl_crosshair_t 1;cl_crosshairusealpha 1;cl_crosshair_recoil true;cl_crosshairgap_useweaponvalue 0;cl_crosshairalpha 137;alias gmrcrossnow crosst"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "crosst" "alias mycross restore_t;alias gmrcrossnow shape_t;alias selection_status selected_t;refresh_crosshair"
+// Funktion cross1.
+alias cross1 "crosshole;alias next_cross cross2"
+// Funktion cross2.
+alias cross2 "crossdot;alias next_cross cross3"
+// Funktion cross3.
+alias cross3 "crosscross;alias next_cross cross4"
+// Funktion cross4.
+alias cross4 "crosst;alias next_cross cross1"
+// Funktion next_cross.
+alias next_cross "cross1"
+// ALT: alias "c_hell" "cl_crosshaircolor 5; cl_crosshaircolor_r 255; cl_crosshaircolor_g 255; cl_crosshaircolor_b 255;alias croco c_hell "
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+// ALT: alias "c_hell" "alias croco rgb_white;refresh_crosshair"
+// NEU v10: Bewusste Farbwahl speichern; Schussprofil waehrend Schiessen nicht ueberschreiben.
+alias "c_hell" "alias selected_color rgb_white;alias croco rgb_white;refresh_crosshair"
+// ALT: alias "c_matrix" "cl_crosshaircolor 6;cl_crosshaircolor_r 250;cl_crosshaircolor_g 50;cl_crosshaircolor_b 129;alias croco c_matrix "
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+// ALT: alias "c_matrix" "alias croco rgb_matrix;refresh_crosshair"
+// NEU v10: Bewusste Farbwahl speichern; Schussprofil waehrend Schiessen nicht ueberschreiben.
+alias "c_matrix" "alias selected_color rgb_matrix;alias croco rgb_matrix;refresh_crosshair"
+// ALT: alias "c_npink" "cl_crosshaircolor 5;cl_crosshaircolor_r 255;cl_crosshaircolor_g 0;cl_crosshaircolor_b 255;alias croco c_npink "
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+// ALT: alias "c_npink" "alias croco rgb_pink;refresh_crosshair"
+// NEU v10: Bewusste Farbwahl speichern; Schussprofil waehrend Schiessen nicht ueberschreiben.
+alias "c_npink" "alias selected_color rgb_pink;alias croco rgb_pink;refresh_crosshair"
+// ALT: alias "c_nweed" "cl_crosshaircolor 5; cl_crosshaircolor_r 155; cl_crosshaircolor_g 255; cl_crosshaircolor_b 0;alias croco c_nweed "
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+// ALT: alias "c_nweed" "alias croco rgb_weed;refresh_crosshair"
+// NEU v10: Bewusste Farbwahl speichern; Schussprofil waehrend Schiessen nicht ueberschreiben.
+alias "c_nweed" "alias selected_color rgb_weed;alias croco rgb_weed;refresh_crosshair"
+// ALT: alias "c_nred" "cl_crosshaircolor 5; cl_crosshaircolor_r 255; cl_crosshaircolor_g 0; cl_crosshaircolor_b 0;alias croco c_nred "
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+// ALT: alias "c_nred" "alias croco rgb_red;refresh_crosshair"
+// NEU v10: Bewusste Farbwahl speichern; Schussprofil waehrend Schiessen nicht ueberschreiben.
+alias "c_nred" "alias selected_color rgb_red;alias croco rgb_red;refresh_crosshair"
+// ALT: alias "c_ntkys" "cl_crosshaircolor 4;cl_crosshaircolor_r 250;cl_crosshaircolor_g 50;cl_crosshaircolor_b 129;alias croco c_ntkys "
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+// ALT: alias "c_ntkys" "alias croco rgb_cyan;refresh_crosshair"
+// NEU v10: Bewusste Farbwahl speichern; Schussprofil waehrend Schiessen nicht ueberschreiben.
+alias "c_ntkys" "alias selected_color rgb_cyan;alias croco rgb_cyan;refresh_crosshair"
+// ALT: alias "crn1" "c_hell; alias cr_x crn2; echo 'Wechsel zu Farbe: Weed'"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "crn1" "c_hell;alias cr_x crn2;echo Farbe: Weiss"
+// ALT: alias "crn2" "c_ntkys; alias cr_x crn3; echo 'Wechsel zu Farbe: Neonrot'"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "crn2" "c_ntkys;alias cr_x crn3;echo Farbe: Cyan"
+// ALT: alias "crn3" "c_npink; alias cr_x crn4; echo 'Wechsel zu Farbe: TürkNeo'"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "crn3" "c_npink;alias cr_x crn4;echo Farbe: Pink"
+// ALT: alias "crn4" "c_nweed; alias cr_x crn5; echo 'Wechsel zu Farbe: Weed'"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "crn4" "c_nweed;alias cr_x crn5;echo Farbe: Weed"
+// ALT: alias "crn5" "c_nred; alias cr_x crn6; echo 'Wechsel zu Farbe: Gree'"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "crn5" "c_nred;alias cr_x crn6;echo Farbe: Rot"
+// ALT: alias "crn6" "c_matrix; alias cr_x crn1; echo 'Wechsel zu Farbe: Weiß'"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "crn6" "c_matrix;alias cr_x crn1;echo Farbe: Matrix"
+// Funktion cr_x.
+alias "cr_x" "crn1"
+// ALT: alias gmrcrossnow crossdot
+// NEU: Reinen Renderer speichern; verhindert Rekursion beim Profilwechsel.
+alias "gmrcrossnow" "shape_dot"
+// ALT: alias croco c_nred
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "croco" "rgb_red"
+// ALT: alias "mycross" "gmrcrossnow;croco;cl_crosshair_recoil 0;ch1"
+// ALT: alias "mycross" "gmrcrossnow;croco;ch1"
+// ALT: alias mycross "gmrcrossnow;croco"
+// NEU: Direkten Rueckstell-Alias speichern; kein next_cross und kein Auswahlschritt beim Wiederanzeigen.
+alias "mycross" "restore_dot"
+// Einstellung/Aufruf mycross.
+mycross
+// ALT: alias atxc "cl_crosshaircolor 5;cl_crosshaircolor_r 255;cl_crosshaircolor_g 0;cl_crosshaircolor_b 0"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "atxc" "rgb_red"
+echo "CSGO-zkNpk-sFnov-seH67-Ln69q-J6sKG"
+// Funktion freehud.
+alias freehud "sv_cheats true;mp_drop_knife_enable true"
+// Funktion flash.
+alias flash "<hand;slot7;look1"
+// Funktion he.
+alias he "<hand;slot6;look1"
+// Funktion smoke.
+alias smoke "<hand;slot8;look1"
+// Funktion snowball.
+alias snowball "give weapon_snowball"
+// Funktion tag.
+alias tag "give weapon_flashbang"
+// ALT: alias knife "<hand;slot3;look1;"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "knife" "<hand;slot3;look1"
+//alias +smoke "use weapon_smokegrenade"
+//alias -smoke ""
+// Taste N.
+BIND N +smoke
+// Funktion +[funkbar].
+alias +[funkbar] "[1]funkbind;1voicevol;face1;switchvoice"
+// Funktion -[funkbar].
+alias -[funkbar] "[0]funkbind;nethub;voip;0voicevol"
+// Funktion +fuk_.
+alias +fuk_ "+buy;<hand>;+[funkbar];faceit1;+_r;switchvoice"
+// Funktion -fuk_.
+alias -fuk_ "-buy;<hand>;-[funkbar];faceit0;-_r;voice"
+// Funktion +_r.
+alias +_r "brad"
+// Funktion -_r.
+// ALT: alias -_r "slot10;grnz"
+// NEU v10: ALT-Release darf keine nach SPACE-/Granaten-Release abgelegte Granate mit Inspect reaktivieren.
+alias "-_r" "close_radio;grnz;best_weapon"
+// Funktion _r.
+alias _r "radio_[1]"
+// Funktion radio_[1].
+alias radio_[1] "radio1; alias _r radio_[2]"
+// Funktion radio_[2].
+alias radio_[2] "radio2; alias _r radio_[3]"
+// Funktion radio_[3].
+alias radio_[3] "radio3; alias _r radio_[4]"
+// Funktion radio_[4].
+alias radio_[4] "Slot10; alias _r radio_[1]"
+// Funktion {say}.
+alias {say} "alltalk"
+// Funktion {team}.
+alias {team} "teamtalk"
+// Funktion funkR_[1].
+alias funkR_[1] "{say}"
+// Funktion funkR_[0].
+alias funkR_[0] "{team}"
+// Funktion [1]hudmode.
+alias [1]hudmode "+cl_show_team_equipment;cl_hud_radar_scale 0.77;cl_teamcounter_playercount_instead_of_avatars 0;cl_show_equipped_character_for_player_avatars 0;cl_sanitize_player_names false;cl_hide_avatar_images 0;cl_mute_enemy_team 0"
+// Funktion [0]hudmode.
+alias [0]hudmode "-radarzoom;cl_teamcounter_playercount_instead_of_avatars 1;cl_show_equipped_character_for_player_avatars 1;cl_sanitize_player_names true;cl_hide_avatar_images 0;cl_mute_enemy_team 1"
+// Funktion [1]funkbind.
+alias [1]funkbind "funkR_[1];[1]hudmode"
+// Funktion [0]funkbind.
+alias [0]funkbind "funkR_[0];[0]hudmode"
+// Funktion +[rr1].
+alias +[rr1] "+radialradio"
+// Funktion +[rr2].
+alias +[rr2] "+radialradio2"
+// Funktion +[rr3].
+alias +[rr3] "+radialradio3"
+// Funktion -[rr1].
+alias -[rr1] "-radialradio"
+// Funktion -[rr2].
+alias -[rr2] "-radialradio2"
+// Funktion -[rr3].
+alias -[rr3] "-radialradio3"
+// Funktion {brad1}.
+alias {brad1} "bind z +[rr1]"
+// Funktion {brad2}.
+alias {brad2} "bind x +[rr2]"
+// Funktion {brad3}.
+alias {brad3} "bind c +[rr3]"
+// Funktion {rrbind}.
+alias {rrbind} "bind f _r"
+// Funktion brad.
+alias brad "{brad1};{brad2};{brad3};{rrbind}"
+// ALT: alias clutch1 "bind v cl_clutch_mode 1"
+// NEU: Clutch ueber stabile V-Aktion statt V neu binden.
+alias "clutch1" "switchvoice"
+// Funktion Voice1.
+alias Voice1 "bind v +voicerecord"
+// Funktion teamtalk.
+alias teamtalk "bind Y say_team"
+// Funktion alltalk.
+alias alltalk "bind Y say"
+// Funktion @msg.
+alias @msg "bind F9 repbot; bind F10 bla; bind F11 ts; bind F12 eng"
+// Funktion {f5stay}.
+alias {f5stay} "bind F5 +f_stay"
+// Funktion {f6switch}.
+alias {f6switch} "bind F6 +f_switch"
+// Funktion {f7gg}.
+alias {f7gg} "bind F7 f_gg"
+// Funktion {f8report}.
+alias {f8report} "bind F8 f_report"
+// Funktion @facekeys.
+alias @facekeys "{f5stay};{f6switch};{f7gg};{f8report}"
+// ALT: alias deco "give weapon_decoy; <hand;look1"
+// NEU: Vorhandene Decoy ausruesten; nicht per give erzeugen.
+alias "deco" "<hand;slot9;look1"
+// ALT: alias fb_>[1]_ ">[2]; move>;"
+// NEU: Entfaellt hier: veralteter/ungueltiger Aufruf, alte ungenutzte Chain oder vorzeitiges Speichern; siehe Aenderungsbericht.
+
+// ALT: alias fb_>[2]_ ">[3]; +[funkbar];"
+// NEU: Entfaellt hier: veralteter/ungueltiger Aufruf, alte ungenutzte Chain oder vorzeitiges Speichern; siehe Aenderungsbericht.
+
+// ALT: alias fb_>[3]_ ">[4]; [1]funkbind;"
+// NEU: Entfaellt hier: veralteter/ungueltiger Aufruf, alte ungenutzte Chain oder vorzeitiges Speichern; siehe Aenderungsbericht.
+
+// ALT: alias fb_>[4]_ ">[5]; brad; {rrbind}; @msg;"
+// NEU: Entfaellt hier: veralteter/ungueltiger Aufruf, alte ungenutzte Chain oder vorzeitiges Speichern; siehe Aenderungsbericht.
+
+// ALT: alias fb_>[5]_ "faceit1; @facekeys; deco; alias _next_forward _noop"
+// NEU: Entfaellt hier: veralteter/ungueltiger Aufruf, alte ungenutzte Chain oder vorzeitiges Speichern; siehe Aenderungsbericht.
+
+// ALT: alias +[chain] "_next_forward; alias _next_forward fb_>[1]_"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "+[chain]" "+fuk_"
+// ALT: alias fb_<[1]_ "<[2]; -[funkbar];"
+// NEU: Entfaellt hier: veralteter/ungueltiger Aufruf, alte ungenutzte Chain oder vorzeitiges Speichern; siehe Aenderungsbericht.
+
+// ALT: alias fb_<[2]_ "<[3]; -fuk_;"
+// NEU: Entfaellt hier: veralteter/ungueltiger Aufruf, alte ungenutzte Chain oder vorzeitiges Speichern; siehe Aenderungsbericht.
+
+// ALT: alias fb_<[3]_ "<[4]; [0]funkbind;"
+// NEU: Entfaellt hier: veralteter/ungueltiger Aufruf, alte ungenutzte Chain oder vorzeitiges Speichern; siehe Aenderungsbericht.
+
+// ALT: alias fb_<[4]_ "<[5]; faceit0;"
+// NEU: Entfaellt hier: veralteter/ungueltiger Aufruf, alte ungenutzte Chain oder vorzeitiges Speichern; siehe Aenderungsbericht.
+
+// ALT: alias fb_<[5]_ "deco; alias _next_back _noop"
+// NEU: Entfaellt hier: veralteter/ungueltiger Aufruf, alte ungenutzte Chain oder vorzeitiges Speichern; siehe Aenderungsbericht.
+
+// ALT: alias -[chain] "_next_back; alias _next_back fb_<[1]_"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "-[chain]" "-fuk_"
+// ALT: alias _next_forward fb_>[1]_
+// NEU: Entfaellt hier: veralteter/ungueltiger Aufruf, alte ungenutzte Chain oder vorzeitiges Speichern; siehe Aenderungsbericht.
+
+// ALT: alias _next_back fb_<[1]_
+// NEU: Entfaellt hier: veralteter/ungueltiger Aufruf, alte ungenutzte Chain oder vorzeitiges Speichern; siehe Aenderungsbericht.
+
+echo "RUN ALIAS ! <END"
+echo ""
+echo "--------------------------------------------------------------"
+echo "╔═════════════════════════════════════════════════════════╗"
+echo "║                    BINDINGS SECTION                     ║"
+echo "╚═════════════════════════════════════════════════════════╝"
+echo "[,] <> #DROP[UMP]4TEAM"
+// Taste ,.
+bind , "dropump;say_team DROP[UMP]4TEAM"
+echo "[.] <> #DROP[P250]4TEAM"
+// Taste ..
+bind . "dropp250;say_team DROP[P250]4TEAM"
+echo "[kp_0] <> #DROP[Flash]4TEAM"
+// Taste kp_0.
+bind kp_0 "dropflash;say_team DROP[Flash]4TEAM"
+echo "[kp_9] <> #BUY HEGRENADE"
+// Taste kp_9.
+bind kp_9 "buy hegrenade;rdygo"
+echo "[kp_8] <> #BUY FLASHBANG"
+// Taste kp_8.
+bind kp_8 "buy flashbang;rdygo"
+echo "[kp_7] <> #BUY SMOKEGRENADE"
+// Taste kp_7.
+bind kp_7 "buy smokegrenade;rdygo"
+echo "[kp_4] <> #BUY SSG08"
+// Taste kp_4.
+bind kp_4 "buy ssg08;rdygo"
+echo "[kp_6] <> #BUY VEST"
+// Taste kp_6.
+bind kp_6 "buy vest;rdygo"
+echo "[kp_5] <> #BUY VEST & HELM"
+// Taste kp_5.
+bind kp_5 "vst;rdygo"
+echo "[kp_3] <> #BUY GALIL/FAMAS"
+// ALT: bind kp_3 "buy galil/famas;rdygo"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+bind "kp_3" "buy galilar;buy famas;rdygo"
+echo "[kp_2] <> #BUY M4A1-S / AK47"
+// Taste kp_2.
+bind kp_2 "buy m4a1_silencer; buy ak47;rdygo"
+echo "[kp_1] <> #BUY AWP"
+// Taste kp_1.
+bind kp_1 "buy awp;rdygo"
+echo "[kp_multiply] <> #BUY INCENDIARY/MOLOTOV"
+// Taste kp_multiply.
+bind kp_multiply "buy incgrenade; buy molotov;rdygo"
+echo "[kp_del] <> #BUY DEFUSER"
+// Taste kp_del.
+bind kp_del "buy DEFUSER;rdygo"
+echo "[kp_divide] <> #BUY DECOY"
+// Taste kp_divide.
+bind kp_divide "buy decoy;rdygo"
+echo "[1] <> #SLOT 1 - PRIMARY WEAPON"
+// Taste 1.
+bind "1" "slot1;hand>"
+echo "[2] <> #SLOT 2 - SECONDARY WEAPON"
+// Taste 2.
+bind "2" "slot2;hand>"
+echo "[3] <> #SLOT 3 - KNIFE"
+// Taste 4.
+bind "4" "knife"
+echo "[4] <> #SLOT 4 - GRENADE"
+// Taste 3.
+bind "3" "slot4"
+echo "[5] <> #SLOT 5 - BOMB"
+// Taste 5.
+bind "5" "slot5"
+echo "[6] <> #SLOT 6 - HE GRENADE"
+// Taste 6.
+bind "6" "slot6"
+echo "[7] <> #SLOT 7 - FLASHBANG"
+// Taste 7.
+bind "7" "slot7"
+echo "[8] <> #SLOT 8 - SMOKE GRENADE"
+// Taste 8.
+bind "8" "slot8"
+echo "[9] <> #SLOT 9 - INCENDIARY GRENADE"
+// Taste 9.
+bind "9" "slot9"
+echo "[0] <> #SLOT 10 - MOLOTOV"
+// Taste 0.
+bind "0" "slot10"
+echo "[mwheelup] <> #RELOAD"
+// Taste mwheelup.
+bind "mwheelup" "+reload"
+echo "[mouse1] <> #PRIMARY ATTACK"
+// Taste mouse1.
+bind "mouse1" "+attack"
+echo "[mouse2] <> #SECONDARY ATTACK"
+// Taste mouse2.
+bind "mouse2" "+holdzoom"
+echo "[mouse3] <> #DUCK"
+// Taste mouse3.
+bind "mouse3" "+duck"
+echo "[MOUSE4] <> #Allows you to fly around the map"
+// Taste MOUSE4.
+bind "MOUSE4" "noclip"
+echo "[MOUSE5] <> #Will trow the most recent grenade so you can see the landing position"
+// Taste MOUSE5.
+bind "MOUSE5" "sv_rethrow_last_grenade"
+echo "SHOW SCOREBOARD"
+// Taste `.
+bind "`" "+scorenet"
+echo "[TAB] <> #RADAR ZOOM"
+// Taste TAB.
+bind "TAB" "+radarzoom"
+echo "[CapsLock] <> #DROP BOMB"
+// Taste CapsLock.
+bind "CapsLock" "+dropbomb"
+echo "[SHIFT] <> #SPRINT"
+// Taste SHIFT.
+bind "SHIFT" "+speed"
+echo "[CTRL] <> #DUCK(Sneakmode)"
+// Taste CTRL.
+bind "CTRL" "+sneak"
+echo "[space] <> #JUMP"
+// Taste space.
+bind "space" "+jumpp"
+echo "[b] <> #WHEEL JUMP"
+// ALT: bind "b" "+jump"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+bind "b" "+duckjump"
+echo "[q] <> #QUICK SWITCH"
+// Taste q.
+bind "q" "+quicky"
+echo "[q] <> #TOGGLE HAND"
+// Taste q.
+bind "q" "+qhand"
+echo "[e] <> #USE OBJECT / BUY MENU"
+// Taste e.
+bind "e" "+use"
+echo "[P] <> #PLAYER PING"
+// Taste P.
+bind "P" "player_ping"
+echo "[m] <> #DROP WEAPON"
+// Taste o.
+bind "o" "drop;slot3"
+echo "[uparrow] <> #CHAT: eZ"
+// Taste uparrow.
+bind "uparrow" "+ez"
+echo "[downarrow] <> #CHAT: Nice Try"
+// Taste downarrow.
+bind "downarrow" "nt"
+echo "[rightarrow] <> #CHAT: Good Job"
+// Taste rightarrow.
+bind "rightarrow" "gj"
+echo "[leftarrow] <> #CHAT: go_PLAY"
+// Funktion +p2.
+alias +p2 say_team "{ PLAY TOGATHER }"
+// Funktion -p2.
+alias -p2 say_team "{ GO BACK & PLAY POSITION #FOKUS }"
+// Taste leftarrow.
+bind "leftarrow" +p2
+echo "[INS] <> #DEV MODE ON"
+// Taste INS.
+bind "INS" "+FIXED"
+echo "[DEL] <> #DISCONNECT & STOP DEMO"
+// Taste DEL.
+bind "DEL" "+gmrdisc"
+echo "[END] <> #QUIT GAME"
+// Taste END.
+bind "END" "+gmrquit"
+echo "[pgdn] <> #EXEC TRAIN MODE"
+// Taste pgdn.
+bind "pgdn" "exec train.cfg;bind mouse5 sv_rethrow_last_grenade;bind mouse4 noclip;echo Practice Settings ON"
+echo "[pgup] <> #EXEC MOVIE MODE"
+// Taste pgup.
+bind "pgup" "exec movie.cfg;echo Moviemaker Settings ON"
+echo "[HOME] <> #CALL VOTE"
+// Taste HOME.
+bind "HOME" "callvote"
+echo "RUN BINDS ! <END"
+// Taste ALT.
+bind ALT "+fuk_"
+// Taste #.
+bind # cl_clutch_mode TRUE
+// Funktion +buy.
+alias +buy buymenu
+// Funktion -buy.
+alias -buy buymenu
+// Einstellung/Aufruf -radarzoom.
+-radarzoom
+// Taste K.
+bind K +smoke
+// Taste enter.
+// ALT: bind enter +ATTACK
+// NEU v10: Direkte Inspect-Aufrufe ueber look1/look0 zentralisieren bzw. Versionsmarker erneuern.
+bind enter +enter_fire
+// ALT: bind K "next_cross"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+bind k +cross_pick
+// Taste J.
+BIND J "cr_x"
+// Taste r.
+bind r +radarzoom
+// Einstellung/Aufruf stdmode.
+stdmode
+echo ""
+echo "╔═════════════════════════════════════════════════════════╗"
+echo "║                    SETTINGS SECTION                     ║"
+echo "╚═════════════════════════════════════════════════════════╝"
+echo ""
+// Einstellung/Aufruf cl_disable_ragdolls.
+cl_disable_ragdolls "1"
+// Einstellung/Aufruf engine_low_latency_sleep_after_client_tick.
+engine_low_latency_sleep_after_client_tick "true"
+// ALT: weapon_debug_spread_gap "0"
+// NEU: Entfaellt hier: veralteter/ungueltiger Aufruf, alte ungenutzte Chain oder vorzeitiges Speichern; siehe Aenderungsbericht.
+
+// Einstellung/Aufruf cl_teamid_overhead_mode.
+cl_teamid_overhead_mode "3"
+// Einstellung/Aufruf cl_teamid_overhead_colors_show.
+cl_teamid_overhead_colors_show "1"
+// Einstellung/Aufruf fps_max_ui.
+fps_max_ui "0"
+// Einstellung/Aufruf r_csgo_render_decals.
+r_csgo_render_decals "true"
+// Einstellung/Aufruf r_csgo_effects_bloom.
+r_csgo_effects_bloom "false"
+// Einstellung/Aufruf r_drawtracers_firstperson.
+r_drawtracers_firstperson "true"
+// Einstellung/Aufruf r_drawparticles.
+r_drawparticles
+// Einstellung/Aufruf snd_mixahead.
+snd_mixahead "0.05"
+// Einstellung/Aufruf snd_voipvolume.
+snd_voipvolume "0.2"
+// Einstellung/Aufruf snd_gamevoicevolume.
+snd_gamevoicevolume "1"
+// Einstellung/Aufruf snd_mvp_volume.
+snd_mvp_volume "0.37"
+// Einstellung/Aufruf snd_roundaction_volume.
+snd_roundaction_volume "0"
+// Einstellung/Aufruf snd_tensecondwarning_volume.
+snd_tensecondwarning_volume "0.2"
+// Einstellung/Aufruf snd_mute_mvp_music_live_players.
+snd_mute_mvp_music_live_players "1"
+// Einstellung/Aufruf voice_modenable.
+voice_modenable "1"
+// Einstellung/Aufruf snd_spatialize_lerp.
+snd_spatialize_lerp "0.0"
+// ALT: snd_front_headphone_position "45.0"
+// NEU: Entfaellt hier: veralteter/ungueltiger Aufruf, alte ungenutzte Chain oder vorzeitiges Speichern; siehe Aenderungsbericht.
+
+// ALT: snd_rear_headphone_position "135.0"
+// NEU: Entfaellt hier: veralteter/ungueltiger Aufruf, alte ungenutzte Chain oder vorzeitiges Speichern; siehe Aenderungsbericht.
+
+// Einstellung/Aufruf snd_steamaudio_enable_perspective_correction.
+snd_steamaudio_enable_perspective_correction "0"
+// Einstellung/Aufruf snd_headphone_eq.
+snd_headphone_eq "1"
+// ALT: snd_async_flush
+// NEU: Entfaellt hier: veralteter/ungueltiger Aufruf, alte ungenutzte Chain oder vorzeitiges Speichern; siehe Aenderungsbericht.
+
+// Einstellung/Aufruf snd_musicvolume.
+snd_musicvolume 0
+// ALT: snd_sfxvolume 0.5
+// NEU: Entfaellt hier: veralteter/ungueltiger Aufruf, alte ungenutzte Chain oder vorzeitiges Speichern; siehe Aenderungsbericht.
+
+// ALT: snd_ambientvolume 1
+// NEU: Entfaellt hier: veralteter/ungueltiger Aufruf, alte ungenutzte Chain oder vorzeitiges Speichern; siehe Aenderungsbericht.
+
+// Einstellung/Aufruf snd_spatialize_lerp.
+snd_spatialize_lerp "0.0"
+// ALT: snd_front_headphone_position "45.0"
+// NEU: Entfaellt hier: veralteter/ungueltiger Aufruf, alte ungenutzte Chain oder vorzeitiges Speichern; siehe Aenderungsbericht.
+
+// ALT: snd_rear_headphone_position "145.0"
+// NEU: Entfaellt hier: veralteter/ungueltiger Aufruf, alte ungenutzte Chain oder vorzeitiges Speichern; siehe Aenderungsbericht.
+
+// Einstellung/Aufruf snd_steamaudio_enable_perspective_correction.
+snd_steamaudio_enable_perspective_correction "0"
+// Einstellung/Aufruf snd_headphone_eq.
+snd_headphone_eq "1"
+// Einstellung/Aufruf fps_max_tools.
+fps_max_tools "999"
+// Einstellung/Aufruf fps_max_ui.
+fps_max_ui "0"
+// Einstellung/Aufruf fps_max.
+fps_max "999"
+// Einstellung/Aufruf cl_showfps.
+cl_showfps "1"
+// Einstellung/Aufruf cl_hud_telemetry_frametime_poor.
+cl_hud_telemetry_frametime_poor "10"
+// Einstellung/Aufruf cl_hud_telemetry_frametime_poor.
+cl_hud_telemetry_frametime_poor "14"
+// ALT: iv_off
+// NEU: Entfaellt hier: veralteter/ungueltiger Aufruf, alte ungenutzte Chain oder vorzeitiges Speichern; siehe Aenderungsbericht.
+
+// ALT: vprof_off
+// NEU: Entfaellt hier: veralteter/ungueltiger Aufruf, alte ungenutzte Chain oder vorzeitiges Speichern; siehe Aenderungsbericht.
+
+// Einstellung/Aufruf mm_dedicated_search_maxping.
+mm_dedicated_search_maxping "25"
+// Einstellung/Aufruf net_client_steamdatagram_enable_override.
+net_client_steamdatagram_enable_override "1"
+// Einstellung/Aufruf cl_net_buffer_ticks.
+cl_net_buffer_ticks "1"
+// Einstellung/Aufruf engine_no_focus_sleep.
+engine_no_focus_sleep "0"
+// Einstellung/Aufruf cl_cq_min_queue.
+cl_cq_min_queue "-1"
+// ALT: cq_min_queue_size "4"
+// NEU: Entfaellt hier: veralteter/ungueltiger Aufruf, alte ungenutzte Chain oder vorzeitiges Speichern; siehe Aenderungsbericht.
+
+// ALT: cq_buffer_bloat_msecs "0"
+// NEU: Entfaellt hier: veralteter/ungueltiger Aufruf, alte ungenutzte Chain oder vorzeitiges Speichern; siehe Aenderungsbericht.
+
+// Einstellung/Aufruf cq_buffer_bloat_msecs_max.
+cq_buffer_bloat_msecs_max "0"
+// ALT: net_queue_method "2"
+// NEU: Entfaellt hier: veralteter/ungueltiger Aufruf, alte ungenutzte Chain oder vorzeitiges Speichern; siehe Aenderungsbericht.
+
+// ALT: rate 98000
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+rate 98304
+// ALT: cl_interp "0.0177"
+// NEU: Entfaellt hier: veralteter/ungueltiger Aufruf, alte ungenutzte Chain oder vorzeitiges Speichern; siehe Aenderungsbericht.
+
+// Einstellung/Aufruf cl_interp_ratio.
+cl_interp_ratio "1"
+// Einstellung/Aufruf cl_predict_kill_ragdolls.
+cl_predict_kill_ragdolls "true"
+// Einstellung/Aufruf cl_predict_head_shot_fx.
+cl_predict_head_shot_fx "false"
+// Einstellung/Aufruf cl_predict_body_shot_fx.
+cl_predict_body_shot_fx "false"
+// Einstellung/Aufruf cl_showfps.
+cl_showfps "1"
+// Einstellung/Aufruf cl_autohelp.
+cl_autohelp "0"
+// Einstellung/Aufruf cl_obs_interp_enable.
+cl_obs_interp_enable "0"
+// Einstellung/Aufruf cl_hud_radar_scale.
+cl_hud_radar_scale 1.15
+// Einstellung/Aufruf cl_radar_scale.
+cl_radar_scale 0.42
+// Einstellung/Aufruf cl_radar_always_centered.
+cl_radar_always_centered 0
+// Einstellung/Aufruf cl_radar_rotate.
+cl_radar_rotate 1
+// Einstellung/Aufruf cl_radar_icon_scale_min.
+cl_radar_icon_scale_min 0.7
+// Einstellung/Aufruf cl_radar_square_with_scoreboard.
+cl_radar_square_with_scoreboard 1
+// Einstellung/Aufruf cl_radar_scale.
+cl_radar_scale 0.42
+// Einstellung/Aufruf cl_radar_always_centered.
+cl_radar_always_centered 0
+// Einstellung/Aufruf cl_radar_rotate.
+cl_radar_rotate 1
+// Einstellung/Aufruf cl_radar_icon_scale_min.
+cl_radar_icon_scale_min 0.7
+// Einstellung/Aufruf cl_radar_square_with_scoreboard.
+cl_radar_square_with_scoreboard 1
+// Einstellung/Aufruf cl_silencer_mode.
+cl_silencer_mode "1"
+// Einstellung/Aufruf cl_debounce_zoom.
+cl_debounce_zoom "1"
+// Einstellung/Aufruf cl_sniper_delay_unscope.
+cl_sniper_delay_unscope "0"
+// Einstellung/Aufruf hud_scaling.
+hud_scaling "1.1337"
+// Einstellung/Aufruf safezonex.
+safezonex "1.1337"
+// Einstellung/Aufruf safezoney.
+safezoney "0.999"
+// Einstellung/Aufruf +cl_show_team_equipment.
++cl_show_team_equipment
+// Einstellung/Aufruf cl_teamid_overhead_mode.
+cl_teamid_overhead_mode "2"
+// Einstellung/Aufruf cl_teamid_overhead_maxdist.
+cl_teamid_overhead_maxdist "9999"
+// Einstellung/Aufruf cl_ragdoll_workaround_threshold.
+cl_ragdoll_workaround_threshold "0"
+// ALT: cl_crosshairgap_useweaponvalue "1"
+// NEU: Entfaellt hier: veralteter/ungueltiger Aufruf, alte ungenutzte Chain oder vorzeitiges Speichern; siehe Aenderungsbericht.
+
+// Einstellung/Aufruf cl_sniper_auto_rezoom.
+cl_sniper_auto_rezoom "0"
+// Einstellung/Aufruf cl_crosshair_t.
+cl_crosshair_t "1"
+// ALT: cl_crosshair_dynamic_splitalpha_outermod "0"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+cl_crosshair_dynamic_splitalpha_outermod 0.3
+// Einstellung/Aufruf cl_crosshair_dynamic_splitdist.
+cl_crosshair_dynamic_splitdist "0"
+// Einstellung/Aufruf cl_crosshair_dynamic_splitalpha_innermod.
+cl_crosshair_dynamic_splitalpha_innermod "0"
+// Einstellung/Aufruf cl_crosshair_dynamic_maxdist_splitratio.
+cl_crosshair_dynamic_maxdist_splitratio "0"
+// ALT: cl_crosshairsize "0.777"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+cl_crosshair_length 2
+// ALT: cl_crosshairgap "-4.000000"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+cl_crosshair_gap 1
+// ALT: cl_crosshairalpha 333
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+cl_crosshaircolor_a 255
+// Einstellung/Aufruf cl_crosshairdot.
+cl_crosshairdot false
+// Einstellung/Aufruf sensitivity_y_scale.
+sensitivity_y_scale 1.33
+// Einstellung/Aufruf m_pitch.
+m_pitch 0.0165
+// Einstellung/Aufruf m_yaw.
+m_yaw 0.0165
+// Einstellung/Aufruf cl_grenadecrosshair_decoy.
+cl_grenadecrosshair_decoy "true"
+// Einstellung/Aufruf cl_grenadecrosshair_keepusercrosshair.
+cl_grenadecrosshair_keepusercrosshair "false"
+// Einstellung/Aufruf cl_grenadecrosshair_flash.
+cl_grenadecrosshair_flash "false"
+// Einstellung/Aufruf cl_grenadecrosshair_fire.
+cl_grenadecrosshair_fire "true"
+// Einstellung/Aufruf cl_grenadecrosshair_explosive.
+cl_grenadecrosshair_explosive "false"
+// Einstellung/Aufruf cl_grenadecrosshair_smoke.
+cl_grenadecrosshair_smoke "true"
+// Einstellung/Aufruf cl_grenadecrosshairdelay_decoy.
+cl_grenadecrosshairdelay_decoy "2"
+// Einstellung/Aufruf cl_grenadecrosshairdelay_flash.
+cl_grenadecrosshairdelay_flash "3"
+// Einstellung/Aufruf cl_grenadecrosshairdelay_fire.
+cl_grenadecrosshairdelay_fire "5"
+// Einstellung/Aufruf cl_grenadecrosshairdelay_explosive.
+cl_grenadecrosshairdelay_explosive "3"
+// Einstellung/Aufruf cl_grenadecrosshairdelay_smoke.
+cl_grenadecrosshairdelay_smoke "0.2"
+// Einstellung/Aufruf cl_show_observer_crosshair.
+cl_show_observer_crosshair "0"
+// Einstellung/Aufruf sv_disable_observer_interpolation.
+sv_disable_observer_interpolation "true"
+// Einstellung/Aufruf install_dlc_workshoptools_cvar.
+install_dlc_workshoptools_cvar "1"
+// Einstellung/Aufruf snd_voipvolume.
+snd_voipvolume "0.7777777"
+// Einstellung/Aufruf cl_showloadout.
+cl_showloadout "1"
+// Einstellung/Aufruf molotov_throw_detonate_time.
+molotov_throw_detonate_time 100
+// Einstellung/Aufruf sv_regeneration_force_on.
+sv_regeneration_force_on true
+// Einstellung/Aufruf cl_crosshair_friendly_warning.
+cl_crosshair_friendly_warning 1
+// Einstellung/Aufruf cl_hide_avatar_images.
+cl_hide_avatar_images 1
+// Einstellung/Aufruf engine_low_latency_sleep_after_client_tick.
+engine_low_latency_sleep_after_client_tick "1"
+// Einstellung/Aufruf con_enable.
+con_enable "1"
+// ALT: vprof_off
+// NEU: Entfaellt hier: veralteter/ungueltiger Aufruf, alte ungenutzte Chain oder vorzeitiges Speichern; siehe Aenderungsbericht.
+
+// ALT: iv_off
+// NEU: Entfaellt hier: veralteter/ungueltiger Aufruf, alte ungenutzte Chain oder vorzeitiges Speichern; siehe Aenderungsbericht.
+
+// Einstellung/Aufruf cl_color.
+cl_color "0"
+// Einstellung/Aufruf cl_hud_color.
+cl_hud_color "12"
+// Einstellung/Aufruf r_csgo_render_decals.
+r_csgo_render_decals "true"
+// Einstellung/Aufruf r_csgo_effects_bloom.
+r_csgo_effects_bloom "false"
+// Einstellung/Aufruf r_drawtracers_firstperson.
+r_drawtracers_firstperson "true"
+// Einstellung/Aufruf r_drawparticles.
+r_drawparticles
+// Einstellung/Aufruf weapon_accuracy_nospread.
+weapon_accuracy_nospread "true"
+// Einstellung/Aufruf zoom_sensitivity_ratio.
+zoom_sensitivity_ratio "0.8189833027098955"
+// Einstellung/Aufruf sensitivity.
+sensitivity "1"
+// ALT: cl_bob_lower_amt "5"
+// NEU: Entfaellt hier: veralteter/ungueltiger Aufruf, alte ungenutzte Chain oder vorzeitiges Speichern; siehe Aenderungsbericht.
+
+// ALT: cl_bobamt_lat "0.1"
+// NEU: Entfaellt hier: veralteter/ungueltiger Aufruf, alte ungenutzte Chain oder vorzeitiges Speichern; siehe Aenderungsbericht.
+
+// ALT: cl_bobamt_vert "0.1"
+// NEU: Entfaellt hier: veralteter/ungueltiger Aufruf, alte ungenutzte Chain oder vorzeitiges Speichern; siehe Aenderungsbericht.
+
+// Einstellung/Aufruf voice.
+voice
+// ALT: bind "n" "+jump; -attack; -attack2"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+bind "n" "+jump"
+// ALT: mat_queue_mode "2"
+// NEU: Entfaellt hier: veralteter/ungueltiger Aufruf, alte ungenutzte Chain oder vorzeitiges Speichern; siehe Aenderungsbericht.
+
+// ALT: cl_threaded_bone_setup "1"
+// NEU: Entfaellt hier: veralteter/ungueltiger Aufruf, alte ungenutzte Chain oder vorzeitiges Speichern; siehe Aenderungsbericht.
+
+// Taste MOUSE3.
+bind MOUSE3 "+jump"
+// ALT: net_queue_method "2"
+// NEU: Entfaellt hier: veralteter/ungueltiger Aufruf, alte ungenutzte Chain oder vorzeitiges Speichern; siehe Aenderungsbericht.
+
+// Funktion +holdzoom.
+alias "+holdzoom" "+zoom"
+// Funktion -holdzoom.
+alias "-holdzoom" "-zoom"
+// Taste MOUSE2.
+bind "MOUSE2" "+holdzoom"
+// Einstellung/Aufruf sensitivity.
+sensitivity 1
+// ALT: cl_viewmodel_shift_left_amt 1.5
+// NEU: Entfaellt hier: veralteter/ungueltiger Aufruf, alte ungenutzte Chain oder vorzeitiges Speichern; siehe Aenderungsbericht.
+
+// ALT: cl_viewmodel_shift_right_amt 0.75
+// NEU: Entfaellt hier: veralteter/ungueltiger Aufruf, alte ungenutzte Chain oder vorzeitiges Speichern; siehe Aenderungsbericht.
+
+// Einstellung/Aufruf viewmodel_presetpos.
+viewmodel_presetpos "0"
+// Einstellung/Aufruf viewmodel_offset_x.
+viewmodel_offset_x "2.5"
+// Einstellung/Aufruf viewmodel_offset_y.
+viewmodel_offset_y "-2"
+// Einstellung/Aufruf viewmodel_offset_z.
+viewmodel_offset_z "-2"
+// Einstellung/Aufruf viewmodel_fov.
+viewmodel_fov "54"
+echo ""
+echo "╔═════════════════════════════════════════════════════════╗"
+echo "║                  DEBUG & STARTUP SECTION                ║"
+echo "╚═════════════════════════════════════════════════════════╝"
+echo ""
+echo "-------------------------------------------------------------------------------"
+echo ""
+echo "Saved User Cloud(#MEMORYSTICK)"
+// Einstellung/Aufruf mycross.
+mycross
+echo "=======FIXED FINISH======"
+// Einstellung/Aufruf +strafe.
++strafe
+// Einstellung/Aufruf -radarzoom.
+-radarzoom
+// Einstellung/Aufruf -dropbomb.
+-dropbomb
+// Einstellung/Aufruf -scorenet.
+-scorenet
+// Einstellung/Aufruf -reload.
+-reload
+// Einstellung/Aufruf -attack.
+-attack
+// Einstellung/Aufruf -attack2.
+-attack2
+// Einstellung/Aufruf -duck.
+-duck
+// Einstellung/Aufruf -jump.
+-jump
+// Einstellung/Aufruf -use.
+-use
+// Einstellung/Aufruf -lookatweapon.
+// ALT: -lookatweapon
+// NEU v10: Direkte Inspect-Aufrufe ueber look1/look0 zentralisieren bzw. Versionsmarker erneuern.
+look0
+echo "#DEBUG* [>]User Config @RUN_"
+echo "=======FIXED FINISH======"
+// Einstellung/Aufruf sens0.
+sens0
+// Einstellung/Aufruf mac_1.
+mac_1
+// Einstellung/Aufruf myfps.
+myfps
+// Einstellung/Aufruf hand>.
+hand>
+// Einstellung/Aufruf nethub.
+nethub
+// Einstellung/Aufruf xgrnz.
+xgrnz
+// Einstellung/Aufruf gretz.
+gretz
+// Einstellung/Aufruf stdv.
+stdv
+// Einstellung/Aufruf proview.
+proview
+// Einstellung/Aufruf c_nred.
+c_nred
+echo "#USER FIX** [>]User Config @RUN_"
+echo "=======READY TO RUMBLE======"
+// Einstellung/Aufruf +cl_show_team_equipment.
++cl_show_team_equipment
+echo " "
+// ALT: host_writeconfig
+// NEU: Entfaellt hier: veralteter/ungueltiger Aufruf, alte ungenutzte Chain oder vorzeitiges Speichern; siehe Aenderungsbericht.
+
+echo "MEMORYSTICK[UPLOAD 100%] <GAME OVER"
+// Einstellung/Aufruf stdmode.
+stdmode
+echo " "
+echo "=============== CS2 SUPER SKRIPT v2.0 ==============="
+echo " "
+echo "GRUNDLEGENDE BINDINGS:"
+echo "A/D - Starfemode | Z - Rauch | X - Molotow"
+echo "C - HE | F - Blend | ALT - Decoy"
+echo " "
+echo "STANDARD MODUS (ALT losgelassen):"
+echo "F1 - Crosshair Größe | F2 - Recoil Crosshair"
+echo "F3 - HUD Farbe | F4 - Viewmodel"
+echo "F5 - Nächstes XHair | F6 - Farbe"
+echo "F7 - Alpha | F8 - T-Style"
+echo "F9-F12 - Netzwerkraten(LOWRATE-64TICK-128TICK-LANSTARK)"
+echo " "
+echo "FACEIT&MSG+FUNK MODUS (ALT gedrückt halten+):"
+echo "F3 - Have Fun | F4 - Good Game"
+echo "F5 - !stay | F6 - !switch"
+echo "F7 - !gg | F8 - !report"
+echo "F9 - Reportbot | F10 - Flamebox"
+echo "F11 - Teamspeak | F12 - Playerinfo"
+echo " "
+echo "#ᴸᴵᴷᴱᴰᴮᴵᴳ #𝐿𝐼𝐊𝐄𝐃𝐵𝐼𝐆 #ＬＩ𝐊𝐄𝐃Ｂ𝐼Ｇ #Լᵢⲕₑ𝑑𝑏ᵢ𝑔 #𐌋𐌉𐌊𐌄𐌃𐌁𐌉Ᏽ #𝐋𝐈𝐊𝐄𝐃𝐁𝐈𝐆"
+echo ██████╗ ███████╗██╗ ██╗██╗ ██╗██╗████████╗██████╗
+echo ██╔══██╗██╔════╝██║ ██║██║ ██╔╝██║╚══██╔══╝╚════██╗
+echo ██║ ██║█████╗ ██║ ██║█████╔╝ ██║ ██║ █████╔╝
+echo ██║ ██║██╔══╝ ╚██╗ ██╔╝██╔═██╗ ██║ ██║ ██╔═══╝
+echo ██████╔╝███████╗ ╚████╔╝ ██║ ██╗██║ ██║ ███████╗
+echo ╚═════╝ ╚══════╝ ╚═══╝ ╚═╝ ╚═╝╚═╝ ╚═╝ ╚══════╝#
+echo "#ᴸᴵᴷᴱᴰᴮᴵᴳ #𝐿𝐼𝐊𝐄𝐃𝐵𝐼𝐆 #ＬＩ𝐊𝐄𝐃Ｂ𝐼Ｇ #Լᵢⲕₑ𝑑𝑏ᵢ𝑔 #𐌋𐌉𐌊𐌄𐌃𐌁𐌉Ᏽ #𝐋𝐈𝐊𝐄𝐃𝐁𝐈𝐆"
+echo ""
+echo "╔═════════════════════════════════════════════════════════╗"
+echo "║                                                         ║"
+// ALT: echo "║            AUTOEXEC LOADED SUCCESSFULLY                ║"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+echo LEETED_BASIS_GELADEN_REPARATUR_FOLGT
+echo "║              VERSION: V1 v01.1_01                      ║"
+echo "║                                                         ║"
+echo "╚═════════════════════════════════════════════════════════╝"
+echo ""
+// Funktion -scorenet.
+alias -scorenet "-showscores;fps1;myfps"
+// ALT: alias myfps     "fps_max 0"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "myfps" "fps_max 999"
+// Einstellung/Aufruf fps_max.
+fps_max                     999
+// Einstellung/Aufruf fps_max_ui.
+fps_max_ui                  0
+// Einstellung/Aufruf cl_showfps.
+cl_showfps                  1
+// ALT: rate                        98000
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+rate 98304
+// Einstellung/Aufruf cl_net_buffer_ticks.
+cl_net_buffer_ticks         1
+// Einstellung/Aufruf r_drawtracers_firstperson.
+r_drawtracers_firstperson   0
+// Einstellung/Aufruf r_drawtracers.
+r_drawtracers               1
+// ALT: vprof_off
+// NEU: Entfaellt hier: veralteter/ungueltiger Aufruf, alte ungenutzte Chain oder vorzeitiges Speichern; siehe Aenderungsbericht.
+
+// ALT: iv_off
+// NEU: Entfaellt hier: veralteter/ungueltiger Aufruf, alte ungenutzte Chain oder vorzeitiges Speichern; siehe Aenderungsbericht.
+
+// ALT: cq_netgraph                 1
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+cl_hud_telemetry_serverrecvmargin_graph_show 1
+// ALT: echo "[DKZ] ENDBLOCK v01.2_03 aktiv"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+echo "[LEETED] ENDBLOCK v01.2_03 aktiv"
+// ALT: echo "[DKZ] neo crosshair config aktiv"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+echo "[LEETED] neo crosshair config aktiv"
+echo "CSGO-HhKXK-GGcBN-FcPuc-Cfbux-Np74E"
+// Einstellung/Aufruf cl_hud_radar_blur_background.
+cl_hud_radar_blur_background 0
+// Taste CTRL.
+bind "CTRL"  "+sneak"
+// Einstellung/Aufruf m_pitch.
+m_pitch "0.0165"
+// Einstellung/Aufruf m_yaw.
+m_yaw "0.0165"
+// Taste v.
+bind v +voicerecord
+// Einstellung/Aufruf r_drawtracers_firstperson.
+r_drawtracers_firstperson true
+// Einstellung/Aufruf r_drawparticles.
+r_drawparticles false
+// Einstellung/Aufruf snd_mixahead.
+snd_mixahead 0.05
+// Einstellung/Aufruf viewmodel_fov.
+viewmodel_fov 68
+// Einstellung/Aufruf viewmodel_offset_x.
+viewmodel_offset_x -2.5
+// Einstellung/Aufruf viewmodel_offset_y.
+viewmodel_offset_y -2.5
+// Einstellung/Aufruf viewmodel_offset_z.
+viewmodel_offset_z -2
+// Einstellung/Aufruf viewmodel_presetpos.
+viewmodel_presetpos 1
+// ALT: host_writeconfig
+// NEU: Entfaellt hier: veralteter/ungueltiger Aufruf, alte ungenutzte Chain oder vorzeitiges Speichern; siehe Aenderungsbericht.
+
+// ALT: alias "+atx" "+attack;alias refresh_crosshair crosshair_fire;atx1"
+// ALT: alias +atx "+attack;ch0;atx1"
+// NEU: Schusszustand merken; bestehendes Schussprofil und optionale Drueck-Diagnose.
+// ALT: alias "+atx" "+attack;alias refresh_crosshair crosshair_fire;atx1;shot_trace_down"
+// NEU v10: Maus1 als gehalten merken; gemeinsame Angriffsrueckstellung.
+alias "+atx" "alias fire_check_mouse fire_hold;fire_refresh;shot_trace_down"
+// ALT: alias "-atx" "-attack;alias refresh_crosshair crosshair_idle;mycross;-h_color;sens1;shot_trace_up"
+// ALT: alias "-atx" "-attack;alias refresh_crosshair crosshair_idle;atx0"
+// ALT: alias -atx "-attack;atx0;croco"
+// NEU: Normalzustand setzen und mycross direkt aufrufen; HUD/Sens erhalten; optionale Release-Diagnose.
+// ALT: alias "-atx" "-attack;alias refresh_crosshair crosshair_idle;mycross;-h_color;sens1;sens_refresh;shot_trace_up"
+// NEU v10: Maus1 freigeben; Enter darf weiter schiessen, sonst mycross.
+alias "-atx" "alias fire_check_mouse fire_check_enter;fire_refresh;shot_trace_up"
+// ALT: alias "trill" "alias gmrcrossnow shape_trill;refresh_crosshair"
+// ALT: alias trill "alias gmrcrossnow cl_crosshairstyle 4;cl_crosshairsize 0.337;cl_crosshairthickness 0.5;cl_crosshairgap -4;cl_crosshair_drawoutline 1;cl_crosshair_outlinethickness 1;cl_crosshairdot 0;cl_crosshair_t 0;cl_crosshairusealpha 1;cl_crosshairalpha 777;cl_crosshair_recoil false;cl_crosshairgap_useweaponvalue 0;alias gmrcrossnow crossdot"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "trill" "alias mycross restore_trill;alias gmrcrossnow shape_trill;alias selection_status selected_trill;refresh_crosshair"
+// ALT: alias "croattx" "shape_fire;atxc"
+// ALT: alias croattx "atxc;cl_crosshairstyle 4;cl_crosshairsize 1000;cl_crosshairthickness 0.5;cl_crosshairgap -4;cl_crosshair_drawoutline 1;cl_crosshair_outlinethickness 1;cl_crosshairdot 0;cl_crosshair_t 1;cl_crosshairusealpha 1;cl_crosshair_recoil true;cl_crosshairgap_useweaponvalue 0;cl_crosshairalpha 77;ch1"
+// NEU: Alle Werte einschliesslich Farbe direkt aus dem gewuenschten Sharecode.
+// ALT: alias "croattx" "shape_fire"
+// NEU v10: Schussanzeige durch optionalen Profil-Dispatcher.
+alias "croattx" "shot_render"
+// ALT: alias "mycross" "gmrcrossnow;croco;cl_crosshair_recoil 0;ch1"
+// ALT: alias "mycross" "gmrcrossnow;croco;ch1"
+// ALT: alias mycross "gmrcrossnow;croco"
+// NEU: Direkten Rueckstell-Alias speichern; kein next_cross und kein Auswahlschritt beim Wiederanzeigen.
+alias "mycross" "restore_dot"
+// Taste MOUSE2.
+bind "MOUSE2" "+holdzoom"
+// Taste mouse1.
+bind mouse1 +atx
+// Einstellung/Aufruf unbind.
+unbind alt
+// DKZ input repair v1.01.1_03 - load AFTER the existing aliases.
+// SPACE delegates to the existing press/release actions, including BUY.
+// ALT: alias "+dkz_space" "+jumpp;dkz_space_down_trace"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "+space_mode" "+jumpp;space_trace_down"
+// ALT: alias "-dkz_space" "dkz_space_up_trace;unbind mwheeldown;crosshair 1;-jumpp;unbind mwheeldown;crosshair 1;dkz_space_done_trace"
+// NEU: Rad vor/nach Rueckweg entbinden; passende Crosshair-Anzeige wiederherstellen.
+alias "-space_mode" "space_trace_up;unbind mwheeldown;crosshair 1;-jumpp;unbind mwheeldown;refresh_crosshair;space_trace_done"
+// ALT: alias "dkz_space_down_trace" ""
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "space_trace_down" ""
+// ALT: alias "dkz_space_up_trace" ""
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "space_trace_up" ""
+// ALT: alias "dkz_space_done_trace" ""
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "space_trace_done" ""
+// ALT: alias "dkz_print_down" "echo [DKZ03] SPACE_DOWN;bind mwheeldown;crosshair"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "print_down" "echo [LEETED05] SPACE_DOWN;bind mwheeldown;crosshair"
+// ALT: alias "dkz_print_up" "echo [DKZ03] SPACE_UP_BEGIN"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "print_up" "echo [LEETED05] SPACE_UP_BEGIN"
+// ALT: alias "dkz_print_done" "echo [DKZ03] SPACE_UP_END;bind mwheeldown;crosshair"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "print_done" "echo [LEETED05] SPACE_UP_END;bind mwheeldown;crosshair"
+// ALT: alias "dkz_trace_on" "alias dkz_space_down_trace dkz_print_down;alias dkz_space_up_trace dkz_print_up;alias dkz_space_done_trace dkz_print_done;echo [DKZ] TRACE_ON"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "trace_on" "alias space_trace_down print_down;alias space_trace_up print_up;alias space_trace_done print_done;echo [LEETED] TRACE_ON"
+// ALT: alias "dkz_trace_off" "alias dkz_space_down_trace dkz_noop;alias dkz_space_up_trace dkz_noop;alias dkz_space_done_trace dkz_noop;echo [DKZ] TRACE_OFF"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "trace_off" "alias space_trace_down noop;alias space_trace_up noop;alias space_trace_done noop;echo [LEETED] TRACE_OFF"
+// ALT: alias "dkz_space_reset" "unbind mwheeldown;crosshair 1"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "input_reset" "unbind mwheeldown;refresh_crosshair"
+// ALT + V: clutch. Release ALT: clear clutch and restore V for voice.
+// ALT: alias "dkz_noop" ""
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "noop" ""
+// ALT: alias "dkz_clutch" "cl_clutch_mode 1"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "clutch_on" "cl_clutch_mode 1"
+// ALT: alias "+dkz_voice" "dkz_voice_action"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "+voice_key" "voice_action"
+// ALT: alias "-dkz_voice" "-voicerecord"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "-voice_key" "-voicerecord"
+// ALT: alias "dkz_voice_action" "+voicerecord"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "voice_action" "+voicerecord"
+// ALT: alias "switchvoice" "-voicerecord;alias dkz_voice_action dkz_clutch"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "switchvoice" "-voicerecord;alias voice_action clutch_on"
+// ALT: alias "Voice1" "alias dkz_voice_action +voicerecord"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "Voice1" "alias voice_action +voicerecord"
+// Funktion -[funkbar].
+alias "-[funkbar]" "[0]funkbind;nethub;Voice1;0voicevol"
+// Funktion -fuk_.
+alias "-fuk_" "-buy;<hand>;-[funkbar];faceit0;-_r;cl_clutch_mode 0;Voice1"
+// ALT: bind "space" "+dkz_space"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+bind "space" "+space_mode"
+// Taste alt.
+bind "alt" "+fuk_"
+// ALT: bind "v" "+dkz_voice"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+bind "v" "+voice_key"
+// Einstellung/Aufruf cl_clutch_mode.
+cl_clutch_mode 0
+// Einstellung/Aufruf unbind.
+unbind "mwheeldown"
+// ALT: alias "dkz_check" "bind space;bind mwheeldown;bind alt;bind v;cl_clutch_mode;crosshair"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "input_status" "bind space;bind mwheeldown;bind alt;bind v;cl_clutch_mode;crosshair"
+// Stable grenade keys; each press remembers its own release action.
+// ALT: alias "dkz_best_weapon" "slot3;slot2;slot1;look0"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+// ALT: alias "best_weapon" "slot3;slot2;slot1;look0"
+// NEU v10: Eindeutig Hauptwaffe, ersatzweise Pistole/Messer; rechte Hand, Inspect aus, passende Anzeige.
+alias "best_weapon" "look0;slot3;slot2;slot1;hand>;refresh_crosshair"
+// ALT: alias "dkz_choose_held" "dkz_check_z"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "select_held" "check_z"
+// ALT: alias "equip_z" "smoke;look1"
+// ALT: alias "dkz_equip_z" "+smoke;look1"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+// ALT: alias "equip_z" "<hand;slot7;slot6;slot10;slot8;look1"
+// NEU v10: Vorhandene Granatenprioritaet links; optionales Inspect, gespeicherte Farbe bleibt erhalten.
+alias "equip_z" "<hand;slot7;slot6;slot10;slot8;look1;refresh_crosshair"
+// ALT: alias "dkz_check_z" "dkz_check_x"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "check_z" "check_x"
+// ALT: alias "dkz_z_gren_down" "alias dkz_check_z dkz_equip_z;alias dkz_z_up dkz_z_gren_up;dkz_equip_z"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "z_gren_down" "alias check_z equip_z;alias z_up z_gren_up;equip_z"
+// ALT: alias "dkz_z_gren_up" "alias dkz_check_z dkz_check_x;alias dkz_z_up dkz_noop;dkz_choose_held"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+// ALT: alias "z_gren_up" "alias check_z check_x;alias z_up noop;select_held"
+// NEU v10: Jedes Granaten-Loslassen endet bei der besten Waffe; keine andere Granate/Inspect neu starten.
+alias "z_gren_up" "alias check_z check_x;alias z_up noop;best_weapon"
+// ALT: alias "dkz_z_radio_down" "alias dkz_z_up dkz_z_radio_up;+radialradio"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "z_radio_down" "alias z_up z_radio_up;+radialradio"
+// ALT: alias "dkz_z_radio_up" "-radialradio;alias dkz_z_up dkz_noop"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "z_radio_up" "-radialradio;alias z_up noop"
+// ALT: alias "dkz_z_down" "dkz_z_gren_down"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "z_down" "z_gren_down"
+// ALT: alias "dkz_z_up" "dkz_noop"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "z_up" "noop"
+// ALT: alias "+dkz_key_z" "dkz_z_down"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "+key_z" "z_down"
+// ALT: alias "-dkz_key_z" "dkz_z_up"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "-key_z" "z_up"
+// ALT: bind "z" "+dkz_key_z"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+bind "z" "+key_z"
+// ALT: alias "equip_x" "molo;look1"
+// ALT: alias "dkz_equip_x" "+molo;look1"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+// ALT: alias "equip_x" "<hand;slot8;slot7;slot6;slot10;look1"
+// NEU v10: Vorhandene Granatenprioritaet links; optionales Inspect, gespeicherte Farbe bleibt erhalten.
+alias "equip_x" "<hand;slot8;slot7;slot6;slot10;look1;refresh_crosshair"
+// ALT: alias "dkz_check_x" "dkz_check_c"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "check_x" "check_c"
+// ALT: alias "dkz_x_gren_down" "alias dkz_check_x dkz_equip_x;alias dkz_x_up dkz_x_gren_up;dkz_equip_x"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "x_gren_down" "alias check_x equip_x;alias x_up x_gren_up;equip_x"
+// ALT: alias "dkz_x_gren_up" "alias dkz_check_x dkz_check_c;alias dkz_x_up dkz_noop;dkz_choose_held"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+// ALT: alias "x_gren_up" "alias check_x check_c;alias x_up noop;select_held"
+// NEU v10: Jedes Granaten-Loslassen endet bei der besten Waffe; keine andere Granate/Inspect neu starten.
+alias "x_gren_up" "alias check_x check_c;alias x_up noop;best_weapon"
+// ALT: alias "dkz_x_radio_down" "alias dkz_x_up dkz_x_radio_up;+radialradio2"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "x_radio_down" "alias x_up x_radio_up;+radialradio2"
+// ALT: alias "dkz_x_radio_up" "-radialradio2;alias dkz_x_up dkz_noop"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "x_radio_up" "-radialradio2;alias x_up noop"
+// ALT: alias "dkz_x_down" "dkz_x_gren_down"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "x_down" "x_gren_down"
+// ALT: alias "dkz_x_up" "dkz_noop"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "x_up" "noop"
+// ALT: alias "+dkz_key_x" "dkz_x_down"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "+key_x" "x_down"
+// ALT: alias "-dkz_key_x" "dkz_x_up"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "-key_x" "x_up"
+// ALT: bind "x" "+dkz_key_x"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+bind "x" "+key_x"
+// ALT: alias "equip_c" "he;look1"
+// ALT: alias "dkz_equip_c" "+he;look1"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+// ALT: alias "equip_c" "<hand;slot10;slot8;slot7;slot6;look1"
+// NEU v10: Vorhandene Granatenprioritaet links; optionales Inspect, gespeicherte Farbe bleibt erhalten.
+alias "equip_c" "<hand;slot10;slot8;slot7;slot6;look1;refresh_crosshair"
+// ALT: alias "dkz_check_c" "dkz_check_f"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "check_c" "check_f"
+// ALT: alias "dkz_c_gren_down" "alias dkz_check_c dkz_equip_c;alias dkz_c_up dkz_c_gren_up;dkz_equip_c"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "c_gren_down" "alias check_c equip_c;alias c_up c_gren_up;equip_c"
+// ALT: alias "dkz_c_gren_up" "alias dkz_check_c dkz_check_f;alias dkz_c_up dkz_noop;dkz_choose_held"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+// ALT: alias "c_gren_up" "alias check_c check_f;alias c_up noop;select_held"
+// NEU v10: Jedes Granaten-Loslassen endet bei der besten Waffe; keine andere Granate/Inspect neu starten.
+alias "c_gren_up" "alias check_c check_f;alias c_up noop;best_weapon"
+// ALT: alias "dkz_c_radio_down" "alias dkz_c_up dkz_c_radio_up;+radialradio3"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "c_radio_down" "alias c_up c_radio_up;+radialradio3"
+// ALT: alias "dkz_c_radio_up" "-radialradio3;alias dkz_c_up dkz_noop"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "c_radio_up" "-radialradio3;alias c_up noop"
+// ALT: alias "dkz_c_down" "dkz_c_gren_down"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "c_down" "c_gren_down"
+// ALT: alias "dkz_c_up" "dkz_noop"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "c_up" "noop"
+// ALT: alias "+dkz_key_c" "dkz_c_down"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "+key_c" "c_down"
+// ALT: alias "-dkz_key_c" "dkz_c_up"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "-key_c" "c_up"
+// ALT: bind "c" "+dkz_key_c"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+bind "c" "+key_c"
+// ALT: alias "equip_f" "flash;look1"
+// ALT: alias "dkz_equip_f" "+flash;look1"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+// ALT: alias "equip_f" "<hand;slot6;slot10;slot8;slot7;look1"
+// NEU v10: Vorhandene Granatenprioritaet links; optionales Inspect, gespeicherte Farbe bleibt erhalten.
+alias "equip_f" "<hand;slot6;slot10;slot8;slot7;look1;refresh_crosshair"
+// ALT: alias "check_f" "best_weapon"
+// ALT: alias "dkz_check_f" "dkz_best_weapon"
+// NEU: Wenn keine Granatentaste gehalten ist, SPACE-Granatenzustand beachten.
+alias "check_f" "check_space"
+// ALT: alias "dkz_f_gren_down" "alias dkz_check_f dkz_equip_f;alias dkz_f_up dkz_f_gren_up;dkz_equip_f"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "f_gren_down" "alias check_f equip_f;alias f_up f_gren_up;equip_f"
+// ALT: alias "f_gren_up" "alias check_f best_weapon;alias f_up noop;select_held"
+// ALT: alias "dkz_f_gren_up" "alias dkz_check_f dkz_best_weapon;alias dkz_f_up dkz_noop;dkz_choose_held"
+// NEU: F-Freigabe faellt auf SPACE oder beste Waffe zurueck.
+// ALT: alias "f_gren_up" "alias check_f check_space;alias f_up noop;select_held"
+// NEU v10: Jedes Granaten-Loslassen endet bei der besten Waffe; keine andere Granate/Inspect neu starten.
+alias "f_gren_up" "alias check_f check_space;alias f_up noop;best_weapon"
+// ALT: alias "dkz_f_radio_down" "alias dkz_f_up dkz_f_radio_up;_r"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "f_radio_down" "alias f_up f_radio_up;_r"
+// ALT: alias "dkz_f_radio_up" "dkz_noop;alias dkz_f_up dkz_noop"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "f_radio_up" "noop;alias f_up noop"
+// ALT: alias "dkz_f_down" "dkz_f_gren_down"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "f_down" "f_gren_down"
+// ALT: alias "dkz_f_up" "dkz_noop"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "f_up" "noop"
+// ALT: alias "+dkz_key_f" "dkz_f_down"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "+key_f" "f_down"
+// ALT: alias "-dkz_key_f" "dkz_f_up"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "-key_f" "f_up"
+// ALT: bind "f" "+dkz_key_f"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+bind "f" "+key_f"
+// ALT: alias "dkz_grenade_mode" "alias dkz_z_down dkz_z_gren_down;alias dkz_x_down dkz_x_gren_down;alias dkz_c_down dkz_c_gren_down;alias dkz_f_down dkz_f_gren_down"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "grenade_mode" "alias z_down z_gren_down;alias x_down x_gren_down;alias c_down c_gren_down;alias f_down f_gren_down"
+// ALT: alias "dkz_radio_mode" "alias dkz_z_down dkz_z_radio_down;alias dkz_x_down dkz_x_radio_down;alias dkz_c_down dkz_c_radio_down;alias dkz_f_down dkz_f_radio_down"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "radio_mode" "alias z_down z_radio_down;alias x_down x_radio_down;alias c_down c_radio_down;alias f_down f_radio_down"
+// ALT: alias "dkz_close_radio" "-radialradio;-radialradio2;-radialradio3"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "close_radio" "-radialradio;-radialradio2;-radialradio3"
+// ALT: alias "grnz" "dkz_grenade_mode"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "grnz" "grenade_mode"
+// ALT: alias "brad" "dkz_radio_mode"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+alias "brad" "radio_mode"
+// Funktion +_r.
+alias "+_r" "brad"
+// ALT: alias "-_r" "dkz_close_radio;grnz;dkz_choose_held"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+// ALT: alias "-_r" "close_radio;grnz;select_held"
+// NEU v10: ALT-Release darf keine nach SPACE-/Granaten-Release abgelegte Granate mit Inspect reaktivieren.
+alias "-_r" "close_radio;grnz;best_weapon"
+// Funktion radio_[3].
+alias "radio_[3]" "radio3;alias _r radio_[1]"
+// ALT: dkz_grenade_mode
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+grenade_mode
+// Einstellung/Aufruf crosshair.
+crosshair 1
+// ALT: dkz_trace_on
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+trace_on
+// ALT: echo "[DKZ03] FULL_CONFIG_v1.01.1_03_END"
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+echo LEETED_BASIS_GELADEN
+// ALT: dkz_check
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+input_status
+// ALT: r_drawtracers_firstperson true;r_drawparticles false;snd_mixahead 0.05;viewmodel_fov 68; viewmodel_offset_x -2.5; viewmodel_offset_y -2.5; viewmodel_offset_z -3; viewmodel_presetpos 1;weapon_accuracy_nospread 1;fov_cs_debug 90
+// NEU: Befehle aktualisiert, Aliasbezug repariert oder neutral benannt; Reihenfolge der verbleibenden Aktionen erhalten.
+r_drawtracers_firstperson true
+r_drawparticles false
+snd_mixahead 0.05
+viewmodel_presetpos 0
+viewmodel_fov 68
+viewmodel_offset_x -2.5
+viewmodel_offset_y -2.5
+viewmodel_offset_z -2
+weapon_accuracy_nospread 1
+fov_cs_debug 90
+// NEU: Normalen Schusszustand initialisieren.
+alias "refresh_crosshair" "crosshair_idle"
+// NEU: Aktuelle Taste B gemaess Duckjump-Wunsch; kann am Engine-Filter scheitern.
+bind b +duckjump
+// NEU: Crosshairwechsel weiter auf K, Farbwechsel auf J.
+// ALT: bind k next_cross
+bind k +cross_pick
+bind j cr_x
+// NEU: Maus1 wieder ueber korrigierte Schuss-/Rueckstellfunktion.
+bind mouse1 +atx
+// NEU: Mausrad startet entbunden; Crosshair sichtbar.
+unbind mwheeldown
+mycross
+// NEU: Eigene finale Viewmodel-Werte nach Preset anwenden; z=-3 war ausserhalb des normalen Bereichs.
+viewmodel_presetpos 0
+viewmodel_fov 68
+viewmodel_offset_x -2.5
+viewmodel_offset_y -2.5
+viewmodel_offset_z -2
+// NEU: Diagnose nach Maps mit unterdruecktem General-Kanal wieder einschaltbar.
+alias "diag_crosshair" "log_flags General -donotecho;echo LEETED_CROSSHAIR_STATUS;crosshair;bind mouse1;bind k;find cl_crosshair"
+// NEU: Status der wichtigen Eingaben pruefen; keine Einstellungen umschalten.
+alias "input_status" "bind space;bind mwheeldown;bind b;bind alt;bind v;bind z;bind x;bind c;bind f;cl_clutch_mode;crosshair"
+// NEU: Einfachen Sprung auf B als kompatible Alternative waehlen.
+alias "b_jump" "bind b +jump"
+// NEU: Vorhandene Duckjump-Kombination auf B waehlen; keine Engine-Sperren aendern.
+alias "b_duckjump" "bind b +duckjump"
+// NEU: Crosshair-Werte fuer optionale Schussdiagnose abfragen.
+alias "shot_values" "crosshair;cl_crosshairstyle;cl_crosshair_length;cl_crosshair_thickness;cl_crosshair_gap;cl_crosshaircolor_a;cl_crosshaircolor_r;cl_crosshaircolor_g;cl_crosshaircolor_b;cl_crosshair_recoil"
+// NEU: Drueck-Protokoll nach dem Schussprofil.
+alias "shot_down_report" "echo LEETED_SHOT_DOWN;shot_values"
+// NEU: Release-Protokoll nach Wiederherstellung.
+alias "shot_up_report" "echo LEETED_SHOT_UP_END;selection_status;shot_values"
+// NEU: Schussdiagnose bei Bedarf einschalten.
+alias "shot_trace_on" "log_flags General -donotecho;alias shot_trace_down shot_down_report;alias shot_trace_up shot_up_report;echo LEETED_SHOT_TRACE_ON"
+// NEU: Schussdiagnose abschalten.
+alias "shot_trace_off" "alias shot_trace_down noop;alias shot_trace_up noop"
+// NEU: Binding und Crosshair-Werte abfragen.
+alias "shot_status" "log_flags General -donotecho;echo LEETED_SHOT_STATUS;selection_status;bind mouse1;bind k;shot_values"
+// NEU: Schussdiagnose gemaess options.json initialisieren.
+shot_trace_off
+// NEU: Angeforderte Start-Sensitivitaet 1.33 anwenden.
+sens_refresh
+// NEU: Speicherbare Bindings und Werte erst nach dem letzten Reparaturblock sichern.
+// NEU v10: Startoptionen nach allen Altdefinitionen anwenden.
+inspect_off;color_lock_on;shot_circle;shot_on;look0;hand>;sens_refresh;refresh_crosshair
+host_writeconfig
+// NEU: Eindeutiger Abschlussmarker dieser Version.
+// ALT: echo LEETED_v1.01.1_09_END
+// NEU v10: Direkte Inspect-Aufrufe ueber look1/look0 zentralisieren bzw. Versionsmarker erneuern.
+echo LEETED_v1.01.1_10_END
+input_status
